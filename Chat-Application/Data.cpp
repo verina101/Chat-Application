@@ -14,17 +14,42 @@ void Data::CreateTables() {
 
 	tables[0].first = "USER";
 	tables[0].second = "CREATE TABLE IF NOT EXISTS " + tables[0].first + "("
-		"ID INTEGER PRIMARY KEY AUTOINCREMENT, "
-		"NAME         TEXT NOT NULL, "
-		"PASSWORD     TEXT NOT NULL, "
-		"PHONENUMBER       TEXT NOT NULL, "
-		"ABOUT     TEXT );";
+		"UserID INTEGER PRIMARY KEY AUTOINCREMENT, "
+		"FirstName  TEXT NOT NULL, "
+		"LastName   TEXT NOT NULL, "
+		"ProfilePicture  TEXT NOT NULL, "
+		"Description  TEXT NOT NULL, "
+		"Password     TEXT NOT NULL, "
+		"PHONENUMBER  TEXT NOT NULL UNIQUE, "
+		"Visibility   TEXT NOT NULL);";
 
-	tables[1].first = "CHATROOM";
+	
+	tables[1].first  = "ChatRoom";
 	tables[1].second = "CREATE TABLE IF NOT EXISTS " + tables[1].first + "("
-		"ID INTEGER PRIMARY KEY AUTOINCREMENT, "
-		"NAME      TEXT NOT NULL, "
-		"DESCREPTION     TEXT NOT NULL );";
+		"RoomID INTEGER PRIMARY KEY AUTOINCREMENT, "
+		"Name   TEXT NOT NULL);";
+
+
+	tables[2].first = "ChatRoomInfo";
+	tables[2].second =
+		"CREATE TABLE IF NOT EXISTS " + tables[2].first + "("
+		"AdminName  TEXT  NOT NULL,"
+		"ChatRoomID INTEGER  NOT NULL ,"
+		"NumberOfParticipants  TEXT,"
+		"RoomType   TEXT NOT NULL,"
+		"PRIMARY KEY (AdminName,ChatRoomID),"
+		"FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom (RoomID));";
+		
+	tables[3].first = "Message";
+	tables[3].second =
+		"CREATE TABLE IF NOT EXISTS " + tables[3].first + "("
+		"SenderId  INTEGER NOT NULL ,"
+		"ChatRoomID INTEGER  NOT NULL ,"
+		"SenderName  TEXT NOT NULL ,"
+		"Text        TEXT NOT NULL,"
+		"IsDeleted   TEXT NOT NULL,"
+		"FOREIGN KEY (SenderId) REFERENCES USER (UserID),"
+		"FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom (RoomID));";
 
 	// **************************************************************** //
 
