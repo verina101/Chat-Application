@@ -11,7 +11,7 @@ static const char* dir = "DataBase.db";
 static vector<map<string, string>> Rows;
 
 class Data {
-	static const int NumberOfTables = 4;
+	static const int NumberOfTables = 9;
 
 
 public:

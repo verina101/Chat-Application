@@ -14,14 +14,14 @@ void Data::CreateTables() {
 
 	tables[0].first = "USER";
 	tables[0].second = "CREATE TABLE IF NOT EXISTS " + tables[0].first + "("
-		"UserID INTEGER PRIMARY KEY AUTOINCREMENT, "
-		"FirstName  TEXT NOT NULL, "
-		"LastName   TEXT NOT NULL, "
+		"UserID          INTEGER PRIMARY KEY AUTOINCREMENT, "
+		"FirstName       TEXT NOT NULL, "
+		"LastName        TEXT NOT NULL, "
 		"ProfilePicture  TEXT NOT NULL, "
-		"Description  TEXT NOT NULL, "
-		"Password     TEXT NOT NULL, "
-		"PHONENUMBER  TEXT NOT NULL UNIQUE, "
-		"Visibility   TEXT NOT NULL);";
+		"Description     TEXT NOT NULL, "
+		"Password        TEXT NOT NULL, "
+		"PhoneNumber     TEXT NOT NULL UNIQUE, "
+		"Visibility      TEXT NOT NULL);";
 
 	
 	tables[1].first  = "ChatRoom";
@@ -33,8 +33,8 @@ void Data::CreateTables() {
 	tables[2].first = "ChatRoomInfo";
 	tables[2].second =
 		"CREATE TABLE IF NOT EXISTS " + tables[2].first + "("
-		"AdminName  TEXT  NOT NULL,"
-		"ChatRoomID INTEGER  NOT NULL ,"
+		"ChatRoomID  INTEGER  NOT NULL ,"
+		"AdminName   TEXT  NOT NULL,"
 		"NumberOfParticipants  TEXT,"
 		"RoomType   TEXT NOT NULL,"
 		"PRIMARY KEY (AdminName,ChatRoomID),"
@@ -43,13 +43,73 @@ void Data::CreateTables() {
 	tables[3].first = "Message";
 	tables[3].second =
 		"CREATE TABLE IF NOT EXISTS " + tables[3].first + "("
-		"SenderId  INTEGER NOT NULL ,"
-		"ChatRoomID INTEGER  NOT NULL ,"
+		"MessageID   INTEGER PRIMARY KEY AUTOINCREMENT,"
+		"SenderId    INTEGER NOT NULL ,"
+		"ChatRoomID  INTEGER  NOT NULL ,"
 		"SenderName  TEXT NOT NULL ,"
 		"Text        TEXT NOT NULL,"
 		"IsDeleted   TEXT NOT NULL,"
 		"FOREIGN KEY (SenderId) REFERENCES USER (UserID),"
 		"FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom (RoomID));";
+
+
+	tables[4].first = "MessageStatus";
+	tables[4].second =
+		"CREATE TABLE IF NOT EXISTS " + tables[4].first + "("
+		"MessageID        INTEGER NOT NULL,"
+		"Time             TEXT  NOT NULL,"
+		"NumberOfViewers  TEXT NOT NULL,"
+		"Date             TEXT  NOT NULL,"
+		"IsSeen           TEXT NOT NULL,"
+		"PRIMARY KEY (MessageID,Time),"
+		"FOREIGN KEY (MessageID) REFERENCES Message (MessageID));";
+
+
+	tables[5].first = "Contacts";
+	tables[5].second =
+		"CREATE TABLE IF NOT EXISTS " + tables[5].first + "("
+		"UserID      INTEGER  NOT NULL,"
+		"ContactID   INTEGER  NOT NULL ,"
+		"PRIMARY KEY (UserID,ContactID),"
+		"FOREIGN KEY (UserID) REFERENCES USER (UserID),"
+		"FOREIGN KEY (ContactID) REFERENCES USER (UserID));";
+
+
+	tables[6].first = "Participate";
+	tables[6].second =
+		"CREATE TABLE IF NOT EXISTS " + tables[6].first + "("
+		"ChatRoomID  INTEGER  NOT NULL,"
+		"UserID      INTEGER  NOT NULL ,"
+		"Date        INTEGER  NOT NULL ,"
+		"Time        INTEGER  NOT NULL ,"
+		"PRIMARY KEY (ChatRoomID,UserID),"
+		"FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom (RoomID),"
+		"FOREIGN KEY (UserID) REFERENCES USER (UserID));";
+
+
+	tables[7].first = "Story";
+	tables[7].second =
+		"CREATE TABLE IF NOT EXISTS " + tables[7].first + "("
+		"StoryID          INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,"
+		"StoryOwnerID     INTEGER  NOT NULL ,"
+		"StoryOwnerName   TEXT  NOT NULL ,"
+		"Text             TEXT  NOT NULL ,"
+		"Image            TEXT  NOT NULL ,"
+		"Time             TEXT  NOT NULL ,"
+		"Visibility       TEXT  NOT NULL ,"
+		"FOREIGN KEY (StoryOwnerID) REFERENCES USER (UserID));";
+
+
+
+	tables[8].first = "CanView";
+	tables[8].second =
+		"CREATE TABLE IF NOT EXISTS " + tables[8].first + "("
+		"UserID   INTEGER  NOT NULL,"
+		"StoryID  INTEGER  NOT NULL ,"
+		"PRIMARY KEY (UserID,StoryID),"
+		"FOREIGN KEY (UserID) REFERENCES USER (UserID),"
+		"FOREIGN KEY (StoryID) REFERENCES Story (StoryID));";
+
 
 	// **************************************************************** //
 
