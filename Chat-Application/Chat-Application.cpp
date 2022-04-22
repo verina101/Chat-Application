@@ -17,10 +17,10 @@ void printselected(vector<map<string, string>>& vec) {
 }
 
 int main() {
-
 	Data test; // create your database 
 	test.CreateTables(); // create all tables
-
+	/*
+	
 	string tablename = "CHATROOM";
 	string columns = "(Name, DESCREPTION)";
 	string values = "('Kebol3dewya', 'ht3ml eh ya w7sh')";
@@ -43,4 +43,5 @@ int main() {
 	string selectcol = "*";
 	vector<map<string, string>> vec = test.SelectData(tablename, selectcol);
 	printselected(vec);
+	*/
 }
