@@ -17,7 +17,7 @@ void Data::CreateTables() {
 
     tables[0].first = "USER";
     tables[0].second = "CREATE TABLE IF NOT EXISTS " + tables[0].first + "("
-                       "UserID          TEXT PRIMARY KEY AUTOINCREMENT, "
+                       "UserID          INTEGER  PRIMARY KEY AUTOINCREMENT, "
                        "FirstName       TEXT NOT NULL, "
                        "LastName        TEXT NOT NULL, "
                        "ProfilePicture  TEXT NOT NULL, "
@@ -29,25 +29,25 @@ void Data::CreateTables() {
 
     tables[1].first  = "CHATROOM";
     tables[1].second = "CREATE TABLE IF NOT EXISTS " + tables[1].first + "("
-                       "RoomID TEXT PRIMARY KEY AUTOINCREMENT, "
-                       "Name   TEXT NOT NULL);";
+                       "RoomID      INTEGER PRIMARY KEY AUTOINCREMENT, "
+                       "Name        TEXT NOT NULL);";
 
 
     tables[2].first = "CHATROOMINFO";
     tables[2].second = "CREATE TABLE IF NOT EXISTS " + tables[2].first + "("
                        "ChatRoomID  INTEGER  NOT NULL ,"
                        "AdminName   TEXT  NOT NULL,"
-                       "NumberOfParticipants  TEXT,"
-                       "RoomType   TEXT NOT NULL,"
+                       "NumberOfParticipants  INTEGER,"
+                       "RoomType    TEXT NOT NULL,"
                        "PRIMARY KEY (AdminName,ChatRoomID),"
                        "FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom (RoomID));";
 
 
     tables[3].first = "MESSAGE";
     tables[3].second = "CREATE TABLE IF NOT EXISTS " + tables[3].first + "("
-                       "MessageID   TEXT PRIMARY KEY AUTOINCREMENT,"
-                       "SenderId    TEXT NOT NULL ,"
-                       "ChatRoomID  TEXT  NOT NULL ,"
+                       "MessageID   INTEGER PRIMARY KEY AUTOINCREMENT,"
+                       "SenderId    INTEGER NOT NULL ,"
+                       "ChatRoomID  INTEGER  NOT NULL ,"
                        "SenderName  TEXT NOT NULL ,"
                        "Text        TEXT NOT NULL,"
                        "IsDeleted   TEXT NOT NULL,"
@@ -57,7 +57,7 @@ void Data::CreateTables() {
 
     tables[4].first = "MESSAGESTATUS";
     tables[4].second = "CREATE TABLE IF NOT EXISTS " + tables[4].first + "("
-                       "MessageID        TEXT NOT NULL,"
+                       "MessageID        INTEGER NOT NULL,"
                        "Time             TEXT  NOT NULL,"
                        "NumberOfViewers  TEXT NOT NULL,"
                        "Date             DATE  NOT NULL,"
@@ -77,9 +77,9 @@ void Data::CreateTables() {
 
     tables[6].first = "PARTICIPATE";
     tables[6].second = "CREATE TABLE IF NOT EXISTS " + tables[6].first + "("
-                       "ChatRoomID  TEXT  NOT NULL,"
-                       "UserID      TEXT  NOT NULL ,"
-                       "Date        TEXT  NOT NULL ,"
+                       "ChatRoomID  INTEGER  NOT NULL,"
+                       "UserID      INTEGER  NOT NULL ,"
+                       "Date        DATE  NOT NULL ,"
                        "Time        TEXT  NOT NULL ,"
                        "PRIMARY KEY (ChatRoomID,UserID),"
                        "FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom (RoomID),"
@@ -88,8 +88,8 @@ void Data::CreateTables() {
 
     tables[7].first = "STORY";
     tables[7].second = "CREATE TABLE IF NOT EXISTS " + tables[7].first + "("
-                       "StoryID          TEXT  NOT NULL PRIMARY KEY AUTOINCREMENT,"
-                       "StoryOwnerID     TEXT  NOT NULL ,"
+                       "StoryID          INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,"
+                       "StoryOwnerID     INTEGER  NOT NULL ,"
                        "StoryOwnerName   TEXT  NOT NULL ,"
                        "Text             TEXT  NOT NULL ,"
                        "Image            TEXT  NOT NULL ,"
@@ -100,8 +100,8 @@ void Data::CreateTables() {
 
     tables[8].first = "CANVIEW";
     tables[8].second = "CREATE TABLE IF NOT EXISTS " + tables[8].first + "("
-                       "UserID   TEXT  NOT NULL,"
-                       "StoryID  TEXT  NOT NULL ,"
+                       "UserID   INTEGER  NOT NULL,"
+                       "StoryID  INTEGER  NOT NULL ,"
                        "PRIMARY KEY (UserID,StoryID),"
                        "FOREIGN KEY (UserID) REFERENCES USER (UserID),"
                        "FOREIGN KEY (StoryID) REFERENCES Story (StoryID));";

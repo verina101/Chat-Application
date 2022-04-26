@@ -9,7 +9,7 @@
         "-I",
         "C:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\amirm\\AppData\\Local\\Temp\\QtCreator-jtfdwR\\clang-uiheader-Ipfjri",
+        "C:\\Users\\Maria Tawfek\\AppData\\Local\\Temp\\QtCreator-fnkEHG\\clang-uiheader-uStgwX",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -34,7 +34,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\Amir\\projects\\QT\\Chat-Application",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\Chat-Application",
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\include",
         "-I",
@@ -46,9 +46,9 @@
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\include\\QtCore",
         "-I",
-        "D:\\Amir\\projects\\QT\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug\\debug",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug\\debug",
         "-I",
-        "D:\\Amir\\projects\\QT\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug",
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -72,10 +72,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\Amir\\projects\\QT\\Chat-Application\\Data.cpp"
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\Chat-Application\\Data.cpp"
     ],
-    "directory": "D:/Amir/projects/QT/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/Amir/projects/QT/Chat-Application/Data.cpp"
+    "directory": "C:/Users/Maria Tawfek/set app/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/Maria Tawfek/set app/Chat-Application/Chat-Application/Data.cpp"
 },
 {
     "arguments": [
@@ -87,7 +87,7 @@
         "-I",
         "C:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\amirm\\AppData\\Local\\Temp\\QtCreator-jtfdwR\\clang-uiheader-Ipfjri",
+        "C:\\Users\\Maria Tawfek\\AppData\\Local\\Temp\\QtCreator-fnkEHG\\clang-uiheader-uStgwX",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -112,7 +112,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\Amir\\projects\\QT\\Chat-Application",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\Chat-Application",
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\include",
         "-I",
@@ -124,9 +124,9 @@
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\include\\QtCore",
         "-I",
-        "D:\\Amir\\projects\\QT\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug\\debug",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug\\debug",
         "-I",
-        "D:\\Amir\\projects\\QT\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug",
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -150,10 +150,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\Amir\\projects\\QT\\Chat-Application\\main.cpp"
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\Chat-Application\\main.cpp"
     ],
-    "directory": "D:/Amir/projects/QT/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/Amir/projects/QT/Chat-Application/main.cpp"
+    "directory": "C:/Users/Maria Tawfek/set app/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/Maria Tawfek/set app/Chat-Application/Chat-Application/main.cpp"
 },
 {
     "arguments": [
@@ -165,7 +165,7 @@
         "-I",
         "C:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\amirm\\AppData\\Local\\Temp\\QtCreator-jtfdwR\\clang-uiheader-Ipfjri",
+        "C:\\Users\\Maria Tawfek\\AppData\\Local\\Temp\\QtCreator-fnkEHG\\clang-uiheader-uStgwX",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -190,7 +190,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\Amir\\projects\\QT\\Chat-Application",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\Chat-Application",
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\include",
         "-I",
@@ -202,9 +202,9 @@
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\include\\QtCore",
         "-I",
-        "D:\\Amir\\projects\\QT\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug\\debug",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug\\debug",
         "-I",
-        "D:\\Amir\\projects\\QT\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug",
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -228,10 +228,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\Amir\\projects\\QT\\Chat-Application\\mainwindow.cpp"
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\Chat-Application\\mainwindow.cpp"
     ],
-    "directory": "D:/Amir/projects/QT/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/Amir/projects/QT/Chat-Application/mainwindow.cpp"
+    "directory": "C:/Users/Maria Tawfek/set app/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/Maria Tawfek/set app/Chat-Application/Chat-Application/mainwindow.cpp"
 },
 {
     "arguments": [
@@ -243,7 +243,7 @@
         "-I",
         "C:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\amirm\\AppData\\Local\\Temp\\QtCreator-jtfdwR\\clang-uiheader-Ipfjri",
+        "C:\\Users\\Maria Tawfek\\AppData\\Local\\Temp\\QtCreator-fnkEHG\\clang-uiheader-uStgwX",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -268,7 +268,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\Amir\\projects\\QT\\Chat-Application",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\Chat-Application",
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\include",
         "-I",
@@ -280,9 +280,9 @@
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\include\\QtCore",
         "-I",
-        "D:\\Amir\\projects\\QT\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug\\debug",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug\\debug",
         "-I",
-        "D:\\Amir\\projects\\QT\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug",
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -306,10 +306,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\Amir\\projects\\QT\\Chat-Application\\Data.h"
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\Chat-Application\\Data.h"
     ],
-    "directory": "D:/Amir/projects/QT/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/Amir/projects/QT/Chat-Application/Data.h"
+    "directory": "C:/Users/Maria Tawfek/set app/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/Maria Tawfek/set app/Chat-Application/Chat-Application/Data.h"
 },
 {
     "arguments": [
@@ -321,7 +321,7 @@
         "-I",
         "C:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\amirm\\AppData\\Local\\Temp\\QtCreator-jtfdwR\\clang-uiheader-Ipfjri",
+        "C:\\Users\\Maria Tawfek\\AppData\\Local\\Temp\\QtCreator-fnkEHG\\clang-uiheader-uStgwX",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -346,7 +346,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\Amir\\projects\\QT\\Chat-Application",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\Chat-Application",
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\include",
         "-I",
@@ -358,9 +358,9 @@
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\include\\QtCore",
         "-I",
-        "D:\\Amir\\projects\\QT\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug\\debug",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug\\debug",
         "-I",
-        "D:\\Amir\\projects\\QT\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug",
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -384,10 +384,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\Amir\\projects\\QT\\Chat-Application\\mainwindow.h"
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\Chat-Application\\mainwindow.h"
     ],
-    "directory": "D:/Amir/projects/QT/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/Amir/projects/QT/Chat-Application/mainwindow.h"
+    "directory": "C:/Users/Maria Tawfek/set app/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/Maria Tawfek/set app/Chat-Application/Chat-Application/mainwindow.h"
 },
 {
     "arguments": [
@@ -399,7 +399,7 @@
         "-I",
         "C:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\amirm\\AppData\\Local\\Temp\\QtCreator-jtfdwR\\clang-uiheader-Ipfjri",
+        "C:\\Users\\Maria Tawfek\\AppData\\Local\\Temp\\QtCreator-fnkEHG\\clang-uiheader-uStgwX",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -424,7 +424,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\Amir\\projects\\QT\\Chat-Application",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\Chat-Application",
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\include",
         "-I",
@@ -436,9 +436,9 @@
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\include\\QtCore",
         "-I",
-        "D:\\Amir\\projects\\QT\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug\\debug",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug\\debug",
         "-I",
-        "D:\\Amir\\projects\\QT\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug",
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug",
         "-I",
         "C:\\Qt\\6.3.0\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -462,9 +462,9 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\Amir\\projects\\QT\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug\\ui_mainwindow.h"
+        "C:\\Users\\Maria Tawfek\\set app\\Chat-Application\\build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug\\ui_mainwindow.h"
     ],
-    "directory": "D:/Amir/projects/QT/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/Amir/projects/QT/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/ui_mainwindow.h"
+    "directory": "C:/Users/Maria Tawfek/set app/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/Maria Tawfek/set app/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/ui_mainwindow.h"
 }
 ]
