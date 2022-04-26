@@ -1,4 +1,6 @@
 #include "Data.h"
+
+#include <QDebug>
 using namespace std;
 
 Data::Data() {
@@ -17,7 +19,7 @@ void Data::CreateTables() {
 
     tables[0].first = "USER";
     tables[0].second = "CREATE TABLE IF NOT EXISTS " + tables[0].first + "("
-                       "UserID          TEXT PRIMARY KEY AUTOINCREMENT, "
+                       "UserID          INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT DEFAULT 1, "
                        "FirstName       TEXT NOT NULL, "
                        "LastName        TEXT NOT NULL, "
                        "ProfilePicture  TEXT NOT NULL, "
@@ -29,7 +31,7 @@ void Data::CreateTables() {
 
     tables[1].first  = "CHATROOM";
     tables[1].second = "CREATE TABLE IF NOT EXISTS " + tables[1].first + "("
-                       "RoomID TEXT PRIMARY KEY AUTOINCREMENT, "
+                       "RoomID INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT DEFAULT 1, "
                        "Name   TEXT NOT NULL);";
 
 
@@ -45,7 +47,7 @@ void Data::CreateTables() {
 
     tables[3].first = "MESSAGE";
     tables[3].second = "CREATE TABLE IF NOT EXISTS " + tables[3].first + "("
-                       "MessageID   TEXT PRIMARY KEY AUTOINCREMENT,"
+                       "MessageID   INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT DEFAULT 1,"
                        "SenderId    TEXT NOT NULL ,"
                        "ChatRoomID  TEXT  NOT NULL ,"
                        "SenderName  TEXT NOT NULL ,"
@@ -88,7 +90,7 @@ void Data::CreateTables() {
 
     tables[7].first = "STORY";
     tables[7].second = "CREATE TABLE IF NOT EXISTS " + tables[7].first + "("
-                       "StoryID          TEXT  NOT NULL PRIMARY KEY AUTOINCREMENT,"
+                       "StoryID          INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT DEFAULT 1,"
                        "StoryOwnerID     TEXT  NOT NULL ,"
                        "StoryOwnerName   TEXT  NOT NULL ,"
                        "Text             TEXT  NOT NULL ,"
@@ -212,4 +214,15 @@ void Data::DeleteData(string& TableName, string& Condition) {
     }
 
     DB.close();
+}
+
+// Pass the returned value from 'SelectData' function
+void Data::DisplayData(vector<vector<QString>> &vec){
+
+    for (auto row : vec) {
+        for (auto col : row) {
+            cerr << " | " << col.toStdString();
+        }
+        cerr << " | \n";
+    }
 }
