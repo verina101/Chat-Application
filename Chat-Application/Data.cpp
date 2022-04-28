@@ -24,7 +24,7 @@ void Data::CreateTables() {
                        "Description     TEXT NOT NULL, "
                        "Password        TEXT NOT NULL, "
                        "PhoneNumber     TEXT NOT NULL UNIQUE, "
-                       "Visibility      TEXT NOT NULL);";
+                       "Visibility      INTEGER NOT NULL);";
 
 
     tables[1].first  = "CHATROOM";
@@ -38,8 +38,8 @@ void Data::CreateTables() {
                        "ChatRoomID      INTEGER  NOT NULL, "
                        "AdminName       TEXT  NOT NULL, "
                        "NumberOfParticipants  INTEGER, "
-                       "RoomType        TEXT NOT NULL, "
-                       "PRIMARY KEY (AdminName,ChatRoomID), "
+                       "RoomType        INTEGER NOT NULL, "
+                       "PRIMARY KEY (AdminName, ChatRoomID), "
                        "FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom (RoomID));";
 
 
@@ -50,19 +50,19 @@ void Data::CreateTables() {
                        "ChatRoomID      INTEGER  NOT NULL, "
                        "SenderName      TEXT NOT NULL, "
                        "Text            TEXT NOT NULL, "
-                       "IsDeleted       TEXT NOT NULL, "
-                       "FOREIGN KEY (SenderId) REFERENCES USER (UserID),"
+                       "IsDeleted       INTEGER NOT NULL, "
+                       "FOREIGN KEY (SenderId) REFERENCES USER (UserID), "
                        "FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom (RoomID));";
 
 
     tables[4].first = "MESSAGESTATUS";
     tables[4].second = "CREATE TABLE IF NOT EXISTS " + tables[4].first + "("
-                       "MessageID        TEXT NOT NULL, "
+                       "MessageID        INTEGER NOT NULL, "
                        "Time             TEXT  NOT NULL, "
-                       "NumberOfViewers  TEXT NOT NULL, "
-                       "Date             DATE  NOT NULL, "
-                       "IsSeen           TEXT NOT NULL, "
-                       "PRIMARY KEY (MessageID,Time), "
+                       "NumberOfViewers  INTEGER NOT NULL, "
+                       "Date             DATETIME  NOT NULL, "
+                       "IsSeen           INTEGER NOT NULL, "
+                       "PRIMARY KEY (MessageID, Time), "
                        "FOREIGN KEY (MessageID) REFERENCES Message (MessageID));";
 
 
@@ -70,7 +70,7 @@ void Data::CreateTables() {
     tables[5].second = "CREATE TABLE IF NOT EXISTS " + tables[5].first + "("
                        "UserID          INTEGER  NOT NULL, "
                        "ContactID       INTEGER  NOT NULL, "
-                       "PRIMARY KEY (UserID,ContactID), "
+                       "PRIMARY KEY (UserID, ContactID), "
                        "FOREIGN KEY (UserID) REFERENCES USER (UserID), "
                        "FOREIGN KEY (ContactID) REFERENCES USER (UserID));";
 
@@ -78,10 +78,10 @@ void Data::CreateTables() {
     tables[6].first = "PARTICIPATE";
     tables[6].second = "CREATE TABLE IF NOT EXISTS " + tables[6].first + "("
                        "ChatRoomID      INTEGER  NOT NULL, "
-                       "UserID          TEXT  NOT NULL, "
-                       "Date            DATE  NOT NULL, "
+                       "UserID          INTEGER  NOT NULL, "
+                       "Date            DATETIME  NOT NULL, "
                        "Time            TEXT  NOT NULL, "
-                       "PRIMARY KEY (ChatRoomID,UserID),"
+                       "PRIMARY KEY (ChatRoomID, UserID), "
                        "FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom (RoomID), "
                        "FOREIGN KEY (UserID) REFERENCES USER (UserID));";
 
@@ -94,7 +94,7 @@ void Data::CreateTables() {
                        "Text             TEXT  NOT NULL, "
                        "Image            TEXT  NOT NULL, "
                        "Time             TEXT  NOT NULL, "
-                       "Visibility       TEXT  NOT NULL, "
+                       "Visibility       INTEGER  NOT NULL, "
                        "FOREIGN KEY (StoryOwnerID) REFERENCES USER (UserID));";
 
 
@@ -102,7 +102,7 @@ void Data::CreateTables() {
     tables[8].second = "CREATE TABLE IF NOT EXISTS " + tables[8].first + "("
                        "UserID          INTEGER  NOT NULL, "
                        "StoryID         INTEGER  NOT NULL, "
-                       "PRIMARY KEY (UserID,StoryID),"
+                       "PRIMARY KEY (UserID, StoryID), "
                        "FOREIGN KEY (UserID) REFERENCES USER (UserID), "
                        "FOREIGN KEY (StoryID) REFERENCES Story (StoryID));";
 
@@ -212,4 +212,12 @@ void Data::DeleteData(string& TableName, string& Condition) {
     }
 
     DB.close();
+}
+void Data::DisplayData(vector<vector<QString>> &vec) {
+    for (auto row : vec) {
+        for (auto col : row) {
+            cerr << col.toStdString() << (col == row.back() ? " " : " | ");
+        }
+        cerr << "\n";
+    }
 }
