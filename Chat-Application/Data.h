@@ -20,7 +20,6 @@ public:
     static vector<vector<QString>> SelectData(string& TableName, string& Columns, string& Condition);
     static void UpdateData(string& TableName, string& UpdatedColumn, string& Condition);
     static void DeleteData(string& TableName, string& Condition);
-    static void DisplayData (vector<vector<QString>>& vec);
-
+    static void DisplayData(vector<vector<QString>> &vec);
 };
 #endif // DATA_H
