@@ -20,6 +20,5 @@ int main(int argc, char *argv[]) {
     win.show();
 
 
-
     return APP.exec();
 }
