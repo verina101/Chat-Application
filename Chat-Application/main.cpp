@@ -19,6 +19,9 @@ int main(int argc, char *argv[]) {
     MainWindow win;
     win.show();
 
+    Data MyDataBase;
+    MyDataBase.CreateTables();
+
 
     return APP.exec();
 }
