@@ -25,14 +25,14 @@ void Data::CreateTables() {
                        "Password        TEXT NOT NULL, "
                        "PhoneNumber     TEXT NOT NULL UNIQUE, "
                        "Visibility      INTEGER NOT NULL);";
-    myColumns["USER"]="(FirstName, LastName, ProfilePicture, Description, Password, PhoneNumber, Visibility)";
+    myColumns[tables[0].first] = "(FirstName, LastName, ProfilePicture, Description, Password, PhoneNumber, Visibility)";
 
 
     tables[1].first  = "CHATROOM";
     tables[1].second = "CREATE TABLE IF NOT EXISTS " + tables[1].first + "("
                        "RoomID          INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT, "
                        "Name            TEXT NOT NULL);";
-    myColumns["CHATROOM"]="(Name)";
+    myColumns[tables[1].first] = "(Name)";
 
 
 
@@ -44,20 +44,20 @@ void Data::CreateTables() {
                        "RoomType        INTEGER NOT NULL, "
                        "PRIMARY KEY (AdminName, ChatRoomID), "
                        "FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom (RoomID));";
-    myColumns["CHATROOMINFO"]="(ChatRoomID, AdminName, NumberOfParticipants, RoomType)";
+    myColumns[tables[2].first] = "(ChatRoomID, AdminName, NumberOfParticipants, RoomType)";
 
 
     tables[3].first = "MESSAGE";
     tables[3].second = "CREATE TABLE IF NOT EXISTS " + tables[3].first + "("
                        "MessageID       INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,"
-                       "SenderId        INTEGER NOT NULL, "
+                       "SenderID        INTEGER NOT NULL, "
                        "ChatRoomID      INTEGER  NOT NULL, "
                        "SenderName      TEXT NOT NULL, "
                        "Text            TEXT NOT NULL, "
                        "IsDeleted       INTEGER NOT NULL, "
                        "FOREIGN KEY (SenderId) REFERENCES USER (UserID), "
                        "FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom (RoomID));";
-    myColumns["MESSAGE"]="(SenderId, ChatRoomID, SenderName, Text, IsDeleted )";
+    myColumns[tables[3].first] = "(SenderID, ChatRoomID, SenderName, Text, IsDeleted)";
 
 
     tables[4].first = "MESSAGESTATUS";
@@ -69,7 +69,7 @@ void Data::CreateTables() {
                        "IsSeen           INTEGER NOT NULL, "
                        "PRIMARY KEY (MessageID, Time), "
                        "FOREIGN KEY (MessageID) REFERENCES Message (MessageID));";
-    myColumns["MESSAGESTATUS"]="(MessageID, Time, NumberOfViewers, Date, IsSeen)";
+    myColumns[tables[4].first] = "(MessageID, Time, NumberOfViewers, Date, IsSeen)";
 
 
     tables[5].first = "CONTACTS";
@@ -79,7 +79,7 @@ void Data::CreateTables() {
                        "PRIMARY KEY (UserID, ContactID), "
                        "FOREIGN KEY (UserID) REFERENCES USER (UserID), "
                        "FOREIGN KEY (ContactID) REFERENCES USER (UserID));";
-    myColumns["CONTACTS"]="( UserID, ContactID )";
+    myColumns[tables[5].first] = "(UserID, ContactID)";
 
 
 
@@ -92,7 +92,7 @@ void Data::CreateTables() {
                        "PRIMARY KEY (ChatRoomID, UserID), "
                        "FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom (RoomID), "
                        "FOREIGN KEY (UserID) REFERENCES USER (UserID));";
-    myColumns["PARTICIPATE"]="( ChatRoomID, UserID, Date, Time )";
+    myColumns[tables[6].first] = "(ChatRoomID, UserID, Date, Time)";
 
 
     tables[7].first = "STORY";
@@ -105,7 +105,7 @@ void Data::CreateTables() {
                        "Time             TEXT  NOT NULL, "
                        "Visibility       INTEGER  NOT NULL, "
                        "FOREIGN KEY (StoryOwnerID) REFERENCES USER (UserID));";
-    myColumns["STORY"]="( StoryOwnerID, StoryOwnerName, Text, Image, Time, Visibility )";
+    myColumns[tables[7].first] = "(StoryOwnerID, StoryOwnerName, Text, Image, Time, Visibility)";
 
 
     tables[8].first = "CANVIEW";
@@ -115,7 +115,7 @@ void Data::CreateTables() {
                        "PRIMARY KEY (UserID, StoryID), "
                        "FOREIGN KEY (UserID) REFERENCES USER (UserID), "
                        "FOREIGN KEY (StoryID) REFERENCES Story (StoryID));";
-    myColumns["CANVIEW"]="( UserID, StoryID )";
+    myColumns[tables[8].first] = "(UserID, StoryID)";
 
 
     // **************************************************************** //
@@ -146,10 +146,8 @@ void Data::CreateTable(string& SQL) {
 //when using 'insert function', columns are ordered as in data.cpp
 //do not insert values for any AUTOINCEREMENT attribute
 void Data::InsertData(string& TableName, string& values) {
-    //  Columns must be in this format = (Column1, Column2, Column3, Column4, Column5, ColumnN)
-    //	values must be in this format and same order as columns =  ('1213', 'A', 'B', '12', '123', 'N')
-
     DB.open();
+    for (auto& c: TableName) c = toupper(c);
 
     string SQL = "INSERT INTO " + TableName + myColumns[TableName] + " VALUES" + values ;
     QSqlQuery query;
@@ -195,11 +193,10 @@ vector<vector<QString>> Data::SelectData(string& TableName, string& Columns, str
 }
 
 void Data::UpdateData(string& TableName, string& UpdatedColumn, string& Condition) {
-    //	UPDATE table SET column = newvalue WHERE column = Condition
-    //	in condition all values must be between ' '
+    //	UPDATE (TableName) SET (UpdatedColumn) WHERE (Condition)
     DB.open();
 
-    string SQL = "UPDATE " + TableName + " SET " + UpdatedColumn + Condition;
+    string SQL = "UPDATE " + TableName + " SET " + UpdatedColumn + " " + Condition;
     QSqlQuery query;
     if(query.exec(QString::fromStdString(SQL))) {
         cerr << "*** Records updated successfully ***\n";
@@ -212,7 +209,6 @@ void Data::UpdateData(string& TableName, string& UpdatedColumn, string& Conditio
 }
 
 void Data::DeleteData(string& TableName, string& Condition) {
-    //	in condition all values must be between ' '
     DB.open();
 
     string SQL = "DELETE FROM " + TableName + " " + Condition;
