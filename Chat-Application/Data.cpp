@@ -165,7 +165,7 @@ void Data::InsertData(string& TableName, string& values) {
 vector<vector<QString>> Data::SelectData(string& TableName, string& Columns, string& Condition) {
     //	columns must be in this format = (column1, column2, column3, columnN)
     DB.open();
-    static vector<vector<QString>> Rows;
+    vector<vector<QString>> Rows;
 
     string SQL = "SELECT " + Columns + " FROM " + TableName + " " + Condition;
     QSqlQuery query;
