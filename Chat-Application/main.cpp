@@ -5,12 +5,15 @@
 #include <QtSql>
 #include <iostream>
 #include <QVector>
+#include <Message.h>
+#include "ChatRoom.h"
+
 #include "Data.h"
 using namespace std;
 
 int main(int argc, char *argv[]) {
     QApplication APP(argc, argv);
-    MainWindow win;
+    Message win;
     win.show();
 
 
