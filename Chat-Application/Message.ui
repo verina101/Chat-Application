@@ -6,50 +6,108 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>250</width>
-    <height>50</height>
+    <width>610</width>
+    <height>103</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">
+background:rgb(54, 108, 80);
+	border-radius:15px;
+</string>
   </property>
-  <widget class="QPlainTextEdit" name="plainTextEdit">
+  <widget class="QTextEdit" name="textEdit">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>250</width>
-     <height>50</height>
+     <x>10</x>
+     <y>30</y>
+     <width>591</width>
+     <height>68</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>50</height>
+     <width>591</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>591</width>
+     <height>16777215</height>
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">background:rgb(62, 106, 79);
-font: 300 12pt &quot;Segoe UI Variable Small Light&quot;;</string>
+    <string notr="true">
+background:rgb(54, 108, 80);
+	border-radius:15px;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>231</x>
-     <y>0</y>
-     <width>20</width>
+     <x>10</x>
+     <y>10</y>
+     <width>591</width>
      <height>20</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background:rgb(62, 106, 79);
-font::rgb(62, 106, 79);
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="minimumSize">
+       <size>
+        <width>566</width>
+        <height>18</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>566</width>
+        <height>18</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Name :</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBox">
+      <property name="minimumSize">
+       <size>
+        <width>25</width>
+        <height>18</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>25</width>
+        <height>18</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font::rgb(62, 106, 79);
 </string>
-   </property>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

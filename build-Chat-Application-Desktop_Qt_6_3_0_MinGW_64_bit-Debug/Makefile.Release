@@ -401,6 +401,7 @@ release/moc_ChatRoom.cpp: ../Chat-Application/ChatRoom.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QSizeF \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QTransform \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnativeinterface.h \
+		../Chat-Application/Message.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QPixmap \
 		release/moc_predefs.h \
 		D:/downloadss/qt/6.3.0/mingw_64/bin/moc.exe
@@ -850,29 +851,7 @@ release/ChatInfo.o: ../Chat-Application/ChatInfo.cpp ../Chat-Application/ChatInf
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QSizeF \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QTransform \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnativeinterface.h \
-		ui_ChatInfo.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QVariant \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QApplication \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreapplication.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qeventloop.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuture.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfutureinterface.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmutex.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qresultstore.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuture_impl.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthreadpool.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthread.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdeadlinetimer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qelapsedtimer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrunnable.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qexception.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpromise.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qguiapplication.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qinputmethod.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlocale.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qguiapplication_platform.h
+		ui_ChatInfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ChatInfo.o ..\Chat-Application\ChatInfo.cpp
 
 release/ChatRoom.o: ../Chat-Application/ChatRoom.cpp ../Chat-Application/ChatRoom.h \
@@ -1009,75 +988,9 @@ release/ChatRoom.o: ../Chat-Application/ChatRoom.cpp ../Chat-Application/ChatRoo
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QSizeF \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QTransform \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnativeinterface.h \
+		../Chat-Application/Message.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QPixmap \
-		ui_ChatRoom.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QVariant \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QApplication \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreapplication.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qeventloop.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuture.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfutureinterface.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmutex.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qresultstore.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuture_impl.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthreadpool.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthread.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdeadlinetimer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qelapsedtimer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrunnable.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qexception.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpromise.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qguiapplication.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qinputmethod.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlocale.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QComboBox \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qcombobox.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qstyleoption.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qvalidator.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qregularexpression.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qslider.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractslider.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qstyle.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtabbar.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtabwidget.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qrubberband.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qframe.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qabstractitemmodel.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QHBoxLayout \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qboxlayout.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qlayout.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qlayoutitem.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qgridlayout.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QLabel \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qlabel.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpicture.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextdocument.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QPlainTextEdit \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qplaintextedit.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtextedit.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextoption.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextcursor.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextformat.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpen.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qabstracttextdocumentlayout.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextlayout.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qglyphrun.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qrawfont.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qfontdatabase.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractbutton.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QScrollArea \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qscrollarea.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QSpacerItem \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QStackedWidget \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qstackedwidget.h
+		ui_ChatRoom.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ChatRoom.o ..\Chat-Application\ChatRoom.cpp
 
 release/Data.o: ../Chat-Application/Data.cpp ../Chat-Application/Data.h \
@@ -1828,9 +1741,10 @@ release/main.o: ../Chat-Application/main.cpp ../Chat-Application/mainwindow.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlresult.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qtsqlversion.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QVector \
+		../Chat-Application/Message.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QWidget \
 		../Chat-Application/ChatRoom.h \
 		../Chat-Application/ChatInfo.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QWidget \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QPixmap \
 		../Chat-Application/Data.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QString \
@@ -1972,35 +1886,7 @@ release/mainwindow.o: ../Chat-Application/mainwindow.cpp ../Chat-Application/mai
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QTransform \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnativeinterface.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtabwidget.h \
-		ui_mainwindow.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QVariant \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QApplication \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreapplication.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qeventloop.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuture.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfutureinterface.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmutex.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qresultstore.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuture_impl.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthreadpool.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthread.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdeadlinetimer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qelapsedtimer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrunnable.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qexception.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpromise.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qguiapplication.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qinputmethod.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlocale.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QMenuBar \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qmenubar.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qmenu.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QStatusBar \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qstatusbar.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QWidget
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\Chat-Application\mainwindow.cpp
 
 release/moc_ChatInfo.o: release/moc_ChatInfo.cpp 
