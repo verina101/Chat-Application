@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "login.h"
 #include <QApplication>
 #include <QCoreApplication>
 #include <QDebug>
@@ -6,14 +6,15 @@
 #include <iostream>
 #include <QVector>
 #include "Data.h"
+
 using namespace std;
 
 int main(int argc, char *argv[]) {
     QApplication APP(argc, argv);
-    MainWindow win;
+    login win;
     win.show();
-
-
+    Data myData;
+    myData.CreateTables();
 
     return APP.exec();
 }
