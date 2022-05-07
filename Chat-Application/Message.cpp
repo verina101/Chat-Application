@@ -16,7 +16,7 @@ bool Message::setMessage(QString msg, bool SentByMe) {
     QString myStyleSheet = "font-size: 14px;";
     myStyleSheet += "font: " + QString(SentByMe ? "black" : "white") + ";";
     myStyleSheet += "background: " + QString(SentByMe ? "lightgrey" : "steelblue") + ";";
-
+    //ui->horizontalLayout_2->hide();
     msg = ConvertFormat(msg);
     if(msg.isEmpty()) return 1;
     ui->label_msg->setText(msg);
