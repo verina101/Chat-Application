@@ -1,6 +1,7 @@
 #include "login.h"
 #include "ui_login.h"
 #include "Data.h"
+#include "MyConstants.h"
 #include<QMessageBox>
 #include <qdebug.h>
 #include<QPixmap>
@@ -30,7 +31,7 @@ void login::on_pushButton_login_clicked()
 
     mobileno=ui->lineEdit_mobileno->text();
     password=ui->lineEdit_password->text();
-   string tablename="USER",columns="PhoneNumber, Password";
+   string tablename="USER",columns="UserID, PhoneNumber, Password";
    string condition="where PhoneNumber='"+mobileno.toStdString() +"' and Password='"+password.toStdString() +"' ";
    vector<vector<QString>> returndata=db.SelectData(tablename,columns,condition);
    if(returndata.empty()){
@@ -39,6 +40,13 @@ void login::on_pushButton_login_clicked()
    }
    else{
        QMessageBox::information(this,"valid login","login successfully");
+       MyConstants().myId = returndata[0][0].toStdString();
+       ui->stackedWidget_2->close();
+       close();
+       myChats = new Chats();
+       myChats->show();
+
+
    }
    db.DisplayData(returndata);
 }

@@ -2,7 +2,10 @@
 #define LOGIN_H
 
 #include <QWidget>
+#include "Chats.h"
 #include"Data.h"
+#include "MyConstants.h"
+
 namespace Ui {
 class login;
 }
@@ -15,8 +18,8 @@ public:
     explicit login(QWidget *parent = nullptr);
     ~login();
 
+
 private slots:
-    void on_pushButton_clicked();
 
     void on_pushButton_login_clicked();
 
@@ -28,7 +31,9 @@ private slots:
 
 private:
     Ui::login *ui;
-       Data db;
+    Data db;
+    Chats* myChats;
+
 };
 
 #endif // LOGIN_H

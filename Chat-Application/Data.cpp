@@ -145,7 +145,7 @@ void Data::CreateTable(string& SQL) {
 
 //when using 'insert function', columns are ordered as in data.cpp
 //do not insert values for any AUTOINCEREMENT attribute
-void Data::InsertData(string& TableName, string& values) {
+void Data::InsertData(string TableName, string values) {
     DB.open();
     for (auto& c: TableName) c = toupper(c);
 
@@ -162,7 +162,7 @@ void Data::InsertData(string& TableName, string& values) {
     DB.close();
 }
 
-vector<vector<QString>> Data::SelectData(string& TableName, string& Columns, string& Condition) {
+vector<vector<QString>> Data::SelectData(string TableName, string Columns, string Condition) {
     //	columns must be in this format = (column1, column2, column3, columnN)
     DB.open();
     vector<vector<QString>> Rows;
@@ -192,7 +192,7 @@ vector<vector<QString>> Data::SelectData(string& TableName, string& Columns, str
     return Rows;
 }
 
-void Data::UpdateData(string& TableName, string& UpdatedColumn, string& Condition) {
+void Data::UpdateData(string TableName, string UpdatedColumn, string Condition) {
     //	UPDATE (TableName) SET (UpdatedColumn) WHERE (Condition)
     DB.open();
 
@@ -223,7 +223,7 @@ void Data::DeleteData(string& TableName, string& Condition) {
     DB.close();
 }
 
-void Data::DisplayData(vector<vector<QString>> &vec) {
+void Data::DisplayData(vector<vector<QString>> vec) {
     for (auto row : vec) {
         for (auto col : row) {
             cerr << col.toStdString() << (col == row.back() ? " " : " | ");

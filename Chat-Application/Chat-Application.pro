@@ -12,23 +12,34 @@ CONFIG += c++17
 
 SOURCES += \
     ChatInfo.cpp \
+    ChatItem.cpp \
     ChatRoom.cpp \
+    Chats.cpp \
     Data.cpp \
     Message.cpp \
+    MyConstants.cpp \
     main.cpp \
+    login.cpp \
     mainwindow.cpp
 
 HEADERS += \
     ChatInfo.h \
+    ChatItem.h \
     ChatRoom.h \
+    Chats.h \
     Data.h \
     Message.h \
+    MyConstants.h \
+    login.h \
     mainwindow.h
 
 FORMS += \
     ChatInfo.ui \
+    ChatItem.ui \
     ChatRoom.ui \
+    Chats.ui \
     Message.ui \
+    login.ui \
     mainwindow.ui
 
 # Default rules for deployment.
