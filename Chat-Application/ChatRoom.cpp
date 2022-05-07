@@ -13,6 +13,7 @@ ChatRoom::ChatRoom(QWidget *parent): QWidget(parent), ui(new Ui::ChatRoom) {
     this->setPalette(palette);
 
     // *************************************** //
+
     QPixmap piximg("D:/Memes/shrek.jpg");
     int w = ui->label_image->width();
     int h = ui->label_image->height();
@@ -38,10 +39,10 @@ void ChatRoom::on_pushButton_send_clicked() {
     int w = myMsg->width();
     int h = myMsg->height();
     QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
+
     item->setSizeHint(QSize(w, h));
     ui->listWidget->setItemWidget(item, myMsg);
     ui->listWidget->scrollToBottom();
-    item->setTextAlignment(1);
 }
 
 void ChatRoom::on_comboBox_currentIndexChanged(int index) {

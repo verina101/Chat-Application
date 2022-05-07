@@ -174,7 +174,7 @@ border-radius:15px;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background:transparent;</string>
+      <string notr="true">background:red;;</string>
      </property>
      <property name="autoScrollMargin">
       <number>10</number>

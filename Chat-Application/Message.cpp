@@ -63,7 +63,6 @@ void Message::ConvertFormat(QString &str) {
     tmpo->close();
 }
 
-
 Message::~Message() {
     delete ui;
 }
