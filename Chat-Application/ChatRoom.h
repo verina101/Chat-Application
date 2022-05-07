@@ -2,9 +2,11 @@
 #define CHATROOM_H
 
 #include "ChatInfo.h"
+#include "Message.h"
 
 #include <QWidget>
 #include <QPixmap>
+
 namespace Ui {
 class ChatRoom;
 }
@@ -19,6 +21,8 @@ public:
 
 private slots:
     void on_comboBox_currentIndexChanged(int index);
+
+    void on_pushButton_send_clicked();
 
 private:
     Ui::ChatRoom *ui;

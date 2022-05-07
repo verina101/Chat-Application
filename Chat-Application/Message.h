@@ -2,6 +2,9 @@
 #define MESSAGE_H
 
 #include <QWidget>
+#include <string>
+
+using namespace std;
 
 namespace Ui {
 class Message;
@@ -15,7 +18,9 @@ public:
     explicit Message(QWidget *parent = nullptr);
     ~Message();
 
+    bool setMessage(QString s, bool SentByMe);
 private:
+    QString ConvertFormat(QString str);
     Ui::Message *ui;
 };
 
