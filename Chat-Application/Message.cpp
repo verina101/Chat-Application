@@ -66,3 +66,8 @@ void Message::ConvertFormat(QString &str) {
 Message::~Message() {
     delete ui;
 }
+
+void Message::on_comboBox_currentIndexChanged(int index) {
+
+}
+

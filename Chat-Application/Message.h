@@ -18,13 +18,12 @@ class Message: public QWidget
 public:
     explicit Message(QWidget *parent = nullptr);
     ~Message();
-    void setMessageText(QString text, int lineCount);
+    void setMessage(QString s, bool SentByMe);
+    void ConvertFormat(QString &str);
 
 private slots:
     void on_comboBox_currentIndexChanged(int index);
 
-    void setMessage(QString s, bool SentByMe);
-    void ConvertFormat(QString &str);
 private:
 
     Ui::Message *ui;

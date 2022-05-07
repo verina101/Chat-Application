@@ -142,7 +142,6 @@ void Data::CreateTable(string& SQL) {
 
     DB.close();
 }
-
 //when using 'insert function', columns are ordered as in data.cpp
 //do not insert values for any AUTOINCEREMENT attribute
 void Data::InsertData(string TableName, string values) {
@@ -181,7 +180,6 @@ vector<vector<QString>> Data::SelectData(string TableName, string Columns, strin
                     Rows.back().push_back(qCol);
                 }
             }
-
         }
     }
     else {

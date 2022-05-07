@@ -5,6 +5,7 @@
 #include <QtSql>
 #include <iostream>
 #include <QVector>
+#include "ChatRoom.h"
 #include "Data.h"
 
 using namespace std;
@@ -14,7 +15,7 @@ int main(int argc, char *argv[]) {
     login win;
     win.show();
     Data myData;
-    myData.CreateTables();
+    //myData.CreateTables();
     //myData.UpdateData("PARTICIPATE", "Time = datetime('now') ","WHERE ChatRoomID = '2' AND UserID = '1' ");
 
 

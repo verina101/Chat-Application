@@ -561,6 +561,189 @@ release/moc_ChatRoom.cpp: ../Chat-Application/ChatRoom.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QTransform \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnativeinterface.h \
 		../Chat-Application/Message.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QString \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qplaintextedit.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtextedit.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qframe.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextdocument.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextoption.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextcursor.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextformat.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpen.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qabstracttextdocumentlayout.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextlayout.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qglyphrun.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qrawfont.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qfontdatabase.h \
+		../Chat-Application/Data.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QDebug \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/QtSql \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/QtSqlDepends \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QtCore \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QtCoreDepends \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/q20algorithm.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/q20functional.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/q20iterator.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qabstractanimation.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qeventloop.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qabstractnativeeventfilter.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qabstractproxymodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qanimationgroup.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qapplicationstatic.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QMutex \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmutex.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreapplication.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuture.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfutureinterface.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qresultstore.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuture_impl.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthreadpool.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthread.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdeadlinetimer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qelapsedtimer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrunnable.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qexception.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpromise.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qassociativeiterable.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbasictimer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbitarray.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbuffer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbytearraymatcher.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcache.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcalendar.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlocale.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcborarray.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcborvalue.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdatetime.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcborcommon.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qregularexpression.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/quuid.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcbormap.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcborstream.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcborstreamreader.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfloat16.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcborstreamwriter.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcollator.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcommandlineoption.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcommandlineparser.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcryptographichash.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdir.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfile.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfiledevice.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfileinfo.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdiriterator.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qeasingcurve.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qendian.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfactoryinterface.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfileselector.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QStringList \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfilesystemwatcher.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuturesynchronizer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuturewatcher.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qidentityproxymodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qitemselectionmodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qjnienvironment.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QScopedPointer \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qjniobject.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qjsonarray.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qjsonvalue.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qjsondocument.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qjsonobject.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlibrary.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlibraryinfo.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qversionnumber.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlockfile.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qloggingcategory.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmessageauthenticationcode.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmetaobject.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmimedata.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmimedatabase.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmimetype.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobjectcleanuphandler.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qoperatingsystemversion.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qparallelanimationgroup.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpauseanimation.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qplugin.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpluginloader.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qprocess.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qproperty.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpropertyprivate.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpropertyanimation.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qvariantanimation.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qqueue.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrandom.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qreadwritelock.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qresource.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsavefile.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qscopedvaluerollback.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsemaphore.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsequentialanimationgroup.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsequentialiterable.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsettings.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsharedmemory.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsignalmapper.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsimd.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsocketnotifier.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsortfilterproxymodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstack.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstandardpaths.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstorageinfo.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringlistmodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsystemsemaphore.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtemporarydir.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtemporaryfile.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtextboundaryfinder.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthreadstorage.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtimeline.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtimer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtimezone.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtranslator.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtransposeproxymodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qurlquery.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qvector.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qwaitcondition.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QDeadlineTimer \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qwineventnotifier.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qxmlstream.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtcoreversion.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qtsqlglobal.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qtsql-config.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qtsqlexports.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqldatabase.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqldriver.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqldriverplugin.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlerror.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlfield.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlindex.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlrecord.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlquery.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlquerymodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlrelationaldelegate.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qstyleditemdelegate.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qvalidator.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qslider.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qstyle.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qrubberband.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qlistview.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qcombobox.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlrelationaltablemodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqltablemodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlresult.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qtsqlversion.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QVector \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QMap \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QPixmap \
 		release/moc_predefs.h \
 		D:/downloadss/qt/6.3.0/mingw_64/bin/moc.exe
@@ -1007,6 +1190,21 @@ release/moc_Message.cpp: ../Chat-Application/Message.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QSizeF \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QTransform \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QString \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qplaintextedit.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtextedit.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qframe.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextdocument.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextoption.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextcursor.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextformat.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpen.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qabstracttextdocumentlayout.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextlayout.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qglyphrun.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qrawfont.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qfontdatabase.h \
 		release/moc_predefs.h \
 		D:/downloadss/qt/6.3.0/mingw_64/bin/moc.exe
 	D:\downloadss\qt\6.3.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Verina Gad/source/repos/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/release/moc_predefs.h" -ID:/downloadss/qt/6.3.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/Verina Gad/source/repos/Chat-Application/Chat-Application" -ID:/downloadss/qt/6.3.0/mingw_64/include -ID:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets -ID:/downloadss/qt/6.3.0/mingw_64/include/QtGui -ID:/downloadss/qt/6.3.0/mingw_64/include/QtSql -ID:/downloadss/qt/6.3.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Chat-Application\Message.h -o release\moc_Message.cpp
@@ -1798,146 +1996,7 @@ release/ChatItem.o: ../Chat-Application/ChatItem.cpp ../Chat-Application/ChatIte
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QSizeF \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QTransform \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnativeinterface.h \
-		ui_ChatItem.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ChatItem.o ..\Chat-Application\ChatItem.cpp
-
-release/ChatRoom.o: ../Chat-Application/ChatRoom.cpp ../Chat-Application/ChatRoom.h \
-		../Chat-Application/ChatInfo.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QWidget \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qwidget.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtguiglobal.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qglobal.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qconfig-bootstrapped.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qconfig.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtcore-config.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtcoreexports.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsystemdetection.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qprocessordetection.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcompilerdetection.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtypeinfo.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcontainerfwd.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsysinfo.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlogging.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qflags.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcompare_impl.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qatomic.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbasicatomic.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qatomic_bootstrap.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qgenericatomic.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qatomic_cxx11.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qglobalstatic.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnumeric.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qversiontagging.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtgui-config.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtguiexports.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qwindowdefs.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobjectdefs.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnamespace.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtmetamacros.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobjectdefs_impl.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qwindowdefs_win.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobject.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstring.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qchar.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringview.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbytearray.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrefcount.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qarraydata.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpair.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qarraydatapointer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qarraydataops.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcontainertools_impl.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbytearrayalgorithms.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbytearrayview.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringliteral.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringalgorithms.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qanystringview.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qutf8stringview.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringtokenizer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringbuilder.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlist.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qhashfunctions.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qiterator.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbytearraylist.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringlist.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qalgorithms.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringmatcher.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreevent.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qscopedpointer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmetatype.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcompare.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qvarlengtharray.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qscopeguard.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdatastream.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qiodevicebase.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qiterable.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmetacontainer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcontainerinfo.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtaggedpointer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmath.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobject_impl.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbindingstorage.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmargins.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qaction.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qkeysequence.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qicon.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsize.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpixmap.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpaintdevice.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrect.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpoint.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qcolor.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qrgb.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qrgba64.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsharedpointer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qshareddata.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qimage.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpixelformat.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtransform.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpolygon.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qregion.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qline.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qvariant.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmap.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qshareddata_impl.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qhash.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdebug.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtextstream.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringconverter.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qset.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcontiguouscache.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpalette.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qbrush.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qfont.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qfontmetrics.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qfontinfo.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qsizepolicy.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qcursor.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qbitmap.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qevent.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qiodevice.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpointer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qurl.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qeventpoint.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qvector2d.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qvectornd.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpointingdevice.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qinputdevice.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qscreen.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QList \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QObject \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QRect \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QSize \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QSizeF \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QTransform \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnativeinterface.h \
-		../Chat-Application/Message.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QPixmap \
-		ui_ChatRoom.h \
+		ui_ChatItem.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QVariant \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QApplication \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qapplication.h \
@@ -1959,9 +2018,165 @@ release/ChatRoom.o: ../Chat-Application/ChatRoom.cpp ../Chat-Application/ChatRoo
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qguiapplication.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qinputmethod.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlocale.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qguiapplication_platform.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ChatItem.o ..\Chat-Application\ChatItem.cpp
+
+release/ChatRoom.o: ../Chat-Application/ChatRoom.cpp ui_ChatRoom.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QVariant \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qvariant.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qatomic.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qglobal.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qconfig-bootstrapped.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qconfig.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtcore-config.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtcoreexports.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsystemdetection.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qprocessordetection.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcompilerdetection.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtypeinfo.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcontainerfwd.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsysinfo.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlogging.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qflags.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcompare_impl.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qglobalstatic.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnumeric.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qversiontagging.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbasicatomic.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qatomic_bootstrap.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qgenericatomic.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qatomic_cxx11.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbytearray.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrefcount.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnamespace.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtmetamacros.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qarraydata.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpair.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qarraydatapointer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qarraydataops.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcontainertools_impl.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbytearrayview.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlist.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qhashfunctions.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstring.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qchar.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringview.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringliteral.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringalgorithms.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qanystringview.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qutf8stringview.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringtokenizer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringbuilder.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qiterator.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbytearraylist.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringlist.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qalgorithms.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringmatcher.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmetatype.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcompare.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qvarlengtharray.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qscopeguard.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdatastream.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qscopedpointer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qiodevicebase.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qiterable.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmetacontainer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcontainerinfo.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtaggedpointer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmath.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobjectdefs.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobjectdefs_impl.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmap.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qshareddata.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qshareddata_impl.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qhash.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobject.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreevent.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobject_impl.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbindingstorage.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdebug.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtextstream.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringconverter.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qset.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcontiguouscache.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsharedpointer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QApplication \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qapplication.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtguiglobal.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtgui-config.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtguiexports.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreapplication.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qeventloop.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuture.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfutureinterface.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmutex.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qresultstore.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuture_impl.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthreadpool.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthread.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdeadlinetimer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qelapsedtimer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrunnable.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qexception.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpointer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpromise.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qwindowdefs.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpoint.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsize.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmargins.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qcursor.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qbitmap.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpixmap.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpaintdevice.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrect.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qcolor.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qrgb.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qrgba64.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qimage.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpixelformat.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtransform.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpolygon.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qregion.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qline.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qguiapplication.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qinputmethod.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlocale.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QComboBox \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qcombobox.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qwidget.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qaction.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qkeysequence.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qicon.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpalette.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qbrush.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qfont.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qfontmetrics.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qfontinfo.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qsizepolicy.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qevent.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qiodevice.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qurl.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qeventpoint.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qvector2d.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qvectornd.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpointingdevice.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qinputdevice.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qscreen.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QList \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QObject \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QRect \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QSize \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QSizeF \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QTransform \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qstyleoption.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
@@ -2008,7 +2223,149 @@ release/ChatRoom.o: ../Chat-Application/ChatRoom.cpp ../Chat-Application/ChatRoo
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QSpacerItem \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QStackedWidget \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qstackedwidget.h
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qstackedwidget.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QWidget \
+		../Chat-Application/ChatRoom.h \
+		../Chat-Application/ChatInfo.h \
+		../Chat-Application/Message.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QString \
+		../Chat-Application/Data.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QDebug \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/QtSql \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/QtSqlDepends \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QtCore \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QtCoreDepends \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/q20algorithm.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/q20functional.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/q20iterator.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qabstractanimation.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qabstractnativeeventfilter.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qabstractproxymodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qanimationgroup.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qapplicationstatic.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QMutex \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qassociativeiterable.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbasictimer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbitarray.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbuffer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbytearraymatcher.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcache.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcalendar.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcborarray.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcborvalue.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdatetime.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcborcommon.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/quuid.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcbormap.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcborstream.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcborstreamreader.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfloat16.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcborstreamwriter.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcollator.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcommandlineoption.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcommandlineparser.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcryptographichash.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdir.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfile.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfiledevice.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfileinfo.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdiriterator.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qeasingcurve.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qendian.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfactoryinterface.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfileselector.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QStringList \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfilesystemwatcher.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuturesynchronizer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuturewatcher.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qidentityproxymodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qjnienvironment.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QScopedPointer \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qjniobject.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qjsonarray.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qjsonvalue.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qjsondocument.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qjsonobject.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlibrary.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlibraryinfo.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qversionnumber.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlockfile.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qloggingcategory.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmessageauthenticationcode.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmetaobject.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmimedata.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmimedatabase.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmimetype.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobjectcleanuphandler.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qoperatingsystemversion.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qparallelanimationgroup.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpauseanimation.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qplugin.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpluginloader.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qprocess.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qproperty.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpropertyprivate.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpropertyanimation.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qvariantanimation.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qqueue.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrandom.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qreadwritelock.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qresource.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsavefile.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qscopedvaluerollback.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsemaphore.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsequentialanimationgroup.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsequentialiterable.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsettings.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsharedmemory.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsignalmapper.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsimd.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsocketnotifier.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsortfilterproxymodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstack.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstandardpaths.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstorageinfo.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringlistmodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsystemsemaphore.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtemporarydir.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtemporaryfile.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtextboundaryfinder.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthreadstorage.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtimeline.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtimer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtimezone.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtranslator.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtransposeproxymodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qurlquery.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qvector.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qwaitcondition.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QDeadlineTimer \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qwineventnotifier.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qxmlstream.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtcoreversion.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qtsqlglobal.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qtsql-config.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qtsqlexports.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqldatabase.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqldriver.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqldriverplugin.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlerror.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlfield.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlindex.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlrecord.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlquery.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlquerymodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlrelationaldelegate.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qstyleditemdelegate.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlrelationaltablemodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqltablemodel.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qsqlresult.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtSql/qtsqlversion.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QVector \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QMap \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QPixmap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ChatRoom.o ..\Chat-Application\ChatRoom.cpp
 
 release/Chats.o: ../Chat-Application/Chats.cpp ../Chat-Application/Chats.h \
@@ -2644,11 +3001,10 @@ release/Data.o: ../Chat-Application/Data.cpp ../Chat-Application/Data.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QMap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Data.o ..\Chat-Application\Data.cpp
 
-release/Message.o: ../Chat-Application/Message.cpp ../Chat-Application/Message.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QWidget \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qwidget.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtguiglobal.h \
+release/Message.o: ../Chat-Application/Message.cpp ui_Message.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QVariant \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qvariant.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qatomic.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qglobal.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qconfig-bootstrapped.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qconfig.h \
@@ -2663,30 +3019,17 @@ release/Message.o: ../Chat-Application/Message.cpp ../Chat-Application/Message.h
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlogging.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qflags.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcompare_impl.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qatomic.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qglobalstatic.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnumeric.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qversiontagging.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbasicatomic.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qatomic_bootstrap.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qgenericatomic.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qatomic_cxx11.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qglobalstatic.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnumeric.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qversiontagging.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtgui-config.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtguiexports.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qwindowdefs.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobjectdefs.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnamespace.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtmetamacros.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobjectdefs_impl.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qwindowdefs_win.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobject.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstring.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qchar.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringview.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbytearray.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrefcount.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnamespace.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtmetamacros.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qarraydata.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpair.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qarraydatapointer.h \
@@ -2694,75 +3037,113 @@ release/Message.o: ../Chat-Application/Message.cpp ../Chat-Application/Message.h
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcontainertools_impl.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbytearrayalgorithms.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbytearrayview.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlist.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qhashfunctions.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstring.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qchar.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringview.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringliteral.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringalgorithms.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qanystringview.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qutf8stringview.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringtokenizer.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringbuilder.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlist.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qhashfunctions.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qiterator.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbytearraylist.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringlist.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qalgorithms.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringmatcher.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreevent.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qscopedpointer.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmetatype.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcompare.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qvarlengtharray.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qscopeguard.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdatastream.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qscopedpointer.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qiodevicebase.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qiterable.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmetacontainer.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcontainerinfo.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtaggedpointer.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmath.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobjectdefs.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobjectdefs_impl.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmap.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qshareddata.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qshareddata_impl.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qhash.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobject.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreevent.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qobject_impl.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qbindingstorage.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmargins.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qaction.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qkeysequence.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qicon.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdebug.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtextstream.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringconverter.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qset.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcontiguouscache.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsharedpointer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QApplication \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qapplication.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtguiglobal.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtgui-config.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtguiexports.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreapplication.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qeventloop.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuture.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfutureinterface.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmutex.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qresultstore.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuture_impl.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthreadpool.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthread.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdeadlinetimer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qelapsedtimer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrunnable.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qexception.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpointer.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpromise.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qwindowdefs.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpoint.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsize.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmargins.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qcursor.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qbitmap.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpixmap.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpaintdevice.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrect.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpoint.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qcolor.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qrgb.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qrgba64.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsharedpointer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qshareddata.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qimage.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpixelformat.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtransform.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpolygon.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qregion.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qline.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qvariant.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmap.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qshareddata_impl.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qhash.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdebug.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qtextstream.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qstringconverter.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qset.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcontiguouscache.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qguiapplication.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qinputmethod.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlocale.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qguiapplication_platform.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QComboBox \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qcombobox.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qwidget.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qaction.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qkeysequence.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qicon.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpalette.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qbrush.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qfont.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qfontmetrics.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qfontinfo.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qsizepolicy.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qcursor.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qbitmap.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qevent.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qiodevice.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpointer.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qurl.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qeventpoint.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qvector2d.h \
@@ -2776,32 +3157,6 @@ release/Message.o: ../Chat-Application/Message.cpp ../Chat-Application/Message.h
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QSize \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QSizeF \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/QTransform \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qnativeinterface.h \
-		ui_Message.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QVariant \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QApplication \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreapplication.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qeventloop.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuture.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfutureinterface.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qmutex.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qresultstore.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qfuture_impl.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthreadpool.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qthread.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qdeadlinetimer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qelapsedtimer.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qrunnable.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qexception.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qpromise.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qguiapplication.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qinputmethod.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/qlocale.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QComboBox \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qcombobox.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qstyleoption.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
@@ -2830,7 +3185,16 @@ release/Message.o: ../Chat-Application/Message.cpp ../Chat-Application/Message.h
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextoption.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextcursor.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextformat.h \
-		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpen.h
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qpen.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QWidget \
+		../Chat-Application/Message.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QString \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qplaintextedit.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qabstracttextdocumentlayout.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qtextlayout.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qglyphrun.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qrawfont.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtGui/qfontdatabase.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Message.o ..\Chat-Application\Message.cpp
 
 release/MyConstants.o: ../Chat-Application/MyConstants.cpp ../Chat-Application/MyConstants.h
