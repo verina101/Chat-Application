@@ -1,7 +1,5 @@
-#include "Message.h"
 #include "ui_Message.h"
-
-#include <qplaintextedit.h>
+#include "Message.h"
 
 
 using namespace std;
@@ -9,23 +7,31 @@ using namespace std;
 Message::Message(QWidget *parent) : QWidget(parent), ui(new Ui::Message) {
     ui->setupUi(this);
 
-
 }
 
-bool Message::setMessage(QString msg, bool SentByMe) {
-    QString myStyleSheet = "font-size: 14px;";
+void Message::setMessage(QString msg, bool SentByMe) {
+    QString myStyleSheet = "font-size: 14px; border-radius:15px; margin-left: 1;";
     myStyleSheet += "font: " + QString(SentByMe ? "black" : "white") + ";";
     myStyleSheet += "background: " + QString(SentByMe ? "lightgrey" : "steelblue") + ";";
-    //ui->horizontalLayout_2->hide();
-    ConvertFormat(msg);
-    if(msg.isEmpty()) return 1;
+
+    if(SentByMe) {
+        ui->label_Sender_Image->hide();
+        ui->label_Sender_Name->hide();
+        myStyleSheet += "font: black; background: lightgrey;";
+        ui->widget->setMaximumHeight(20);
+    }
+    else {
+        ui->comboBox->removeItem(1);
+        myStyleSheet += "font: white; background: steelblue;";
+    }
 
     ui->label_msg->setStyleSheet(myStyleSheet);
     ui->label_msg->setText(msg);
     ui->label_msg->adjustSize();
     ui->label_msg->setMinimumWidth(ui->label_msg->width() + 8);
+    ui->label_msg->setMaximumHeight(ui->label_msg->height());
+
     this->adjustSize();
-    return 0;
 }
 
 void Message::ConvertFormat(QString &str) {

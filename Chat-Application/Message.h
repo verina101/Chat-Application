@@ -2,8 +2,8 @@
 #define MESSAGE_H
 
 #include <QWidget>
-#include <string>
-
+#include <QString>
+#include <qplaintextedit.h>
 using namespace std;
 
 namespace Ui {
@@ -18,9 +18,10 @@ public:
     explicit Message(QWidget *parent = nullptr);
     ~Message();
 
-    bool setMessage(QString s, bool SentByMe);
-private:
+    void setMessage(QString s, bool SentByMe);
     void ConvertFormat(QString &str);
+private:
+
     Ui::Message *ui;
 };
 

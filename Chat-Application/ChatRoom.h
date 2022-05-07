@@ -3,6 +3,7 @@
 
 #include "ChatInfo.h"
 #include "Message.h"
+#include "Data.h"
 
 #include <QWidget>
 #include <QPixmap>
@@ -17,14 +18,18 @@ class ChatRoom: public QWidget
 
 public:
     explicit ChatRoom(QWidget *parent = nullptr);
+    void DisplayMessages();
+
     ~ChatRoom();
 
 private slots:
     void on_comboBox_currentIndexChanged(int index);
-
     void on_pushButton_send_clicked();
 
+
 private:
+    Data myDataBase;
+
     Ui::ChatRoom *ui;
     ChatInfo myChatInfo;
 };

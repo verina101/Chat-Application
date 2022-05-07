@@ -3,6 +3,7 @@
 #include "ChatRoom.h"
 #include "ChatInfo.h"
 #include <Message.h>
+#include <MyMessage.h>
 
 #include <QApplication>
 #include <QCoreApplication>
@@ -18,7 +19,8 @@ int main(int argc, char *argv[]) {
     //Data DataBase;
     //DataBase.CreateTables();
 
-    ChatRoom win;
+    MainWindow win;
+
     win.show();
 
 

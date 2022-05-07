@@ -30,12 +30,12 @@
      <widget class="QLabel" name="label_image">
       <property name="minimumSize">
        <size>
-        <width>50</width>
+        <width>60</width>
         <height>50</height>
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background:red;
+       <string notr="true">background:white;
 border-radius:15px;</string>
       </property>
       <property name="text">
@@ -45,8 +45,15 @@ border-radius:15px;</string>
     </item>
     <item>
      <widget class="QLabel" name="label_ChatName">
+      <property name="minimumSize">
+       <size>
+        <width>500</width>
+        <height>0</height>
+       </size>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background:transparent;</string>
+       <string notr="true">background:transparent;
+font:15px;</string>
       </property>
       <property name="text">
        <string>ChatName</string>
@@ -110,7 +117,7 @@ border-radius:15px;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background: rgb(55, 212, 255);
+    <string notr="true">background: black;;
 
 </string>
    </property>
@@ -167,7 +174,7 @@ border-radius:15px;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background:rgb(200, 194, 191);</string>
+      <string notr="true">background:transparent;</string>
      </property>
      <property name="autoScrollMargin">
       <number>10</number>

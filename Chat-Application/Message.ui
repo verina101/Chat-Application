@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>630</width>
-    <height>91</height>
+    <height>93</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -24,125 +24,6 @@
 </string>
   </property>
   <layout class="QFormLayout" name="formLayout">
-   <property name="sizeConstraint">
-    <enum>QLayout::SetDefaultConstraint</enum>
-   </property>
-   <property name="fieldGrowthPolicy">
-    <enum>QFormLayout::ExpandingFieldsGrow</enum>
-   </property>
-   <property name="rowWrapPolicy">
-    <enum>QFormLayout::WrapAllRows</enum>
-   </property>
-   <property name="verticalSpacing">
-    <number>6</number>
-   </property>
-   <property name="leftMargin">
-    <number>10</number>
-   </property>
-   <property name="topMargin">
-    <number>4</number>
-   </property>
-   <property name="rightMargin">
-    <number>10</number>
-   </property>
-   <property name="bottomMargin">
-    <number>0</number>
-   </property>
-   <item row="0" column="0" colspan="2">
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <property name="spacing">
-      <number>6</number>
-     </property>
-     <property name="leftMargin">
-      <number>0</number>
-     </property>
-     <item>
-      <widget class="QLabel" name="label_Sender_Image">
-       <property name="minimumSize">
-        <size>
-         <width>50</width>
-         <height>45</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background:red;
-border-radius:15px;</string>
-       </property>
-       <property name="text">
-        <string>Sender_Image</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_ChatNam">
-       <property name="minimumSize">
-        <size>
-         <width>300</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background:transparent;
-border-radius:15px;</string>
-       </property>
-       <property name="text">
-        <string>Sender_Name</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QComboBox" name="comboBox">
-       <property name="minimumSize">
-        <size>
-         <width>15</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>0</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background:transparent;
-font::rgb(62, 106, 79);
-border-radius:15px;
-</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>info</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Delete</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-    </layout>
-   </item>
    <item row="1" column="0">
     <widget class="QLabel" name="label_msg">
      <property name="sizePolicy">
@@ -189,6 +70,108 @@ border:red;</string>
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse</set>
      </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>4</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_Sender_Image">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:rgb(255, 255, 255);
+border-radius:15px;</string>
+        </property>
+        <property name="text">
+         <string>Sender_Image</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_Sender_Name">
+        <property name="minimumSize">
+         <size>
+          <width>300</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+border-radius:15px;
+font-size:15px;
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>label_Sender_Name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>13</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox">
+        <property name="minimumSize">
+         <size>
+          <width>15</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>0</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+font::rgb(62, 106, 79);
+border-radius:15px;
+</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>info</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Delete</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>
