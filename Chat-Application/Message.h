@@ -10,7 +10,7 @@ namespace Ui {
 class Message;
 }
 
-class Message : public QWidget
+class Message: public QWidget
 {
     Q_OBJECT
 
@@ -20,7 +20,7 @@ public:
 
     bool setMessage(QString s, bool SentByMe);
 private:
-    QString ConvertFormat(QString str);
+    void ConvertFormat(QString &str);
     Ui::Message *ui;
 };
 
