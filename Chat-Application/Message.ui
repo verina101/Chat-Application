@@ -78,6 +78,9 @@ border:red;</string>
       <property name="spacing">
        <number>6</number>
       </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
       <property name="topMargin">
        <number>2</number>
       </property>
@@ -123,6 +126,9 @@ color:white;</string>
         </property>
         <property name="text">
          <string>label_Sender_Name</string>
+        </property>
+        <property name="margin">
+         <number>2</number>
         </property>
        </widget>
       </item>
