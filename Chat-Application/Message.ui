@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>630</width>
-    <height>97</height>
+    <height>100</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -55,11 +55,11 @@
        <property name="minimumSize">
         <size>
          <width>50</width>
-         <height>45</height>
+         <height>50</height>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background:white;
+        <string notr="true">background:red;
 border-radius:15px;</string>
        </property>
        <property name="text">
@@ -71,8 +71,8 @@ border-radius:15px;</string>
       <widget class="QLabel" name="label_ChatNam">
        <property name="minimumSize">
         <size>
-         <width>400</width>
-         <height>0</height>
+         <width>300</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -83,8 +83,7 @@ border-radius:15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background:transparent;
-border-radius:15px;
-font-size:16px;</string>
+border-radius:15px;</string>
        </property>
        <property name="text">
         <string>Sender_Name</string>
@@ -149,12 +148,12 @@ border-radius:15px;
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>20</height>
+       <height>18</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>600</width>
+       <width>16777215</width>
        <height>16777215</height>
       </size>
      </property>
@@ -166,7 +165,8 @@ border-radius:15px;
      </property>
      <property name="styleSheet">
       <string notr="true">background:rgb(255, 200, 106);
-border-radius:15px;</string>
+border-radius:15px;
+border:red;</string>
      </property>
      <property name="text">
       <string/>
