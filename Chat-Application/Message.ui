@@ -59,7 +59,7 @@
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background:red;
+        <string notr="true">background:white;
 border-radius:15px;</string>
        </property>
        <property name="text">
@@ -114,7 +114,7 @@ font-size:16px;</string>
        </property>
        <property name="maximumSize">
         <size>
-         <width>100</width>
+         <width>0</width>
          <height>16777215</height>
         </size>
        </property>
