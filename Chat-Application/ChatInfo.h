@@ -7,7 +7,7 @@ namespace Ui {
 class ChatInfo;
 }
 
-class ChatInfo : public QWidget
+class ChatInfo: public QWidget
 {
     Q_OBJECT
 

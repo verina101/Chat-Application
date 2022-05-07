@@ -2,13 +2,16 @@
 #define MESSAGE_H
 
 #include <QWidget>
+#include <QString>
+#include <qplaintextedit.h>
+using namespace std;
 
 using namespace std;
 namespace Ui {
 class Message;
 }
 
-class Message : public QWidget
+class Message: public QWidget
 {
     Q_OBJECT
 
@@ -20,7 +23,10 @@ public:
 private slots:
     void on_comboBox_currentIndexChanged(int index);
 
+    void setMessage(QString s, bool SentByMe);
+    void ConvertFormat(QString &str);
 private:
+
     Ui::Message *ui;
 };
 

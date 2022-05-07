@@ -1,49 +1,68 @@
-#include "Message.h"
 #include "ui_Message.h"
+#include "Message.h"
 
-Message::Message(QWidget *parent) : QWidget(parent),ui(new Ui::Message) {
+
+using namespace std;
+
+Message::Message(QWidget *parent) : QWidget(parent), ui(new Ui::Message) {
     ui->setupUi(this);
 
-    QIcon deleteIcon("images\\delete.png");
-    QIcon infoIcon("images\\info.jpg");
-    ui->comboBox->addItem(infoIcon,"Chat Info");
-    ui->comboBox->addItem(deleteIcon,"Delete");
 }
 
-Message::~Message()
-{
-    delete ui;
-}
+void Message::setMessage(QString msg, bool SentByMe) {
+    QString myStyleSheet = "font-size: 14px; border-radius:15px; margin-left: 1;";
+    myStyleSheet += "font: " + QString(SentByMe ? "black" : "white") + ";";
+    myStyleSheet += "background: " + QString(SentByMe ? "lightgrey" : "steelblue") + ";";
 
-void Message::setMessageText(QString text,int lineCount)
-{
-    ui->textEdit->setPlainText(text);
-
-
-    ui->textEdit->setMinimumHeight(lineCount*24);
-    ui->textEdit->setMaximumHeight(lineCount*24);
-
-
-    setMaximumHeight(ui->textEdit->height()+60);
-    setMinimumHeight(ui->textEdit->height()+60);
-
-
-}
-
-void Message::on_comboBox_currentIndexChanged(int index)
-{
-    if(index == 0){ //Message info
-        qDebug() <<"0";
-    }else{ //Delete Message
-        ui->textEdit->setPlainText("THIS MESSAGE IS DELETED");
-        ui->textEdit->setMinimumHeight(48);
-        ui->textEdit->setMaximumHeight(48);
-
-
-        setMaximumHeight(ui->textEdit->height()+60);
-        setMinimumHeight(ui->textEdit->height()+60);
-        qDebug() <<"1";
+    if(SentByMe) {
+        ui->label_Sender_Image->hide();
+        ui->label_Sender_Name->hide();
+        myStyleSheet += "font: black; background: lightgrey;";
+        ui->widget->setMaximumHeight(20);
+    }
+    else {
+        ui->comboBox->removeItem(1);
+        myStyleSheet += "font: white; background: steelblue;";
     }
 
+    ui->label_msg->setStyleSheet(myStyleSheet);
+    ui->label_msg->setText(msg);
+    ui->label_msg->adjustSize();
+    ui->label_msg->setMinimumWidth(ui->label_msg->width() + 8);
+    ui->label_msg->setMaximumHeight(ui->label_msg->height());
+
+    this->adjustSize();
 }
 
+void Message::ConvertFormat(QString &str) {
+    QPlainTextEdit *tmpo = new QPlainTextEdit();
+    tmpo->setGeometry(0, 0, 570, 80);
+    tmpo->setStyleSheet("font-size: 14px;");
+    tmpo->show();
+
+    string tmpStr = str.toStdString(), subStr = "";
+    tmpo->setPlainText(QString::fromStdString(subStr));
+    while(!tmpStr.empty() && (tmpStr.back() == '\n' || tmpStr.back() == ' '))
+        tmpStr.pop_back();
+
+    str.clear();
+    for(auto ch : tmpStr) {
+        subStr += ch;
+
+        int oLd_nLines = tmpo->document()->documentLayout()->documentSize().height();
+        tmpo->setPlainText(QString::fromStdString(subStr));
+        int new_nLines = tmpo->document()->documentLayout()->documentSize().height();
+
+        string addChar (1, ch);
+        if(oLd_nLines != new_nLines && ch != '\n') {
+            addChar = '\n' + addChar;
+        }
+        str += QString::fromStdString(addChar);
+    }
+    //qDebug() << str;
+    tmpo->close();
+}
+
+Message::~Message() {
+    delete ui;
+}
