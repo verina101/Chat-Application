@@ -6,13 +6,11 @@
 #include <qplaintextedit.h>
 using namespace std;
 
-using namespace std;
 namespace Ui {
 class Message;
 }
 
-class Message: public QWidget
-{
+class Message: public QWidget {
     Q_OBJECT
 
 public:

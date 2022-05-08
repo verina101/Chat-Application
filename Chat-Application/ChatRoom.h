@@ -12,8 +12,7 @@ namespace Ui {
 class ChatRoom;
 }
 
-class ChatRoom: public QWidget
-{
+class ChatRoom: public QWidget {
     Q_OBJECT
 
 public:

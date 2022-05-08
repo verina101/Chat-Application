@@ -5,8 +5,8 @@
 #include <QString>
 using namespace std;
 
-class MyConstants
-{
+class MyConstants {
+
 public:
     MyConstants();
     inline static string myId;

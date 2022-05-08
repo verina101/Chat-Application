@@ -1,6 +1,5 @@
 #include "MyConstants.h"
 
-MyConstants::MyConstants()
-{
+MyConstants::MyConstants() {
 
 }
