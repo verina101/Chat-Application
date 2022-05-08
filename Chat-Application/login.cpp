@@ -16,7 +16,7 @@ login::login(QWidget *parent): QWidget(parent), ui(new Ui::login) {
     ui->comboBox_visibilty->addItem("your contacts");//0
     ui->comboBox_visibilty->addItem("for any one");//1
     QPixmap pic("C:/Users/m/Pictures/Saved Pictures/WhatsApp Image 2022-05-05 at 11.19.27 PM.jpeg");
-    ui->label_pic->setPixmap(pic.scaled(100,100,Qt::KeepAspectRatio));
+    ui->label_pic->setPixmap(pic.scaled(100, 100, Qt::KeepAspectRatio));
 
 }
 
@@ -43,7 +43,6 @@ void login::on_pushButton_login_clicked() {
        close();
        myChats = new Chats();
        myChats->show();
-
 
    }
    db.DisplayData(returndata);

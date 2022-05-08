@@ -37,7 +37,7 @@ void ChatRoom::on_pushButton_send_clicked() {
     myMsg->ConvertFormat(myMsgText);
     if(myMsgText.isEmpty()) return;
     myMsg->setUserData("Amir Moris", "D:/Memes/messi.jpg");
-    myMsg->setMessage(myMsgText, 0);
+    myMsg->setMessage(myMsgText, 1);
 
     int w = myMsg->width();
     int h = myMsg->height();
