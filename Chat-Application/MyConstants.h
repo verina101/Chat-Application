@@ -2,7 +2,7 @@
 #define MYCONSTANTS_H
 
 #include <iostream>
-
+#include <QString>
 using namespace std;
 
 class MyConstants

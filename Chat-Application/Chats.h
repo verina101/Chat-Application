@@ -2,15 +2,14 @@
 #define CHATS_H
 
 #include "Data.h"
-
+#include "QMap"
 #include <QWidget>
 
 namespace Ui {
 class Chats;
 }
 
-class Chats : public QWidget
-{
+class Chats : public QWidget {
     Q_OBJECT
 
 public:
@@ -22,6 +21,7 @@ private slots:
 
 private:
     Ui::Chats *ui;
+    void displayChatList();
     Data db;
 };
 

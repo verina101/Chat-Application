@@ -10,11 +10,10 @@
 using namespace std;
 
 static QSqlDatabase DB;
-static map<string,string>myColumns;
+static map<string,string> myColumns;
 
 class Data {
     static const int NumberOfTables = 9;
-
 
     static void CreateTable(string& SQL);
 public:

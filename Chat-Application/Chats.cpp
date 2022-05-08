@@ -5,34 +5,48 @@
 
 using namespace std;
 
-Chats::Chats(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Chats)
-{
+Chats::Chats(QWidget *parent): QWidget(parent), ui(new Ui::Chats) {
     ui->setupUi(this);
 
-    string table = "PARTICIPATE", columns = "ChatRoomID", cond = "WHERE UserID ='"+MyConstants().myId+"' ORDER BY Time Desc";
-    vector<vector<QString>> roomsID = db.SelectData(table,columns,cond);
-    for(auto id : roomsID){
-        cerr<< "###### \n";
-        vector<QString> roomsName = db.SelectData("CHATROOM","Name","WHERE RoomID ='"+id[0].toStdString()+"'").front();
-        vector<vector<QString>> lastMsg = db.SelectData("MESSAGE","SenderName, Text","WHERE ChatRoomID ='"+id[0].toStdString()+"' and isDeleted = '0'  ORDER BY MessageID Desc");
+    displayChatList();
 
-        QString myString = id[0]+" " +roomsName[0];
-        if(lastMsg.size()) {
-            myString += "\n"+lastMsg[0][0] + " : " + lastMsg[0][1];
-        }
-        ui->listWidget->addItem(myString);
 
-    }
 }
 
 Chats::~Chats() {
     delete ui;
 }
 
-void Chats::on_pushButton_createChat_clicked()
+void Chats::on_pushButton_createChat_clicked() {
+
+}
+
+void Chats::displayChatList()
 {
+    string table = "PARTICIPATE", columns = "ChatRoomID", cond = "WHERE UserID = '" + MyConstants().myId + "' ORDER BY DateTime Desc";
+    vector<vector<QString>> roomsID = db.SelectData(table, columns, cond);
+    vector<vector<QString>> msgs = db.SelectData("MESSAGE", "ChatRoomID, SenderName, Text", "ORDER BY MessageID Desc");
+    map<QString, int> rooms;
+    for(auto it : roomsID) {
+        rooms[it[0]] = -1;
+    }
+
+    QString chatname;
+    for(auto currentMsg : msgs) {
+        if(rooms[currentMsg[0] ] == -1) {
+
+            rooms[currentMsg[0]] = 1;
+            chatname = db.SelectData("CHATROOM", "Name", "WHERE RoomID = '" + currentMsg[0].toStdString() + "'").front().front();
+            chatname += "\n" + currentMsg[1] + ":  " + currentMsg[2];
+            ui->listWidget->addItem(chatname);
+        }
+    }
+    for(auto left : rooms) {
+        if(left.second == -1) {
+            chatname = db.SelectData("CHATROOM", "Name", "WHERE RoomID = '" + left.first.toStdString() + "'").front().front();
+             ui->listWidget->addItem(chatname);
+        }
+    }
 
 }
 
