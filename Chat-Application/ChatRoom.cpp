@@ -34,7 +34,7 @@ void ChatRoom::on_pushButton_send_clicked() {
     Message *myMsg = new Message();
     myMsg->ConvertFormat(myMsgText);
     if(myMsgText.isEmpty()) return;
-    myMsg->setMessage(myMsgText, 0);
+    myMsg->setMessage(myMsgText, 1);
 
     int w = myMsg->width();
     int h = myMsg->height();

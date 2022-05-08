@@ -23,6 +23,7 @@ void Message::setMessage(QString msg, bool SentByMe) {
     else {
         ui->comboBox->removeItem(1);
         myStyleSheet += "font: white; background: steelblue;";
+        ui->horizontalLayout_2->setDirection(QBoxLayout::RightToLeft);
     }
 
     ui->label_msg->setStyleSheet(myStyleSheet);
@@ -30,7 +31,6 @@ void Message::setMessage(QString msg, bool SentByMe) {
     ui->label_msg->adjustSize();
     ui->label_msg->setMinimumWidth(ui->label_msg->width() + 8);
     ui->label_msg->setMaximumHeight(ui->label_msg->height());
-
     this->adjustSize();
 }
 
