@@ -6,6 +6,13 @@ using namespace std;
 
 Message::Message(QWidget *parent) : QWidget(parent), ui(new Ui::Message) {
     ui->setupUi(this);
+    this->setMinimumSize(QSize(700, 500));
+    this->setMaximumSize(QSize(700, 500));
+
+    QIcon iconDelete("images/Delete_Icon.png");
+    QIcon iconInfo("images/Info_Icon.png");
+    ui->comboBox->setItemIcon(0, iconInfo);
+    ui->comboBox->setItemIcon(1, iconDelete);
 
 }
 

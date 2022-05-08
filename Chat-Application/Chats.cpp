@@ -7,9 +7,11 @@ using namespace std;
 
 Chats::Chats(QWidget *parent): QWidget(parent), ui(new Ui::Chats) {
     ui->setupUi(this);
+    this->setMinimumSize(QSize(700, 500));
+    this->setMaximumSize(QSize(700, 500));
+
 
     displayChatList();
-
 
 }
 

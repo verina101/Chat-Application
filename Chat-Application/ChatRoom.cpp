@@ -5,6 +5,8 @@ using namespace std;
 
 ChatRoom::ChatRoom(QWidget *parent): QWidget(parent), ui(new Ui::ChatRoom) {
     ui->setupUi(this);
+    this->setMinimumSize(QSize(700, 500));
+    this->setMaximumSize(QSize(700, 500));
 
     QPixmap myBackGround("images/Chat_BackGround.png");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);

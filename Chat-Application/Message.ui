@@ -20,12 +20,15 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:rgb(62, 106, 79);
+   <string notr="true">background:transparent;
 </string>
   </property>
   <layout class="QFormLayout" name="formLayout">
    <item row="0" column="0" colspan="2">
     <widget class="QWidget" name="widget" native="true">
+     <property name="styleSheet">
+      <string notr="true">background:rgb(85, 170, 0);</string>
+     </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
        <number>6</number>
@@ -48,7 +51,7 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background:rgb(255, 255, 255);
+         <string notr="true">background:transparent;
 border-radius:15px;</string>
         </property>
         <property name="text">
@@ -60,7 +63,7 @@ border-radius:15px;</string>
        <widget class="QLabel" name="label_Sender_Name">
         <property name="minimumSize">
          <size>
-          <width>300</width>
+          <width>400</width>
           <height>40</height>
          </size>
         </property>
@@ -101,7 +104,7 @@ color:white;</string>
        <widget class="QComboBox" name="comboBox">
         <property name="minimumSize">
          <size>
-          <width>15</width>
+          <width>20</width>
           <height>0</height>
          </size>
         </property>
@@ -112,8 +115,7 @@ color:white;</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background:transparent;
-font::rgb(62, 106, 79);
+         <string notr="true">background:rgb(85, 170, 0);
 border-radius:15px;
 </string>
         </property>

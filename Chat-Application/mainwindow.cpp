@@ -3,6 +3,10 @@
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
+    this->setMinimumSize(QSize(700, 500));
+    this->setMaximumSize(QSize(700, 500));
+
+
 }
 
 MainWindow::~MainWindow() {

@@ -9,6 +9,9 @@
 
 login::login(QWidget *parent): QWidget(parent), ui(new Ui::login) {
     ui->setupUi(this);
+    this->setMinimumSize(QSize(700, 500));
+    this->setMaximumSize(QSize(700, 500));
+
     ui->stackedWidget_2->setCurrentIndex(0);
     ui->comboBox_visibilty->addItem("your contacts");//0
     ui->comboBox_visibilty->addItem("for any one");//1

@@ -26,6 +26,9 @@
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="rightMargin">
+     <number>10</number>
+    </property>
     <item>
      <widget class="QLabel" name="label_image">
       <property name="minimumSize">
