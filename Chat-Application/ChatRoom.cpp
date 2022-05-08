@@ -36,12 +36,12 @@ void ChatRoom::on_pushButton_send_clicked() {
     Message *myMsg = new Message();
     myMsg->ConvertFormat(myMsgText);
     if(myMsgText.isEmpty()) return;
-    myMsg->setMessage(myMsgText, 1);
+    myMsg->setUserData("Amir Moris", "D:/Memes/messi.jpg");
+    myMsg->setMessage(myMsgText, 0);
 
     int w = myMsg->width();
     int h = myMsg->height();
     QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
-
     item->setSizeHint(QSize(w, h));
     ui->listWidget->setItemWidget(item, myMsg);
     ui->listWidget->scrollToBottom();

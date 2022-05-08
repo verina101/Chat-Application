@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>630</width>
-    <height>95</height>
+    <height>93</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -27,35 +27,44 @@
    <item row="0" column="0" colspan="2">
     <widget class="QWidget" name="widget" native="true">
      <property name="styleSheet">
-      <string notr="true">background:rgb(85, 170, 0);</string>
+      <string notr="true">background:rgb(85, 170, 0);
+border-radius:15px;</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
        <number>6</number>
       </property>
       <property name="leftMargin">
-       <number>2</number>
+       <number>4</number>
       </property>
       <property name="topMargin">
        <number>2</number>
       </property>
+      <property name="rightMargin">
+       <number>3</number>
+      </property>
       <property name="bottomMargin">
-       <number>4</number>
+       <number>2</number>
       </property>
       <item>
        <widget class="QLabel" name="label_Sender_Image">
         <property name="minimumSize">
          <size>
-          <width>50</width>
+          <width>60</width>
           <height>45</height>
          </size>
         </property>
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="styleSheet">
-         <string notr="true">background:transparent;
-border-radius:15px;</string>
+         <string notr="true">background:transparent;</string>
         </property>
         <property name="text">
-         <string>Sender_Image</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -80,7 +89,7 @@ font-size:15px;
 color:white;</string>
         </property>
         <property name="text">
-         <string>label_Sender_Name</string>
+         <string/>
         </property>
         <property name="margin">
          <number>2</number>
@@ -104,7 +113,7 @@ color:white;</string>
        <widget class="QComboBox" name="comboBox">
         <property name="minimumSize">
          <size>
-          <width>20</width>
+          <width>15</width>
           <height>0</height>
          </size>
         </property>
@@ -116,6 +125,7 @@ color:white;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">background:rgb(85, 170, 0);
+font::rgb(62, 106, 79);
 border-radius:15px;
 </string>
         </property>

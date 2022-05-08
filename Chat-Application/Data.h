@@ -25,7 +25,5 @@ public:
     static void DeleteData(string& TableName, string& Condition);
     static void DisplayData(vector<vector<QString>> vec);
 
-
-
 };
 #endif // DATA_H

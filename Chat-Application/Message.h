@@ -16,6 +16,8 @@ class Message: public QWidget {
 public:
     explicit Message(QWidget *parent = nullptr);
     ~Message();
+
+    void setUserData(QString userName, QString userPhoto);
     void setMessage(QString s, bool SentByMe);
     void ConvertFormat(QString &str);
 
