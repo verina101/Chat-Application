@@ -12,18 +12,35 @@ CONFIG += c++17
 
 SOURCES += \
     Data.cpp \
+    addstory.cpp \
     contact.cpp \
+    contactwidget.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    saveddata.cpp \
+    showcontact.cpp \
+    showcontactnamestory.cpp \
+    showstories.cpp
 
 HEADERS += \
     Data.h \
+    addstory.h \
     contact.h \
-    mainwindow.h
+    contactwidget.h \
+    mainwindow.h \
+    saveddata.h \
+    showcontact.h \
+    showcontactnamestory.h \
+    showstories.h
 
 FORMS += \
+    addstory.ui \
     contact.ui \
-    mainwindow.ui
+    contactwidget.ui \
+    mainwindow.ui \
+    showcontact.ui \
+    showcontactnamestory.ui \
+    showstories.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

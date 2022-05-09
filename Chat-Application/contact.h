@@ -8,6 +8,8 @@
 #include <QString>
 #include <string>
 #include "Data.h"
+//#include<QDialog>
+
 using namespace std;
 namespace Ui {
 class contact;
@@ -22,18 +24,22 @@ public:
     explicit contact(QWidget *parent = nullptr);
     //void setMyId(int id);
     ~contact();
+     Data *w= new Data;
+     Data *f= new Data;
 
 private slots:
     void  on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
 
+
 private:
     Ui::contact *ui;
     vector<vector<QString>>data;
     vector<vector<QString>>cdata;
-    int myID = 3;
+    int myID = 1;
     int at[500]={};
+    //contact *c;
 
 };
 

@@ -1,4 +1,3 @@
-#include "contact.h"
 #include "ui_contact.h"
 #include <QPixmap>
 #include "mainwindow.h"
@@ -11,30 +10,34 @@
 #include <QVector>
 #include "Data.h"
 #include <QMap>
+
 //#include <QPair>
 using namespace std;
-contact::contact(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::contact)
-{
+contact::contact(QWidget *parent): QWidget(parent), ui(new Ui::contact) {
     ui->setupUi(this);
-     QPixmap pix("D:/Pictures/Ds project/download.png") ;
-     ui->label-> setPixmap(pix);
+    this->setMinimumSize(QSize(700, 500));
+    this->setMaximumSize(QSize(700, 500));
+
+     QPixmap pix("D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg") ;
+     int h= ui->label->height();
+     int w = ui->label->width();
+     ui->label-> setPixmap(pix.scaled(w,h, Qt::IgnoreAspectRatio));
      Data MyDataBase;
 
      QString curr = QString::number(this->myID);
      string cid = curr.toStdString();
-          string Col       =  "UserID,FirstName,LastName";
-          string table     =  "USER" ;
-          string cond      =  ";";
-          this->data= MyDataBase.SelectData(table,Col,cond);
+          string userCol     =  "UserID,FirstName,LastName";
+          string userTable     =  "USER" ;
+          string userCond     =  ";";
+          this->data= MyDataBase.SelectData(userTable,userCol,userCond);
            //cout<< "size is "<< data.size();
-          string cCol       =  "UserID,ContactID";
-          string ctable     =  "CONTACTS" ;
-          string ccond      =  "where UserID ='"+cid+"' ;";
-          this->cdata= MyDataBase.SelectData(ctable,cCol,ccond);
 
-          for(auto row1 : this->cdata) {
+          string contactCol       =  "UserID,ContactID";
+          string contactTable     =  "CONTACTS" ;
+          string contactCond      =  "where UserID ='"+cid+"' ;";
+          this->cdata= MyDataBase.SelectData(contactTable,contactCol,contactCond);
+
+          for(auto row1 : this->data) {
                qDebug()<< row1;
           }
 
@@ -74,11 +77,11 @@ contact::~contact()
 //}
 
 
-void  contact::on_pushButton_clicked()
-{
-      this->close();
- }
 
+string ConvertoValue(string s) {
+    s = "'" + s + "'" ;
+    return s;
+}
 
 void contact::on_pushButton_2_clicked()
 {
@@ -87,19 +90,46 @@ void contact::on_pushButton_2_clicked()
     //('A', 'B', '12', '123', 'N')
     int indx = ui->listWidget->selectionModel()->currentIndex().row();
     indx= at[indx];
-    cout<< indx<< endl;
-    qDebug()<< data[2][0];
+
     QListWidgetItem *it = ui->listWidget->currentItem();
     Data db;
     string tablename ="Contacts";
     string col = "(UserID,ContactID) ";
-     QString x = data[indx][0];
-     string str=x.toStdString();
+    QString x = data[indx][0];
+    string str=x.toStdString();
 
-     string val1 = "( ' "+ id +"' , ' " + str + "' );";
-     string val2 = "( ' "+ str +"' , ' " + id + "' );";
-     db.InsertData(tablename,val1);
-     db.InsertData(tablename,val2);
-     delete it ;
+    string val1 = "('"+ id +"','"+str+"');";
+    string val2 = "('"+ str +"','"+id+"');";
+
+    db.InsertData(tablename,val1);
+    db.InsertData(tablename,val2);
+    delete it ;
+}
+
+
+
+
+void contact::on_pushButton_clicked() {
+//    Data MyDataBase;
+
+//    cout<< "size of stack is" <<MyDataBase.s.size();
+//    if(MyDataBase.s.empty())
+//        this->close();
+//    else{
+
+//  char x= MyDataBase.s.top();
+//  MyDataBase.s.pop();
+//  if(x=='w'){
+//    hide();
+//     m->show();
+//  }
+//  else{
+//      hide();
+//      f->show();
+//  }
+//  }
+    //this->close();
+
+
 }
 
