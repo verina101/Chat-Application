@@ -38,21 +38,21 @@ void ChatRoom::on_pushButton_send_clicked() {
     if(myMsgText.isEmpty()) return;
     myMsg->setUserData("Amir Moris", "D:/Memes/messi.jpg");
     myMsg->setMessage(myMsgText, 1);
-
     int w = myMsg->width();
     int h = myMsg->height();
     QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
     item->setSizeHint(QSize(w, h));
     ui->listWidget->setItemWidget(item, myMsg);
     ui->listWidget->scrollToBottom();
+    ui->plainTextEdit->clear();
 }
 
 void ChatRoom::on_comboBox_currentIndexChanged(int index) {
     if(index == 0) { //Chat
-   //     ui->stackedWidget->setCurrentIndex(0);
+        //ui->stackedWidget->setCurrentIndex(0);
     }
     else if(index == 1) { //Chat info
-       // ui->stackedWidget->setCurrentIndex(1);
+        //ui->stackedWidget->setCurrentIndex(1);
     }
     else { //Exit
          qDebug() << 2 << "\n";
