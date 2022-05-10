@@ -145,7 +145,7 @@ void Data::InsertData(string TableName, string values) {
     DB.open();
     for (auto& c: TableName) c = toupper(c);
 
-    string SQL = "INSERT INTO " + TableName + myColumns[TableName] + " VALUES" + values ;
+    string SQL = "INSERT INTO " + TableName + myColumns[TableName] + " VALUES " + values ;
     QSqlQuery query;
     if(query.exec(QString::fromStdString(SQL))) {
         cerr << "*** Records inserted successfully ***\n";
