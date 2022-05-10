@@ -11,16 +11,59 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ChatInfo.cpp \
+    ChatItem.cpp \
+    ChatRoom.cpp \
+    Chats.cpp \
     Data.cpp \
+    Message.cpp \
+    MyConstants.cpp \
     main.cpp \
-    mainwindow.cpp
+    login.cpp \
+    mainwindow.cpp \
+    addstory.cpp \
+    contact.cpp \
+    contactwidget.cpp \
+    saveddata.cpp \
+    showcontact.cpp \
+    showcontactnamestory.cpp \
+    showstories.cpp
 
 HEADERS += \
+    ChatInfo.h \
+    ChatItem.h \
+    ChatRoom.h \
+    Chats.h \
     Data.h \
-    mainwindow.h
+    Message.h \
+    MyConstants.h \
+    login.h \
+    addstory.h \
+    contact.h \
+    contactwidget.h \
+    mainwindow.h \
+    saveddata.h \
+    showcontact.h \
+    showcontactnamestory.h \
+    showstories.h
 
 FORMS += \
-    mainwindow.ui
+    ChatInfo.ui \
+    ChatItem.ui \
+    ChatRoom.ui \
+    Chats.ui \
+    Message.ui \
+    login.ui \
+    addstory.ui \
+    contact.ui \
+    contactwidget.ui \
+    mainwindow.ui \
+    showcontact.ui \
+    showcontactnamestory.ui \
+    showstories.ui
+
+
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

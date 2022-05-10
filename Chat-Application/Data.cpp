@@ -63,13 +63,12 @@ void Data::CreateTables() {
     tables[4].first = "MESSAGESTATUS";
     tables[4].second = "CREATE TABLE IF NOT EXISTS " + tables[4].first + "("
                        "MessageID        INTEGER NOT NULL, "
-                       "Time             TEXT  NOT NULL, "
+                       "DateTime         TEXT    NOT NULL, "
                        "NumberOfViewers  INTEGER NOT NULL, "
-                       "Date             DATETIME  NOT NULL, "
                        "IsSeen           INTEGER NOT NULL, "
-                       "PRIMARY KEY (MessageID, Time), "
+                       "PRIMARY KEY (MessageID, DateTime), "
                        "FOREIGN KEY (MessageID) REFERENCES Message (MessageID));";
-    myColumns[tables[4].first] = "(MessageID, Time, NumberOfViewers, Date, IsSeen)";
+    myColumns[tables[4].first] = "(MessageID, DateTime, NumberOfViewers, IsSeen)";
 
 
     tables[5].first = "CONTACTS";
@@ -87,12 +86,11 @@ void Data::CreateTables() {
     tables[6].second = "CREATE TABLE IF NOT EXISTS " + tables[6].first + "("
                        "ChatRoomID      INTEGER  NOT NULL, "
                        "UserID          INTEGER  NOT NULL, "
-                       "Date            DATETIME  NOT NULL, "
-                       "Time            TEXT  NOT NULL, "
+                       "DateTime        TEXT  NOT NULL, "
                        "PRIMARY KEY (ChatRoomID, UserID), "
                        "FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom (RoomID), "
                        "FOREIGN KEY (UserID) REFERENCES USER (UserID));";
-    myColumns[tables[6].first] = "(ChatRoomID, UserID, Date, Time)";
+    myColumns[tables[6].first] = "(ChatRoomID, UserID, DateTime)";
 
 
     tables[7].first = "STORY";
@@ -102,10 +100,9 @@ void Data::CreateTables() {
                        "StoryOwnerName   TEXT  NOT NULL, "
                        "Text             TEXT  NOT NULL, "
                        "Image            TEXT  NOT NULL, "
-                       "Time             TEXT  NOT NULL, "
-                       "Visibility       INTEGER  NOT NULL, "
+                       "DateTime         TEXT  NOT NULL, "
                        "FOREIGN KEY (StoryOwnerID) REFERENCES USER (UserID));";
-    myColumns[tables[7].first] = "(StoryOwnerID, StoryOwnerName, Text, Image, Time, Visibility)";
+    myColumns[tables[7].first] = "(StoryOwnerID, StoryOwnerName, Text, Image, DateTime)";
 
 
     tables[8].first = "CANVIEW";
@@ -132,7 +129,7 @@ void Data::CreateTable(string& SQL) {
     try {
         QSqlQuery query;
         if(query.exec(QString::fromStdString(SQL))) {
-            cerr << "*** Table created successfully ***\n";
+          //  cerr << "*** Table created successfully ***\n";
         } else {
             cerr << "*** Error in CreateTables function ***\n";
         }
@@ -142,14 +139,13 @@ void Data::CreateTable(string& SQL) {
 
     DB.close();
 }
-
 //when using 'insert function', columns are ordered as in data.cpp
 //do not insert values for any AUTOINCEREMENT attribute
-void Data::InsertData(string& TableName, string& values) {
+void Data::InsertData(string TableName, string values) {
     DB.open();
     for (auto& c: TableName) c = toupper(c);
 
-    string SQL = "INSERT INTO " + TableName + myColumns[TableName] + " VALUES" + values ;
+    string SQL = "INSERT INTO " + TableName + myColumns[TableName] + " VALUES " + values ;
     QSqlQuery query;
     if(query.exec(QString::fromStdString(SQL))) {
         cerr << "*** Records inserted successfully ***\n";
@@ -162,7 +158,7 @@ void Data::InsertData(string& TableName, string& values) {
     DB.close();
 }
 
-vector<vector<QString>> Data::SelectData(string& TableName, string& Columns, string& Condition) {
+vector<vector<QString>> Data::SelectData(string TableName, string Columns, string Condition) {
     //	columns must be in this format = (column1, column2, column3, columnN)
     DB.open();
     vector<vector<QString>> Rows;
@@ -170,7 +166,7 @@ vector<vector<QString>> Data::SelectData(string& TableName, string& Columns, str
     string SQL = "SELECT " + Columns + " FROM " + TableName + " " + Condition;
     QSqlQuery query;
     if(query.exec(QString::fromStdString(SQL))) {
-        cerr << "*** Records selected successfully ***\n";
+       // cerr << "*** Records selected successfully ***\n";
 
         while(query.next()) {
             Rows.push_back({});
@@ -181,7 +177,6 @@ vector<vector<QString>> Data::SelectData(string& TableName, string& Columns, str
                     Rows.back().push_back(qCol);
                 }
             }
-
         }
     }
     else {
@@ -192,7 +187,7 @@ vector<vector<QString>> Data::SelectData(string& TableName, string& Columns, str
     return Rows;
 }
 
-void Data::UpdateData(string& TableName, string& UpdatedColumn, string& Condition) {
+void Data::UpdateData(string TableName, string UpdatedColumn, string Condition) {
     //	UPDATE (TableName) SET (UpdatedColumn) WHERE (Condition)
     DB.open();
 
@@ -223,7 +218,7 @@ void Data::DeleteData(string& TableName, string& Condition) {
     DB.close();
 }
 
-void Data::DisplayData(vector<vector<QString>> &vec) {
+void Data::DisplayData(vector<vector<QString>> vec) {
     for (auto row : vec) {
         for (auto col : row) {
             cerr << col.toStdString() << (col == row.back() ? " " : " | ");
