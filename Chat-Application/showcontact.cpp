@@ -2,7 +2,6 @@
 #include "ui_showcontact.h"
 #include "ui_contact.h"
 #include <QPixmap>
-#include "mainwindow.h"
 #include "contact.h"
 #include <QApplication>
 #include <QCoreApplication>
@@ -21,6 +20,7 @@ ShowContact::ShowContact(QWidget *parent): QWidget(parent), ui(new Ui::ShowConta
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
+    //background
     QPixmap myBackGround("background2.png");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
@@ -60,7 +60,7 @@ ShowContact::ShowContact(QWidget *parent): QWidget(parent), ui(new Ui::ShowConta
               if(found){
                     ContactWidget *mycontact = new ContactWidget();
                     QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";
-                    mycontact->setContactData(myphotopath, row1[1] +" "+ row1[2], row1[0]);
+                    mycontact->setContactData(myphotopath, row1[1] +" "+ row1[2], "ID: "+row1[0]);
                     int w = mycontact->width();
                     int h = mycontact->height();
                     QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
