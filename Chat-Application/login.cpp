@@ -38,7 +38,7 @@ void login::on_pushButton_login_clicked() {
    }
    else{
        QMessageBox::information(this,"valid login","login successfully");
-       MyConstants().myId = returndata[0][0].toStdString();
+       MyConstants().myId = returndata[0][0];
        ui->stackedWidget_2->close();
        close();
        myChats = new Chats();

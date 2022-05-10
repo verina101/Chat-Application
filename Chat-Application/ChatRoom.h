@@ -4,7 +4,6 @@
 #include "ChatInfo.h"
 #include "Message.h"
 #include "Data.h"
-
 #include <QWidget>
 #include <QPixmap>
 
@@ -28,7 +27,6 @@ private slots:
 
 private:
     Data myDataBase;
-
     Ui::ChatRoom *ui;
     ChatInfo myChatInfo;
 };

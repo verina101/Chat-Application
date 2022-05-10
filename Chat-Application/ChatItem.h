@@ -12,6 +12,7 @@ class ChatItem : public QWidget {
 
 public:
     explicit ChatItem(QWidget *parent = nullptr);
+    void setChatData(QString chatPhoto, QString chatName, QString msgSender ,QString msg);
     ~ChatItem();
 
 private:

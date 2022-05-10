@@ -9,7 +9,10 @@ class MyConstants {
 
 public:
     MyConstants();
-    inline static string myId;
+    inline static QString myId;
+    inline static QString myChatRoomID;
+    inline static QString myChatRoomName;
+
 };
 
 #endif // MYCONSTANTS_H
