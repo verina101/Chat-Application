@@ -2,7 +2,6 @@
 #include "ui_showcontact.h"
 #include "ui_contact.h"
 #include <QPixmap>
-#include "mainwindow.h"
 #include "contact.h"
 #include <QApplication>
 #include <QCoreApplication>

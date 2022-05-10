@@ -20,10 +20,10 @@ SOURCES += \
     MyConstants.cpp \
     main.cpp \
     login.cpp \
-    mainwindow.cpp \
     addstory.cpp \
     contact.cpp \
     contactwidget.cpp \
+    mainwindow.cpp \
     saveddata.cpp \
     showcontact.cpp \
     showcontactnamestory.cpp \
