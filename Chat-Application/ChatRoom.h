@@ -24,6 +24,8 @@ private slots:
     void on_comboBox_currentIndexChanged(int index);
     void on_pushButton_send_clicked();
 
+signals:
+    void exitChat();
 
 private:
     Data myDataBase;

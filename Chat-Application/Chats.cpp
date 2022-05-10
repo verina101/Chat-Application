@@ -11,7 +11,8 @@ Chats::Chats(QWidget *parent): QWidget(parent), ui(new Ui::Chats) {
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
-
+    ui->stackedWidget->insertWidget(1, &myChatRoom);
+    connect(&myChatRoom, SIGNAL(exitChat()), this, SLOT(enterchats()));
     displayChatList();
 
 }
@@ -25,6 +26,8 @@ void Chats::on_pushButton_createChat_clicked() {
 }
 
 void Chats::displayChatList() {
+    qDebug()<< "x0";
+
     string table = "PARTICIPATE", columns = "ChatRoomID", cond = "WHERE UserID = '" + MyConstants().myId.toStdString() + "' ORDER BY DateTime Desc";
     vector<vector<QString>> roomsID = db.SelectData(table, columns, cond);
     vector<vector<QString>> msgs = db.SelectData("MESSAGE", "ChatRoomID, SenderName, Text", "ORDER BY MessageID Desc");
@@ -49,7 +52,6 @@ void Chats::displayChatList() {
             int h = chatItem->height();
             QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
             item->setSizeHint(QSize(w, h));
-
             ui->listWidget->setItemWidget(item, chatItem);
         }
     }
@@ -71,6 +73,8 @@ void Chats::displayChatList() {
         }
     }
 
+
+
 }
 
 
@@ -79,19 +83,30 @@ void Chats::on_listWidget_currentRowChanged(int currentRow)
     MyConstants::myChatRoomID = myChatsInfo[currentRow].first;
     MyConstants::myChatRoomName = myChatsInfo[currentRow].second;
 
-//    qDebug () <<MyConstants::myChatRoomID ;
-//    qDebug () << MyConstants::myChatRoomName;
+
 
 }
 
 
 void Chats::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
 {
-    qDebug () <<MyConstants::myChatRoomID ;
-    qDebug () << MyConstants::myChatRoomName;
-    hide();
-    myChatRoom = new ChatRoom();
-    myChatRoom->show();
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void Chats::enterchats() {
+    ui->stackedWidget->setCurrentIndex(0);
+    displayChatList();
+
+
+//     ui->listWidget->clearSelection();
+//    ui->listWidget->selectAll();
+//    QList<QListWidgetItem*> items = ui->listWidget->selectedItems();
+//    foreach(QListWidgetItem * item, items)
+//    {
+//        delete ui->listWidget->takeItem(ui->listWidget->row(item));
+//    }
+
+//ui->listWidget->update();
 
 }
 

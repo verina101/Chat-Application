@@ -20,7 +20,14 @@ SOURCES += \
     MyConstants.cpp \
     main.cpp \
     login.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    addstory.cpp \
+    contact.cpp \
+    contactwidget.cpp \
+    saveddata.cpp \
+    showcontact.cpp \
+    showcontactnamestory.cpp \
+    showstories.cpp
 
 HEADERS += \
     ChatInfo.h \
@@ -31,7 +38,14 @@ HEADERS += \
     Message.h \
     MyConstants.h \
     login.h \
-    mainwindow.h
+    addstory.h \
+    contact.h \
+    contactwidget.h \
+    mainwindow.h \
+    saveddata.h \
+    showcontact.h \
+    showcontactnamestory.h \
+    showstories.h
 
 FORMS += \
     ChatInfo.ui \
@@ -40,7 +54,16 @@ FORMS += \
     Chats.ui \
     Message.ui \
     login.ui \
-    mainwindow.ui
+    addstory.ui \
+    contact.ui \
+    contactwidget.ui \
+    mainwindow.ui \
+    showcontact.ui \
+    showcontactnamestory.ui \
+    showstories.ui
+
+
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

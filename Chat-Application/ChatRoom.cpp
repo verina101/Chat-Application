@@ -58,7 +58,7 @@ void ChatRoom::on_comboBox_currentIndexChanged(int index) {
         ui->stackedWidget->setCurrentIndex(1);
     }
     else { //Exit
-         qDebug() << 2 << "\n";
+         emit exitChat();
     }
 }
 

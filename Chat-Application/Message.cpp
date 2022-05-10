@@ -53,6 +53,7 @@ void Message::ConvertFormat(QString &str) {
     tmpo->setGeometry(0, 0, 570, 80);
     tmpo->setStyleSheet("font-size: 14px;");
     tmpo->show();
+    tmpo->hide();
 
     string tmpStr = str.toStdString(), subStr = "";
     tmpo->setPlainText(QString::fromStdString(subStr));
@@ -63,6 +64,7 @@ void Message::ConvertFormat(QString &str) {
     for(auto ch : tmpStr) {
         subStr += ch;
         int oLd_nLines = tmpo->document()->documentLayout()->documentSize().height();
+
         tmpo->setPlainText(QString::fromStdString(subStr));
         int new_nLines = tmpo->document()->documentLayout()->documentSize().height();
 
