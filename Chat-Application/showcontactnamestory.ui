@@ -40,7 +40,7 @@
         <string notr="true"/>
        </property>
        <property name="text">
-        <string>Show Stories</string>
+        <string>SHOW STORIES 🤩</string>
        </property>
       </widget>
      </item>
@@ -53,7 +53,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Back</string>
+        <string>BACK 🥺</string>
        </property>
       </widget>
      </item>

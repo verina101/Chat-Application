@@ -136,7 +136,7 @@ font:white;</string>
 border-radius:15px;</string>
        </property>
        <property name="text">
-        <string>Add</string>
+        <string>ADD 🤩</string>
        </property>
       </widget>
      </item>
@@ -153,7 +153,7 @@ border-radius:15px;</string>
 border-radius:15px;</string>
        </property>
        <property name="text">
-        <string>Close</string>
+        <string>CLOSE 🥺</string>
        </property>
       </widget>
      </item>
