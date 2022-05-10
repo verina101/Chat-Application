@@ -47,7 +47,7 @@ border-radius:15px;</string>
        <number>2</number>
       </property>
       <property name="rightMargin">
-       <number>3</number>
+       <number>10</number>
       </property>
       <property name="bottomMargin">
        <number>2</number>
@@ -125,7 +125,7 @@ color:white;</string>
         </property>
         <property name="maximumSize">
          <size>
-          <width>0</width>
+          <width>20</width>
           <height>16777215</height>
          </size>
         </property>

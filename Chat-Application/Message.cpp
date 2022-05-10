@@ -62,7 +62,6 @@ void Message::ConvertFormat(QString &str) {
     str.clear();
     for(auto ch : tmpStr) {
         subStr += ch;
-
         int oLd_nLines = tmpo->document()->documentLayout()->documentSize().height();
         tmpo->setPlainText(QString::fromStdString(subStr));
         int new_nLines = tmpo->document()->documentLayout()->documentSize().height();
