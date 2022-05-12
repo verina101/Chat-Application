@@ -15,7 +15,7 @@ login::login(QWidget *parent): QWidget(parent), ui(new Ui::login) {
     ui->stackedWidget_2->setCurrentIndex(0);
     ui->comboBox_visibilty->addItem("your contacts");//0
     ui->comboBox_visibilty->addItem("for any one");//1
-    QPixmap pic("C:/Users/m/Pictures/Saved Pictures/WhatsApp Image 2022-05-05 at 11.19.27 PM.jpeg");
+    QPixmap pic(":/images/assets/ChatRooms_BackGround.jpg");
     ui->label_pic->setPixmap(pic.scaled(100, 100, Qt::KeepAspectRatio));
 
 }
@@ -29,8 +29,8 @@ void login::on_pushButton_login_clicked() {
 
     mobileno=ui->lineEdit_mobileno->text();
     password=ui->lineEdit_password->text();
-   string tablename="USER",columns="UserID, PhoneNumber, Password";
-   string condition="where PhoneNumber='"+mobileno.toStdString() +"' and Password='"+password.toStdString() +"' ";
+   string tablename="USER",columns="UserID, FirstName, LastName, PhoneNumber, Password";
+   string condition="where PhoneNumber = " + db.convertToValue(mobileno) + " and Password = " + db.convertToValue(password);
    vector<vector<QString>> returndata=db.SelectData(tablename,columns,condition);
    if(returndata.empty()){
      QMessageBox::warning(this,"invalid login","wrong mobileno or password");
@@ -38,7 +38,8 @@ void login::on_pushButton_login_clicked() {
    }
    else{
        QMessageBox::information(this,"valid login","login successfully");
-       MyConstants().myId = returndata[0][0];
+       MyConstants::setMyId(returndata[0][0]);
+       MyConstants::setMyName( returndata[0][1] + " " + returndata[0][2] );
        ui->stackedWidget_2->close();
        close();
        myChats = new Chats();
@@ -86,11 +87,11 @@ void login::on_pushButton_submit_clicked() {
              }
              if(x == true) {
              string columns = "PhoneNumber ";
-             string condition = "where PhoneNumber = '" + phoneno.toStdString() + "'";
+             string condition = "where PhoneNumber = " + db.convertToValue(phoneno);
              vector<vector<QString>> returnData = db.SelectData("USER", columns, condition);
              if(returnData.empty()) {
                  string tablename="USER";
-                 string values = "('" + firstname.toStdString() + "','" + lastname.toStdString() + "','not found','" + description.toStdString()+"','" + password.toStdString() + "','"+phoneno.toStdString() + "','"+visibility.toStdString() + "')";
+                 string values = "(" + db.convertToValue(firstname) + "," + db.convertToValue(lastname) + ",'not found', " + db.convertToValue(description) + "," + db.convertToValue(password) + "," + db.convertToValue(phoneno) + "," + db.convertToValue(visibility) + ")";
                  db.InsertData(tablename,values);
                  QMessageBox::information(this, "valid registration", "registration successfully");
              }

@@ -7,8 +7,8 @@ using namespace std;
 Message::Message(QWidget *parent) : QWidget(parent), ui(new Ui::Message) {
     ui->setupUi(this);
 
-    QIcon iconDelete("images/Delete_Icon.png");
-    QIcon iconInfo("images/Info_Icon.png");
+    QIcon iconInfo(":/icons/assets/Info_Icon.png");
+    QIcon iconDelete(":/icons/assets/Delete_Icon.png");
     ui->comboBox->setItemIcon(0, iconInfo);
     ui->comboBox->setItemIcon(1, iconDelete);
 

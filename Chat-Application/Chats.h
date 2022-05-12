@@ -25,12 +25,19 @@ private slots:
 
     void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
     void enterchats();
+
+signals :
+    void selectChat();
+
 private:
     Ui::Chats *ui;
     void displayChatList();
     Data db;
     ChatRoom myChatRoom;
     vector<pair<QString,QString>>myChatsInfo;
+
+
+
 };
 
 #endif // CHATS_H

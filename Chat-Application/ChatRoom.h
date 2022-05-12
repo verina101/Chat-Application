@@ -16,21 +16,23 @@ class ChatRoom: public QWidget {
 
 public:
     explicit ChatRoom(QWidget *parent = nullptr);
-    void DisplayMessages();
+    void DisplayMessage(QString msgText, QString senderName, QString senderID, QString profilePicture, bool isDeleted);
 
     ~ChatRoom();
 
 private slots:
     void on_comboBox_currentIndexChanged(int index);
     void on_pushButton_send_clicked();
+    void openChatRoom();
 
 signals:
     void exitChat();
 
 private:
-    Data myDataBase;
+    Data db;
     Ui::ChatRoom *ui;
     ChatInfo myChatInfo;
+    vector<vector<QString>> myChatMsgs;
 };
 
 #endif // CHATROOM_H

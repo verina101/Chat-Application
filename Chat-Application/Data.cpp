@@ -166,7 +166,7 @@ vector<vector<QString>> Data::SelectData(string TableName, string Columns, strin
     string SQL = "SELECT " + Columns + " FROM " + TableName + " " + Condition;
     QSqlQuery query;
     if(query.exec(QString::fromStdString(SQL))) {
-       // cerr << "*** Records selected successfully ***\n";
+        cerr << "*** Records selected successfully ***\n";
 
         while(query.next()) {
             Rows.push_back({});
@@ -225,4 +225,8 @@ void Data::DisplayData(vector<vector<QString>> vec) {
         }
         cerr << "\n";
     }
+}
+
+string Data::convertToValue(QString myqstr) {
+    return ("'" + myqstr + "'").toStdString();
 }

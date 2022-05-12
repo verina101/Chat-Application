@@ -13,6 +13,7 @@ class ChatInfo: public QWidget {
 public:
     explicit ChatInfo(QWidget *parent = nullptr);
     ~ChatInfo();
+    void setChatData(bool myChatType, QString myChatName, QString myDescription_admin, QString picture);
 
 private:
     Ui::ChatInfo *ui;

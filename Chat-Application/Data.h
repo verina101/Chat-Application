@@ -24,6 +24,6 @@ public:
     static void UpdateData(string TableName, string UpdatedColumn, string Condition);
     static void DeleteData(string& TableName, string& Condition);
     static void DisplayData(vector<vector<QString>> vec);
-
+    static string convertToValue(QString myqstr);
 };
 #endif // DATA_H

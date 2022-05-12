@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 178, 102, 255), stop:0.55 rgba(235, 148, 61, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0));</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
@@ -38,8 +38,7 @@
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background:white;
-border-radius:15px;</string>
+       <string notr="true">background:transparent;</string>
       </property>
       <property name="text">
        <string>Chat rooo</string>
@@ -55,8 +54,9 @@ border-radius:15px;</string>
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background:transparent;
-font:15px;</string>
+       <string notr="true">color:white;
+font:15px;
+background:transparent;</string>
       </property>
       <property name="text">
        <string>ChatName</string>
@@ -88,7 +88,9 @@ font:15px;</string>
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius:15px;
+       <string notr="true">background:transparent;
+color:white;
+border-radius:15px;
 </string>
       </property>
       <item>
@@ -120,16 +122,14 @@ font:15px;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background: black;;
-
-</string>
+    <string notr="true">background:transparent;</string>
    </property>
    <property name="currentIndex">
     <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">background:transparent;</string>
     </property>
     <widget class="QPlainTextEdit" name="plainTextEdit">
      <property name="geometry">
@@ -153,18 +153,23 @@ border-radius:15px;
     <widget class="QPushButton" name="pushButton_send">
      <property name="geometry">
       <rect>
-       <x>600</x>
-       <y>350</y>
-       <width>105</width>
-       <height>80</height>
+       <x>625</x>
+       <y>365</y>
+       <width>50</width>
+       <height>50</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 178, 102, 255), stop:0.55 rgba(235, 148, 61, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0));
-</string>
+      <string notr="true">background:transparent;</string>
      </property>
      <property name="text">
-      <string>Send</string>
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
      </property>
     </widget>
     <widget class="QListWidget" name="listWidget">
@@ -177,7 +182,7 @@ border-radius:15px;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background:red;;</string>
+      <string notr="true">background:transparent;</string>
      </property>
      <property name="autoScrollMargin">
       <number>10</number>
