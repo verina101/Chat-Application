@@ -23,7 +23,7 @@
     </rect>
    </property>
    <widget class="QWidget" name="page_myChats">
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -93,7 +93,7 @@
         <item>
          <widget class="QPushButton" name="pushButton_createChat">
           <property name="text">
-           <string>Create Chat</string>
+           <string>My Contacts</string>
           </property>
          </widget>
         </item>

@@ -18,7 +18,7 @@ contact::contact(QWidget *parent): QWidget(parent), ui(new Ui::contact) {
     this->setMaximumSize(QSize(700, 500));
 
     //background
-    QPixmap myBackGround("background2.png");
+    QPixmap myBackGround(":/images/assets/Chat_BackGround.png");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(backgroundRole(), myBackGround);
@@ -31,6 +31,7 @@ contact::contact(QWidget *parent): QWidget(parent), ui(new Ui::contact) {
      ui->label-> setPixmap(pix.scaled(w,h, Qt::IgnoreAspectRatio));
      Data MyDataBase;
 
+     this->myID = MyConstants::getMyId().toInt();
      QString curr = QString::number(this->myID);
      string cid = curr.toStdString();
           string userCol     =  "UserID,FirstName,LastName,ProfilePicture,Visibility";

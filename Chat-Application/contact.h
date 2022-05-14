@@ -8,6 +8,8 @@
 #include <QString>
 #include <string>
 #include "Data.h"
+#include "MyConstants.h"
+
 //#include<QDialog>
 
 using namespace std;

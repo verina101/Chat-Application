@@ -189,6 +189,7 @@ compiler_rcc_clean:
 debug/qrc_Recources.cpp: ../Chat-Application/Recources.qrc \
 		D:/downloadss/qt/6.3.0/mingw_64/bin/rcc.exe \
 		../Chat-Application/assets/Chat_BackGround.png \
+		../Chat-Application/assets/group_image.png \
 		../Chat-Application/assets/ChatRooms_BackGround.jpg \
 		../Chat-Application/assets/Info_Icon.png \
 		../Chat-Application/assets/Send_Icon.png \
@@ -2219,6 +2220,7 @@ debug/moc_contact.cpp: ../Chat-Application/contact.h \
 		../Chat-Application/Data.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QDebug \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QMap \
+		../Chat-Application/MyConstants.h \
 		debug/moc_predefs.h \
 		D:/downloadss/qt/6.3.0/mingw_64/bin/moc.exe
 	D:\downloadss\qt\6.3.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Verina Gad/source/repos/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/debug/moc_predefs.h" -ID:/downloadss/qt/6.3.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/Verina Gad/source/repos/Chat-Application/Chat-Application" -ID:/downloadss/qt/6.3.0/mingw_64/include -ID:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets -ID:/downloadss/qt/6.3.0/mingw_64/include/QtGui -ID:/downloadss/qt/6.3.0/mingw_64/include/QtSql -ID:/downloadss/qt/6.3.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Chat-Application\contact.h -o debug\moc_contact.cpp
@@ -2804,6 +2806,7 @@ debug/moc_showcontact.cpp: ../Chat-Application/showcontact.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QDebug \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QMap \
 		../Chat-Application/contactwidget.h \
+		../Chat-Application/MyConstants.h \
 		debug/moc_predefs.h \
 		D:/downloadss/qt/6.3.0/mingw_64/bin/moc.exe
 	D:\downloadss\qt\6.3.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Verina Gad/source/repos/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/debug/moc_predefs.h" -ID:/downloadss/qt/6.3.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/Verina Gad/source/repos/Chat-Application/Chat-Application" -ID:/downloadss/qt/6.3.0/mingw_64/include -ID:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets -ID:/downloadss/qt/6.3.0/mingw_64/include/QtGui -ID:/downloadss/qt/6.3.0/mingw_64/include/QtSql -ID:/downloadss/qt/6.3.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Chat-Application\showcontact.h -o debug\moc_showcontact.cpp
@@ -3885,6 +3888,7 @@ debug/ChatRoom.o: ../Chat-Application/ChatRoom.cpp ../Chat-Application/MyConstan
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QSpacerItem \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QStackedWidget \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/qstackedwidget.h \
+		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QVBoxLayout \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QWidget \
 		../Chat-Application/ChatRoom.h \
 		../Chat-Application/ChatInfo.h \
@@ -6291,6 +6295,7 @@ debug/contact.o: ../Chat-Application/contact.cpp ui_contact.h \
 		../Chat-Application/Data.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QDebug \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QMap \
+		../Chat-Application/MyConstants.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QCoreApplication \
 		../Chat-Application/contactwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\contact.o ..\Chat-Application\contact.cpp
@@ -6939,6 +6944,7 @@ debug/showcontact.o: ../Chat-Application/showcontact.cpp ../Chat-Application/sho
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QDebug \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QMap \
 		../Chat-Application/contactwidget.h \
+		../Chat-Application/MyConstants.h \
 		ui_showcontact.h \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtCore/QVariant \
 		D:/downloadss/qt/6.3.0/mingw_64/include/QtWidgets/QApplication \

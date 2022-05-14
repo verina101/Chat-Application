@@ -11,6 +11,7 @@ ChatRoom::ChatRoom(QWidget *parent): QWidget(parent), ui(new Ui::ChatRoom) {
     this->setMaximumSize(QSize(700, 500));
 
 
+
     QPixmap myBackGround(":/images/assets/Chat_BackGround.png");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
@@ -22,13 +23,27 @@ ChatRoom::ChatRoom(QWidget *parent): QWidget(parent), ui(new Ui::ChatRoom) {
     ui->pushButton_send->setIcon(iconSendButton);
 
 
-
     // *************************************** //
 
     ui->stackedWidget->insertWidget(1,&myChatInfo);
     ui->listWidget->scrollToBottom();
 
    openChatRoom();
+}
+
+void ChatRoom::openChatRoom() {
+    ui->label_ChatName->setText(MyConstants().getMyChatRoomName());
+    db.UpdateData("PARTICIPATE", "DateTime = datetime('now', 'localtime')", "WHERE UserID = " + db.convertToValue(MyConstants::getMyId()));
+    //----(Messsages)-----//
+
+    string column = "Text, MessageID, SenderName, SenderID, IsDeleted";
+    string condition = "WHERE ChatRoomID = " + db.convertToValue(MyConstants::getMyChatRoomID());
+    myChatMsgs = db.SelectData("MESSAGE", column, condition);
+
+    for(auto curMsg : myChatMsgs) {
+        QString curSenderPic = db.SelectData("USER", "ProfilePicture", "WHERE UserID = " + db.convertToValue(curMsg[3])).front().front();
+        DisplayMessage(curMsg[0], curMsg[2], curMsg[3], curSenderPic, 0);
+    }
 }
 
 void ChatRoom::DisplayMessage(QString msgText, QString senderName, QString senderID, QString profilePicture, bool isDeleted) {
@@ -62,20 +77,7 @@ void ChatRoom::on_pushButton_send_clicked() {
     //db.InsertData("MESSAGESTATUS","(" + db.convertToValue(msgID) + ", datetime('now'), '0', '0')");
 }
 
-void ChatRoom::openChatRoom() {
-    ui->label_ChatName->setText(MyConstants().getMyChatRoomName());
 
-    //----(Messsages)-----//
-
-    string column = "Text, MessageID, SenderName, SenderID, IsDeleted";
-    string condition = "WHERE ChatRoomID = " + db.convertToValue(MyConstants::getMyChatRoomID());
-    myChatMsgs = db.SelectData("MESSAGE", column, condition);
-
-    for(auto curMsg : myChatMsgs) {
-        QString curSenderPic = db.SelectData("USER", "ProfilePicture", "WHERE UserID = " + db.convertToValue(curMsg[3])).front().front();
-        DisplayMessage(curMsg[0], curMsg[2], curMsg[3], curSenderPic, 0);
-    }
-}
 
 void ChatRoom::on_comboBox_currentIndexChanged(int index) {
     if(index == 0) { //Chat
@@ -83,6 +85,8 @@ void ChatRoom::on_comboBox_currentIndexChanged(int index) {
     }
     else if(index == 1) { //Chat info
         ui->stackedWidget->setCurrentIndex(1);
+        //chattype,chatname,adminName,pp
+        myChatInfo.setChatData();
     }
     else { //Exit
         emit exitChat();

@@ -28,6 +28,8 @@ ShowContact::ShowContact(QWidget *parent): QWidget(parent), ui(new Ui::ShowConta
     this->setPalette(palette);
 
      Data MyDataBase;
+     this->myID = MyConstants::getMyId().toInt();
+
      QString curr = QString::number(this->myID);
      string cid = curr.toStdString();
           string userCol     =  "UserID,FirstName,LastName,ProfilePicture";

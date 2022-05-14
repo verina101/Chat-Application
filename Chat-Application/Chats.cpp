@@ -11,8 +11,6 @@ Chats::Chats(QWidget *parent): QWidget(parent), ui(new Ui::Chats) {
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
-
-
     ui->stackedWidget->insertWidget(1, &myChatRoom);
     connect(&myChatRoom, SIGNAL(exitChat()), this, SLOT(enterchats()));
     connect(this, SIGNAL(selectChat()), &myChatRoom, SLOT(openChatRoom()));
@@ -76,8 +74,6 @@ void Chats::displayChatList() {
             ui->listWidget->setItemWidget(item, chatItem);
         }
     }
-
-
 
 }
 
