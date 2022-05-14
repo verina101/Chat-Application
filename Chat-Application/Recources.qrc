@@ -6,7 +6,9 @@
     </qresource>
     <qresource prefix="/images">
         <file>assets/ChatRooms_BackGround.jpg</file>
-        <file>assets/Chat_BackGround.png</file>
         <file>assets/group_image.png</file>
+        <file>assets/Chat_BackGround.jpg</file>
+        <file>assets/login_BackGround.png</file>
+        <file>assets/Menu_BackGround.jpg</file>
     </qresource>
 </RCC>

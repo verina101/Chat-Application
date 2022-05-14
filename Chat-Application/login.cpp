@@ -15,7 +15,7 @@ login::login(QWidget *parent): QWidget(parent), ui(new Ui::login) {
     ui->stackedWidget_2->setCurrentIndex(0);
     ui->comboBox_visibilty->addItem("your contacts");//0
     ui->comboBox_visibilty->addItem("for any one");//1
-    QPixmap pic(":/images/assets/ChatRooms_BackGround.jpg");
+    QPixmap pic(":/images/assets/login_BackGround.png");
     ui->label_pic->setPixmap(pic.scaled(100, 100, Qt::KeepAspectRatio));
 
 }

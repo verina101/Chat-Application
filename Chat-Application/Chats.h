@@ -33,7 +33,7 @@ private:
     Ui::Chats *ui;
     void displayChatList();
     Data db;
-    ChatRoom myChatRoom;
+    ChatRoom myChatRoom ;
     vector<pair<QString,QString>>myChatsInfo;
 
 

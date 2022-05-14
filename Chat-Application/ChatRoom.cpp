@@ -10,17 +10,13 @@ ChatRoom::ChatRoom(QWidget *parent): QWidget(parent), ui(new Ui::ChatRoom) {
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
-
-
-    QPixmap myBackGround(":/images/assets/Chat_BackGround.png");
-    myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(backgroundRole(), myBackGround);
-    this->setPalette(palette);
+    QString myStyleSheet = "background: url(':/images/assets/Chat_BackGround.jpg');";
+    this->setStyleSheet(myStyleSheet);
 
     QPixmap myButton(":/icons/assets/Send_Icon.png");
     QIcon iconSendButton (myButton);
     ui->pushButton_send->setIcon(iconSendButton);
+
 
 
     // *************************************** //
@@ -28,10 +24,15 @@ ChatRoom::ChatRoom(QWidget *parent): QWidget(parent), ui(new Ui::ChatRoom) {
     ui->stackedWidget->insertWidget(1,&myChatInfo);
     ui->listWidget->scrollToBottom();
 
-   openChatRoom();
+    openChatRoom();
 }
 
 void ChatRoom::openChatRoom() {
+    QPixmap piximg(":/images/assets/group_image.png");
+    int w = ui->label_image->width();
+    int h = ui->label_image->height();
+    ui->label_image->setPixmap(piximg.scaled(w, h, Qt::KeepAspectRatio));
+
     ui->label_ChatName->setText(MyConstants().getMyChatRoomName());
     db.UpdateData("PARTICIPATE", "DateTime = datetime('now', 'localtime')", "WHERE UserID = " + db.convertToValue(MyConstants::getMyId()));
     //----(Messsages)-----//

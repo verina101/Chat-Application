@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
     Data myData;
     myData.CreateTables();
 
-    ChatRoom win;
+    login win;
     win.show();
 
     return APP.exec();
