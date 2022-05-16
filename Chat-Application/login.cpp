@@ -119,3 +119,9 @@ void login::on_pushButton_change_pic_clicked() {
     ui->label_pic->setPixmap(pic.scaled(100, 100, Qt::KeepAspectRatio));
 }
 
+
+void login::on_pushButton_loginin_2_clicked()
+{
+    ui->stackedWidget_2->setCurrentIndex(0);
+}
+

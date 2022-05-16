@@ -71,7 +71,7 @@ void ChatInfo::setChatData() {
         QPixmap piximg(":/images/assets/group_image.png");
         int w = ui->label_picture->width();
         int h = ui->label_picture->height();
-        ui->label_picture->setPixmap(piximg.scaled(w, h, Qt::IgnoreAspectRatio));
+        ui->label_picture->setPixmap(piximg.scaled(w, h, Qt::KeepAspectRatio));
 
         for(auto user : users) {
             vector<QString> name = db.SelectData("USER","FirstName, LastName","WHERE UserID = " + db.convertToValue(user[0])).front();

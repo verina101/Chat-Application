@@ -10,7 +10,7 @@ ChatRoom::ChatRoom(QWidget *parent): QWidget(parent), ui(new Ui::ChatRoom) {
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
-    QString myStyleSheet = "background: url(':/images/assets/Chat_BackGround.jpg');";
+    QString myStyleSheet = "background: url(':/images/assets/login_BackGround.png');";
     this->setStyleSheet(myStyleSheet);
 
     QPixmap myButton(":/icons/assets/Send_Icon.png");

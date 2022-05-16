@@ -28,6 +28,8 @@ private slots:
 
     void on_pushButton_change_pic_clicked();
 
+    void on_pushButton_loginin_2_clicked();
+
 private:
     Ui::login *ui;
     Data db;
