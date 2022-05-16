@@ -16,8 +16,11 @@ SOURCES += \
     ChatRoom.cpp \
     Chats.cpp \
     Data.cpp \
+    Datetime.cpp \
     Message.cpp \
     MyConstants.cpp \
+    StoryTime.cpp \
+    StoryWidgett.cpp \
     main.cpp \
     login.cpp \
     addstory.cpp \
@@ -35,8 +38,11 @@ HEADERS += \
     ChatRoom.h \
     Chats.h \
     Data.h \
+    Datetime.h \
     Message.h \
     MyConstants.h \
+    StoryTime.h \
+    StoryWidget.h \
     login.h \
     addstory.h \
     contact.h \
@@ -53,6 +59,8 @@ FORMS += \
     ChatRoom.ui \
     Chats.ui \
     Message.ui \
+    StoryTime.ui \
+    StoryWidget.ui \
     login.ui \
     addstory.ui \
     contact.ui \

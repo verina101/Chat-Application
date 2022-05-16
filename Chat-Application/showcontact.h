@@ -29,7 +29,7 @@ private slots:
 
 private:
     Ui::ShowContact *ui;
-    int myID = 2;
+    int myID = 1;
     vector<vector<QString>>cdata;
     vector<vector<QString>>data;
 };

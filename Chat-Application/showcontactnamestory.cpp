@@ -2,6 +2,7 @@
 #include "ui_showcontactnamestory.h"
 #include<iostream>
 #include<QPixmap>
+#include <ContactWidget.h>
 using namespace std;
 ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui(new Ui::ShowContactNameStory) {
     ui->setupUi(this);
@@ -14,11 +15,29 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
     QPalette palette;
     palette.setBrush(backgroundRole(), myBackGround);
     this->setPalette(palette);
+    SavedData s;
+    Data MyDataBase;
+
     //********************************
     // Delte old stories feom database
     //********************************
-    SavedData s;
-    Data MyDataBase;
+    vector<vector<QString>>vec;
+    string tableName="STORY";
+    string cond=";";
+    string col="*";
+    vec=MyDataBase.SelectData(tableName,col,cond);
+    for(auto it : vec){
+        string time = it[5].toStdString();
+        DateTime t;
+        if(!t.isValidStory(time)){
+            cond="where StoryID ='"+it[0].toStdString()+"' ;";
+            MyDataBase.DeleteData(tableName,cond);
+        }
+    }
+
+
+
+
     this->storyUsersID.clear();
     vector<vector<QString>>usersIds,checkvec;
 
@@ -29,7 +48,6 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
 
 
 
-
     for(int i =0;i < usersIds.size();i++){
         string id=usersIds[i][0].toStdString();
         string contactCol       =  "*";
@@ -37,7 +55,15 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
         string contactCond      =  "where StoryOwnerID ='"+id+"' ;";
         checkvec = MyDataBase.SelectData(contactTable,contactCol,contactCond);
         if(checkvec.size()){
-            ui->listWidget->addItem("\n" + checkvec[0][2] +"\n"+"ID : "+ checkvec[0][1]+"\n") ;
+            ContactWidget *mycontact = new ContactWidget();
+            QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";
+            mycontact->setContactData(myphotopath, checkvec[0][2], "ID: "+checkvec[0][1]);
+            int w = mycontact->width();
+            int h = mycontact->height();
+            QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
+            item->setSizeHint(QSize(w, h));
+            ui->listWidget->setItemWidget(item, mycontact);
+
             vector<QString>vec;
             vec.push_back(checkvec[0][1]);
             vec.push_back(checkvec[0][2]);
@@ -47,19 +73,8 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
         checkvec.clear();
     }
 
-
 //    this->data= MyDataBase.SelectData(userTable,userCol,userCond);
 //     cout<< "size is "<< data.size();
-
-    cout<<"sizee " << storyUsersID.size();
-    for (auto it : storyUsersID) {
-            for (auto itt : it) {
-                qDebug() << "curr user id"<< itt<< "\n";
-            }
-            cout << "\n";
-        }
-
-
 }
 ShowContactNameStory::~ShowContactNameStory()
 {
@@ -73,7 +88,10 @@ void ShowContactNameStory::on_ShowStories_clicked()
     int indx = ui->listWidget->selectionModel()->currentIndex().row();
     string s=storyUsersID[indx][0].toStdString();
     saved.setStoryUserID(s);
-    cout<<storyUsersID[indx][0].toStdString()<<endl;
-    cout<<"Story user id   "<<saved.getStoryUserID()<<endl;
+//    cout<<storyUsersID[indx][0].toStdString()<<endl;
+//    cout<<"Story user id   "<<saved.getStoryUserID()<<endl;
+    ShowStories *ss= new ShowStories();
+    ss->show();
+    this->hide();
 }
 

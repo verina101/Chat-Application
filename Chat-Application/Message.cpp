@@ -1,7 +1,5 @@
 #include "ui_Message.h"
 #include "Message.h"
-
-
 using namespace std;
 
 Message::Message(QWidget *parent) : QWidget(parent), ui(new Ui::Message) {
