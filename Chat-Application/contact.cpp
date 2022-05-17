@@ -70,7 +70,7 @@ contact::contact(QWidget *parent): QWidget(parent), ui(new Ui::contact) {
                   QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";  //row1[3]
                   QString defaultphoto= "D:/Pictures/Ds project/NotSeenBackground.png";
                   if(row1[4]==seen){
-                  mycontact->setContactData(defaultphoto, row1[1] +" "+ row1[2], "ID: Not Public");
+                  mycontact->setContactData(defaultphoto, row1[1] +" "+ row1[2], "ID: "+row1[0]);
                   }
                   else{
                   mycontact->setContactData(myphotopath, row1[1] +" "+ row1[2], "ID: "+row1[0]);
@@ -80,7 +80,7 @@ contact::contact(QWidget *parent): QWidget(parent), ui(new Ui::contact) {
                   QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
                   item->setSizeHint(QSize(w, h));
                   ui->listWidget->setItemWidget(item, mycontact);
-                  ui->listWidget->scrollToBottom();
+                  //ui->listWidget->scrollToBottom();
 
                   this->at[expected++]=real;
               }
@@ -114,43 +114,7 @@ void contact::on_pushButton_2_clicked()
     //('A', 'B', '12', '123', 'N')
     int indx = ui->listWidget->selectionModel()->currentIndex().row();
     indx= at[indx];
-    //************************************************
-   // ui->listWidget->selectionModel()->Clear;
-    ui->listWidget->selectAll();
 
-   // while((tmpo = ui->listWidget->takeItem(cnto)) != nullptr) {
-
-    //        cerr << cnto;
-    //        cnto ++;
-    //        if(cnto == 10) break;
-    //    }
-        // 1 3
-//        ui->listWidget->clear();
-//       int cnt = ui->listWidget->count();
-//        for(int i=0 ;i <cnt;i++){
-
-//            QListWidgetItem *item = ui->listWidget->item(i);
-//            delete item;
-//    }
-
-//    ui->listWidget->clearSelection();
-//   // ui->listWidget.select
-
-//         ui->listWidget->selectAll();
-//         QList<QListWidgetItem*> items = ui->listWidget->selectedItems();
-
-//         foreach(QListWidgetItem* item, items){
-//             ui->listWidget->removeItemWidget(item);
-//             delete item; // Qt documentation warnings you to destroy item to effectively remove it from QListWidget.
-//         }
-//         qDeleteAll(ui->listWidget->selectedItems());
-//        foreach(QListWidgetItem * item, items)
-//        {
-//            delete ui->listWidget->takeItem(ui->listWidget->row(item));
-//        }
-
-
-    //**************************************
     QListWidgetItem *it = ui->listWidget->currentItem();
     Data db;
     string tablename ="Contacts";
@@ -167,27 +131,8 @@ void contact::on_pushButton_2_clicked()
 }
 
 
-
-
 void contact::on_pushButton_clicked() {
-//    Data MyDataBase;
 
-//    cout<< "size of stack is" <<MyDataBase.s.size();
-//    if(MyDataBase.s.empty())
-//        this->close();
-//    else{
-
-//  char x= MyDataBase.s.top();
-//  MyDataBase.s.pop();
-//  if(x=='w'){
-//    hide();
-//     m->show();
-//  }
-//  else{
-//      hide();
-//      f->show();
-//  }
-//  }
     this->close();
 
 

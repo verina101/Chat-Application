@@ -39,7 +39,7 @@ private:
     Ui::contact *ui;
     vector<vector<QString>>data;
     vector<vector<QString>>cdata;
-    int myID = 2;
+    int myID = 1;
     int at[500]={};
     //contact *c;
 

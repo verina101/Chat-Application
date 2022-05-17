@@ -29,10 +29,14 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_radioButtonPhoto_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::AddStory *ui;
     vector<vector<QString>>data;
-    int myID = 1;
+    int myID = 3;
 
 };
 

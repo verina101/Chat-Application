@@ -4,6 +4,8 @@
 #include <QWidget>
 #include "saveddata.h"
 #include "Data.h"
+#include "Datetime.h"
+#include "showstories.h"
 using namespace std;
 namespace Ui {
 class ShowContactNameStory;

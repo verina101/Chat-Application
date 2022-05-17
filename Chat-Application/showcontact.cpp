@@ -43,10 +43,6 @@ ShowContact::ShowContact(QWidget *parent): QWidget(parent), ui(new Ui::ShowConta
           string contactCond      =  "where UserID ='"+cid+"' ;";
           this->cdata= MyDataBase.SelectData(contactTable,contactCol,contactCond);
 
-//          for(auto row1 : this->data) {
-//               qDebug()<< row1;
-//          }
-
 
           for(auto row1 : this->data) {
               bool found=0;
@@ -68,7 +64,7 @@ ShowContact::ShowContact(QWidget *parent): QWidget(parent), ui(new Ui::ShowConta
                     QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
                     item->setSizeHint(QSize(w, h));
                     ui->listWidget->setItemWidget(item, mycontact);
-                    ui->listWidget->scrollToBottom();
+                    //ui->listWidget->scrollToBottom();
               }
 
           }
