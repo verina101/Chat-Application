@@ -31,21 +31,13 @@ StoryTime::StoryTime(QWidget *parent) :
     else{
 
        string path= chosenStory[0][4].toStdString(),name="";
-       bool p=false;
-       for(int i=path.size(); i>-1; --i){
-           if(path[i]=='/')
-               break;
-           if(path[i]=='.'){
-               p=true;
-               continue;
-       }
-           if(p)
-              name+=path[i];
-       }
 
-       reverse(name.begin(), name.end());
+       for(int i=path.size() - 1; i>-1; --i){
+           if(path[i] == '/') break;
 
-//        name=ConvertoValue(name);
+                name = path[i] + name;
+
+       }
 
         QPixmap photo(QString::fromStdString(name));
         int h= ui->label->height();

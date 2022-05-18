@@ -132,7 +132,7 @@ void login::on_pushButton_change_pic_clicked()
     ui->label_pic->setPixmap(pic.scaled(100,100,Qt::IgnoreAspectRatio));
      QFileInfo fi(filePath);
      QString fileName= fi.fileName();
-     QString desktopPath = "D:/chatapp/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug";
+     QString desktopPath = "C:/Users/Maria Tawfek/Desktop/GitHub/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug";
      QString destinationPath= desktopPath+QDir::separator()+fileName;
     QFile::copy(filePath, destinationPath);
     }

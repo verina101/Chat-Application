@@ -16,17 +16,18 @@
 #include "Datetime.h"
 #include <showstories.h>
 #include <StoryTime.h>
+#include <profile.h>
 using namespace std;
 
 int main(int argc, char *argv[]) {
     QApplication APP(argc, argv);
     Data myData;
-    dateTime obj;
-    DateTime t;
+    //dateTime obj;
+   // DateTime t;
     myData.CreateTables();
-    string s ="Mon May 15 13:23:52 2022";
-    if(t.isValidStory(s))cout<<"YES"<<endl;
-    else cout<<"NO"<<endl;
+//    string s ="Mon May 15 13:23:52 2022";
+//    if(t.isValidStory(s))cout<<"YES"<<endl;
+//    else cout<<"NO"<<endl;
 
 //    string tableName="USER";
 //    string val="('Amir','Moris','123','01234567890','12340','145600','0')";
@@ -37,7 +38,7 @@ int main(int argc, char *argv[]) {
 //       myData.InsertData(tableName,val);
 
 
-    AddStory Win;
+    ChatRoom Win;
     Win.show();
     return APP.exec();
 }

@@ -77,8 +77,7 @@ string  AddStory:: EditText(string s){
 
 
 
-void AddStory::on_pushButton_clicked()
-{
+void AddStory::on_pushButton_clicked(){
 
     QString input    = ui->textEdit->toPlainText();
     string editInput = input.toStdString();
