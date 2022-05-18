@@ -3,6 +3,10 @@
 
 #include <QWidget>
 #include"Data.h"
+#include<constantdata.h>
+#include<string>
+#include<iostream>
+using namespace std;
 namespace Ui {
 class login;
 }
@@ -16,7 +20,6 @@ public:
     ~login();
 
 private slots:
-    void on_pushButton_clicked();
 
     void on_pushButton_login_clicked();
 
@@ -26,9 +29,13 @@ private slots:
 
     void on_pushButton_change_pic_clicked();
 
+    void on_pushButton_clicked();
+
+
 private:
     Ui::login *ui;
        Data db;
+       string ProfilePicture;
 };
 
 #endif // LOGIN_H

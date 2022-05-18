@@ -5,6 +5,8 @@
 #include <qdebug.h>
 #include<QPixmap>
 #include<QFileDialog>
+
+
 login::login(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::login)
@@ -26,6 +28,8 @@ login::~login()
 
 void login::on_pushButton_login_clicked()
 {
+
+    constantdata currUser;
     QString mobileno,password;
 
     mobileno=ui->lineEdit_mobileno->text();
@@ -38,9 +42,11 @@ void login::on_pushButton_login_clicked()
      //qDebug() << "wrong password or mobileno";
    }
    else{
+       currUser.setphoneNumber(mobileno.toStdString());
        QMessageBox::information(this,"valid login","login successfully");
    }
    db.DisplayData(returndata);
+
 }
 
 
@@ -58,6 +64,7 @@ void login::on_pushButton_submit_clicked()
     phoneno=ui->lineEdit_phoneno->text();
     description=ui->lineEdit_description->text();
     visibility=ui->comboBox_visibilty->currentText();
+
      if(visibility.contains("for any one")){
          visibility="1";
      }
@@ -90,10 +97,11 @@ void login::on_pushButton_submit_clicked()
              vector<vector<QString>> returnData=db.SelectData(tableName,columns,condition);
              if(returnData.empty()){
                  string tablename="USER";
-                 string values="('"+firstname.toStdString()+"','"+lastname.toStdString()+"','not found','"+description.toStdString()+"','"+password.toStdString()+"','"+phoneno.toStdString()+"','"+visibility.toStdString()+"')";
+                 string values="('"+firstname.toStdString()+"','"+lastname.toStdString()+"','"+ProfilePicture+"','"+description.toStdString()+"','"+password.toStdString()+"','"+phoneno.toStdString()+"','"+visibility.toStdString()+"')";
                  db.InsertData(tablename,values);
+                 constantdata currUser;
+                 currUser.setphoneNumber(phoneno.toStdString());
                  QMessageBox::information(this,"valid registration","registration successfully");
-
              }
              else{
                   QMessageBox::warning(this,"invalid registration "," duplicated phone number");
@@ -114,10 +122,28 @@ void login::on_pushButton_submit_clicked()
 }
 void login::on_pushButton_change_pic_clicked()
 {
-     QString filter="Jpeg File(*.jpeg);; Png File(*.png)";
-    QString filename=QFileDialog::getOpenFileName(this,"open a file","D:/pic",filter);
-    QMessageBox::information(this,"..",filename);
-    QPixmap pic(filename);
-    ui->label_pic->setPixmap(pic.scaled(100,100,Qt::KeepAspectRatio));
+
+    QString filter="Jpeg File(*.jpeg);; Png File(*.png);; JPG File(*.jpg) ;; BMP File(*.bmp);; GIF file(*.gif)";
+    QString filePath=QFileDialog::getOpenFileName(this,"open a file","D:/pic",filter);
+    QMessageBox::information(this,"..",filePath);
+    this->ProfilePicture=filePath.toStdString();
+    if(!filePath.isEmpty()){
+    QPixmap pic(filePath);
+    ui->label_pic->setPixmap(pic.scaled(100,100,Qt::IgnoreAspectRatio));
+     QFileInfo fi(filePath);
+     QString fileName= fi.fileName();
+     QString desktopPath = "D:/chatapp/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug";
+     QString destinationPath= desktopPath+QDir::separator()+fileName;
+    QFile::copy(filePath, destinationPath);
+    }
 }
+
+// QFileInfo fi(filePath);
+// QString fileName= fi.fileName();
+// QString desktopPath = "C:/Users/Maria Tawfek/Desktop/GitHub/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug";
+// QString destinationPath= desktopPath+QDir::separator()+fileName;
+//QFile::copy(filePath, destinationPath);
+
+
+
 
