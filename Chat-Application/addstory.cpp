@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <QFileDialog>
 #include <dateTime.h>
+#include <QGraphicsScene>
 using namespace std;
 AddStory::AddStory(QWidget *parent): QWidget(parent), ui(new Ui::AddStory) {
     ui->setupUi(this);
@@ -117,6 +118,7 @@ void AddStory::on_pushButton_clicked()
             MyDatabase.InsertData(tableName,values);
           //show = MyDatabase.SelectData(tableName,col,cond);
 
+            QMessageBox :: information(this, "Add Story", "Valid Data !");
 
 
         }
@@ -125,9 +127,17 @@ void AddStory::on_pushButton_clicked()
 
 void AddStory::on_radioButtonPhoto_clicked()
 {
-      QString fileName= QFileDialog:: getOpenFileName(this, "open a file","D://",tr("Images(*.png *.jpg *.jpeg *.bmp *.gif)"));
-      QMessageBox :: information(this, "..", fileName);
-      ui->textEdit->setText(fileName);
+
+    QString filter="Jpeg File(*.jpeg);; Png File(*.png);; JPG File(*.jpg) ;; BMP File(*.bmp);; GIF file(*.gif)";
+     QString filePath= QFileDialog:: getOpenFileName(this, "open a file","D://",filter);
+     ui->textEdit->setText(filePath);
+
+     QFileInfo fi(filePath);
+     QString fileName= fi.fileName();
+     QString desktopPath = "C:/Users/Maria Tawfek/Desktop/GitHub/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug";
+     QString destinationPath= desktopPath+QDir::separator()+fileName;
+     QFile::copy(filePath, destinationPath);
+
 }
 
 

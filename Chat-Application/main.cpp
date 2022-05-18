@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
 //       myData.InsertData(tableName,val);
 
 
-    ShowContactNameStory Win;
+    AddStory Win;
     Win.show();
     return APP.exec();
 }

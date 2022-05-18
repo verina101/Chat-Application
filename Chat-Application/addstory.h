@@ -8,6 +8,7 @@
 #include <vector>
 #include <QString>
 #include <string>
+#include <QGraphicsScene>
 #include "Data.h"
 //#include<QDialog>
 
@@ -24,6 +25,7 @@ public:
     explicit AddStory(QWidget *parent = nullptr);
     static string EditText(string s);
     static string currDateTime();
+
     ~AddStory();
 
 private slots:
@@ -37,6 +39,7 @@ private:
     Ui::AddStory *ui;
     vector<vector<QString>>data;
     int myID = 3;
+
 
 };
 
