@@ -2,21 +2,22 @@
 #define LOGIN_H
 
 #include <QWidget>
-#include "Chats.h"
 #include"Data.h"
-#include "MyConstants.h"
-
+#include<constantdata.h>
+#include<string>
+#include<iostream>
+using namespace std;
 namespace Ui {
 class login;
 }
 
-class login : public QWidget {
+class login : public QWidget
+{
     Q_OBJECT
 
 public:
     explicit login(QWidget *parent = nullptr);
     ~login();
-
 
 private slots:
 
@@ -28,11 +29,13 @@ private slots:
 
     void on_pushButton_change_pic_clicked();
 
+    void on_pushButton_clicked();
+
+
 private:
     Ui::login *ui;
-    Data db;
-    Chats* myChats;
-
+       Data db;
+       string ProfilePicture;
 };
 
 #endif // LOGIN_H
