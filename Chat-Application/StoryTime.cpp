@@ -1,3 +1,4 @@
+#include "Chats.h"
 #include "StoryTime.h"
 #include "ui_StoryTime.h"
 #include <saveddata.h>
@@ -11,7 +12,7 @@ StoryTime::StoryTime(QWidget *parent) :
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
     //background
-    QPixmap myBackGround("background2.png");
+    QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(backgroundRole(), myBackGround);
@@ -47,10 +48,10 @@ StoryTime::StoryTime(QWidget *parent) :
 
 //        name=ConvertoValue(name);
 
-        QPixmap photo(QString::fromStdString(name));
+        QPixmap photo(QString::fromStdString(path));
         int h= ui->label->height();
         int w= ui->label->width();
-        ui->label-> setPixmap(photo.scaled(w,h, Qt::IgnoreAspectRatio));
+        ui->label-> setPixmap(photo.scaled(w,h, Qt::KeepAspectRatio));
     }
 
 
@@ -72,6 +73,8 @@ void StoryTime::on_pushButton_clicked()
 
 void StoryTime::on_pushButton_2_clicked()
 {
+    Chats *myChats = new Chats();
+    myChats->show();
     this->close();
 }
 

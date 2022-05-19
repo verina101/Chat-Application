@@ -1,12 +1,12 @@
 #include "MyConstants.h"
 
- QString MyConstants::myId = "";
+ QString MyConstants::myId = "1";
  QString MyConstants::myName = "";
  QString MyConstants::myChatRoomName = "";
- QString MyConstants::myChatRoomID = "";
- QString MyConstants::myChatRoomType = "";
+ QString MyConstants::myChatRoomID = "1";
+ QString MyConstants::myMsgID = "";
 
- QString MyConstants::getMyId()
+QString MyConstants::getMyId()
 {
     return myId;
 }
@@ -16,7 +16,7 @@ void MyConstants::setMyId( QString newMyId)
     myId = newMyId;
 }
 
- QString MyConstants::getMyName()
+QString MyConstants::getMyName()
 {
     return myName;
 }
@@ -26,7 +26,7 @@ void MyConstants::setMyName( QString newMyName)
     myName = newMyName;
 }
 
- QString MyConstants::getMyChatRoomID()
+QString MyConstants::getMyChatRoomID()
 {
     return myChatRoomID;
 }
@@ -36,7 +36,7 @@ void MyConstants::setMyChatRoomID( QString newMyChatRoomID)
     myChatRoomID = newMyChatRoomID;
 }
 
- QString MyConstants::getMyChatRoomName()
+QString MyConstants::getMyChatRoomName()
 {
     return myChatRoomName;
 }
@@ -46,14 +46,14 @@ void MyConstants::setMyChatRoomName( QString newMyChatRoomName)
     myChatRoomName = newMyChatRoomName;
 }
 
- QString MyConstants::getMyChatRoomType()
+QString MyConstants::getMyMsgID()
 {
-    return myChatRoomType;
+    return myMsgID;
 }
 
-void MyConstants::setMyChatRoomType( QString newMyChatRoomType)
+void MyConstants::setMyMsgID( QString newMyMsgID)
 {
-    myChatRoomType = newMyChatRoomType;
+    myMsgID = newMyMsgID;
 }
 
 MyConstants::MyConstants() {

@@ -12,7 +12,7 @@ class MyConstants {
     static QString myName;
     static QString myChatRoomID;
     static QString myChatRoomName;
-    static QString myChatRoomType;
+    static QString myMsgID;
 
 public:
     MyConstants();
@@ -25,8 +25,8 @@ public:
     static void setMyChatRoomID( QString newMyChatRoomID);
     static  QString getMyChatRoomName();
     static void setMyChatRoomName( QString newMyChatRoomName);
-    static  QString getMyChatRoomType();
-    static void setMyChatRoomType( QString newMyChatRoomType);
+    static  QString getMyMsgID();
+    static void setMyMsgID( QString newMyMsgID);
 };
 
 #endif // MYCONSTANTS_H

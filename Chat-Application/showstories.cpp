@@ -10,7 +10,7 @@ ShowStories::ShowStories(QWidget *parent): QWidget(parent), ui(new Ui::ShowStori
     this->setMaximumSize(QSize(700, 500));
 
     //background
-    QPixmap myBackGround("background2.png");
+    QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(backgroundRole(), myBackGround);

@@ -6,6 +6,7 @@
 #include "Data.h"
 #include <QWidget>
 #include <QPixmap>
+#include <QListWidgetItem>
 
 namespace Ui {
 class ChatRoom;
@@ -24,6 +25,10 @@ private slots:
     void on_comboBox_currentIndexChanged(int index);
     void on_pushButton_send_clicked();
     void openChatRoom();
+    void updateSeen();
+    void on_listWidget_currentRowChanged(int currentRow);
+
+
 
 signals:
     void exitChat();
@@ -33,6 +38,7 @@ private:
     Ui::ChatRoom *ui;
     ChatInfo myChatInfo;
     vector<vector<QString>> myChatMsgs;
+    QString numberOfParticipate="";
 };
 
 #endif // CHATROOM_H

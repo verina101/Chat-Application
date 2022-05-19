@@ -1,8 +1,11 @@
+#include "Chats.h"
+#include "MyConstants.h"
 #include "showcontactnamestory.h"
 #include "ui_showcontactnamestory.h"
 #include<iostream>
 #include<QPixmap>
 #include <ContactWidget.h>
+#include <QMessageBox>
 using namespace std;
 ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui(new Ui::ShowContactNameStory) {
     ui->setupUi(this);
@@ -10,7 +13,7 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
     this->setMaximumSize(QSize(700, 500));
 
     //background
-    QPixmap myBackGround("background2.png");
+    QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(backgroundRole(), myBackGround);
@@ -43,7 +46,7 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
 
     string contactCol       =  "ContactID";
     string contactTable     =  "CONTACTS" ;
-    string contactCond      =  "where UserID ='"+s.getUserId()+"' ;";
+    string contactCond      =  "where UserID = "+MyDataBase.convertToValue( MyConstants::getMyId()) + " ;";
     usersIds= MyDataBase.SelectData(contactTable,contactCol,contactCond); // [0] contacat id
 
 
@@ -86,6 +89,12 @@ void ShowContactNameStory::on_ShowStories_clicked()
     SavedData saved;
 
     int indx = ui->listWidget->selectionModel()->currentIndex().row();
+
+    if(indx == -1){
+        QMessageBox::warning(this,"View Story","No contact selected");
+        return;
+    }
+
     string s=storyUsersID[indx][0].toStdString();
     saved.setStoryUserID(s);
 //    cout<<storyUsersID[indx][0].toStdString()<<endl;
@@ -93,5 +102,13 @@ void ShowContactNameStory::on_ShowStories_clicked()
     ShowStories *ss= new ShowStories();
     ss->show();
     this->hide();
+}
+
+
+void ShowContactNameStory::on_Back_clicked()
+{
+    Chats *myChats = new Chats();
+    myChats->show();
+    this->close();
 }
 
