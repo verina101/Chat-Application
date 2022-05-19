@@ -9,6 +9,7 @@
 #include <QString>
 #include <string>
 #include "Data.h"
+#include "MyConstants.h"
 //#include<QDialog>
 
 using namespace std;
@@ -36,7 +37,7 @@ private slots:
 private:
     Ui::AddStory *ui;
     vector<vector<QString>>data;
-    int myID = 3;
+    int myID =(MyConstants::getMyId()).toInt();
 
 };
 

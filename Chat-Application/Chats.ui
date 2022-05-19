@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:red;</string>
+   <string notr="true">background:rgb(54, 54, 54);</string>
   </property>
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
@@ -159,7 +159,7 @@
         <item>
          <widget class="QPushButton" name="pushButton_viewStory">
           <property name="text">
-           <string>View Story</string>
+           <string>View Stories</string>
           </property>
          </widget>
         </item>

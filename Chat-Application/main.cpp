@@ -20,13 +20,13 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
     QApplication APP(argc, argv);
-    Data myData;
+    Data db;
     dateTime obj;
     DateTime t;
-    myData.CreateTables();
     string s ="Mon May 15 13:23:52 2022";
     if(t.isValidStory(s))cout<<"YES"<<endl;
     else cout<<"NO"<<endl;
+    db.CreateTables();
 
 //    string tableName="USER";
 //    string val="('Amir','Moris','123','01234567890','12340','145600','0')";
@@ -37,7 +37,9 @@ int main(int argc, char *argv[]) {
 //       myData.InsertData(tableName,val);
 
 
-    ShowContactNameStory Win;
+
+
+    login Win;
     Win.show();
     return APP.exec();
 }

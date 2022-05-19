@@ -18,6 +18,7 @@ SOURCES += \
     Data.cpp \
     Datetime.cpp \
     Message.cpp \
+    MsgStatus.cpp \
     MyConstants.cpp \
     StoryTime.cpp \
     StoryWidgett.cpp \
@@ -40,6 +41,7 @@ HEADERS += \
     Data.h \
     Datetime.h \
     Message.h \
+    MsgStatus.h \
     MyConstants.h \
     StoryTime.h \
     StoryWidget.h \
@@ -59,6 +61,7 @@ FORMS += \
     ChatRoom.ui \
     Chats.ui \
     Message.ui \
+    MsgStatus.ui \
     StoryTime.ui \
     StoryWidget.ui \
     login.ui \

@@ -7,6 +7,7 @@
 #include <QVector>
 #include <QString>
 #include <string>
+#include <QListWidgetItem>
 #include "Data.h"
 #include "MyConstants.h"
 
@@ -31,17 +32,21 @@ public:
 
 private slots:
     void  on_pushButton_clicked();
-
     void on_pushButton_2_clicked();
+    void on_listWidget_itemClicked(QListWidgetItem *item);
+    void openAddContact();
+
+signals:
+    void exitAddContact();
 
 
 private:
     Ui::contact *ui;
     vector<vector<QString>>data;
     vector<vector<QString>>cdata;
-    int myID = 1;
+    int myID = (MyConstants::getMyId()).toInt();
     int at[500]={};
-    //contact *c;
+    bool isSelected = false;
 
 };
 

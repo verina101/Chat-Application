@@ -1,6 +1,7 @@
 #include "addstory.h"
 #include "ui_addstory.h"
 #include <iostream>
+#include "Chats.h"
 #include "Data.h"
 #include <QMessageBox>
 #include<QDateTime>
@@ -18,7 +19,7 @@ AddStory::AddStory(QWidget *parent): QWidget(parent), ui(new Ui::AddStory) {
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
-    QPixmap myBackGround("background2.png");
+    QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(backgroundRole(), myBackGround);
@@ -99,14 +100,9 @@ void AddStory::on_pushButton_clicked()
             this->data= MyDatabase.SelectData(userTable,userCol,userCond);
 
 
-
-
-
-
             string Name = this->data[0][0].toStdString();
             string lastName  = this->data[0][1].toStdString();
             Name+=" "+lastName;
-            //cout<<Name<<endl;
             string tableName = "STORY";
             string story = (photo)? str : "0";
             string t = (text )? str : "0";
@@ -115,6 +111,8 @@ void AddStory::on_pushButton_clicked()
             string cond=  "where StoryOwnerID ='"+id+"' ;";
             string values = "('"+id+"',"+"'"+Name+"','"+t+"','"+story+"','"+DateTime+"' )";
             MyDatabase.InsertData(tableName,values);
+            QMessageBox :: information(this, "Add Story", "Story Added Successfully");
+            ui->textEdit->setPlainText("");
           //show = MyDatabase.SelectData(tableName,col,cond);
 
 
@@ -133,6 +131,8 @@ void AddStory::on_radioButtonPhoto_clicked()
 
 void AddStory::on_pushButton_2_clicked()
 {
+    Chats *myChats = new Chats();
+    myChats->show();
     this->close();
 }
 

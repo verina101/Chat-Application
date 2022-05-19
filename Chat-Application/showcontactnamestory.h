@@ -22,6 +22,8 @@ public:
 private slots:
     void on_ShowStories_clicked();
 
+    void on_Back_clicked();
+
 private:
     Ui::ShowContactNameStory *ui;
 };

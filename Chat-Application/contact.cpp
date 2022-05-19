@@ -9,6 +9,7 @@
 #include <QVector>
 #include "Data.h"
 #include <QMap>
+#include "Chats.h"
 #include "contactwidget.h"
 //#include <QPair>
 using namespace std;
@@ -17,8 +18,66 @@ contact::contact(QWidget *parent): QWidget(parent), ui(new Ui::contact) {
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
+}
+
+contact::~contact()
+{
+    delete ui;
+}
+
+string ConvertoValue(string s) {
+    s = "'" + s + "'" ;
+    return s;
+}
+
+void contact::on_pushButton_2_clicked()
+{
+    if(!this->isSelected)
+        return;
+
+    QString s = QString::number(this->myID);
+    string id = s.toStdString();
+    //('A', 'B', '12', '123', 'N')
+    int indx = ui->listWidget->selectionModel()->currentIndex().row();
+    indx= at[indx];
+
+    QListWidgetItem *it = ui->listWidget->currentItem();
+    Data db;
+    string tablename ="Contacts";
+    string col = "(UserID,ContactID) ";
+    QString x = data[indx][0];
+    string str=x.toStdString();
+
+    string val1 = "('"+ id +"','"+str+"');";
+    string val2 = "('"+ str +"','"+id+"');";
+
+    db.InsertData(tablename,val1);
+    db.InsertData(tablename,val2);
+    delete it ;
+    this->isSelected = false;
+}
+
+
+void contact::on_pushButton_clicked() {
+
+    emit exitAddContact();
+    ui->listWidget->blockSignals(true);
+    ui->listWidget->clear();
+    ui->listWidget->blockSignals(false);
+
+}
+
+
+void contact::on_listWidget_itemClicked(QListWidgetItem *item){
+    this->isSelected = true;
+}
+
+void contact::openAddContact()
+{
+
+
     //background
-    QPixmap myBackGround(":/images/assets/Chat_BackGround.png");
+    QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(backgroundRole(), myBackGround);
@@ -86,55 +145,6 @@ contact::contact(QWidget *parent): QWidget(parent), ui(new Ui::contact) {
               }
               real++;
           }
-
-
-
-}
-
-contact::~contact()
-{
-    delete ui;
-}
-
-//void contact::setMyId(int id){
-//    this->myID = id;
-//}
-
-
-
-string ConvertoValue(string s) {
-    s = "'" + s + "'" ;
-    return s;
-}
-
-void contact::on_pushButton_2_clicked()
-{
-    QString s = QString::number(this->myID);
-    string id = s.toStdString();
-    //('A', 'B', '12', '123', 'N')
-    int indx = ui->listWidget->selectionModel()->currentIndex().row();
-    indx= at[indx];
-
-    QListWidgetItem *it = ui->listWidget->currentItem();
-    Data db;
-    string tablename ="Contacts";
-    string col = "(UserID,ContactID) ";
-    QString x = data[indx][0];
-    string str=x.toStdString();
-
-    string val1 = "('"+ id +"','"+str+"');";
-    string val2 = "('"+ str +"','"+id+"');";
-
-    db.InsertData(tablename,val1);
-    db.InsertData(tablename,val2);
-    delete it ;
-}
-
-
-void contact::on_pushButton_clicked() {
-
-    this->close();
-
 
 }
 

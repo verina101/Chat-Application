@@ -1,5 +1,6 @@
 #include "ui_Message.h"
 #include "Message.h"
+#include "MyConstants.h"
 using namespace std;
 
 Message::Message(QWidget *parent) : QWidget(parent), ui(new Ui::Message) {
@@ -80,7 +81,16 @@ Message::~Message() {
     delete ui;
 }
 
-void Message::on_comboBox_currentIndexChanged(int index) {
 
+void Message::on_comboBox_activated(int index)
+{
+    if(index == 0) {
+       vector<QString> msgData =  db.SelectData("MESSAGESTATUS"," DateTime, NumberOfViewers ", "WHERE MessageID = " + db.convertToValue(MyConstants::getMyMsgID())).front();
+       QString numberOfParticipate = db.SelectData("CHATROOMINFO","NumberOfParticipants","WHERE ChatRoomID = "+ db.convertToValue(MyConstants::getMyChatRoomID())).front().front();
+        qDebug() <<numberOfParticipate <<"  "<<msgData[1];
+        myMsgStatus = new MsgStatus();
+       myMsgStatus->setMsgStatus(msgData[0].left(10),msgData[0].right(9), (numberOfParticipate==msgData[1] ? 1 : 0));
+       myMsgStatus->show();
+    }
 }
 

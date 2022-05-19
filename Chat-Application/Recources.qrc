@@ -3,6 +3,8 @@
         <file>assets/Delete_Icon.png</file>
         <file>assets/Info_Icon.png</file>
         <file>assets/Send_Icon.png</file>
+        <file>assets/notSeen_Icon.png</file>
+        <file>assets/seen_Icon.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>assets/ChatRooms_BackGround.jpg</file>
@@ -10,5 +12,6 @@
         <file>assets/Chat_BackGround.jpg</file>
         <file>assets/login_BackGround.png</file>
         <file>assets/Menu_BackGround.jpg</file>
+        <file>assets/app_BackGround.jpg</file>
     </qresource>
 </RCC>
