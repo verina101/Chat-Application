@@ -174,9 +174,6 @@ border-radius:15px;
          <property name="autoScrollMargin">
           <number>10</number>
          </property>
-         <property name="verticalScrollMode">
-          <enum>QAbstractItemView::ScrollPerPixel</enum>
-         </property>
         </widget>
        </item>
        <item>

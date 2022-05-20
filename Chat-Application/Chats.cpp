@@ -33,7 +33,14 @@ Chats::Chats(QWidget *parent): QWidget(parent), ui(new Ui::Chats) {
     connect(&myContact,SIGNAL(exitAddContact()),this,SLOT(enterchats()));
     connect(this,SIGNAL(selectAddContact()),&myContact,SLOT(openAddContact()));
 
+
+
+
+
+
     displayChatList();
+
+
 
 }
 
@@ -93,7 +100,8 @@ void Chats::displayChatList() {
 
 }
 
-QString Chats::getChatName(QString chatName){
+QString Chats::getChatName(QString chatName)
+{
     int idIndex = 0;
     if(chatName.contains('#')){
         QList myList =  chatName.split('#');
@@ -129,7 +137,6 @@ void Chats::on_listWidget_itemDoubleClicked(QListWidgetItem *item){
 }
 
 void Chats::enterchats() {
-    showContact.groupType = 0;
     ui->stackedWidget->setCurrentIndex(0);
     displayChatList();
 
@@ -184,18 +191,5 @@ void Chats::on_pushButton_createChat_clicked() {
     ui->listWidget->clear();
     ui->listWidget->blockSignals(false);
 
-}
-
-
-void Chats::on_pushButton_createGroup_clicked()
-{
-    emit selectShowContact();
-
-    ui->stackedWidget->setCurrentIndex(2);
-    showContact.groupType = 1;
-
-    ui->listWidget->blockSignals(true);
-    ui->listWidget->clear();
-    ui->listWidget->blockSignals(false);
 }
 

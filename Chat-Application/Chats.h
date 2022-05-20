@@ -30,8 +30,6 @@ private slots:
     void on_pushButton_addContact_clicked();
     void openChatRoomFromContact();
 
-    void on_pushButton_createGroup_clicked();
-
 signals :
     void selectAddContact();
     void selectChatRoom();
