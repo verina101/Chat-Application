@@ -7,7 +7,8 @@ SavedData::SavedData()
 }
 string SavedData::userId      ="1";
 string SavedData::userName    ="";
-string SavedData::stortUserId ="";
+string SavedData::storyUserId ="3";
+string SavedData::ChosenStoryId="";
 void SavedData::setUserId(string id){
     userId=id;
 }
@@ -25,11 +26,19 @@ string SavedData::getUserName(){
 }
 
 void SavedData::setStoryUserID(string i){
-    stortUserId=i;
+    storyUserId=i;
 }
 
 string SavedData::getStoryUserID(){
-    return stortUserId;
+    return storyUserId;
+}
+
+void SavedData::setChosenStoryId(string i){
+    ChosenStoryId=i;
+}
+
+string SavedData::getChosenStoryId(){
+    return ChosenStoryId;
 }
 
 

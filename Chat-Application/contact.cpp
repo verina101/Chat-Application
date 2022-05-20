@@ -9,6 +9,7 @@
 #include <QVector>
 #include "Data.h"
 #include <QMap>
+#include "Chats.h"
 #include "contactwidget.h"
 //#include <QPair>
 using namespace std;
@@ -17,8 +18,66 @@ contact::contact(QWidget *parent): QWidget(parent), ui(new Ui::contact) {
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
+}
+
+contact::~contact()
+{
+    delete ui;
+}
+
+string ConvertoValue(string s) {
+    s = "'" + s + "'" ;
+    return s;
+}
+
+void contact::on_pushButton_2_clicked()
+{
+    if(!this->isSelected)
+        return;
+
+    QString s = QString::number(this->myID);
+    string id = s.toStdString();
+    //('A', 'B', '12', '123', 'N')
+    int indx = ui->listWidget->selectionModel()->currentIndex().row();
+    indx= at[indx];
+
+    QListWidgetItem *it = ui->listWidget->currentItem();
+    Data db;
+    string tablename ="Contacts";
+    string col = "(UserID,ContactID) ";
+    QString x = data[indx][0];
+    string str=x.toStdString();
+
+    string val1 = "('"+ id +"','"+str+"');";
+    string val2 = "('"+ str +"','"+id+"');";
+
+    db.InsertData(tablename,val1);
+    db.InsertData(tablename,val2);
+    delete it ;
+    this->isSelected = false;
+}
+
+
+void contact::on_pushButton_clicked() {
+
+    emit exitAddContact();
+    ui->listWidget->blockSignals(true);
+    ui->listWidget->clear();
+    ui->listWidget->blockSignals(false);
+
+}
+
+
+void contact::on_listWidget_itemClicked(QListWidgetItem *item){
+    this->isSelected = true;
+}
+
+void contact::openAddContact()
+{
+
+
     //background
-    QPixmap myBackGround("background2.png");
+    QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(backgroundRole(), myBackGround);
@@ -31,6 +90,7 @@ contact::contact(QWidget *parent): QWidget(parent), ui(new Ui::contact) {
      ui->label-> setPixmap(pix.scaled(w,h, Qt::IgnoreAspectRatio));
      Data MyDataBase;
 
+     this->myID = MyConstants::getMyId().toInt();
      QString curr = QString::number(this->myID);
      string cid = curr.toStdString();
           string userCol     =  "UserID,FirstName,LastName,ProfilePicture,Visibility";
@@ -69,7 +129,7 @@ contact::contact(QWidget *parent): QWidget(parent), ui(new Ui::contact) {
                   QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";  //row1[3]
                   QString defaultphoto= "D:/Pictures/Ds project/NotSeenBackground.png";
                   if(row1[4]==seen){
-                  mycontact->setContactData(defaultphoto, row1[1] +" "+ row1[2], "ID: Not Public");
+                  mycontact->setContactData(defaultphoto, row1[1] +" "+ row1[2], "ID: "+row1[0]);
                   }
                   else{
                   mycontact->setContactData(myphotopath, row1[1] +" "+ row1[2], "ID: "+row1[0]);
@@ -79,116 +139,12 @@ contact::contact(QWidget *parent): QWidget(parent), ui(new Ui::contact) {
                   QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
                   item->setSizeHint(QSize(w, h));
                   ui->listWidget->setItemWidget(item, mycontact);
-                  ui->listWidget->scrollToBottom();
+                  //ui->listWidget->scrollToBottom();
 
                   this->at[expected++]=real;
               }
               real++;
           }
-
-
-
-}
-
-contact::~contact()
-{
-    delete ui;
-}
-
-//void contact::setMyId(int id){
-//    this->myID = id;
-//}
-
-
-
-string ConvertoValue(string s) {
-    s = "'" + s + "'" ;
-    return s;
-}
-
-void contact::on_pushButton_2_clicked()
-{
-    QString s = QString::number(this->myID);
-    string id = s.toStdString();
-    //('A', 'B', '12', '123', 'N')
-    int indx = ui->listWidget->selectionModel()->currentIndex().row();
-    indx= at[indx];
-    //************************************************
-   // ui->listWidget->selectionModel()->Clear;
-    ui->listWidget->selectAll();
-
-   // while((tmpo = ui->listWidget->takeItem(cnto)) != nullptr) {
-
-    //        cerr << cnto;
-    //        cnto ++;
-    //        if(cnto == 10) break;
-    //    }
-        // 1 3
-//        ui->listWidget->clear();
-//       int cnt = ui->listWidget->count();
-//        for(int i=0 ;i <cnt;i++){
-
-//            QListWidgetItem *item = ui->listWidget->item(i);
-//            delete item;
-//    }
-
-//    ui->listWidget->clearSelection();
-//   // ui->listWidget.select
-
-//         ui->listWidget->selectAll();
-//         QList<QListWidgetItem*> items = ui->listWidget->selectedItems();
-
-//         foreach(QListWidgetItem* item, items){
-//             ui->listWidget->removeItemWidget(item);
-//             delete item; // Qt documentation warnings you to destroy item to effectively remove it from QListWidget.
-//         }
-//         qDeleteAll(ui->listWidget->selectedItems());
-//        foreach(QListWidgetItem * item, items)
-//        {
-//            delete ui->listWidget->takeItem(ui->listWidget->row(item));
-//        }
-
-
-    //**************************************
-    QListWidgetItem *it = ui->listWidget->currentItem();
-    Data db;
-    string tablename ="Contacts";
-    string col = "(UserID,ContactID) ";
-    QString x = data[indx][0];
-    string str=x.toStdString();
-
-    string val1 = "('"+ id +"','"+str+"');";
-    string val2 = "('"+ str +"','"+id+"');";
-
-    db.InsertData(tablename,val1);
-    db.InsertData(tablename,val2);
-    delete it ;
-}
-
-
-
-
-void contact::on_pushButton_clicked() {
-//    Data MyDataBase;
-
-//    cout<< "size of stack is" <<MyDataBase.s.size();
-//    if(MyDataBase.s.empty())
-//        this->close();
-//    else{
-
-//  char x= MyDataBase.s.top();
-//  MyDataBase.s.pop();
-//  if(x=='w'){
-//    hide();
-//     m->show();
-//  }
-//  else{
-//      hide();
-//      f->show();
-//  }
-//  }
-    this->close();
-
 
 }
 

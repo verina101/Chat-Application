@@ -4,6 +4,8 @@
 #include <QWidget>
 #include "saveddata.h"
 #include "Data.h"
+#include "Datetime.h"
+#include "showstories.h"
 using namespace std;
 namespace Ui {
 class ShowContactNameStory;
@@ -19,6 +21,8 @@ public:
 
 private slots:
     void on_ShowStories_clicked();
+
+    void on_Back_clicked();
 
 private:
     Ui::ShowContactNameStory *ui;

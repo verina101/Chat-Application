@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(54, 54, 54);</string>
+  </property>
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
@@ -23,11 +26,11 @@
     </rect>
    </property>
    <widget class="QWidget" name="page_myChats">
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>0</y>
+       <y>2</y>
        <width>701</width>
        <height>491</height>
       </rect>
@@ -93,7 +96,7 @@
         <item>
          <widget class="QPushButton" name="pushButton_createChat">
           <property name="text">
-           <string>Create Chat</string>
+           <string>My Contacts</string>
           </property>
          </widget>
         </item>
@@ -121,6 +124,46 @@
       </item>
       <item>
        <widget class="QListWidget" name="listWidget"/>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <property name="leftMargin">
+         <number>4</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>4</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="pushButton_addStory">
+          <property name="text">
+           <string>Add Story</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_viewStory">
+          <property name="text">
+           <string>View Stories</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>

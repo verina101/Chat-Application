@@ -25,17 +25,14 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <widget class="QListWidget" name="listWidget">
-     <property name="maximumSize">
-      <size>
-       <width>500</width>
-       <height>16777215</height>
-      </size>
-     </property>
      <property name="styleSheet">
-      <string notr="true">background:url(&quot;background2.png&quot;);</string>
+      <string notr="true"/>
      </property>
     </widget>
    </item>
@@ -61,7 +58,7 @@
       <widget class="QPushButton" name="pushButton">
        <property name="minimumSize">
         <size>
-         <width>50</width>
+         <width>110</width>
          <height>50</height>
         </size>
        </property>

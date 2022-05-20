@@ -2,10 +2,13 @@
 using namespace std;
 
 Data::Data() {
+
+}
+
+void Data::CreateDataBase() {
     DB = QSqlDatabase::addDatabase("QSQLITE");
     DB.setDatabaseName("DataBase.db");
-    bool Exit = DB.open();
-    if(!Exit) {
+    if(!DB.open()) {
         cerr << "Error in Data function";
         assert(0);
     }
@@ -13,6 +16,7 @@ Data::Data() {
 }
 
 void Data::CreateTables() {
+    CreateDataBase();
     vector<pair<string, string>> tables(NumberOfTables, make_pair("UnNamed", ""));
 
     tables[0].first = "USER";
@@ -114,7 +118,6 @@ void Data::CreateTables() {
                        "FOREIGN KEY (StoryID) REFERENCES Story (StoryID));";
     myColumns[tables[8].first] = "(UserID, StoryID)";
 
-
     // **************************************************************** //
 
     for (int i = 0; i < NumberOfTables; i++) {
@@ -128,9 +131,7 @@ void Data::CreateTable(string& SQL) {
 
     try {
         QSqlQuery query;
-        if(query.exec(QString::fromStdString(SQL))) {
-          //  cerr << "*** Table created successfully ***\n";
-        } else {
+        if(!query.exec(QString::fromStdString(SQL))) {
             cerr << "*** Error in CreateTables function ***\n";
         }
     } catch (const exception& e) {
@@ -139,9 +140,10 @@ void Data::CreateTable(string& SQL) {
 
     DB.close();
 }
-//when using 'insert function', columns are ordered as in data.cpp
-//do not insert values for any AUTOINCEREMENT attribute
+
 void Data::InsertData(string TableName, string values) {
+    // values -> "('value1', 'value2', 'value3', 'valuen')"
+    // values must be in the same order as created in database!
     DB.open();
     for (auto& c: TableName) c = toupper(c);
 
@@ -159,14 +161,14 @@ void Data::InsertData(string TableName, string values) {
 }
 
 vector<vector<QString>> Data::SelectData(string TableName, string Columns, string Condition) {
-    //	columns must be in this format = (column1, column2, column3, columnN)
+    // columns -> "column1, column2, column3, columnn"
     DB.open();
     vector<vector<QString>> Rows;
 
     string SQL = "SELECT " + Columns + " FROM " + TableName + " " + Condition;
     QSqlQuery query;
     if(query.exec(QString::fromStdString(SQL))) {
-       // cerr << "*** Records selected successfully ***\n";
+        cerr << "*** Records selected successfully ***\n";
 
         while(query.next()) {
             Rows.push_back({});
@@ -188,7 +190,7 @@ vector<vector<QString>> Data::SelectData(string TableName, string Columns, strin
 }
 
 void Data::UpdateData(string TableName, string UpdatedColumn, string Condition) {
-    //	UPDATE (TableName) SET (UpdatedColumn) WHERE (Condition)
+    // UpdatedColumn -> "column1 = 'newvalue', column2 = 'newvalue'"
     DB.open();
 
     string SQL = "UPDATE " + TableName + " SET " + UpdatedColumn + " " + Condition;
@@ -225,4 +227,8 @@ void Data::DisplayData(vector<vector<QString>> vec) {
         }
         cerr << "\n";
     }
+}
+
+string Data::convertToValue(QString myqstr) {
+    return ("'" + myqstr + "'").toStdString();
 }

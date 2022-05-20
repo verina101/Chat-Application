@@ -14,7 +14,6 @@ void ContactWidget::setContactData(QString pic, QString name, QString id) {
 
     ui->Id->setText(id);
     ui->Name->setText(name);
-
 }
 
 ContactWidget::~ContactWidget()

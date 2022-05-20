@@ -9,6 +9,7 @@
 #include <QString>
 #include <string>
 #include "Data.h"
+#include "MyConstants.h"
 //#include<QDialog>
 
 using namespace std;
@@ -29,10 +30,14 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_radioButtonPhoto_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::AddStory *ui;
     vector<vector<QString>>data;
-    int myID = 1;
+    int myID =(MyConstants::getMyId()).toInt();
 
 };
 
