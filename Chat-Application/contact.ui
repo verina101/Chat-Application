@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>707</width>
+    <width>700</width>
     <height>500</height>
    </rect>
   </property>
@@ -30,7 +30,7 @@
     <widget class="QListWidget" name="listWidget">
      <property name="minimumSize">
       <size>
-       <width>500</width>
+       <width>493</width>
        <height>0</height>
       </size>
      </property>
@@ -42,6 +42,9 @@
      </property>
      <property name="styleSheet">
       <string notr="true">background:transparent;</string>
+     </property>
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
      </property>
     </widget>
    </item>

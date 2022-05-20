@@ -6,20 +6,11 @@ using namespace std;
 Message::Message(QWidget *parent) : QWidget(parent), ui(new Ui::Message) {
     ui->setupUi(this);
 
-    QIcon iconInfo(":/icons/assets/Info_Icon.png");
-    QIcon iconDelete(":/icons/assets/Delete_Icon.png");
-    ui->comboBox->setItemIcon(0, iconInfo);
-    ui->comboBox->setItemIcon(1, iconDelete);
-
 }
 
-void Message::setUserData(QString userName, QString userPhoto) {
+void Message::setUserData(QString userName) {
     ui->label_Sender_Name->setText(userName);
 
-    QPixmap piximg(userPhoto);
-    int w = ui->label_Sender_Image->width();
-    int h = ui->label_Sender_Image->height();
-    ui->label_Sender_Image->setPixmap(piximg.scaled(w, h, Qt::IgnoreAspectRatio));
 }
 
 void Message::setMessage(QString msg, bool SentByMe) {
@@ -28,14 +19,11 @@ void Message::setMessage(QString msg, bool SentByMe) {
     myStyleSheet += "background: " + QString(SentByMe ? "lightgrey" : "steelblue") + ";";
 
     if(SentByMe) {
-        ui->label_Sender_Image->hide();
+        ui->label_Sender_Name->setMinimumHeight(0);
+        ui->label_Sender_Name->setMaximumHeight(0);
         ui->label_Sender_Name->hide();
-        myStyleSheet += "font: black; background: lightgrey;";
-        ui->widget->setMaximumHeight(20);
     }
     else {
-        ui->comboBox->removeItem(1);
-        myStyleSheet += "font: white; background: steelblue;";
         ui->horizontalLayout_2->setDirection(QBoxLayout::RightToLeft);
     }
 
@@ -44,6 +32,7 @@ void Message::setMessage(QString msg, bool SentByMe) {
     ui->label_msg->adjustSize();
     ui->label_msg->setMinimumWidth(ui->label_msg->width() + 8);
     ui->label_msg->setMaximumHeight(ui->label_msg->height());
+
     this->adjustSize();
 }
 
@@ -81,16 +70,15 @@ Message::~Message() {
     delete ui;
 }
 
+void Message::getMessageInfo(QString messageID) {
+    vector<QString> msgData =  db.SelectData("MESSAGESTATUS"," DateTime, NumberOfViewers ", "WHERE MessageID = " + db.convertToValue(messageID)).front();
+    QString numberOfParticipate = db.SelectData("CHATROOMINFO","NumberOfParticipants","WHERE ChatRoomID = "+ db.convertToValue(MyConstants::getMyChatRoomID())).front().front();
+    myMsgStatus->setMsgStatus(msgData[0].left(10),msgData[0].right(9), numberOfParticipate==msgData[1]);
+    myMsgStatus->exec();
+}
 
-void Message::on_comboBox_activated(int index)
-{
-    if(index == 0) {
-       vector<QString> msgData =  db.SelectData("MESSAGESTATUS"," DateTime, NumberOfViewers ", "WHERE MessageID = " + db.convertToValue(MyConstants::getMyMsgID())).front();
-       QString numberOfParticipate = db.SelectData("CHATROOMINFO","NumberOfParticipants","WHERE ChatRoomID = "+ db.convertToValue(MyConstants::getMyChatRoomID())).front().front();
-        qDebug() <<numberOfParticipate <<"  "<<msgData[1];
-        myMsgStatus = new MsgStatus();
-       myMsgStatus->setMsgStatus(msgData[0].left(10),msgData[0].right(9), (numberOfParticipate==msgData[1] ? 1 : 0));
-       myMsgStatus->show();
-    }
+void Message::deleteMessage(QString messageID) {
+    db.UpdateData("MESSAGE","Text = 'THIS MESSAGE WAS DELETED' , isDeleted = '1'","WHERE MessageID = " + db.convertToValue(messageID) );
+
 }
 

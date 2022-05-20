@@ -3,10 +3,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-StoryWidget::StoryWidget(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::StoryWidget)
-{
+StoryWidget::StoryWidget(QWidget *parent):  QWidget(parent), ui(new Ui::StoryWidget) {
     ui->setupUi(this);
 
 }

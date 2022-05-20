@@ -25,6 +25,7 @@ class ShowContact : public QWidget
 public:
     explicit ShowContact(QWidget *parent = nullptr);
     ~ShowContact();
+    int groupType=0;
 
 private slots:
     void on_pushButton_clicked();
@@ -45,6 +46,7 @@ private:
     vector<vector<QString>>data;
     Data db;
     QString selectedID = "";
+
 
 };
 
