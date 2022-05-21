@@ -59,7 +59,7 @@ void ShowContact::openShowContact()
           string userTable     =  "USER" ;
           string userCond     =  ";";
           this->data= db.SelectData(userTable,userCol,userCond);
-           cout<< "size is "<< data.size();
+          cout<< "size is "<< data.size();
 
           string contactCol       =  "UserID, ContactID";
           string contactTable     =  "CONTACTS" ;
@@ -105,8 +105,8 @@ void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
         db.InsertData("CHATROOM","( " + db.convertToValue(chatName1) + " )");
         QString chatID = db.SelectData("CHATROOM","RoomID","ORDER BY RoomID DESC").front().front();
         db.InsertData("CHATROOMINFO","( " + db.convertToValue(chatID) +", 'None', '2', '0' )");
-        db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(MyConstants::getMyId()) +" , datetime('now') )");
-        db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(selectedID) +" , datetime('now') )");
+        db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(MyConstants::getMyId()) +" , datetime('now','localtime'))");
+        db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(selectedID) +" , datetime('now','localtime'))");
 
         MyConstants::setMyChatRoomID(chatID);
 
