@@ -4,7 +4,10 @@
 #include <QWidget>
 #include "Chats.h"
 #include"Data.h"
-#include "MyConstants.h"
+#include<constantdata.h>
+#include<string>
+#include<iostream>
+using namespace std;
 
 namespace Ui {
 class login;
@@ -28,12 +31,13 @@ private slots:
 
     void on_pushButton_change_pic_clicked();
 
-    void on_pushButton_loginin_2_clicked();
+    void on_pushButton_clicked();
+
 
 private:
     Ui::login *ui;
-    Data db;
-    Chats* myChats;
+       Data db;
+       string ProfilePicture;
 
 };
 
