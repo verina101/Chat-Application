@@ -9,7 +9,6 @@
 #include <QtSql>
 #include <iostream>
 #include <QVector>
-#include "Chats.h"
 #include "Data.h"
 #include <QMap>
 
@@ -21,50 +20,30 @@ ShowContact::ShowContact(QWidget *parent): QWidget(parent), ui(new Ui::ShowConta
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
-    QString myStyleSheet = "background: url(':/images/assets/login_BackGround.png');";
-    this->setStyleSheet(myStyleSheet);
+    //background
+    QPixmap myBackGround("background2.png");
+    myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(backgroundRole(), myBackGround);
+    this->setPalette(palette);
 
-}
-
-ShowContact::~ShowContact() {
-    delete ui;
-}
-
-void ShowContact::on_pushButton_clicked()
-{
-    emit exitShowContact();
-
-    ui->listWidget->blockSignals(true);
-    ui->listWidget->clear();
-    ui->listWidget->blockSignals(false);
-
-}
-
-
-void ShowContact::on_listWidget_currentRowChanged(int currentRow){
-
-    selectedID = cdata[currentRow][1];
-
-}
-
-void ShowContact::openShowContact()
-{
-
-
-    this->myID = MyConstants::getMyId().toInt();
-
+     Data MyDataBase;
      QString curr = QString::number(this->myID);
      string cid = curr.toStdString();
           string userCol     =  "UserID,FirstName,LastName,ProfilePicture";
           string userTable     =  "USER" ;
           string userCond     =  ";";
-          this->data= db.SelectData(userTable,userCol,userCond);
-          cout<< "size is "<< data.size();
+          this->data= MyDataBase.SelectData(userTable,userCol,userCond);
+           cout<< "size is "<< data.size();
 
           string contactCol       =  "UserID, ContactID";
           string contactTable     =  "CONTACTS" ;
           string contactCond      =  "where UserID ='"+cid+"' ;";
-          this->cdata= db.SelectData(contactTable,contactCol,contactCond);
+          this->cdata= MyDataBase.SelectData(contactTable,contactCol,contactCond);
+
+//          for(auto row1 : this->data) {
+//               qDebug()<< row1;
+//          }
 
 
           for(auto row1 : this->data) {
@@ -87,40 +66,18 @@ void ShowContact::openShowContact()
                     QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
                     item->setSizeHint(QSize(w, h));
                     ui->listWidget->setItemWidget(item, mycontact);
-                    //ui->listWidget->scrollToBottom();
+                    ui->listWidget->scrollToBottom();
               }
 
           }
 }
 
-void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
-
-    vector<QString> userData = db.SelectData("USER","FirstName, LastName","WHERE UserID = " + db.convertToValue(selectedID)).front();
-    QString chatName1 = MyConstants::getMyId() + "#" + selectedID;
-    QString chatName2 = selectedID + "#" +MyConstants::getMyId();
-    vector<vector<QString>> myChatID = db.SelectData("CHATROOM", "RoomID", "WHERE Name in ("+ db.convertToValue(chatName1)+", "+db.convertToValue(chatName2)+")" );
-
-    if(myChatID.empty()){
-
-        db.InsertData("CHATROOM","( " + db.convertToValue(chatName1) + " )");
-        QString chatID = db.SelectData("CHATROOM","RoomID","ORDER BY RoomID DESC").front().front();
-        db.InsertData("CHATROOMINFO","( " + db.convertToValue(chatID) +", 'None', '2', '0' )");
-        db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(MyConstants::getMyId()) +" , datetime('now','localtime'))");
-        db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(selectedID) +" , datetime('now','localtime'))");
-
-        MyConstants::setMyChatRoomID(chatID);
-
-
-    }else{
-
-        MyConstants::setMyChatRoomID(myChatID[0][0]);
-
-    }
-
-    MyConstants::setMyChatRoomName(userData[0] + " " + userData[1]);
-    emit openContactChat();
-    ui->listWidget->blockSignals(true);
-    ui->listWidget->clear();
-    ui->listWidget->blockSignals(false);
-
+ShowContact::~ShowContact() {
+    delete ui;
 }
+
+void ShowContact::on_pushButton_clicked()
+{
+    this->close();
+}
+

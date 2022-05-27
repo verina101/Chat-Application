@@ -16,12 +16,8 @@ SOURCES += \
     ChatRoom.cpp \
     Chats.cpp \
     Data.cpp \
-    Datetime.cpp \
     Message.cpp \
-    MsgStatus.cpp \
     MyConstants.cpp \
-    StoryTime.cpp \
-    StoryWidgett.cpp \
     main.cpp \
     login.cpp \
     addstory.cpp \
@@ -39,12 +35,8 @@ HEADERS += \
     ChatRoom.h \
     Chats.h \
     Data.h \
-    Datetime.h \
     Message.h \
-    MsgStatus.h \
     MyConstants.h \
-    StoryTime.h \
-    StoryWidget.h \
     login.h \
     addstory.h \
     contact.h \
@@ -61,9 +53,6 @@ FORMS += \
     ChatRoom.ui \
     Chats.ui \
     Message.ui \
-    MsgStatus.ui \
-    StoryTime.ui \
-    StoryWidget.ui \
     login.ui \
     addstory.ui \
     contact.ui \
@@ -80,6 +69,3 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES += \
-    Recources.qrc

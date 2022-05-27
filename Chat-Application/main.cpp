@@ -4,7 +4,7 @@
 #include <QtSql>
 #include <iostream>
 #include <QVector>
-#include <bits/stdc++.h>
+
 #include "login.h"
 #include "ChatRoom.h"
 #include "Data.h"
@@ -13,33 +13,17 @@
 #include "addstory.h"
 #include "saveddata.h"
 #include "showcontactnamestory.h"
-#include "Datetime.h"
-#include <showstories.h>
-#include <StoryTime.h>
+
 using namespace std;
 
 int main(int argc, char *argv[]) {
     QApplication APP(argc, argv);
-    Data db;
-    dateTime obj;
-    DateTime t;
-    string s ="Mon May 15 13:23:52 2022";
-    if(t.isValidStory(s))cout<<"YES"<<endl;
-    else cout<<"NO"<<endl;
-    db.CreateTables();
+    Data myData;
+    myData.CreateTables();
 
-//    string tableName="USER";
-//    string val="('Amir','Moris','123','01234567890','12340','145600','0')";
-//    myData.InsertData(tableName,val);
+    login win;
+    win.show();
 
-//    string tableName="STORY";
-//       string val="('3','Amir Moris','1','0','Wed May 10 23:35:30 2022')";
-//       myData.InsertData(tableName,val);
-
-
-
-
-    login Win;
-    Win.show();
     return APP.exec();
 }
+

@@ -7,8 +7,7 @@ class SavedData
 
     static string userId;
     static string userName;
-    static string storyUserId;
-    static string ChosenStoryId;
+    static string stortUserId;
 
 public:
 
@@ -20,9 +19,6 @@ public:
    static string getUserName();
    static void   setStoryUserID(string id);
    static string getStoryUserID();
-   static void   setChosenStoryId(string id);
-   static string getChosenStoryId();
-
 };
 
 #endif // SAVEDDATA_H

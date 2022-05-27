@@ -6,7 +6,6 @@
 #include "Data.h"
 #include <QWidget>
 #include <QPixmap>
-#include <QListWidgetItem>
 
 namespace Ui {
 class ChatRoom;
@@ -17,28 +16,21 @@ class ChatRoom: public QWidget {
 
 public:
     explicit ChatRoom(QWidget *parent = nullptr);
-    void DisplayMessage(QString msgText, QString senderName, QString senderID, QString profilePicture, bool isDeleted);
+    void DisplayMessages();
 
     ~ChatRoom();
 
 private slots:
     void on_comboBox_currentIndexChanged(int index);
     void on_pushButton_send_clicked();
-    void openChatRoom();
-    void updateSeen();
-    void on_listWidget_currentRowChanged(int currentRow);
-
-
 
 signals:
     void exitChat();
 
 private:
-    Data db;
+    Data myDataBase;
     Ui::ChatRoom *ui;
     ChatInfo myChatInfo;
-    vector<vector<QString>> myChatMsgs;
-    QString numberOfParticipate="";
 };
 
 #endif // CHATROOM_H

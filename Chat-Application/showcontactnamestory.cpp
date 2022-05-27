@@ -1,11 +1,7 @@
-#include "Chats.h"
-#include "MyConstants.h"
 #include "showcontactnamestory.h"
 #include "ui_showcontactnamestory.h"
 #include<iostream>
 #include<QPixmap>
-#include <ContactWidget.h>
-#include <QMessageBox>
 using namespace std;
 ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui(new Ui::ShowContactNameStory) {
     ui->setupUi(this);
@@ -13,41 +9,24 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
     this->setMaximumSize(QSize(700, 500));
 
     //background
-    QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
+    QPixmap myBackGround("background2.png");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(backgroundRole(), myBackGround);
     this->setPalette(palette);
-    SavedData s;
-    Data MyDataBase;
-
     //********************************
     // Delte old stories feom database
     //********************************
-    vector<vector<QString>>vec;
-    string tableName="STORY";
-    string cond=";";
-    string col="*";
-    vec=MyDataBase.SelectData(tableName,col,cond);
-    for(auto it : vec){
-        string time = it[5].toStdString();
-        DateTime t;
-        if(!t.isValidStory(time)){
-            cond="where StoryID ='"+it[0].toStdString()+"' ;";
-            MyDataBase.DeleteData(tableName,cond);
-        }
-    }
-
-
-
-
+    SavedData s;
+    Data MyDataBase;
     this->storyUsersID.clear();
     vector<vector<QString>>usersIds,checkvec;
 
     string contactCol       =  "ContactID";
     string contactTable     =  "CONTACTS" ;
-    string contactCond      =  "where UserID = "+MyDataBase.convertToValue( MyConstants::getMyId()) + " ;";
+    string contactCond      =  "where UserID ='"+s.getUserId()+"' ;";
     usersIds= MyDataBase.SelectData(contactTable,contactCol,contactCond); // [0] contacat id
+
 
 
 
@@ -58,15 +37,7 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
         string contactCond      =  "where StoryOwnerID ='"+id+"' ;";
         checkvec = MyDataBase.SelectData(contactTable,contactCol,contactCond);
         if(checkvec.size()){
-            ContactWidget *mycontact = new ContactWidget();
-            QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";
-            mycontact->setContactData(myphotopath, checkvec[0][2], "ID: "+checkvec[0][1]);
-            int w = mycontact->width();
-            int h = mycontact->height();
-            QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
-            item->setSizeHint(QSize(w, h));
-            ui->listWidget->setItemWidget(item, mycontact);
-
+            ui->listWidget->addItem("\n" + checkvec[0][2] +"\n"+"ID : "+ checkvec[0][1]+"\n") ;
             vector<QString>vec;
             vec.push_back(checkvec[0][1]);
             vec.push_back(checkvec[0][2]);
@@ -76,8 +47,19 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
         checkvec.clear();
     }
 
+
 //    this->data= MyDataBase.SelectData(userTable,userCol,userCond);
 //     cout<< "size is "<< data.size();
+
+    cout<<"sizee " << storyUsersID.size();
+    for (auto it : storyUsersID) {
+            for (auto itt : it) {
+                qDebug() << "curr user id"<< itt<< "\n";
+            }
+            cout << "\n";
+        }
+
+
 }
 ShowContactNameStory::~ShowContactNameStory()
 {
@@ -89,26 +71,9 @@ void ShowContactNameStory::on_ShowStories_clicked()
     SavedData saved;
 
     int indx = ui->listWidget->selectionModel()->currentIndex().row();
-
-    if(indx == -1){
-        QMessageBox::warning(this,"View Story","No contact selected");
-        return;
-    }
-
     string s=storyUsersID[indx][0].toStdString();
     saved.setStoryUserID(s);
-//    cout<<storyUsersID[indx][0].toStdString()<<endl;
-//    cout<<"Story user id   "<<saved.getStoryUserID()<<endl;
-    ShowStories *ss= new ShowStories();
-    ss->show();
-    this->hide();
-}
-
-
-void ShowContactNameStory::on_Back_clicked()
-{
-    Chats *myChats = new Chats();
-    myChats->show();
-    this->close();
+    cout<<storyUsersID[indx][0].toStdString()<<endl;
+    cout<<"Story user id   "<<saved.getStoryUserID()<<endl;
 }
 

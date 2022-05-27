@@ -336,8 +336,7 @@ Makefile: ../Chat-Application/Chat-Application.pro D:/downloadss/qt/6.3.0/mingw_
 		D:/downloadss/qt/6.3.0/mingw_64/lib/Qt6Sql.prl \
 		D:/downloadss/qt/6.3.0/mingw_64/lib/Qt6Core.prl \
 		D:/downloadss/qt/6.3.0/mingw_64/lib/Qt6EntryPoint.prl \
-		D:/downloadss/qt/6.3.0/mingw_64/mkspecs/features/build_pass.prf \
-		../Chat-Application/Recources.qrc
+		D:/downloadss/qt/6.3.0/mingw_64/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\Chat-Application\Chat-Application.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 D:/downloadss/qt/6.3.0/mingw_64/mkspecs/features/spec_pre.prf:
 D:/downloadss/qt/6.3.0/mingw_64/mkspecs/features/device_config.prf:
@@ -606,7 +605,6 @@ D:/downloadss/qt/6.3.0/mingw_64/lib/Qt6Sql.prl:
 D:/downloadss/qt/6.3.0/mingw_64/lib/Qt6Core.prl:
 D:/downloadss/qt/6.3.0/mingw_64/lib/Qt6EntryPoint.prl:
 D:/downloadss/qt/6.3.0/mingw_64/mkspecs/features/build_pass.prf:
-../Chat-Application/Recources.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\Chat-Application\Chat-Application.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 
