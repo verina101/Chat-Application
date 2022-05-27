@@ -1,0 +1,36 @@
+#ifndef MESSAGE_H
+#define MESSAGE_H
+
+#include <QWidget>
+#include <QString>
+#include <qplaintextedit.h>
+#include "Data.h"
+#include "MsgStatus.h"
+
+using namespace std;
+
+namespace Ui {
+class Message;
+}
+
+class Message: public QWidget {
+    Q_OBJECT
+
+public:
+    explicit Message(QWidget *parent = nullptr);
+    ~Message();
+
+    void setUserData(QString userName, QString userPhoto);
+    void setMessage(QString s, bool SentByMe);
+    void ConvertFormat(QString &str);
+
+private slots:
+    void on_comboBox_activated(int index);
+
+private:
+    MsgStatus *myMsgStatus ;
+    Data db;
+    Ui::Message *ui;
+};
+
+#endif // MESSAGE_H

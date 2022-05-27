@@ -1,10 +1,12 @@
-#include "login.h"
 #include <QApplication>
 #include <QCoreApplication>
 #include <QDebug>
 #include <QtSql>
 #include <iostream>
 #include <QVector>
+#include <bits/stdc++.h>
+#include "login.h"
+#include "ChatRoom.h"
 #include "Data.h"
 #include"profile.h"
 
@@ -20,5 +22,8 @@ int main(int argc, char *argv[]) {
      profile p;
      p.show();
 
+
+    login Win;
+    Win.show();
     return APP.exec();
 }

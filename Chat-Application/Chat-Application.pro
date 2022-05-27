@@ -11,6 +11,10 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ChatInfo.cpp \
+    ChatItem.cpp \
+    ChatRoom.cpp \
+    Chats.cpp \
     Data.cpp \
     constantdata.cpp \
     login.cpp \
@@ -18,19 +22,40 @@ SOURCES += \
     mainwindow.cpp \
     profile.cpp
 
+
 HEADERS += \
+    ChatInfo.h \
+    ChatItem.h \
+    ChatRoom.h \
+    Chats.h \
     Data.h \
     constantdata.h \
     login.h \
     mainwindow.h \
     profile.h
 
+
 FORMS += \
+    ChatInfo.ui \
+    ChatItem.ui \
+    ChatRoom.ui \
+    Chats.ui \
+    Message.ui \
+    MsgStatus.ui \
+    StoryTime.ui \
+    StoryWidget.ui \
     login.ui \
     mainwindow.ui \
     profile.ui
+
+
+
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Recources.qrc

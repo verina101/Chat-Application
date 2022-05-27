@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
+ <author/>
+ <comment/>
+ <exportmacro/>
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <widget name="MainWindow" class="QMainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,10 +15,10 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget name="menubar" class="QMenuBar"/>
+  <widget name="centralwidget" class="QWidget"/>
+  <widget name="statusbar" class="QStatusBar"/>
  </widget>
- <resources/>
+ <pixmapfunction/>
  <connections/>
 </ui>
