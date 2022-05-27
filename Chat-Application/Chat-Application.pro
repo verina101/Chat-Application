@@ -16,17 +16,9 @@ SOURCES += \
     ChatRoom.cpp \
     Chats.cpp \
     Data.cpp \
-    Datetime.cpp \
-    Message.cpp \
-    MsgStatus.cpp \
-    MyConstants.cpp \
-    StoryTime.cpp \
-    StoryWidgett.cpp \
-    main.cpp \
+    constantdata.cpp \
     login.cpp \
-    addstory.cpp \
-    contact.cpp \
-    contactwidget.cpp \
+    main.cpp \
     mainwindow.cpp \
     saveddata.cpp \
     showcontact.cpp \
@@ -34,28 +26,22 @@ SOURCES += \
     showstories.cpp \
     tstclass.cpp
 
+
 HEADERS += \
     ChatInfo.h \
     ChatItem.h \
     ChatRoom.h \
     Chats.h \
     Data.h \
-    Datetime.h \
-    Message.h \
-    MsgStatus.h \
-    MyConstants.h \
-    StoryTime.h \
-    StoryWidget.h \
+    constantdata.h \
     login.h \
-    addstory.h \
-    contact.h \
-    contactwidget.h \
     mainwindow.h \
     saveddata.h \
     showcontact.h \
     showcontactnamestory.h \
     showstories.h \
     tstclass.h
+
 
 FORMS += \
     ChatInfo.ui \
@@ -67,13 +53,9 @@ FORMS += \
     StoryTime.ui \
     StoryWidget.ui \
     login.ui \
-    addstory.ui \
-    contact.ui \
-    contactwidget.ui \
     mainwindow.ui \
-    showcontact.ui \
-    showcontactnamestory.ui \
-    showstories.ui
+    profile.ui
+
 
 
 

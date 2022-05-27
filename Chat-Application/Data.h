@@ -14,7 +14,7 @@ static map<string,string> myColumns;
 
 class Data {
     static const int NumberOfTables = 9;
-
+    static void CreateDataBase();
     static void CreateTable(string& SQL);
 public:
     Data();
