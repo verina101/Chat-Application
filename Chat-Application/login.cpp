@@ -90,7 +90,8 @@ void login::on_pushButton_submit_clicked() {
              vector<vector<QString>> returnData = db.SelectData("USER", columns, condition);
              if(returnData.empty()) {
                  string tablename="USER";
-                 string values = "('" + firstname.toStdString() + "','" + lastname.toStdString() + "','not found','" + description.toStdString()+"','" + password.toStdString() + "','"+phoneno.toStdString() + "','"+visibility.toStdString() + "')";
+
+                 string values = "(" + db.convertToValue(firstname) + "," + db.convertToValue(lastname) + ",'not found', " + db.convertToValue(description) + "," + db.convertToValue(password) + "," + db.convertToValue(phoneno) + "," + db.convertToValue(visibility) + ")";
                  db.InsertData(tablename,values);
                  QMessageBox::information(this, "valid registration", "registration successfully");
              }
@@ -116,5 +117,12 @@ void login::on_pushButton_change_pic_clicked() {
     QMessageBox::information(this, "..", filename);
     QPixmap pic(filename);
     ui->label_pic->setPixmap(pic.scaled(100, 100, Qt::KeepAspectRatio));
+
+}
+
+
+void login::on_pushButton_loginin_2_clicked()
+{
+    ui->stackedWidget_2->setCurrentIndex(0);
 }
 

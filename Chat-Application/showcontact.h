@@ -34,6 +34,10 @@ private:
 
     vector<vector<QString>>cdata;
     vector<vector<QString>>data;
+
+    Data db;
+    QString selectedID = "";
+
 };
 
 #endif // SHOWCONTACT_H

@@ -22,10 +22,12 @@ public:
     void ConvertFormat(QString &str);
 
 private slots:
-    void on_comboBox_currentIndexChanged(int index);
+
+    void on_comboBox_activated(int index);
 
 private:
-
+    MsgStatus *myMsgStatus ;
+    Data db;
     Ui::Message *ui;
 };
 

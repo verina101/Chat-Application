@@ -25,6 +25,18 @@ private slots:
 
     void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
     void enterchats();
+
+    void on_pushButton_addStory_clicked();
+    void on_pushButton_viewStory_clicked();
+    void on_pushButton_addContact_clicked();
+    void openChatRoomFromContact();
+
+signals :
+    void selectAddContact();
+    void selectChatRoom();
+    void selectShowContact();
+
+
 private:
     Ui::Chats *ui;
     void displayChatList();

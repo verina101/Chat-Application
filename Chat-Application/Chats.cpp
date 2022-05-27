@@ -13,7 +13,30 @@ Chats::Chats(QWidget *parent): QWidget(parent), ui(new Ui::Chats) {
 
     ui->stackedWidget->insertWidget(1, &myChatRoom);
     connect(&myChatRoom, SIGNAL(exitChat()), this, SLOT(enterchats()));
+
+    connect(this, SIGNAL(selectChatRoom()), &myChatRoom, SLOT(openChatRoom()));
+
+    //Show Contact Connection
+    ui->stackedWidget->insertWidget(2,&showContact);
+    connect(&showContact, SIGNAL(exitShowContact()),this, SLOT(enterchats()));
+    connect(this,SIGNAL(selectShowContact()),&showContact,SLOT(openShowContact()));
+
+    //to open chatRoom when click on it in showContact
+    connect(&showContact, SIGNAL(openContactChat()),this, SLOT(openChatRoomFromContact()));
+
+    //Add Contact Connection
+    ui->stackedWidget->insertWidget(3,&myContact);
+    connect(&myContact,SIGNAL(exitAddContact()),this,SLOT(enterchats()));
+    connect(this,SIGNAL(selectAddContact()),&myContact,SLOT(openAddContact()));
+
+
+
+
+
+
     displayChatList();
+
+
 
 }
 
@@ -75,6 +98,20 @@ void Chats::displayChatList() {
 
 
 
+QString Chats::getChatName(QString chatName)
+{
+    int idIndex = 0;
+    if(chatName.contains('#')){
+        QList myList =  chatName.split('#');
+        if(MyConstants::getMyId() == myList[0]){
+            idIndex = 1;
+        }
+        vector<QString> otherUserName = db.SelectData("USER","FirstName, LastName"," WHERE UserID = " + db.convertToValue(myList[idIndex])).front();
+
+        return otherUserName[0] + " " + otherUserName[1];
+    }
+    return chatName;
+
 }
 
 
@@ -107,6 +144,29 @@ void Chats::enterchats() {
 //    }
 
 //ui->listWidget->update();
+
+}
+
+//-----(Show Contact class)-----//
+void Chats::openChatRoomFromContact()
+{
+    emit selectChatRoom();
+
+    ui->stackedWidget->setCurrentIndex(1);
+
+    ui->listWidget->blockSignals(true);
+    ui->listWidget->clear();
+    ui->listWidget->blockSignals(false);
+}
+
+void Chats::on_pushButton_createChat_clicked() {
+    emit selectShowContact();
+
+    ui->stackedWidget->setCurrentIndex(2);
+
+    ui->listWidget->blockSignals(true);
+    ui->listWidget->clear();
+    ui->listWidget->blockSignals(false);
 
 }
 
