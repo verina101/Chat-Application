@@ -49,12 +49,6 @@ void ShowContact::on_listWidget_currentRowChanged(int currentRow){
 
 void ShowContact::openShowContact()
 {
-    if(groupType==1){
-
-    }
-    else{
-
-    }
     this->myID = MyConstants::getMyId().toInt();
 
      QString curr = QString::number(this->myID);

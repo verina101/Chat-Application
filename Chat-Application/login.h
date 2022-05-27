@@ -30,10 +30,17 @@ private slots:
 
     void on_pushButton_loginin_2_clicked();
 
+
+
+signals:
+    void exit();
+
 private:
     Ui::login *ui;
     Data db;
-    Chats* myChats;
+    Chats *myChats ;
+    string ProfilePicture;
+
 
 };
 

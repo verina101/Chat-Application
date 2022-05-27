@@ -20,15 +20,17 @@ public:
     explicit Message(QWidget *parent = nullptr);
     ~Message();
 
-    void setUserData(QString userName, QString userPhoto);
+    void setUserData(QString userName);
     void setMessage(QString s, bool SentByMe);
     void ConvertFormat(QString &str);
+    void getMessageInfo(QString messageID);
+    void deleteMessage(QString messageID);
 
 private slots:
-    void on_comboBox_activated(int index);
+
 
 private:
-    MsgStatus *myMsgStatus ;
+    MsgStatus *myMsgStatus  = new MsgStatus();;
     Data db;
     Ui::Message *ui;
 };

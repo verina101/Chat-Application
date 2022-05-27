@@ -4,13 +4,11 @@
 #include <saveddata.h>
 #include <Data.h>
 #include <showstories.h>
-StoryTime::StoryTime(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::StoryTime)
-{
+StoryTime::StoryTime(QWidget *parent): QWidget(parent), ui(new Ui::StoryTime) {
     ui->setupUi(this);
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
+
     //background
     QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);

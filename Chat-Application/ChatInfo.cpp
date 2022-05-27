@@ -4,7 +4,6 @@
 ChatInfo::ChatInfo(QWidget *parent): QWidget(parent), ui(new Ui::ChatInfo) {
     ui->setupUi(this);
 
-
     QPixmap myBackGround(":/images/assets/Chat_BackGround.png");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
