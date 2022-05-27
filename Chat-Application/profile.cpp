@@ -9,6 +9,14 @@
 #include<QFileDialog>
 profile::profile(QWidget *parent): QWidget(parent), ui(new Ui::profile) {
     ui->setupUi(this);
+    this->setMinimumSize(QSize(700, 500));
+    this->setMaximumSize(QSize(700, 500));
+
+    QPixmap myBackGround("background2.png");
+    myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(backgroundRole(), myBackGround);
+    this->setPalette(palette);
     //QPixmap pic("C:/Users/m/Pictures/Saved Pictures/WhatsApp Image 2022-05-05 at 11.19.27 PM.jpeg");
     //ui->label->setPixmap(pic.scaled(100,100,Qt::KeepAspectRatio));
     constantdata currUser;
@@ -54,7 +62,7 @@ void profile::on_pushButton_clicked()
     QMessageBox::information(this,"..",filePath);
     if(!filePath.isEmpty()){
     QPixmap pic(filePath);
-    ui->label->setPixmap(pic.scaled(100,100,Qt::KeepAspectRatio));
+    ui->label->setPixmap(pic.scaled(100,100,Qt::IgnoreAspectRatio));
      QFileInfo fi(filePath);
      QString fileName= fi.fileName();
      QString desktopPath = "C:/Users/Maria Tawfek/Desktop/GitHub/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug";

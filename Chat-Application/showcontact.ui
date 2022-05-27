@@ -65,6 +65,13 @@
          <height>50</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(130, 130, 130);
+font:14px;
+color:white;
+border-radius:15px;
+</string>
+       </property>
        <property name="text">
         <string>CLOSE 🥺</string>
        </property>

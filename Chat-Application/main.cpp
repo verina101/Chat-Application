@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
 //       myData.InsertData(tableName,val);
 
 
-    ChatRoom Win;
+    profile Win;
     Win.show();
     return APP.exec();
 }

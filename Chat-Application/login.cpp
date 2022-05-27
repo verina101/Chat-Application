@@ -12,6 +12,15 @@ login::login(QWidget *parent) :
     ui(new Ui::login)
 {
     ui->setupUi(this);
+
+    this->setMinimumSize(QSize(700, 500));
+    this->setMaximumSize(QSize(700, 500));
+
+    QPixmap myBackGround("background2.png");
+    myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(backgroundRole(), myBackGround);
+    this->setPalette(palette);
     ui->stackedWidget_2->setCurrentIndex(0);
     ui->comboBox_visibilty->addItem("your contacts");//0
     ui->comboBox_visibilty->addItem("for any one");//1
