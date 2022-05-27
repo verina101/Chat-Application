@@ -17,8 +17,9 @@ class ContactWidget : public QWidget
     string id;
 public:
     explicit ContactWidget(QWidget *parent = nullptr);
-    void setContactData(QString pic ,QString name , QString id);
     ~ContactWidget();
+
+    void setContactData(QString pic ,QString name , QString id);
 
 private:
     Ui::ContactWidget *ui;

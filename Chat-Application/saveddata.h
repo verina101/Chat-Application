@@ -12,16 +12,16 @@ class SavedData
 
 public:
 
-   SavedData();
+    SavedData();
 
-   static void   setUserId(string id);
-   static void   setUserName(string name);
-   static string getUserId();
-   static string getUserName();
-   static void   setStoryUserID(string id);
-   static string getStoryUserID();
-   static void   setChosenStoryId(string id);
-   static string getChosenStoryId();
+    static void   setUserId(string id);
+    static void   setUserName(string name);
+    static string getUserId();
+    static string getUserName();
+    static void   setStoryUserID(string id);
+    static string getStoryUserID();
+    static void   setChosenStoryId(string id);
+    static string getChosenStoryId();
 
 };
 

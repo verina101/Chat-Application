@@ -33,16 +33,16 @@ AddStory::~AddStory()
 
 
 string AddStory :: currDateTime(){
-//    auto start = chrono::system_clock::now();
-//        // Some computation here
-//        auto end = chrono::system_clock::now();
+    //    auto start = chrono::system_clock::now();
+    //        // Some computation here
+    //        auto end = chrono::system_clock::now();
 
-//        chrono::duration<double> elapsed_seconds = end-start;
+    //        chrono::duration<double> elapsed_seconds = end-start;
 
-//        time_t end_time = chrono::system_clock::to_time_t(end);
+    //        time_t end_time = chrono::system_clock::to_time_t(end);
 
-//         string dateTime=(string)ctime(&end_time);
-//        return dateTime;
+    //         string dateTime=(string)ctime(&end_time);
+    //        return dateTime;
 
     time_t now = time(0);
     dateTime t;
@@ -86,46 +86,44 @@ void AddStory::on_pushButton_clicked()
     string str       = this->EditText(editInput);
     bool photo = ui->radioButtonPhoto->isChecked();
     bool text  = ui->radioButtonText->isChecked();
-        if((!photo&&!text) || !str.size()) {
-            QMessageBox :: warning(this, "Add Story", "Invalid Data !");
-        }
-        else {
-            QString s = QString::number(this->myID);
-            string id = s.toStdString();
-            Data MyDatabase;
+    if((!photo&&!text) || !str.size()) {
+        QMessageBox :: warning(this, "Add Story", "Invalid Data !");
+    }
+    else {
+        QString s = QString::number(this->myID);
+        string id = s.toStdString();
+        Data MyDatabase;
 
-            string userCol       =  "FirstName, LastName";
-            string userTable     =  "USER" ;
-            string userCond      =  "where UserID ='"+id+"' ;";
-            this->data= MyDatabase.SelectData(userTable,userCol,userCond);
-
-
-            string Name = this->data[0][0].toStdString();
-            string lastName  = this->data[0][1].toStdString();
-            Name+=" "+lastName;
-            string tableName = "STORY";
-            string story = (photo)? str : "0";
-            string t = (text )? str : "0";
-            string DateTime = currDateTime();
-            string col="*";
-            string cond=  "where StoryOwnerID ='"+id+"' ;";
-            string values = "('"+id+"',"+"'"+Name+"','"+t+"','"+story+"','"+DateTime+"' )";
-            MyDatabase.InsertData(tableName,values);
-            QMessageBox :: information(this, "Add Story", "Story Added Successfully");
-            ui->textEdit->setPlainText("");
-          //show = MyDatabase.SelectData(tableName,col,cond);
+        string userCol       =  "FirstName, LastName";
+        string userTable     =  "USER" ;
+        string userCond      =  "where UserID ='"+id+"' ;";
+        this->data= MyDatabase.SelectData(userTable,userCol,userCond);
 
 
+        string Name = this->data[0][0].toStdString();
+        string lastName  = this->data[0][1].toStdString();
+        Name+=" "+lastName;
+        string tableName = "STORY";
+        string story = (photo)? str : "0";
+        string t = (text )? str : "0";
+        string DateTime = currDateTime();
+        string col="*";
+        string cond=  "where StoryOwnerID ='"+id+"' ;";
+        string values = "('"+id+"',"+"'"+Name+"','"+t+"','"+story+"','"+DateTime+"' )";
+        MyDatabase.InsertData(tableName,values);
+        QMessageBox :: information(this, "Add Story", "Story Added Successfully");
+        ui->textEdit->setPlainText("");
+        //show = MyDatabase.SelectData(tableName,col,cond);
 
-        }
+    }
 }
 
 
 void AddStory::on_radioButtonPhoto_clicked()
 {
-      QString fileName= QFileDialog:: getOpenFileName(this, "open a file","D://",tr("Images(*.png *.jpg *.jpeg *.bmp *.gif)"));
-      QMessageBox :: information(this, "..", fileName);
-      ui->textEdit->setText(fileName);
+    QString fileName= QFileDialog:: getOpenFileName(this, "open a file","D://",tr("Images(*.png *.jpg *.jpeg *.bmp *.gif)"));
+    QMessageBox :: information(this, "..", fileName);
+    ui->textEdit->setText(fileName);
 }
 
 

@@ -13,8 +13,9 @@ class MsgStatus : public QDialog
 
 public:
     explicit MsgStatus(QWidget *parent = nullptr);
-    void setMsgStatus(QString date, QString time, bool isSeen);
     ~MsgStatus();
+
+    void setMsgStatus(QString date, QString time, bool isSeen);
 
 private:
     Ui::MsgStatus *ui;

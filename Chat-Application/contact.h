@@ -23,12 +23,11 @@ class contact : public QWidget
     Q_OBJECT
 
 public:
-   // map<pair<QString,QString>,bool> relation;
     explicit contact(QWidget *parent = nullptr);
-    //void setMyId(int id);
     ~contact();
-     Data *w= new Data;
-     Data *f= new Data;
+
+    Data *w= new Data;
+    Data *f= new Data;
 
 private slots:
     void  on_pushButton_clicked();

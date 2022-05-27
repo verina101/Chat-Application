@@ -1,10 +1,10 @@
 #include "MyConstants.h"
 
- QString MyConstants::myId = "1";
- QString MyConstants::myName = "";
- QString MyConstants::myChatRoomName = "";
- QString MyConstants::myChatRoomID = "1";
- QString MyConstants::myMsgID = "";
+QString MyConstants::myId = "1";
+QString MyConstants::myName = "";
+QString MyConstants::myChatRoomName = "";
+QString MyConstants::myChatRoomID = "1";
+QString MyConstants::myMsgID = "";
 
 QString MyConstants::getMyId()
 {

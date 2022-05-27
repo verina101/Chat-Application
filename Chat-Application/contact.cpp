@@ -84,67 +84,67 @@ void contact::openAddContact()
     this->setPalette(palette);
 
 
-     QPixmap pix("D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg") ;
-     int h= ui->label->height();
-     int w = ui->label->width();
-     ui->label-> setPixmap(pix.scaled(w,h, Qt::IgnoreAspectRatio));
-     Data MyDataBase;
+    QPixmap pix("D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg") ;
+    int h= ui->label->height();
+    int w = ui->label->width();
+    ui->label-> setPixmap(pix.scaled(w,h, Qt::IgnoreAspectRatio));
+    Data MyDataBase;
 
-     this->myID = MyConstants::getMyId().toInt();
-     QString curr = QString::number(this->myID);
-     string cid = curr.toStdString();
-          string userCol     =  "UserID,FirstName,LastName,ProfilePicture,Visibility";
-          string userTable     =  "USER" ;
-          string userCond     =  ";";
-          this->data= MyDataBase.SelectData(userTable,userCol,userCond);
-           //cout<< "size is "<< data.size();
+    this->myID = MyConstants::getMyId().toInt();
+    QString curr = QString::number(this->myID);
+    string cid = curr.toStdString();
+    string userCol     =  "UserID,FirstName,LastName,ProfilePicture,Visibility";
+    string userTable     =  "USER" ;
+    string userCond     =  ";";
+    this->data= MyDataBase.SelectData(userTable,userCol,userCond);
+    //cout<< "size is "<< data.size();
 
-          string contactCol       =  "UserID,ContactID";
-          string contactTable     =  "CONTACTS" ;
-          string contactCond      =  "where UserID ='"+cid+"' ;";
-          this->cdata= MyDataBase.SelectData(contactTable,contactCol,contactCond);
+    string contactCol       =  "UserID,ContactID";
+    string contactTable     =  "CONTACTS" ;
+    string contactCond      =  "where UserID ='"+cid+"' ;";
+    this->cdata= MyDataBase.SelectData(contactTable,contactCol,contactCond);
 
-          for(auto row1 : this->data) {
-               qDebug()<< row1;
-          }
+    for(auto row1 : this->data) {
+        qDebug()<< row1;
+    }
 
 
 
-          int expected=0, real=0,visible=0;
-          QString seen = QString::number(visible);
-          memset(at, 0, sizeof at);
-          for(auto row1 : this->data) {
-              bool found=0;
-               if(row1[0]==curr)
-                   found=1;
-              for(auto row2 : this->cdata) {
-                  if(row1[0]==row2[1]){
-                      found=1;
-                      break;
-                  }
-          }
+    int expected=0, real=0,visible=0;
+    QString seen = QString::number(visible);
+    memset(at, 0, sizeof at);
+    for(auto row1 : this->data) {
+        bool found=0;
+        if(row1[0]==curr)
+            found=1;
+        for(auto row2 : this->cdata) {
+            if(row1[0]==row2[1]){
+                found=1;
+                break;
+            }
+        }
 
-              if(!found){
-                  ContactWidget *mycontact = new ContactWidget();
-                  QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";  //row1[3]
-                  QString defaultphoto= "D:/Pictures/Ds project/NotSeenBackground.png";
-                  if(row1[4]==seen){
-                  mycontact->setContactData(defaultphoto, row1[1] +" "+ row1[2], "ID: "+row1[0]);
-                  }
-                  else{
-                  mycontact->setContactData(myphotopath, row1[1] +" "+ row1[2], "ID: "+row1[0]);
-                  }
-                  int w = mycontact->width();
-                  int h = mycontact->height();
-                  QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
-                  item->setSizeHint(QSize(w, h));
-                  ui->listWidget->setItemWidget(item, mycontact);
-                  //ui->listWidget->scrollToBottom();
+        if(!found){
+            ContactWidget *mycontact = new ContactWidget();
+            QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";  //row1[3]
+            QString defaultphoto= "D:/Pictures/Ds project/NotSeenBackground.png";
+            if(row1[4]==seen){
+                mycontact->setContactData(defaultphoto, row1[1] +" "+ row1[2], "ID: "+row1[0]);
+            }
+            else{
+                mycontact->setContactData(myphotopath, row1[1] +" "+ row1[2], "ID: "+row1[0]);
+            }
+            int w = mycontact->width();
+            int h = mycontact->height();
+            QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
+            item->setSizeHint(QSize(w, h));
+            ui->listWidget->setItemWidget(item, mycontact);
+            //ui->listWidget->scrollToBottom();
 
-                  this->at[expected++]=real;
-              }
-              real++;
-          }
+            this->at[expected++]=real;
+        }
+        real++;
+    }
 
 }
 

@@ -3,17 +3,6 @@
 DateTime::DateTime(){
 
 }
-/*
-
-    starting date 1/1/1
-    current date 11/5/2022
-    get number of days
-    get number of hours
-    get numbre of mins
-    //1100
-    // 1000 + (1440)-> 24*60
-    // 2440
-*/
 
 void DateTime::convertDate(string s , dateTime &t){
     int size = s.size();
@@ -33,7 +22,7 @@ void DateTime::convertDate(string s , dateTime &t){
             tmp.clear();
         }
         else{
-           tmp.push_back(vec[3][i]);
+            tmp.push_back(vec[3][i]);
         }
     }
     time.push_back(tmp);
@@ -84,7 +73,7 @@ bool DateTime::isValidStory(string s1 ){
     dateTime t;
     char *dt = ctime(&now);
     string s2=(string)ctime(&now);
-   // string s2(dt);
+    // string s2(dt);
     cout<<"Current time  "<<s2<<endl;
     cout<<"Saved   time  "<<s1<<endl;
     dateTime t1,t2;

@@ -17,9 +17,10 @@ class ChatRoom: public QWidget {
 
 public:
     explicit ChatRoom(QWidget *parent = nullptr);
+    ~ChatRoom();
+
     void DisplayMessage(QString &msgText, QString senderName, QString senderID, bool isDeleted);
 
-    ~ChatRoom();
 
 private slots:
     void on_comboBox_currentIndexChanged(int index);

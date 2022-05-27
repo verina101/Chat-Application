@@ -76,11 +76,8 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
         checkvec.clear();
     }
 
-//    this->data= MyDataBase.SelectData(userTable,userCol,userCond);
-//     cout<< "size is "<< data.size();
 }
-ShowContactNameStory::~ShowContactNameStory()
-{
+ShowContactNameStory::~ShowContactNameStory() {
     delete ui;
 }
 
@@ -97,8 +94,8 @@ void ShowContactNameStory::on_ShowStories_clicked()
 
     string s=storyUsersID[indx][0].toStdString();
     saved.setStoryUserID(s);
-//    cout<<storyUsersID[indx][0].toStdString()<<endl;
-//    cout<<"Story user id   "<<saved.getStoryUserID()<<endl;
+    //    cout<<storyUsersID[indx][0].toStdString()<<endl;
+    //    cout<<"Story user id   "<<saved.getStoryUserID()<<endl;
     ShowStories *ss= new ShowStories();
     ss->show();
     this->hide();

@@ -10,7 +10,6 @@
 #include <string>
 #include "Data.h"
 #include "MyConstants.h"
-//#include<QDialog>
 
 using namespace std;
 namespace Ui {
@@ -23,21 +22,20 @@ class AddStory : public QWidget
 
 public:
     explicit AddStory(QWidget *parent = nullptr);
+    ~AddStory();
+
     static string EditText(string s);
     static string currDateTime();
-    ~AddStory();
 
 private slots:
     void on_pushButton_clicked();
-
     void on_radioButtonPhoto_clicked();
-
     void on_pushButton_2_clicked();
 
 private:
     Ui::AddStory *ui;
     vector<vector<QString>>data;
-    int myID =(MyConstants::getMyId()).toInt();
+    int myID = (MyConstants::getMyId()).toInt();
 
 };
 

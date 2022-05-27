@@ -43,9 +43,9 @@ ShowStories::~ShowStories() {
 }
 
 void ShowStories::on_pushButton_clicked() {
-   ShowContactNameStory *s= new ShowContactNameStory();
-   s->show();
-   this->hide();
+    ShowContactNameStory *s= new ShowContactNameStory();
+    s->show();
+    this->hide();
 }
 
 

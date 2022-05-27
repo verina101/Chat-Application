@@ -29,9 +29,7 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-
     void on_listWidget_currentRowChanged(int currentRow);
-
     void on_listWidget_itemClicked(QListWidgetItem *item);
     void openShowContact();
 
@@ -46,7 +44,6 @@ private:
     vector<vector<QString>>data;
     Data db;
     QString selectedID = "";
-
 
 };
 

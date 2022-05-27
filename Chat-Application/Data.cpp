@@ -2,6 +2,10 @@
 using namespace std;
 
 Data::Data() {
+
+}
+
+void Data::CreateDataBase() {
     DB = QSqlDatabase::addDatabase("QSQLITE");
     DB.setDatabaseName("DataBase.db");
     bool Exit = DB.open();
@@ -11,8 +15,8 @@ Data::Data() {
     }
     DB.close();
 }
-
 void Data::CreateTables() {
+    CreateDataBase();
     vector<pair<string, string>> tables(NumberOfTables, make_pair("UnNamed", ""));
 
     tables[0].first = "USER";

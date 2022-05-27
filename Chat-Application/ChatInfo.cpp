@@ -40,7 +40,7 @@ void ChatInfo::setChatData() {
         QString commonRoomID;
         for(auto it : myChats) {
             if(it[0] != MyConstants::getMyChatRoomID())
-            mp[it[0]] = 1;
+                mp[it[0]] = 1;
         }
 
         for(auto it : userChats) {

@@ -8,6 +8,7 @@
 #include <Data.h>
 #include <StoryWidget.h>
 using namespace std;
+
 namespace Ui {
 class ShowStories;
 }

@@ -111,7 +111,7 @@ void ChatRoom::on_comboBox_currentIndexChanged(int index) {
         ui->stackedWidget->setCurrentIndex(1);
         myChatInfo.setChatData();
     }
-    else { //Exit        
+    else { //Exit
         emit exitChat();
         ui->comboBox->setCurrentIndex(0);
 

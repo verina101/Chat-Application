@@ -51,29 +51,29 @@ void ShowContact::openShowContact()
 {
     this->myID = MyConstants::getMyId().toInt();
 
-     QString curr = QString::number(this->myID);
-     string cid = curr.toStdString();
-     string userCol     =  "UserID,FirstName,LastName,ProfilePicture";
-     string userTable     =  "USER" ;
-     string userCond     =  ";";
-     this->data= db.SelectData(userTable,userCol,userCond);
-     cout<< "size is "<< data.size();
+    QString curr = QString::number(this->myID);
+    string cid = curr.toStdString();
+    string userCol     =  "UserID,FirstName,LastName,ProfilePicture";
+    string userTable     =  "USER" ;
+    string userCond     =  ";";
+    this->data= db.SelectData(userTable,userCol,userCond);
+    cout<< "size is "<< data.size();
 
-     string contactCol       =  "UserID, ContactID";
-     string contactTable     =  "CONTACTS" ;
-     string contactCond      =  "where UserID ='"+cid+"' ;";
-     this->cdata= db.SelectData(contactTable,contactCol,contactCond);
+    string contactCol       =  "UserID, ContactID";
+    string contactTable     =  "CONTACTS" ;
+    string contactCond      =  "where UserID ='"+cid+"' ;";
+    this->cdata= db.SelectData(contactTable,contactCol,contactCond);
 
 
     for(auto row1 : this->data) {
 
         bool found=0;
         if(row1[0]==curr)
-        continue;
+            continue;
         for(auto row2 : this->cdata) {
             if(row1[0]==row2[1]){
-              found=1;
-              break;
+                found=1;
+                break;
             }
         }
 
@@ -89,10 +89,10 @@ void ShowContact::openShowContact()
             //ui->listWidget->scrollToBottom();
         }
 
-     }
+    }
 
     if(groupType==1){
-         ui->listWidget->setSelectionMode(QAbstractItemView::MultiSelection);
+        ui->listWidget->setSelectionMode(QAbstractItemView::MultiSelection);
     }
 
 
