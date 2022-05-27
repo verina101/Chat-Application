@@ -30,6 +30,8 @@ private slots:
 private:
     Ui::ShowContact *ui;
     int myID = 2;
+
+
     vector<vector<QString>>cdata;
     vector<vector<QString>>data;
 };
