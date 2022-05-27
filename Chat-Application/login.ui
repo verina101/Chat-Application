@@ -22,87 +22,45 @@
      <height>500</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">* {
-	font-size:14px;
-}</string>
-   </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="LoginPage">
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>70</y>
-       <width>341</width>
-       <height>321</height>
+       <x>80</x>
+       <y>0</y>
+       <width>381</width>
+       <height>331</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
-      <property name="leftMargin">
-       <number>2</number>
-      </property>
-      <property name="rightMargin">
-       <number>2</number>
-      </property>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <property name="rightMargin">
-         <number>3</number>
-        </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
          <widget class="QLabel" name="label_mobileNumber">
-          <property name="minimumSize">
-           <size>
-            <width>110</width>
-            <height>0</height>
-           </size>
-          </property>
           <property name="text">
-           <string>Mobile Number</string>
+           <string>mobileno</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_mobileno">
-          <property name="maximumSize">
-           <size>
-            <width>200</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
+         <widget class="QLineEdit" name="lineEdit_mobileno"/>
         </item>
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <property name="rightMargin">
-         <number>6</number>
-        </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="QLabel" name="label_password">
-          <property name="minimumSize">
-           <size>
-            <width>110</width>
-            <height>0</height>
-           </size>
-          </property>
           <property name="text">
-           <string>Password</string>
+           <string>password</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QLineEdit" name="lineEdit_password">
-          <property name="maximumSize">
-           <size>
-            <width>200</width>
-            <height>16777215</height>
-           </size>
-          </property>
           <property name="echoMode">
            <enum>QLineEdit::Password</enum>
           </property>
@@ -114,12 +72,6 @@
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
          <widget class="QPushButton" name="pushButton_login">
-          <property name="minimumSize">
-           <size>
-            <width>100</width>
-            <height>40</height>
-           </size>
-          </property>
           <property name="text">
            <string>login</string>
           </property>
@@ -132,20 +84,14 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>10</width>
-            <height>10</height>
+            <width>374</width>
+            <height>17</height>
            </size>
           </property>
          </spacer>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_signup">
-          <property name="minimumSize">
-           <size>
-            <width>100</width>
-            <height>40</height>
-           </size>
-          </property>
           <property name="text">
            <string>signup</string>
           </property>
@@ -160,8 +106,8 @@
     <widget class="QGroupBox" name="groupBox">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>60</y>
+       <x>50</x>
+       <y>40</y>
        <width>471</width>
        <height>361</height>
       </rect>

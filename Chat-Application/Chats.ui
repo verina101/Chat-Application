@@ -123,11 +123,7 @@
        </layout>
       </item>
       <item>
-       <widget class="QListWidget" name="listWidget">
-        <property name="verticalScrollMode">
-         <enum>QAbstractItemView::ScrollPerPixel</enum>
-        </property>
-       </widget>
+       <widget class="QListWidget" name="listWidget"/>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
