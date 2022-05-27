@@ -1,11 +1,11 @@
 #include "MsgStatus.h"
 #include "ui_MsgStatus.h"
 
-MsgStatus::MsgStatus(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::MsgStatus)
-{
+MsgStatus::MsgStatus(QWidget *parent): QDialog(parent), ui(new Ui::MsgStatus) {
     ui->setupUi(this);
+    this->setMinimumSize(this->size());
+    this->setMinimumSize(this->size());
+
 }
 
 void MsgStatus::setMsgStatus(QString date, QString time, bool isSeen) {

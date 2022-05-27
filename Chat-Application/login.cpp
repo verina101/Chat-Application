@@ -7,7 +7,6 @@
 #include<QPixmap>
 #include<QFileDialog>
 
-
 login::login(QWidget *parent): QWidget(parent), ui(new Ui::login) {
     ui->setupUi(this);
     this->setMinimumSize(QSize(700, 500));
@@ -25,12 +24,7 @@ login::~login() {
     delete ui;
 }
 
-
-void login::on_pushButton_login_clicked()
-{
-
-    constantdata currUser;
-
+void login::on_pushButton_login_clicked() {
     QString mobileno,password;
 
     mobileno=ui->lineEdit_mobileno->text();
@@ -43,18 +37,17 @@ void login::on_pushButton_login_clicked()
      //qDebug() << "wrong password or mobileno";
    }
    else{
-       currUser.setphoneNumber(mobileno.toStdString());
        QMessageBox::information(this,"valid login","login successfully");
        MyConstants::setMyId(returndata[0][0]);
        MyConstants::setMyName( returndata[0][1] + " " + returndata[0][2] );
        ui->stackedWidget_2->close();
-       close();
+       this->close();
+
        myChats = new Chats();
        myChats->show();
 
    }
    db.DisplayData(returndata);
-
 }
 
 void login::on_pushButton_signup_clicked() {
@@ -71,14 +64,9 @@ void login::on_pushButton_submit_clicked() {
     description=ui->lineEdit_description->text();
     visibility=ui->comboBox_visibilty->currentText();
 
-     if(visibility.contains("for any one")){
-         visibility="1";
-     }
-     else{
-         visibility="0";
-     }
-     if(firstname.isEmpty()||lastname.isEmpty()||description.isEmpty()||password.isEmpty()||phoneno.isEmpty()){
+    visibility = visibility.contains("for any one") ? "1" : "0";
 
+     if(firstname.isEmpty() || lastname.isEmpty() || description.isEmpty() || password.isEmpty() || phoneno.isEmpty()) {
        QMessageBox::warning(this,"invalid registration "," missing value");
      }
      else {
@@ -104,12 +92,9 @@ void login::on_pushButton_submit_clicked() {
              vector<vector<QString>> returnData = db.SelectData("USER", columns, condition);
              if(returnData.empty()) {
                  string tablename="USER";
-                 string values="('"+firstname.toStdString()+"','"+lastname.toStdString()+"','"+ProfilePicture+"','"+description.toStdString()+"','"+password.toStdString()+"','"+phoneno.toStdString()+"','"+visibility.toStdString()+"')";
+                 string values = "(" + db.convertToValue(firstname) + "," + db.convertToValue(lastname) + ",'" + ProfilePicture + "', " + db.convertToValue(description) + "," + db.convertToValue(password) + "," + db.convertToValue(phoneno) + "," + db.convertToValue(visibility) + ")";
                  db.InsertData(tablename,values);
-                 constantdata currUser;
-                 currUser.setphoneNumber(phoneno.toStdString());
-                 QMessageBox::information(this,"valid registration","registration successfully");
-
+                 QMessageBox::information(this, "valid registration", "registration successfully");
              }
              else{
                   QMessageBox::warning(this, "invalid registration ", " duplicated phone number");
@@ -128,39 +113,24 @@ void login::on_pushButton_submit_clicked() {
 }
 
 void login::on_pushButton_change_pic_clicked() {
-    QString filter = "Jpeg File(*.jpeg);; Png File(*.png)";
-    QString filename = QFileDialog::getOpenFileName(this, "open a file", "D:/pic", filter);
-    QMessageBox::information(this, "..", filename);
-    QPixmap pic(filename);
-    ui->label_pic->setPixmap(pic.scaled(100, 100, Qt::KeepAspectRatio));
+    QString filter="Jpeg File(*.jpeg);; Png File(*.png);; JPG File(*.jpg) ;; BMP File(*.bmp);; GIF file(*.gif)";
+        QString filePath=QFileDialog::getOpenFileName(this,"open a file","D:/pic",filter);
+        QMessageBox::information(this,"..",filePath);
+        this->ProfilePicture=filePath.toStdString();
+        if(!filePath.isEmpty()){
+        QPixmap pic(filePath);
+        ui->label_pic->setPixmap(pic.scaled(100,100,Qt::IgnoreAspectRatio));
+         QFileInfo fi(filePath);
+         QString fileName= fi.fileName();
+         QString desktopPath = "C:/Users/Maria Tawfek/Desktop/GitHub/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug";
+         QString destinationPath= desktopPath+QDir::separator()+fileName;
+        QFile::copy(filePath, destinationPath);
+        }
 }
 
 
 void login::on_pushButton_loginin_2_clicked()
 {
-
-    QString filter="Jpeg File(*.jpeg);; Png File(*.png);; JPG File(*.jpg) ;; BMP File(*.bmp);; GIF file(*.gif)";
-    QString filePath=QFileDialog::getOpenFileName(this,"open a file","D:/pic",filter);
-    QMessageBox::information(this,"..",filePath);
-    this->ProfilePicture=filePath.toStdString();
-    if(!filePath.isEmpty()){
-    QPixmap pic(filePath);
-    ui->label_pic->setPixmap(pic.scaled(100,100,Qt::IgnoreAspectRatio));
-     QFileInfo fi(filePath);
-     QString fileName= fi.fileName();
-     QString desktopPath = "D:/chatapp/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug";
-     QString destinationPath= desktopPath+QDir::separator()+fileName;
-    QFile::copy(filePath, destinationPath);
-    }
-
+    ui->stackedWidget_2->setCurrentIndex(0);
 }
-
-// QFileInfo fi(filePath);
-// QString fileName= fi.fileName();
-// QString desktopPath = "C:/Users/Maria Tawfek/Desktop/GitHub/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug";
-// QString destinationPath= desktopPath+QDir::separator()+fileName;
-//QFile::copy(filePath, destinationPath);
-
-
-
 

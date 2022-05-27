@@ -34,6 +34,9 @@
      <property name="styleSheet">
       <string notr="true"/>
      </property>
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
     </widget>
    </item>
    <item>
