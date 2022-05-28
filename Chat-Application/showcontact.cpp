@@ -45,12 +45,14 @@ void ShowContact::on_pushButton_clicked()
 }
 
 void ShowContact::openShowContact() {
+    selectedMembers.clear();
     if(groupType == 1) {// groupchat
         ui->listWidget_2->show();
-
+        ui->pushButton_creategroupChat->show();
     }
     else {// privatechat
         ui->listWidget_2->hide();
+        ui->pushButton_creategroupChat->hide();
     }
     this->myID = MyConstants::getMyId().toInt();
 
@@ -113,6 +115,7 @@ void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
     QString selectedID = cdata[index][1];
 
     if(groupType==1) {
+        selectedMembers[index] = selectedID;
         ui->listWidget->item(index)->setHidden(true);
         ui->listWidget_2->item(index)->setHidden(false);
     }
@@ -149,4 +152,23 @@ void ShowContact::on_listWidget_2_itemClicked(QListWidgetItem *item) {
     int index = ui->listWidget_2->currentRow();
     ui->listWidget_2->item(index)->setHidden(true);
     ui->listWidget->item(index)->setHidden(false);
+    selectedMembers.erase(index);
 }
+// chatroom, chatinfo, participate
+void ShowContact::on_pushButton_creategroupChat_clicked() {
+    if(selectedMembers.empty()) return;
+
+    QWidget Wndow_enterChatName;
+    QLabel Label_enterChatName;
+    QLineEdit *LineEdit_myChatName;
+
+    Label_enterChatName.setText("Enter groupchat name: ");
+    Wndow_enterChatName.setAcceptDrops(true);
+
+    for(auto user : selectedMembers) {
+
+    }
+
+
+}
+

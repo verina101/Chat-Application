@@ -36,6 +36,8 @@ private slots:
     void on_listWidget_2_itemClicked(QListWidgetItem *item);
 
 
+    void on_pushButton_creategroupChat_clicked();
+
 signals:
     void exitShowContact();
     void openContactChat();
