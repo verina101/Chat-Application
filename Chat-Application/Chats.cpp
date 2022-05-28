@@ -153,7 +153,6 @@ void Chats::on_pushButton_viewStory_clicked(){
 void Chats::on_pushButton_addContact_clicked(){
     emit selectAddContact();
 
-
     ui->stackedWidget->setCurrentIndex(3);
 
     ui->listWidget->blockSignals(true);

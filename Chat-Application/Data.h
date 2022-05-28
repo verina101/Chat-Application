@@ -15,10 +15,11 @@ static map<string,string> myColumns;
 class Data {
     static const int NumberOfTables = 9;
 
-    static void CreateTable(string& SQL);
-public:
-    Data();
     static void CreateTables();
+    static void CreateTable(string& SQL);
+
+public:
+    static void CreateDataBase();
     static void InsertData(string TableName, string values);
     static vector<vector<QString>> SelectData(string TableName, string Columns, string Condition);
     static void UpdateData(string TableName, string UpdatedColumn, string Condition);

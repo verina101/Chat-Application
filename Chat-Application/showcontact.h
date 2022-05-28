@@ -35,6 +35,7 @@ private slots:
 
     void on_listWidget_2_itemClicked(QListWidgetItem *item);
 
+
 signals:
     void exitShowContact();
     void openContactChat();
@@ -45,7 +46,6 @@ private:
     int myID = (MyConstants::getMyId()).toInt();
     vector<vector<QString>>cdata;
     vector<vector<QString>>data;
-    map<int,int> list2Contact;
     Data db;
 
 };

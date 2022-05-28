@@ -1,7 +1,7 @@
 #include "Data.h"
 using namespace std;
 
-Data::Data() {
+void Data::CreateDataBase() {
     DB = QSqlDatabase::addDatabase("QSQLITE");
     DB.setDatabaseName("DataBase.db");
     bool Exit = DB.open();
@@ -10,8 +10,9 @@ Data::Data() {
         assert(0);
     }
     DB.close();
-}
 
+    CreateTables();
+}
 void Data::CreateTables() {
     vector<pair<string, string>> tables(NumberOfTables, make_pair("UnNamed", ""));
 
@@ -162,7 +163,7 @@ vector<vector<QString>> Data::SelectData(string TableName, string Columns, strin
     //	columns must be in this format = (column1, column2, column3, columnN)
     DB.open();
     vector<vector<QString>> Rows;
-
+    int columnsCount = count(Columns.begin(), Columns.end(), ',') + 1;
     string SQL = "SELECT " + Columns + " FROM " + TableName + " " + Condition;
     QSqlQuery query;
     if(query.exec(QString::fromStdString(SQL))) {
@@ -170,12 +171,9 @@ vector<vector<QString>> Data::SelectData(string TableName, string Columns, strin
 
         while(query.next()) {
             Rows.push_back({});
-
-            for(int i = 0; i < 10; i++) {
+            for(int i = 0; i < columnsCount; i++) {
                 QString qCol = query.value(i).toString();
-                if(qCol != "") {
-                    Rows.back().push_back(qCol);
-                }
+                Rows.back().push_back(qCol);
             }
         }
     }

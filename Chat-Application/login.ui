@@ -28,10 +28,10 @@
 }</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="LoginPage">
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -252,7 +252,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_password_2"/>
+          <widget class="QLineEdit" name="lineEdit_password_2">
+           <property name="echoMode">
+            <enum>QLineEdit::Password</enum>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>

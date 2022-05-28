@@ -78,7 +78,7 @@ void ShowContact::openShowContact() {
             }
         }
 
-        if(found){
+        if(found) {
             ContactWidget *mycontact = new ContactWidget();
             QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";
             mycontact->setContactData(myphotopath, row1[1] +" "+ row1[2], "ID: "+row1[0]);
@@ -89,12 +89,22 @@ void ShowContact::openShowContact() {
             int w = mycontact->width();
             int h = mycontact->height();
             QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
+
             item->setSizeHint(QSize(w, h));
+            if(!ui->listWidget_2->isHidden()) {
+                ContactWidget *mycontact2 = new ContactWidget();
+                myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";
+                mycontact2->setContactData(myphotopath, row1[1] +" "+ row1[2], "ID: "+row1[0]);
+
+                QListWidgetItem *item2 = new QListWidgetItem(ui->listWidget_2);
+                item2->setSizeHint(QSize(w, h));
+                ui->listWidget_2->setItemWidget(item2, mycontact2);
+                ui->listWidget_2->item(ui->listWidget_2->count() - 1)->setHidden(true);
+            }
             ui->listWidget->setItemWidget(item, mycontact);
         }
 
     }
-
 
 }
 
@@ -103,25 +113,8 @@ void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
     QString selectedID = cdata[index][1];
 
     if(groupType==1) {
-
-        QListWidgetItem *it = new QListWidgetItem(ui->listWidget_2);
-        ContactWidget *mycontact = new ContactWidget();
-
-        vector<QString> userData = db.SelectData("USER","UserID,FirstName,LastName,ProfilePicture","WHERE UserID = " + db.convertToValue(selectedID)).front();
-        mycontact->setContactData(userData[3],userData[1]+ " "+ userData[2],selectedID);
-
-        if(!ui->listWidget_2->isHidden()) {
-            mycontact->setGeometry(0,0,250,100);
-        }
-        int w = mycontact->width();
-        int h = mycontact->height();
-        it->setSizeHint(QSize(w, h));
-
-        ui->listWidget_2->setItemWidget(it, mycontact);
-        item->setHidden(true);
-
-        //  list2Contact[ui->listWidget_2->count() - 1] = index;
-
+        ui->listWidget->item(index)->setHidden(true);
+        ui->listWidget_2->item(index)->setHidden(false);
     }
     else{
         vector<QString> userData = db.SelectData("USER","FirstName, LastName","WHERE UserID = " + db.convertToValue(selectedID)).front();
@@ -129,7 +122,7 @@ void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
         QString chatName2 = selectedID + "#" +MyConstants::getMyId();
         vector<vector<QString>> myChatID = db.SelectData("CHATROOM", "RoomID", "WHERE Name in ("+ db.convertToValue(chatName1)+", "+db.convertToValue(chatName2)+")" );
 
-        if(myChatID.empty()){
+        if(myChatID.empty()) {
 
             db.InsertData("CHATROOM","( " + db.convertToValue(chatName1) + " )");
             QString chatID = db.SelectData("CHATROOM","RoomID","ORDER BY RoomID DESC").front().front();
@@ -138,12 +131,9 @@ void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
             db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(selectedID) +" , datetime('now') )");
 
             MyConstants::setMyChatRoomID(chatID);
-
-
-        }else{
-
+        }
+        else{
             MyConstants::setMyChatRoomID(myChatID[0][0]);
-
         }
 
         MyConstants::setMyChatRoomName(userData[0] + " " + userData[1]);
@@ -153,23 +143,10 @@ void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
         ui->listWidget->blockSignals(false);
     }
 
-
-
 }
 
 void ShowContact::on_listWidget_2_itemClicked(QListWidgetItem *item) {
-    int index = list2Contact[ui->listWidget_2->currentRow()];
-    QString selectedID = cdata[index][1];
-
-    QListWidgetItem *it = new QListWidgetItem(ui->listWidget);
-    ContactWidget *mycontact = new ContactWidget();
-
-    vector<QString> userData = db.SelectData("USER","UserID,FirstName,LastName,ProfilePicture","WHERE UserID = " + db.convertToValue(selectedID)).front();
-    mycontact->setContactData(userData[3],userData[1]+ " "+ userData[2],selectedID);
-
-    mycontact->setGeometry(0,0,250,100);
-    int w = mycontact->width();
-    int h = mycontact->height();
-    it->setSizeHint(QSize(w, h));
+    int index = ui->listWidget_2->currentRow();
+    ui->listWidget_2->item(index)->setHidden(true);
     ui->listWidget->item(index)->setHidden(false);
 }

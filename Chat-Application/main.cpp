@@ -21,8 +21,8 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
     QApplication APP(argc, argv);
-  //  Data db;
-   // db.CreateTables();
+    Data db;
+    db.CreateDataBase();
 
 
     login Win;

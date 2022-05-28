@@ -39,7 +39,7 @@ private:
     Ui::login *ui;
     Data db;
     Chats *myChats ;
-    string ProfilePicture;
+    QString ProfilePicture;
 
 
 };
