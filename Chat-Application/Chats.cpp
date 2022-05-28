@@ -109,8 +109,7 @@ QString Chats::getChatName(QString chatName){
 }
 
 
-void Chats::on_listWidget_currentRowChanged(int currentRow)
-{
+void Chats::on_listWidget_currentRowChanged(int currentRow) {
     MyConstants::setMyChatRoomID( myChatsInfo[currentRow].first);
     MyConstants::setMyChatRoomName(  myChatsInfo[currentRow].second);
 
@@ -176,6 +175,7 @@ void Chats::openChatRoomFromContact()
 }
 
 void Chats::on_pushButton_createChat_clicked() {
+    showContact.groupType = 0;
     emit selectShowContact();
 
     ui->stackedWidget->setCurrentIndex(2);
@@ -189,10 +189,11 @@ void Chats::on_pushButton_createChat_clicked() {
 
 void Chats::on_pushButton_createGroup_clicked()
 {
+    showContact.groupType = 1;
     emit selectShowContact();
 
     ui->stackedWidget->setCurrentIndex(2);
-    showContact.groupType = 1;
+
 
     ui->listWidget->blockSignals(true);
     ui->listWidget->clear();

@@ -38,42 +38,43 @@ void ShowContact::on_pushButton_clicked()
     ui->listWidget->clear();
     ui->listWidget->blockSignals(false);
 
-}
-
-
-void ShowContact::on_listWidget_currentRowChanged(int currentRow){
-
-    selectedID = cdata[currentRow][1];
+    ui->listWidget_2->blockSignals(true);
+    ui->listWidget_2->clear();
+    ui->listWidget_2->blockSignals(false);
 
 }
 
-void ShowContact::openShowContact()
-{
+void ShowContact::openShowContact() {
+    if(groupType == 1) {// groupchat
+        ui->listWidget_2->show();
+
+    }
+    else {// privatechat
+        ui->listWidget_2->hide();
+    }
     this->myID = MyConstants::getMyId().toInt();
 
-     QString curr = QString::number(this->myID);
-     string cid = curr.toStdString();
-     string userCol     =  "UserID,FirstName,LastName,ProfilePicture";
-     string userTable     =  "USER" ;
-     string userCond     =  ";";
-     this->data= db.SelectData(userTable,userCol,userCond);
-     cout<< "size is "<< data.size();
+    QString curr = QString::number(this->myID);
+    string cid = curr.toStdString();
+    string userCol     =  "UserID,FirstName,LastName,ProfilePicture";
+    string userTable     =  "USER" ;
+    string userCond     =  ";";
+    this->data= db.SelectData(userTable,userCol,userCond);
+    cout<< "size is "<< data.size();
 
-     string contactCol       =  "UserID, ContactID";
-     string contactTable     =  "CONTACTS" ;
-     string contactCond      =  "where UserID ='"+cid+"' ;";
-     this->cdata= db.SelectData(contactTable,contactCol,contactCond);
-
-
+    string contactCol       =  "UserID, ContactID";
+    string contactTable     =  "CONTACTS" ;
+    string contactCond      =  "where UserID ='"+cid+"' ;";
+    this->cdata= db.SelectData(contactTable,contactCol,contactCond);
     for(auto row1 : this->data) {
 
         bool found=0;
         if(row1[0]==curr)
-        continue;
+            continue;
         for(auto row2 : this->cdata) {
             if(row1[0]==row2[1]){
-              found=1;
-              break;
+                found=1;
+                break;
             }
         }
 
@@ -81,25 +82,44 @@ void ShowContact::openShowContact()
             ContactWidget *mycontact = new ContactWidget();
             QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";
             mycontact->setContactData(myphotopath, row1[1] +" "+ row1[2], "ID: "+row1[0]);
+
+            if(!ui->listWidget_2->isHidden()) {
+                mycontact->setGeometry(0,0,250,100);
+            }
             int w = mycontact->width();
             int h = mycontact->height();
             QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
             item->setSizeHint(QSize(w, h));
             ui->listWidget->setItemWidget(item, mycontact);
-            //ui->listWidget->scrollToBottom();
         }
 
-     }
-
-    if(groupType==1){
-         ui->listWidget->setSelectionMode(QAbstractItemView::MultiSelection);
     }
 
 
 }
 
 void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
-    if(groupType==1){
+    int index = ui->listWidget->currentRow();
+    QString selectedID = cdata[index][1];
+
+    if(groupType==1) {
+
+        QListWidgetItem *it = new QListWidgetItem(ui->listWidget_2);
+        ContactWidget *mycontact = new ContactWidget();
+
+        vector<QString> userData = db.SelectData("USER","UserID,FirstName,LastName,ProfilePicture","WHERE UserID = " + db.convertToValue(selectedID)).front();
+        mycontact->setContactData(userData[3],userData[1]+ " "+ userData[2],selectedID);
+
+        if(!ui->listWidget_2->isHidden()) {
+            mycontact->setGeometry(0,0,250,100);
+        }
+        int w = mycontact->width();
+        int h = mycontact->height();
+        it->setSizeHint(QSize(w, h));
+
+        ui->listWidget_2->setItemWidget(it, mycontact);
+        item->setHidden(true);
+        list2Contact[ui->listWidget_2->count() - 1] = index;
 
     }
     else{
@@ -134,4 +154,21 @@ void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
 
 
 
+}
+
+void ShowContact::on_listWidget_2_itemClicked(QListWidgetItem *item) {
+    int index = list2Contact[ui->listWidget_2->currentRow()];
+    QString selectedID = cdata[index][1];
+
+    QListWidgetItem *it = new QListWidgetItem(ui->listWidget);
+    ContactWidget *mycontact = new ContactWidget();
+
+    vector<QString> userData = db.SelectData("USER","UserID,FirstName,LastName,ProfilePicture","WHERE UserID = " + db.convertToValue(selectedID)).front();
+    mycontact->setContactData(userData[3],userData[1]+ " "+ userData[2],selectedID);
+
+    mycontact->setGeometry(0,0,250,100);
+    int w = mycontact->width();
+    int h = mycontact->height();
+    it->setSizeHint(QSize(w, h));
+    ui->listWidget->item(index)->setHidden(false);
 }

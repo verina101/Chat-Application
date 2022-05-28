@@ -40,6 +40,9 @@
     </widget>
    </item>
    <item>
+    <widget class="QListWidget" name="listWidget_2"/>
+   </item>
+   <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <property name="bottomMargin">
       <number>6</number>
