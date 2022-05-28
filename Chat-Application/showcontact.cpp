@@ -119,7 +119,8 @@ void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
 
         ui->listWidget_2->setItemWidget(it, mycontact);
         item->setHidden(true);
-        list2Contact[ui->listWidget_2->count() - 1] = index;
+
+        //  list2Contact[ui->listWidget_2->count() - 1] = index;
 
     }
     else{
