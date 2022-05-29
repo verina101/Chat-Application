@@ -12,7 +12,6 @@
 #include "Data.h"
 #include "contactwidget.h"
 #include "MyConstants.h"
-//#include<QDialog>
 
 using namespace std;
 namespace Ui {

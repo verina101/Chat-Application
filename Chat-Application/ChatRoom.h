@@ -31,8 +31,6 @@ private slots:
     void deleteMsg();
 
 
-
-
 signals:
     void exitChat();
 
