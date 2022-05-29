@@ -5,6 +5,7 @@
 #include "contact.h"
 #include <QApplication>
 #include <QCoreApplication>
+#include <QMessageBox>
 #include <QDebug>
 #include <QtSql>
 #include <iostream>
@@ -23,7 +24,6 @@ ShowContact::ShowContact(QWidget *parent): QWidget(parent), ui(new Ui::ShowConta
 
     QString myStyleSheet = "background: url(':/images/assets/login_BackGround.png');";
     this->setStyleSheet(myStyleSheet);
-
 }
 
 ShowContact::~ShowContact() {
@@ -45,12 +45,14 @@ void ShowContact::on_pushButton_clicked()
 }
 
 void ShowContact::openShowContact() {
-    selectedMembers.clear();
+    selectedIDs.clear();
     if(groupType == 1) {// groupchat
+        ui->lineEdit_chatName->show();
         ui->listWidget_2->show();
         ui->pushButton_creategroupChat->show();
     }
     else {// privatechat
+        ui->lineEdit_chatName->hide();
         ui->listWidget_2->hide();
         ui->pushButton_creategroupChat->hide();
     }
@@ -115,7 +117,7 @@ void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
     QString selectedID = cdata[index][1];
 
     if(groupType==1) {
-        selectedMembers[index] = selectedID;
+        selectedIDs.insert(index);
         ui->listWidget->item(index)->setHidden(true);
         ui->listWidget_2->item(index)->setHidden(false);
     }
@@ -130,8 +132,8 @@ void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
             db.InsertData("CHATROOM","( " + db.convertToValue(chatName1) + " )");
             QString chatID = db.SelectData("CHATROOM","RoomID","ORDER BY RoomID DESC").front().front();
             db.InsertData("CHATROOMINFO","( " + db.convertToValue(chatID) +", 'None', '2', '0' )");
-            db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(MyConstants::getMyId()) +" , datetime('now') )");
-            db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(selectedID) +" , datetime('now') )");
+            db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(MyConstants::getMyId()) +" , datetime('now','localtime') )");
+            db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(selectedID) +" , datetime('now','localtime') )");
 
             MyConstants::setMyChatRoomID(chatID);
         }
@@ -152,23 +154,33 @@ void ShowContact::on_listWidget_2_itemClicked(QListWidgetItem *item) {
     int index = ui->listWidget_2->currentRow();
     ui->listWidget_2->item(index)->setHidden(true);
     ui->listWidget->item(index)->setHidden(false);
-    selectedMembers.erase(index);
+    selectedIDs.erase(index);
 }
-// chatroom, chatinfo, participate
+
 void ShowContact::on_pushButton_creategroupChat_clicked() {
-    if(selectedMembers.empty()) return;
-
-    QWidget Wndow_enterChatName;
-    QLabel Label_enterChatName;
-    QLineEdit *LineEdit_myChatName;
-
-    Label_enterChatName.setText("Enter groupchat name: ");
-    Wndow_enterChatName.setAcceptDrops(true);
-
-    for(auto user : selectedMembers) {
-
+    QString chatName = ui->lineEdit_chatName->text();
+    if(selectedIDs.empty()) return;
+    if(chatName.isEmpty()) {
+        QMessageBox::warning(this,"Error", "Please Enter Group Name");
+        return;
     }
 
+    db.InsertData("CHATROOM","( " + db.convertToValue(chatName) + " )");
+    QString chatID = db.SelectData("CHATROOM","RoomID","ORDER BY RoomID DESC").front().front();
+    string chatSize = to_string(selectedIDs.size()+1) ;
+    db.InsertData("CHATROOMINFO","( " + db.convertToValue(chatID) +", "+db.convertToValue(MyConstants::getMyName())+", '" + chatSize + "', '1' )");
 
+    db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(MyConstants::getMyId()) +" , datetime('now','localtime') )");
+    for(auto userIndex : selectedIDs) {
+        QString userID = cdata[userIndex][1];
+        db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(userID) +" , datetime('now','localtime') )");
+    }
+    MyConstants::setMyChatRoomID(chatID);
+    MyConstants::setMyChatRoomName(chatName);
+
+    emit openContactChat();
+    ui->listWidget->blockSignals(true);
+    ui->listWidget->clear();
+    ui->listWidget->blockSignals(false);
 }
 

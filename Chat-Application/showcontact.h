@@ -8,6 +8,7 @@
 #include <QString>
 #include <string>
 #include <QListWidgetItem>
+#include <set>
 #include "Data.h"
 #include "contactwidget.h"
 #include "MyConstants.h"
@@ -32,10 +33,7 @@ private slots:
 
     void on_listWidget_itemClicked(QListWidgetItem *item);
     void openShowContact();
-
     void on_listWidget_2_itemClicked(QListWidgetItem *item);
-
-
     void on_pushButton_creategroupChat_clicked();
 
 signals:
@@ -49,6 +47,8 @@ private:
     vector<vector<QString>>cdata;
     vector<vector<QString>>data;
     Data db;
+    set<int>selectedIDs;
+
 
 };
 
