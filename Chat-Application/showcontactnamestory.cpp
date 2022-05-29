@@ -38,9 +38,6 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
         }
     }
 
-
-
-
     this->storyUsersID.clear();
     vector<vector<QString>>usersIds,checkvec;
 

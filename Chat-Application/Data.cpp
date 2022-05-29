@@ -164,6 +164,9 @@ vector<vector<QString>> Data::SelectData(string TableName, string Columns, strin
     DB.open();
     vector<vector<QString>> Rows;
     int columnsCount = count(Columns.begin(), Columns.end(), ',') + 1;
+    if(Columns == "*") {
+        columnsCount = count(myColumns[TableName].begin(), myColumns[TableName].end(), ',') + 2;
+    }
     string SQL = "SELECT " + Columns + " FROM " + TableName + " " + Condition;
     QSqlQuery query;
     if(query.exec(QString::fromStdString(SQL))) {
