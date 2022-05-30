@@ -133,7 +133,6 @@ void contact::openAddContact()
             QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
             item->setSizeHint(QSize(w, h));
             ui->listWidget->setItemWidget(item, mycontact);
-            //ui->listWidget->scrollToBottom();
 
             this->at[expected++]=real;
         }

@@ -34,6 +34,8 @@ private slots:
 
     void on_pushButton_Profile_clicked();
 
+    void on_pushButton_logOut_clicked();
+
 signals :
     void selectAddContact();
     void selectChatRoom();

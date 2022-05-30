@@ -8,6 +8,7 @@
 #include "contact.h"
 #include "showcontact.h"
 #include "profile.h"
+#include "login.h"
 
 using namespace std;
 
@@ -213,6 +214,13 @@ void Chats::on_pushButton_Profile_clicked(){
     this->setWindowTitle("Profile");
     profile *myProfile = new profile();
     myProfile->show();
+    this->close();
+}
+
+
+void Chats::on_pushButton_logOut_clicked(){
+    login *myLogin = new login();
+    myLogin->show();
     this->close();
 }
 
