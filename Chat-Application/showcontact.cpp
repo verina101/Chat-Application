@@ -83,9 +83,8 @@ void ShowContact::openShowContact() {
         }
 
         if(found) {
-            ContactWidget *mycontact = new ContactWidget();
-            QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";
-            mycontact->setContactData(myphotopath, row1[1] +" "+ row1[2], "ID: "+row1[0]);
+            ContactWidget *mycontact = new ContactWidget();            
+            mycontact->setContactData(row1[3], row1[1] +" "+ row1[2], "ID: "+row1[0]);
 
             if(!ui->listWidget_2->isHidden()) {
                 mycontact->setGeometry(0,0,250,100);
@@ -97,8 +96,7 @@ void ShowContact::openShowContact() {
             item->setSizeHint(QSize(w, h));
             if(!ui->listWidget_2->isHidden()) {
                 ContactWidget *mycontact2 = new ContactWidget();
-                myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";
-                mycontact2->setContactData(myphotopath, row1[1] +" "+ row1[2], "ID: "+row1[0]);
+                mycontact2->setContactData(row1[3], row1[1] +" "+ row1[2], "ID: "+row1[0]);
 
                 QListWidgetItem *item2 = new QListWidgetItem(ui->listWidget_2);
                 item2->setSizeHint(QSize(w, h));

@@ -128,6 +128,9 @@ color:white;</string>
       </item>
       <item>
        <widget class="QListWidget" name="listWidget">
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
         <property name="verticalScrollMode">
          <enum>QAbstractItemView::ScrollPerPixel</enum>
         </property>

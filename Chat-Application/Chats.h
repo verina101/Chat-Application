@@ -29,11 +29,8 @@ private slots:
     void on_pushButton_viewStory_clicked();
     void on_pushButton_addContact_clicked();
     void openChatRoomFromContact();
-
     void on_pushButton_createGroup_clicked();
-
     void on_pushButton_Profile_clicked();
-
     void on_pushButton_logOut_clicked();
 
 signals :
@@ -43,13 +40,15 @@ signals :
 
 private:
     Ui::Chats *ui;
-    void displayChatList();
-    QString getChatName(QString chatName);
+
     Data db;
     ChatRoom myChatRoom ;
     ShowContact showContact ;
     contact myContact;
-    vector<pair<QString,QString>>myChatsInfo;
+    vector<pair<QString,pair<QString,QString>>>myChatsInfo;
+
+    void displayChatList();
+    pair<QString,QString> getChatInfo(QString chatName);
 
 
 

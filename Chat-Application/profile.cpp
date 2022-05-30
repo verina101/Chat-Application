@@ -56,7 +56,7 @@ profile::~profile(){
 void profile::on_pushButton_clicked()
 {
     QString filter="Jpeg File(*.jpeg);; Png File(*.png);; JPG File(*.jpg) ;; BMP File(*.bmp);; GIF file(*.gif)";
-    filePath=QFileDialog::getOpenFileName(this,"open a file","D:/pic",filter);
+    filePath=QFileDialog::getOpenFileName(this,"open a file","D:/",filter);
     QMessageBox::information(this,"..",filePath);
     if(!filePath.isEmpty()){
     QPixmap pic(filePath);

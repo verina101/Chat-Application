@@ -57,17 +57,18 @@ void Chats::displayChatList() {
     }
 
     QString chatName;
+    pair<QString,QString> chatInfo;
     for(auto currentMsg : msgs) {
         if(rooms[currentMsg[0] ] == -1) {
             rooms[currentMsg[0]] = 1;
 
             chatName = db.SelectData("CHATROOM", "Name", "WHERE RoomID = " + db.convertToValue(currentMsg[0])).front().front();
-            chatName = getChatName(chatName);
-            myChatsInfo.push_back({currentMsg[0],chatName});
+            chatInfo = getChatInfo(chatName);
+            myChatsInfo.push_back({chatInfo.second,{currentMsg[0],chatInfo.first}});
 
             ChatItem *chatItem = new ChatItem();
 
-            chatItem->setChatData(":/images/assets/ChatRooms_BackGround.jpg",chatName,currentMsg[1],currentMsg[2]);
+            chatItem->setChatData(chatInfo.second,chatInfo.first,currentMsg[1],currentMsg[2]);
 
             int w = chatItem->width();
             int h = chatItem->height();
@@ -78,12 +79,13 @@ void Chats::displayChatList() {
     }
     for(auto left : rooms) {
         if(left.second == -1) {
+
             chatName = db.SelectData("CHATROOM", "Name", "WHERE RoomID = " + db.convertToValue(left.first)).front().front();
-            chatName = getChatName(chatName);
-            myChatsInfo.push_back({left.first,chatName});
+            chatInfo = getChatInfo(chatName);
+            myChatsInfo.push_back({chatInfo.second,{left.first,chatInfo.first}});
 
             ChatItem *chatItem = new ChatItem();
-            chatItem->setChatData(":/images/assets/ChatRooms_BackGround.jpg",chatName,"","");
+            chatItem->setChatData(chatInfo.second,chatInfo.first,"","");
 
             int w = chatItem->width();
             int h = chatItem->height();
@@ -96,25 +98,31 @@ void Chats::displayChatList() {
 
 }
 
-QString Chats::getChatName(QString chatName){
+pair<QString, QString> Chats::getChatInfo(QString chatName){
+    pair<QString, QString> myChatInfo;
     int idIndex = 0;
     if(chatName.contains('#')){
         QList myList =  chatName.split('#');
         if(MyConstants::getMyId() == myList[0]){
             idIndex = 1;
         }
-        vector<QString> otherUserName = db.SelectData("USER","FirstName, LastName"," WHERE UserID = " + db.convertToValue(myList[idIndex])).front();
+        vector<QString> otherUserName = db.SelectData("USER","FirstName, LastName, ProfilePicture"," WHERE UserID = " + db.convertToValue(myList[idIndex])).front();
+        myChatInfo.first = otherUserName[0] + " " + otherUserName[1];
+        myChatInfo.second = otherUserName[2];
 
-        return otherUserName[0] + " " + otherUserName[1];
+        return myChatInfo;
     }
-    return chatName;
+    myChatInfo.first = chatName;
+    myChatInfo.second = ":/images/assets/group_image.png";
 
+    return myChatInfo;
 }
 
 
 void Chats::on_listWidget_currentRowChanged(int currentRow) {
-    MyConstants::setMyChatRoomID( myChatsInfo[currentRow].first);
-    MyConstants::setMyChatRoomName(  myChatsInfo[currentRow].second);
+    MyConstants::setMyChatRoomID( myChatsInfo[currentRow].second.first);
+    MyConstants::setMyChatRoomName(myChatsInfo[currentRow].second.second);
+    MyConstants::setMyChatRoomPic(myChatsInfo[currentRow].first);
 
 }
 

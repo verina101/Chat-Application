@@ -27,16 +27,13 @@ void ChatInfo::setChatData() {
         ui->label_chatType->setText("UserName: ");
         ui->label_chatName->setText(MyConstants::getMyChatRoomName());
         ui->label_descreption_Admin_Type->setText("Description: ");
-        if(userData[3]=="1"){
-            ui->label_Description_Admin->setText(userData[0]);
-            QPixmap piximg(userData[1]);
-            int w = ui->label_picture->width();
-            int h = ui->label_picture->height();
-            ui->label_picture->setPixmap(piximg.scaled(w, h, Qt::IgnoreAspectRatio));
-        }else{
-            ui->label_Description_Admin->setText("Not Visible");
-            ui->label_picture->setText("Not Visible");
-        }
+
+        ui->label_Description_Admin->setText(userData[0]);
+        QPixmap piximg(userData[1]);
+        int w = ui->label_picture->width();
+        int h = ui->label_picture->height();
+        ui->label_picture->setPixmap(piximg.scaled(w, h, Qt::IgnoreAspectRatio));
+
 
         ui->label_myMobile->setText(userData[2]);
         ui->label_ListType->setText("Comman Chat Rooms");

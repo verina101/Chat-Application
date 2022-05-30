@@ -13,5 +13,7 @@
         <file>assets/login_BackGround.png</file>
         <file>assets/Menu_BackGround.jpg</file>
         <file>assets/app_BackGround.jpg</file>
+        <file>assets/contact.png</file>
+        <file>assets/defultProfile.png</file>
     </qresource>
 </RCC>

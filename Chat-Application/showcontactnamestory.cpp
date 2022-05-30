@@ -23,7 +23,7 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
     Data MyDataBase;
 
     //********************************
-    // Delte old stories feom database
+    // Delete old stories feom database
     //********************************
     vector<vector<QString>>vec;
     string tableName="STORY";
@@ -59,8 +59,8 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
         checkvec = MyDataBase.SelectData(contactTable,contactCol,contactCond);
         if(checkvec.size()){
             ContactWidget *mycontact = new ContactWidget();
-            QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";
-            mycontact->setContactData(myphotopath, checkvec[0][2], "ID: "+checkvec[0][1]);
+            QString userPicture = MyDataBase.SelectData("USER","ProfilePicture","WHERE UserID = '" +id + "'").front().front();
+            mycontact->setContactData(userPicture, checkvec[0][2], "ID: "+checkvec[0][1]);
             int w = mycontact->width();
             int h = mycontact->height();
             QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
@@ -113,7 +113,6 @@ void ShowContactNameStory::on_pushButton_clicked()
 {
 
     SavedData::setshowDeleteButton(true);
-    //SavedData::setStoryUserID(SavedData::getUserId());
     ShowStories *ss= new ShowStories();
     ss->show();
     this->hide();

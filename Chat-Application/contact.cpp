@@ -79,10 +79,10 @@ void contact::openAddContact()
     this->setPalette(palette);
 
 
-    QPixmap pix("D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg") ;
+    QPixmap pix(":/images/assets/contact.png") ;
     int h= ui->label->height();
     int w = ui->label->width();
-    ui->label-> setPixmap(pix.scaled(w,h, Qt::IgnoreAspectRatio));
+    ui->label-> setPixmap(pix.scaled(w,h, Qt::KeepAspectRatio));
     Data MyDataBase;
 
     this->myID = MyConstants::getMyId().toInt();
@@ -121,13 +121,12 @@ void contact::openAddContact()
 
         if(!found){
             ContactWidget *mycontact = new ContactWidget();
-            QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";  //row1[3]
-            QString defaultphoto= "D:/Pictures/Ds project/NotSeenBackground.png";
+            QString defultProfile = ":/images/assets/defultProfile.png";  //row1[3]
             if(row1[4]==seen){
-                mycontact->setContactData(defaultphoto, row1[1] +" "+ row1[2], "ID: "+row1[0]);
+                mycontact->setContactData(defultProfile, row1[1] +" "+ row1[2], "ID: "+row1[0]);
             }
             else{
-                mycontact->setContactData(myphotopath, row1[1] +" "+ row1[2], "ID: "+row1[0]);
+                mycontact->setContactData(row1[3], row1[1] +" "+ row1[2], "ID: "+row1[0]);
             }
             int w = mycontact->width();
             int h = mycontact->height();

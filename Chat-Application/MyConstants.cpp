@@ -4,6 +4,7 @@
  QString MyConstants::myName = "";
  QString MyConstants::myChatRoomName = "";
  QString MyConstants::myChatRoomID = "1";
+ QString MyConstants::myChatRoomPic = "";
  QString MyConstants::myMsgID = "";
 
 QString MyConstants::getMyId()
@@ -54,6 +55,16 @@ QString MyConstants::getMyMsgID()
 void MyConstants::setMyMsgID( QString newMyMsgID)
 {
     myMsgID = newMyMsgID;
+}
+
+QString MyConstants::getMyChatRoomPic()
+{
+    return myChatRoomPic;
+}
+
+void MyConstants::setMyChatRoomPic(QString newMyChatRoomPic)
+{
+    myChatRoomPic = newMyChatRoomPic;
 }
 
 MyConstants::MyConstants() {

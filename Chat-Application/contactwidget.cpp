@@ -10,7 +10,7 @@ void ContactWidget::setContactData(QString pic, QString name, QString id) {
     QPixmap piximg(pic);
     int w = ui->Picture->width();
     int h = ui->Picture->height();
-    ui->Picture->setPixmap(piximg.scaled(w, h, Qt ::KeepAspectRatioByExpanding));
+    ui->Picture->setPixmap(piximg.scaled(w, h, Qt ::IgnoreAspectRatio));
 
     ui->Id->setText(id);
     ui->Name->setText(name);

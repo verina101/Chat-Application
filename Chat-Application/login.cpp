@@ -18,7 +18,7 @@ login::login(QWidget *parent): QWidget(parent), ui(new Ui::login) {
     ui->comboBox_visibilty->addItem("For Contacts Only");//0
     ui->comboBox_visibilty->addItem("Everyone");//1
 
-    QPixmap pic(":/images/assets/login_BackGround.png");
+    QPixmap pic(":/images/assets/defultProfile.png");
     ui->label_pic->setPixmap(pic.scaled(100, 100, Qt::KeepAspectRatio));
 
 }
@@ -130,16 +130,15 @@ void login::on_pushButton_change_pic_clicked() {
         ui->label_pic->setPixmap(pic.scaled(100,100,Qt::IgnoreAspectRatio));
         QFileInfo fi(filePath);
         QString fileName= fi.fileName();
-        QResource resource;
-        qDebug()<<resource.fileName();
-        QString desktopPath = ":/Resources/images/assets";
+        QString desktopPath = "D:/myProjects/Chat-Application/Chat-Application/assets/source_images";
         QString destinationPath= desktopPath+QDir::separator()+fileName;
         QFile::copy(filePath, destinationPath);
     }
 }
 
 
-void login::on_pushButton_loginin_2_clicked(){
+void login::on_pushButton_loginin_2_clicked()
+{
     this->setWindowTitle("Login");
     ui->stackedWidget_2->setCurrentIndex(0);
 }

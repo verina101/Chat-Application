@@ -12,6 +12,7 @@ class MyConstants {
     static QString myName;
     static QString myChatRoomID;
     static QString myChatRoomName;
+    static QString myChatRoomPic;
     static QString myMsgID;
 
 public:
@@ -27,6 +28,8 @@ public:
     static void setMyChatRoomName( QString newMyChatRoomName);
     static  QString getMyMsgID();
     static void setMyMsgID( QString newMyMsgID);
+    static  QString getMyChatRoomPic();
+    static void setMyChatRoomPic( QString newMyChatRoomPic);
 };
 
 #endif // MYCONSTANTS_H
