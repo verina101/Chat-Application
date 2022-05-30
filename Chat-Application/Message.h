@@ -20,18 +20,19 @@ public:
     explicit Message(QWidget *parent = nullptr);
     ~Message();
 
-    void setUserData(QString userName);
-    void setMessage(QString s, bool SentByMe);
+    void setUserData(QString userName, int colorIndex);
+    int getColorsCount();
+    void setMessage(QString s, bool SentByMe, bool isGroupChat);
     void ConvertFormat(QString &str);
     void getMessageInfo(QString messageID);
     void deleteMessage(QString messageID);
-
 private slots:
 
 
 private:
     MsgStatus *myMsgStatus  = new MsgStatus();;
     Data db;
+    vector<QString> colors = {"rgb(68, 184, 172)", "rgb(91, 94, 166)", "rgb(188, 36, 60)", "rgb(128, 0, 85)"};
     Ui::Message *ui;
 };
 
