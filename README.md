@@ -1,5 +1,5 @@
 
-![ERD_Diagram](https://user-images.githubusercontent.com/83420413/171068444-8d2defc7-3a32-49c2-ad59-259f3308bcc9.png)
+![ERD_Diagram](https://user-images.githubusercontent.com/83420413/171068520-cc285b9e-804a-4791-839f-bfcd26fac8d7.jpg)
 
 
 
