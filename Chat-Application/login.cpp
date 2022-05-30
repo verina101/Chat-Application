@@ -130,15 +130,16 @@ void login::on_pushButton_change_pic_clicked() {
         ui->label_pic->setPixmap(pic.scaled(100,100,Qt::IgnoreAspectRatio));
         QFileInfo fi(filePath);
         QString fileName= fi.fileName();
-        QString desktopPath = "C:/Users/Maria Tawfek/Desktop/GitHub/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug";
+        QResource resource;
+        qDebug()<<resource.fileName();
+        QString desktopPath = ":/Resources/images/assets";
         QString destinationPath= desktopPath+QDir::separator()+fileName;
         QFile::copy(filePath, destinationPath);
     }
 }
 
 
-void login::on_pushButton_loginin_2_clicked()
-{
+void login::on_pushButton_loginin_2_clicked(){
     this->setWindowTitle("Login");
     ui->stackedWidget_2->setCurrentIndex(0);
 }

@@ -42,23 +42,26 @@ void Message::ConvertFormat(QString &str) {
     tmpo->setStyleSheet("font-size: 14px;");
     tmpo->show();
     tmpo->hide();
+    int l = str.size();
+    while(l && (str[l - 1] == '\n' || str[l - 1] == ' ')) {
+        l--;
+    }
 
-    string tmpStr = str.toStdString();
-    while(!tmpStr.empty() && (tmpStr.back() == '\n' || tmpStr.back() == ' '))
-        tmpStr.pop_back();
-
+    str = str.left(l);
+    QString tmpqStr = str;
     str.clear();
-    for(auto ch : tmpStr) {
+    for(auto ch : tmpqStr) {
+        qDebug()<<ch;
         int oLd_nLines = tmpo->document()->documentLayout()->documentSize().height();
 
-        tmpo->insertPlainText(QString::fromStdString(string(1, ch)));
+        tmpo->insertPlainText(ch);
         int new_nLines = tmpo->document()->documentLayout()->documentSize().height();
 
-        string addChar (1, ch);
+        QString addChar (1, ch);
         if(oLd_nLines != new_nLines && ch != '\n') {
             addChar = '\n' + addChar;
         }
-        str += QString::fromStdString(addChar);
+        str += addChar;
     }
     //qDebug() << str;
     tmpo->close();

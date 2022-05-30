@@ -44,7 +44,7 @@ void ChatRoom::openChatRoom() {
     myChatMsgs = db.SelectData("MESSAGE", column, condition);
 
     for(auto curMsg : myChatMsgs) {
-        DisplayMessage(curMsg[0], curMsg[2], curMsg[3], curMsg[4] == '1');
+        DisplayMessage(curMsg[0], curMsg[2], curMsg[3], curMsg[4] == '1',0);
     }
     updateSeen();
 }
@@ -58,10 +58,12 @@ void ChatRoom::updateSeen(){
 
 }
 
-void ChatRoom::DisplayMessage(QString &msgText, QString senderName, QString senderID, bool isDeleted) {
+void ChatRoom::DisplayMessage(QString &msgText, QString senderName, QString senderID, bool isDeleted, bool isNew) {
     Message *myMsg = new Message();
-    myMsg->ConvertFormat(msgText);
-    if(msgText.isEmpty()) return;
+    if(isNew)
+        myMsg->ConvertFormat(msgText);
+    if(msgText.isEmpty())
+        return;
 
     if(isDeleted) {
         if(MyConstants::getMyId() == senderID)
@@ -86,7 +88,7 @@ void ChatRoom::DisplayMessage(QString &msgText, QString senderName, QString send
 
 void ChatRoom::on_pushButton_send_clicked() {
     QString myMsgText = ui->plainTextEdit->toPlainText();
-    DisplayMessage(myMsgText, "", MyConstants::getMyId(), 0);
+    DisplayMessage(myMsgText, "", MyConstants::getMyId(), 0,1);
 
     ui->plainTextEdit->setPlainText("");
 
@@ -158,80 +160,80 @@ void ChatRoom::deleteMsg() {
 
 
 void ChatRoom::on_pushButton_1_clicked() {
-    QString myEmoji = ui->plainTextEdit->toPlainText() + ui->pushButton_1->text();
-    ui->plainTextEdit->setPlainText(myEmoji);
+    QString myEmoji = ui->pushButton_1->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
 }
 
 
 void ChatRoom::on_pushButton_2_clicked()
 {
 
-    QString myEmoji = ui->plainTextEdit->toPlainText() + ui->pushButton_2->text();
-    ui->plainTextEdit->setPlainText(myEmoji);
+    QString myEmoji = ui->pushButton_2->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
 
 }
 
 
 void ChatRoom::on_pushButton_3_clicked()
 {
-    QString myEmoji = ui->plainTextEdit->toPlainText() + ui->pushButton_3->text();
-    ui->plainTextEdit->setPlainText(myEmoji);
+    QString myEmoji = ui->pushButton_3->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
 }
 
 
 void ChatRoom::on_pushButton_4_clicked()
 {
-    QString myEmoji = ui->plainTextEdit->toPlainText() + ui->pushButton_4->text();
-    ui->plainTextEdit->setPlainText(myEmoji);
+    QString myEmoji = ui->pushButton_4->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
 }
 
 
 void ChatRoom::on_pushButton_5_clicked()
 {
-    QString myEmoji = ui->plainTextEdit->toPlainText() + ui->pushButton_5->text();
-    ui->plainTextEdit->setPlainText(myEmoji);
+    QString myEmoji = ui->pushButton_5->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
 }
 
 
 void ChatRoom::on_pushButton_6_clicked()
 {
-    QString myEmoji = ui->plainTextEdit->toPlainText() + ui->pushButton_6->text();
-    ui->plainTextEdit->setPlainText(myEmoji);
+    QString myEmoji = ui->pushButton_6->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
 }
 
 
 void ChatRoom::on_pushButton_7_clicked()
 {
-    QString myEmoji = ui->plainTextEdit->toPlainText() + ui->pushButton_7->text();
-    ui->plainTextEdit->setPlainText(myEmoji);
+    QString myEmoji = ui->pushButton_7->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
 
 }
 
 
 void ChatRoom::on_pushButton_8_clicked()
 {
-    QString myEmoji = ui->plainTextEdit->toPlainText() + ui->pushButton_8->text();
-    ui->plainTextEdit->setPlainText(myEmoji);
+    QString myEmoji = ui->pushButton_8->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
 }
 
 
 void ChatRoom::on_pushButton_9_clicked()
 {
-    QString myEmoji = ui->plainTextEdit->toPlainText() + ui->pushButton_9->text();
-    ui->plainTextEdit->setPlainText(myEmoji);
+    QString myEmoji = ui->pushButton_9->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
 }
 
 
 void ChatRoom::on_pushButton_10_clicked()
 {
-    QString myEmoji = ui->plainTextEdit->toPlainText() + ui->pushButton_10->text();
-    ui->plainTextEdit->setPlainText(myEmoji);
+    QString myEmoji = ui->pushButton_10->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
 }
 
 
 void ChatRoom::on_pushButton_11_clicked()
 {
-    QString myEmoji = ui->plainTextEdit->toPlainText() + ui->pushButton_11->text();
-    ui->plainTextEdit->setPlainText(myEmoji);
+    QString myEmoji = ui->pushButton_11->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
 }
 

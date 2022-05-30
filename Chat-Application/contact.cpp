@@ -63,6 +63,7 @@ void contact::on_pushButton_clicked() {
 
 
 void contact::on_listWidget_itemClicked(QListWidgetItem *item){
+    item->isHidden();
     this->isSelected = true;
 }
 

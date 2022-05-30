@@ -3,17 +3,13 @@
 
 ChatItem::ChatItem(QWidget *parent): QWidget(parent), ui(new Ui::ChatItem) {
     ui->setupUi(this);
-
-
-
 }
 
 ChatItem::~ChatItem() {
     delete ui;
 }
 
-void ChatItem::setChatData(QString chatPhoto, QString chatName, QString msgSender, QString msg)
-{
+void ChatItem::setChatData(QString chatPhoto, QString chatName, QString msgSender, QString msg){
     QPixmap piximg(chatPhoto);
     int w = ui->label_chatPhoto->width();
     int h = ui->label_chatPhoto->height();

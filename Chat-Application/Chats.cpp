@@ -120,6 +120,7 @@ void Chats::on_listWidget_currentRowChanged(int currentRow) {
 
 
 void Chats::on_listWidget_itemDoubleClicked(QListWidgetItem *item){
+    item->isHidden();
     this->setWindowTitle("ChatRoom");
     emit selectChatRoom();
 

@@ -49,8 +49,7 @@ profile::profile(QWidget *parent): QWidget(parent), ui(new Ui::profile) {
         ui->label-> setPixmap(photo.scaled(w,h, Qt::IgnoreAspectRatio));
 
 }
-profile::~profile()
-{
+profile::~profile(){
     delete ui;
 }
 
@@ -79,8 +78,6 @@ void profile::on_pushButton_2_clicked()
     string userCol     =  "ProfilePicture,Description";
     string userTable     =  "USER" ;
     string userCond     =  ";";
-   // this->data= myData.SelectData(userTable,userCol,userCond);
-
 
     if(!filePath.isEmpty()){
     userCol = "ProfilePicture = '" + filePath.toStdString() + "'";

@@ -1,7 +1,6 @@
 #include "constantdata.h"
 
-constantdata::constantdata()
-{
+constantdata::constantdata(){
 
 }
 

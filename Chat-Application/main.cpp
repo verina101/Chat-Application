@@ -24,6 +24,11 @@ int main(int argc, char *argv[]) {
     Data db;
     db.CreateDataBase();
 
+    QResource resource;
+    resource.setFileName(":/Chat-Application/Chat-Application/assets/source_images");
+    qDebug()<<resource.fileName();
+
+
     login Win;
     Win.show();
 
