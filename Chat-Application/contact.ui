@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
+    <width>713</width>
     <height>500</height>
    </rect>
   </property>
@@ -111,6 +111,13 @@
            <height>50</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(130, 130, 130);
+font:14px;
+color:white;
+border-radius:15px;
+</string>
+         </property>
          <property name="text">
           <string>ADD 🤩</string>
          </property>
@@ -123,6 +130,13 @@
            <width>50</width>
            <height>50</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(130, 130, 130);
+font:14px;
+color:white;
+border-radius:15px;
+</string>
          </property>
          <property name="text">
           <string>CLOSE 🥺</string>

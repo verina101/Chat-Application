@@ -114,7 +114,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background:rgb(178, 211, 255);
+      <string notr="true">background:rgb(206, 206, 206);
 border-radius:15px;
 font:16px;
 font:white;</string>
@@ -132,8 +132,11 @@ font:white;</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background:rgb(255, 249, 203);
-border-radius:15px;</string>
+        <string notr="true">background:rgb(130, 130, 130);
+font:14px;
+color:white;
+border-radius:15px;
+</string>
        </property>
        <property name="text">
         <string>ADD 🤩</string>
@@ -149,8 +152,11 @@ border-radius:15px;</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background:rgb(255, 249, 203);
-border-radius:15px;</string>
+        <string notr="true">background:rgb(130, 130, 130);
+font:14px;
+color:white;
+border-radius:15px;
+</string>
        </property>
        <property name="text">
         <string>CLOSE 🥺</string>
