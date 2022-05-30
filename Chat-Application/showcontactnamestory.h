@@ -24,6 +24,8 @@ private slots:
 
     void on_Back_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::ShowContactNameStory *ui;
 };

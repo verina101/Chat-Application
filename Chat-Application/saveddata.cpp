@@ -5,10 +5,11 @@ SavedData::SavedData()
 
 
 }
-string SavedData::userId      ="1";
-string SavedData::userName    ="";
-string SavedData::storyUserId ="3";
-string SavedData::ChosenStoryId="";
+string SavedData::userId          ="1";
+string SavedData::userName        ="";
+string SavedData::storyUserId     ="3";
+string SavedData::ChosenStoryId   ="";
+bool   SavedData::showDeleteButton = false;
 void SavedData::setUserId(string id){
     userId=id;
 }
@@ -42,3 +43,10 @@ string SavedData::getChosenStoryId(){
 }
 
 
+void SavedData::setshowDeleteButton(bool i){
+    showDeleteButton=i;
+}
+
+bool SavedData::getshowDeleteButton(){
+    return showDeleteButton;
+}
