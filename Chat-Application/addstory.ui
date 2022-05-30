@@ -115,6 +115,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background:transparent;</string>
+       </property>
        <property name="text">
         <string>🥺</string>
        </property>
@@ -127,6 +130,9 @@
          <width>50</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:transparent;</string>
        </property>
        <property name="text">
         <string>🥰</string>
@@ -141,6 +147,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background:transparent;</string>
+       </property>
        <property name="text">
         <string>😂</string>
        </property>
@@ -153,6 +162,9 @@
          <width>50</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:transparent;</string>
        </property>
        <property name="text">
         <string>🤡 </string>
@@ -167,6 +179,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background:transparent;</string>
+       </property>
        <property name="text">
         <string>🐥</string>
        </property>
@@ -179,6 +194,9 @@
          <width>50</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:transparent;</string>
        </property>
        <property name="text">
         <string>😢</string>
@@ -193,6 +211,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background:transparent;</string>
+       </property>
        <property name="text">
         <string>😠</string>
        </property>
@@ -205,6 +226,9 @@
          <width>50</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:transparent;</string>
        </property>
        <property name="text">
         <string>🦉</string>
@@ -219,6 +243,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background:transparent;</string>
+       </property>
        <property name="text">
         <string>👍</string>
        </property>
@@ -232,6 +259,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background:transparent;</string>
+       </property>
        <property name="text">
         <string>❤️ </string>
        </property>
@@ -244,6 +274,9 @@
          <width>50</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:transparent;</string>
        </property>
        <property name="text">
         <string>💔 </string>
