@@ -1,4 +1,4 @@
-![ERD_Diagram](https://user-images.githubusercontent.com/83420413/171068365-ff3e2794-c7ab-4625-98f8-6bc024be0f0d.jpg)
+![ERD_Diagram](https://user-images.githubusercontent.com/83420413/171068365-ff3e2794-c7ab-4625-98f8-6bc024be0f0d.PNG)
 
 
 
