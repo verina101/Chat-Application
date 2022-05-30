@@ -93,8 +93,6 @@ void ShowContactNameStory::on_ShowStories_clicked()
 
     string s=storyUsersID[indx][0].toStdString();
     saved.setStoryUserID(s);
-//    cout<<storyUsersID[indx][0].toStdString()<<endl;
-//    cout<<"Story user id   "<<saved.getStoryUserID()<<endl;
     ShowStories *ss= new ShowStories();
     ss->show();
     this->hide();

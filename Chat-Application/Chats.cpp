@@ -7,10 +7,12 @@
 #include "ShowContactNameStory.h"
 #include "contact.h"
 #include "showcontact.h"
+#include "profile.h"
 
 using namespace std;
 
 Chats::Chats(QWidget *parent): QWidget(parent), ui(new Ui::Chats) {
+    this->setWindowTitle("My Chats");
     ui->setupUi(this);
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
@@ -117,6 +119,7 @@ void Chats::on_listWidget_currentRowChanged(int currentRow) {
 
 
 void Chats::on_listWidget_itemDoubleClicked(QListWidgetItem *item){
+    this->setWindowTitle("ChatRoom");
     emit selectChatRoom();
 
     ui->stackedWidget->setCurrentIndex(1);
@@ -128,6 +131,7 @@ void Chats::on_listWidget_itemDoubleClicked(QListWidgetItem *item){
 }
 
 void Chats::enterchats() {
+    this->setWindowTitle("My Chats");
     showContact.groupType = 0;
     ui->stackedWidget->setCurrentIndex(0);
     displayChatList();
@@ -137,6 +141,7 @@ void Chats::enterchats() {
 
 
 void Chats::on_pushButton_addStory_clicked(){
+    this->setWindowTitle("Add Story");
     AddStory *addStory = new AddStory();
     addStory->show();
     this->close();
@@ -144,6 +149,7 @@ void Chats::on_pushButton_addStory_clicked(){
 
 
 void Chats::on_pushButton_viewStory_clicked(){
+    this->setWindowTitle("View Story");
     ShowContactNameStory *showContactNameStory = new ShowContactNameStory();
     showContactNameStory->show();
     this->close();
@@ -151,6 +157,7 @@ void Chats::on_pushButton_viewStory_clicked(){
 
 //-----(Contact class)-----//
 void Chats::on_pushButton_addContact_clicked(){
+    this->setWindowTitle("Add Contact");
     emit selectAddContact();
 
     ui->stackedWidget->setCurrentIndex(3);
@@ -162,8 +169,8 @@ void Chats::on_pushButton_addContact_clicked(){
 }
 
 //-----(Show Contact class)-----//
-void Chats::openChatRoomFromContact()
-{
+void Chats::openChatRoomFromContact(){
+    this->setWindowTitle("ChatRoom");
     emit selectChatRoom();
 
     ui->stackedWidget->setCurrentIndex(1);
@@ -174,6 +181,7 @@ void Chats::openChatRoomFromContact()
 }
 
 void Chats::on_pushButton_createChat_clicked() {
+    this->setWindowTitle("Contacts");
     showContact.groupType = 0;
     emit selectShowContact();
 
@@ -188,6 +196,7 @@ void Chats::on_pushButton_createChat_clicked() {
 
 void Chats::on_pushButton_createGroup_clicked()
 {
+    this->setWindowTitle("Create Group Chat");
     showContact.groupType = 1;
     emit selectShowContact();
 
@@ -197,5 +206,13 @@ void Chats::on_pushButton_createGroup_clicked()
     ui->listWidget->blockSignals(true);
     ui->listWidget->clear();
     ui->listWidget->blockSignals(false);
+}
+
+
+void Chats::on_pushButton_Profile_clicked(){
+    this->setWindowTitle("Profile");
+    profile *myProfile = new profile();
+    myProfile->show();
+    this->close();
 }
 

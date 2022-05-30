@@ -13,25 +13,24 @@ profile::profile(QWidget *parent): QWidget(parent), ui(new Ui::profile) {
     this->setMaximumSize(QSize(700, 500));
 
     QPixmap myBackGround("background2.png");
-    myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(backgroundRole(), myBackGround);
-    this->setPalette(palette);
-    //QPixmap pic("C:/Users/m/Pictures/Saved Pictures/WhatsApp Image 2022-05-05 at 11.19.27 PM.jpeg");
-    //ui->label->setPixmap(pic.scaled(100,100,Qt::KeepAspectRatio));
+    ui->label->setPixmap(myBackGround.scaled(100,100,Qt::KeepAspectRatio));
+
+    ui->comboBox_visibilty->addItem("Only Me");//0
+    ui->comboBox_visibilty->addItem("For all Contacts");//1
+
     constantdata currUser;
     string phoneno= currUser.getphoneNumber();
     Data myData;
-    string userCol     =  "FirstName,LastName,ProfilePicture,Description,PhoneNumber";
+    string userCol     =  "FirstName,LastName,ProfilePicture,Description,PhoneNumber,Visibility";
     string userTable     =  "USER" ;
     string userCond     =  "where PhoneNumber ='"+phoneno+"' ;";
     this->data= myData.SelectData(userTable,userCol,userCond);
 
-//    for(auto it: data)
-//    qDebug()<< it;
         ui->label_name_2->setText(data[0][0]+ " "+ data[0][1]);
         ui->lineEdit->setText(data[0][3]);
         ui->label_phoneNumber->setText(data[0][4]);
+        if(data[0][5]=="1")
+            ui->comboBox_visibilty->setCurrentIndex(1);
 
 
         string path= data[0][2].toStdString(),name="";
@@ -44,7 +43,7 @@ profile::profile(QWidget *parent): QWidget(parent), ui(new Ui::profile) {
         }
 
         cout<< "full path "<< path<< endl<< "name " << name;
-        QPixmap photo(QString::fromStdString(name));
+        QPixmap photo(QString::fromStdString(path));
         int h= ui->label->height();
         int w= ui->label->width();
         ui->label-> setPixmap(photo.scaled(w,h, Qt::IgnoreAspectRatio));
@@ -65,7 +64,7 @@ void profile::on_pushButton_clicked()
     ui->label->setPixmap(pic.scaled(100,100,Qt::IgnoreAspectRatio));
      QFileInfo fi(filePath);
      QString fileName= fi.fileName();
-     QString desktopPath = "C:/Users/Maria Tawfek/Desktop/GitHub/Chat-Application/build-Chat-Application-Desktop_Qt_6_3_0_MinGW_64_bit-Debug";
+     QString desktopPath = "";
      QString destinationPath= desktopPath+QDir::separator()+fileName;
     QFile::copy(filePath, destinationPath);
     }
@@ -81,14 +80,27 @@ void profile::on_pushButton_2_clicked()
     string userTable     =  "USER" ;
     string userCond     =  ";";
    // this->data= myData.SelectData(userTable,userCol,userCond);
-    QString desk= ui->lineEdit->text();
+
+
     if(!filePath.isEmpty()){
     userCol = "ProfilePicture = '" + filePath.toStdString() + "'";
     myData.UpdateData(userTable, userCol, userCond);
     }
+
+    QString desk= ui->lineEdit->text();
     userCond = "WHERE PhoneNumber = '" + phoneno + "'";
     userCol= "Description = '" + desk.toStdString() + "'";
     myData.UpdateData(userTable, userCol, userCond);
+
+    QString visibility = ui->comboBox_visibilty->currentText();
+    visibility = visibility.contains("For all Contacts") ? "1" : "0";
+    userCond = "WHERE PhoneNumber = '" + phoneno + "'";
+    userCol= "Visibility = '" + visibility.toStdString() + "'";
+    myData.UpdateData(userTable, userCol, userCond);
+
+
+    Chats *myChats = new Chats();
+    myChats->show();
     this->close();
 }
 

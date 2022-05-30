@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>login</string>
   </property>
   <widget class="QStackedWidget" name="stackedWidget_2">
    <property name="geometry">
@@ -156,7 +156,7 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QWidget" name="SignupPage">
+   <widget class="QWidget" name="signup">
     <widget class="QGroupBox" name="groupBox">
      <property name="geometry">
       <rect>

@@ -7,15 +7,17 @@
 #include <qdebug.h>
 #include<QPixmap>
 #include<QFileDialog>
-
 login::login(QWidget *parent): QWidget(parent), ui(new Ui::login) {
+    this->setWindowTitle("Login");
     ui->setupUi(this);
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
     ui->stackedWidget_2->setCurrentIndex(0);
-    ui->comboBox_visibilty->addItem("your contacts");//0
-    ui->comboBox_visibilty->addItem("for any one");//1
+
+    ui->comboBox_visibilty->addItem("Only Me");//0
+    ui->comboBox_visibilty->addItem("For all Contacts");//1
+
     QPixmap pic(":/images/assets/login_BackGround.png");
     ui->label_pic->setPixmap(pic.scaled(100, 100, Qt::KeepAspectRatio));
 
@@ -54,6 +56,7 @@ void login::on_pushButton_login_clicked() {
 }
 
 void login::on_pushButton_signup_clicked() {
+    this->setWindowTitle("Register");
     ui->stackedWidget_2->setCurrentIndex(1);
 
 }
@@ -67,7 +70,7 @@ void login::on_pushButton_submit_clicked() {
     description=ui->lineEdit_description->text();
     visibility=ui->comboBox_visibilty->currentText();
 
-    visibility = visibility.contains("for any one") ? "1" : "0";
+    visibility = visibility.contains("For all Contacts") ? "1" : "0";
 
     if(firstname.isEmpty() || lastname.isEmpty() || description.isEmpty() || password.isEmpty() || phoneno.isEmpty()) {
         QMessageBox::warning(this,"invalid registration "," missing value");
@@ -136,6 +139,7 @@ void login::on_pushButton_change_pic_clicked() {
 
 void login::on_pushButton_loginin_2_clicked()
 {
+    this->setWindowTitle("Login");
     ui->stackedWidget_2->setCurrentIndex(0);
 }
 
