@@ -15,8 +15,8 @@ profile::profile(QWidget *parent): QWidget(parent), ui(new Ui::profile) {
     QPixmap myBackGround("background2.png");
     ui->label->setPixmap(myBackGround.scaled(100,100,Qt::KeepAspectRatio));
 
-    ui->comboBox_visibilty->addItem("Only Me");//0
-    ui->comboBox_visibilty->addItem("For all Contacts");//1
+    ui->comboBox_visibilty->addItem("For Contacts Only");//0
+    ui->comboBox_visibilty->addItem("Everyone");//1
 
     constantdata currUser;
     string phoneno= currUser.getphoneNumber();
@@ -93,7 +93,7 @@ void profile::on_pushButton_2_clicked()
     myData.UpdateData(userTable, userCol, userCond);
 
     QString visibility = ui->comboBox_visibilty->currentText();
-    visibility = visibility.contains("For all Contacts") ? "1" : "0";
+    visibility = visibility.contains("Everyone") ? "1" : "0";
     userCond = "WHERE PhoneNumber = '" + phoneno + "'";
     userCol= "Visibility = '" + visibility.toStdString() + "'";
     myData.UpdateData(userTable, userCol, userCond);

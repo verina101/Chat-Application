@@ -15,8 +15,8 @@ login::login(QWidget *parent): QWidget(parent), ui(new Ui::login) {
 
     ui->stackedWidget_2->setCurrentIndex(0);
 
-    ui->comboBox_visibilty->addItem("Only Me");//0
-    ui->comboBox_visibilty->addItem("For all Contacts");//1
+    ui->comboBox_visibilty->addItem("For Contacts Only");//0
+    ui->comboBox_visibilty->addItem("Everyone");//1
 
     QPixmap pic(":/images/assets/login_BackGround.png");
     ui->label_pic->setPixmap(pic.scaled(100, 100, Qt::KeepAspectRatio));
@@ -70,7 +70,7 @@ void login::on_pushButton_submit_clicked() {
     description=ui->lineEdit_description->text();
     visibility=ui->comboBox_visibilty->currentText();
 
-    visibility = visibility.contains("For all Contacts") ? "1" : "0";
+    visibility = visibility.contains("Everyone") ? "1" : "0";
 
     if(firstname.isEmpty() || lastname.isEmpty() || description.isEmpty() || password.isEmpty() || phoneno.isEmpty()) {
         QMessageBox::warning(this,"invalid registration "," missing value");

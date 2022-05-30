@@ -42,7 +42,7 @@ void ChatRoom::openChatRoom() {
     myChatMsgs = db.SelectData("MESSAGE", column, condition);
 
     for(auto curMsg : myChatMsgs) {
-        DisplayMessage(curMsg[0], curMsg[2], curMsg[3], curMsg[4] == '1');
+        DisplayMessage(curMsg[0], curMsg[2], curMsg[3], curMsg[4] == '1', 0);
     }
     updateSeen();
 }
@@ -56,9 +56,9 @@ void ChatRoom::updateSeen(){
 
 }
 
-void ChatRoom::DisplayMessage(QString &msgText, QString senderName, QString senderID, bool isDeleted) {
+void ChatRoom::DisplayMessage(QString &msgText, QString senderName, QString senderID, bool isDeleted, bool isNew) {
     Message *myMsg = new Message();
-    myMsg->ConvertFormat(msgText);
+    if(isNew) myMsg->ConvertFormat(msgText);
     if(msgText.isEmpty()) return;
 
     if(isDeleted) {
@@ -84,7 +84,7 @@ void ChatRoom::DisplayMessage(QString &msgText, QString senderName, QString send
 
 void ChatRoom::on_pushButton_send_clicked() {
     QString myMsgText = ui->plainTextEdit->toPlainText();
-    DisplayMessage(myMsgText, "", MyConstants::getMyId(), 0);
+    DisplayMessage(myMsgText, "", MyConstants::getMyId(), 0, 1);
 
     ui->plainTextEdit->setPlainText("");
 
@@ -111,7 +111,7 @@ void ChatRoom::on_comboBox_currentIndexChanged(int index) {
         ui->stackedWidget->setCurrentIndex(1);
         myChatInfo.setChatData();
     }
-    else { //Exit        
+    else { //Exit
         emit exitChat();
         ui->comboBox->setCurrentIndex(0);
 
@@ -153,6 +153,4 @@ void ChatRoom::deleteMsg() {
     msg->setMessage("YOU DELETED THIS MESSAGE", 1);
     ui->listWidget->setItemWidget(item,msg);
 }
-
-
 

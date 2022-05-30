@@ -43,17 +43,15 @@ void Message::ConvertFormat(QString &str) {
     tmpo->show();
     tmpo->hide();
 
-    string tmpStr = str.toStdString(), subStr = "";
-    tmpo->setPlainText(QString::fromStdString(subStr));
+    string tmpStr = str.toStdString();
     while(!tmpStr.empty() && (tmpStr.back() == '\n' || tmpStr.back() == ' '))
         tmpStr.pop_back();
 
     str.clear();
     for(auto ch : tmpStr) {
-        subStr += ch;
         int oLd_nLines = tmpo->document()->documentLayout()->documentSize().height();
 
-        tmpo->setPlainText(QString::fromStdString(subStr));
+        tmpo->insertPlainText(QString::fromStdString(string(1, ch)));
         int new_nLines = tmpo->document()->documentLayout()->documentSize().height();
 
         string addChar (1, ch);
@@ -81,4 +79,3 @@ void Message::deleteMessage(QString messageID) {
     db.UpdateData("MESSAGE","Text = 'THIS MESSAGE WAS DELETED' , isDeleted = '1'","WHERE MessageID = " + db.convertToValue(messageID) );
 
 }
-

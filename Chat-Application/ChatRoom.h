@@ -17,7 +17,7 @@ class ChatRoom: public QWidget {
 
 public:
     explicit ChatRoom(QWidget *parent = nullptr);
-    void DisplayMessage(QString &msgText, QString senderName, QString senderID, bool isDeleted);
+    void DisplayMessage(QString &msgText, QString senderName, QString senderID, bool isDeleted, bool isNew);
 
     ~ChatRoom();
 
