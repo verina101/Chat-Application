@@ -46,8 +46,6 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
     string contactCond      =  "where UserID = "+MyDataBase.convertToValue( MyConstants::getMyId()) + " ;";
     usersIds= MyDataBase.SelectData(contactTable,contactCol,contactCond); // [0] contacat id
 
-
-
     for(int i =0;i < usersIds.size();i++){
         string id=usersIds[i][0].toStdString();
         string contactCol       =  "*";
@@ -73,8 +71,6 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
         checkvec.clear();
     }
 
-//    this->data= MyDataBase.SelectData(userTable,userCol,userCond);
-//     cout<< "size is "<< data.size();
 }
 ShowContactNameStory::~ShowContactNameStory()
 {

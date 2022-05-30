@@ -4,6 +4,7 @@
 #include <saveddata.h>
 #include <Data.h>
 #include <showstories.h>
+#include <QResource>
 StoryTime::StoryTime(QWidget *parent): QWidget(parent), ui(new Ui::StoryTime) {
     ui->setupUi(this);
     this->setMinimumSize(QSize(700, 500));
@@ -29,23 +30,15 @@ StoryTime::StoryTime(QWidget *parent): QWidget(parent), ui(new Ui::StoryTime) {
     }
     else{
 
-       string path= chosenStory[0][4].toStdString(),name="";
-       bool p=false;
-       for(int i=path.size(); i>-1; --i){
-           if(path[i]=='/')
-               break;
-           if(path[i]=='.'){
-               p=true;
-               continue;
-       }
-           if(p)
-              name+=path[i];
-       }
+        string path= chosenStory[0][4].toStdString(),name="";
 
-       reverse(name.begin(), name.end());
+        for(int i=path.size() - 1; i>-1; --i){
+            if(path[i] == '/') break;
 
-//        name=ConvertoValue(name);
+            name = path[i] + name;
+        }
 
+        //        name=ConvertoValue(name);
         QPixmap photo(QString::fromStdString(path));
         int h= ui->label->height();
         int w= ui->label->width();

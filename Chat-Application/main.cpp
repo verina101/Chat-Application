@@ -23,8 +23,9 @@ int main(int argc, char *argv[]) {
     QApplication APP(argc, argv);
     Data db;
     db.CreateDataBase();
-
-
+    QResource rs;
+    qDebug()<<rs.absoluteFilePath();
+            return 0;
     login Win;
     Win.show();
 
