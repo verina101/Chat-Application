@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>630</width>
-    <height>62</height>
+    <height>64</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -124,8 +124,7 @@ border:red;</string>
      <property name="styleSheet">
       <string notr="true">background:orange;
 border-radius:15px;
-font-size:15px;
-color:white;</string>
+font-size:15px;</string>
      </property>
      <property name="text">
       <string/>

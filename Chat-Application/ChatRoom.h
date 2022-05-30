@@ -19,12 +19,9 @@ public:
     explicit ChatRoom(QWidget *parent = nullptr);
     void DisplayMessage(QString &msgText, QString senderName, QString senderID, bool isDeleted, bool isNew);
 
-    map<QString, QString> emoji;
-
     ~ChatRoom();
 
 private slots:
-    void setEmoji(QString representation, QString _emoji);
     void on_comboBox_currentIndexChanged(int index);
     void on_pushButton_send_clicked();
     void openChatRoom();
@@ -63,9 +60,11 @@ private:
     Ui::ChatRoom *ui;
     ChatInfo myChatInfo;
     vector<vector<QString>> myChatMsgs;
+    int getRandomNumber(int total);
     QString numberOfParticipate="";
-
-
+    map<QString, int> userColorIndex;
+    map<int, bool> isUsed;
+    bool isGroupChat;
 };
 
 #endif // CHATROOM_H

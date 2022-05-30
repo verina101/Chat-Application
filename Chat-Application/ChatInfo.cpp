@@ -19,7 +19,7 @@ void ChatInfo::setChatData() {
     string cond = "WHERE ChatRoomID = "+ db.convertToValue(MyConstants::getMyChatRoomID()) + " AND UserID !=" +  db.convertToValue(MyConstants::getMyId()) + "ORDER BY DateTime DESC";
     vector<vector<QString>> users = db.SelectData("PARTICIPATE","UserID, DateTime", cond);
 
-    if(myChatRoomInfo[1] == "0"){
+    if(myChatRoomInfo[1] == "0"){// private chat
         ui->label_mobileNumber->show();
         ui->label_myMobile->show();
 
@@ -70,7 +70,7 @@ void ChatInfo::setChatData() {
         }
 
     }
-    else {
+    else {// group chat
         ui->label_chatType->setText("ChatName: " );
         ui->label_chatName->setText(MyConstants::getMyChatRoomName());
         ui->label_descreption_Admin_Type->setText("Admin: " );
