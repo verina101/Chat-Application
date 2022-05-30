@@ -8,11 +8,13 @@ Message::Message(QWidget *parent) : QWidget(parent), ui(new Ui::Message) {
 
 }
 
-void Message::setUserData(QString userName) {
+void Message::setUserData(QString userName, int colorIndex) {
     ui->label_Sender_Name->setText(userName);
-
+    ui->label_Sender_Name->setStyleSheet("font: " + colors[colorIndex] + ";");
 }
-
+int Message::getColorsCount() {
+    return colors.size();
+}
 void Message::setMessage(QString msg, bool SentByMe) {
     QString myStyleSheet = "font-size: 14px; border-radius:15px; margin-left: 1;";
     myStyleSheet += "font: " + QString(SentByMe ? "black" : "white") + ";";

@@ -70,8 +70,8 @@ void ChatRoom::DisplayMessage(QString &msgText, QString senderName, QString send
     else {
         myMsg->setMessage(msgText, (senderID == MyConstants::getMyId()));
     }
-
-    myMsg->setUserData(senderName);
+    int color;
+    myMsg->setUserData(senderName, color);
     int w = myMsg->width();
     int h = myMsg->height();
     QListWidgetItem *item = new QListWidgetItem(ui->listWidget);

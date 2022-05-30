@@ -20,7 +20,8 @@ public:
     explicit Message(QWidget *parent = nullptr);
     ~Message();
 
-    void setUserData(QString userName);
+    void setUserData(QString userName, int colorIndex);
+    int getColorsCount();
     void setMessage(QString s, bool SentByMe);
     void ConvertFormat(QString &str);
     void getMessageInfo(QString messageID);
@@ -32,6 +33,7 @@ private slots:
 private:
     MsgStatus *myMsgStatus  = new MsgStatus();;
     Data db;
+    vector<QString> colors = {"rgb(1, 1, 1)", "rgb(1, 1, 1)", "rgb(1, 1, 1)", "rgb(1, 1, 1)"};
     Ui::Message *ui;
 };
 
