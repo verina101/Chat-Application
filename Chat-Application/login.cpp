@@ -2,6 +2,7 @@
 #include "ui_login.h"
 #include "Data.h"
 #include "MyConstants.h"
+#include "constantdata.h"
 #include<QMessageBox>
 #include <qdebug.h>
 #include<QPixmap>
@@ -25,6 +26,7 @@ login::~login() {
 }
 
 void login::on_pushButton_login_clicked() {
+    constantdata currUser;
     QString mobileno,password;
 
     mobileno=ui->lineEdit_mobileno->text();
@@ -37,7 +39,8 @@ void login::on_pushButton_login_clicked() {
         //qDebug() << "wrong password or mobileno";
     }
     else{
-        // QMessageBox::information(this,"valid login","login successfully");
+        currUser.setphoneNumber(mobileno.toStdString());
+
         MyConstants::setMyId(returndata[0][0]);
         MyConstants::setMyName( returndata[0][1] + " " + returndata[0][2] );
         ui->stackedWidget_2->close();
@@ -94,6 +97,8 @@ void login::on_pushButton_submit_clicked() {
                         string tablename="USER";
                         string values = "(" + db.convertToValue(firstname) + "," + db.convertToValue(lastname) + "," + db.convertToValue(ProfilePicture) + "," + db.convertToValue(description) + "," + db.convertToValue(password) + "," + db.convertToValue(phoneno) + "," + db.convertToValue(visibility) + ")";
                         db.InsertData(tablename,values);
+                        constantdata currUser;
+                        currUser.setphoneNumber(phoneno.toStdString());
                         QMessageBox::information(this, "valid registration", "registration successfully");
                     }
                     else{

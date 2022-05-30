@@ -39,10 +39,11 @@ StoryTime::StoryTime(QWidget *parent): QWidget(parent), ui(new Ui::StoryTime) {
         }
 
         //        name=ConvertoValue(name);
+        qDebug()<<QString::fromStdString(path);
         QPixmap photo(QString::fromStdString(path));
         int h= ui->label->height();
         int w= ui->label->width();
-        ui->label-> setPixmap(photo.scaled(w,h, Qt::KeepAspectRatio));
+        ui->label-> setPixmap(photo.scaled(w,h, Qt::IgnoreAspectRatio));
     }
 
 
@@ -68,4 +69,3 @@ void StoryTime::on_pushButton_2_clicked()
     myChats->show();
     this->close();
 }
-

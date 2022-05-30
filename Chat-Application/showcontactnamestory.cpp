@@ -44,9 +44,12 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
     string contactCol       =  "ContactID";
     string contactTable     =  "CONTACTS" ;
     string contactCond      =  "where UserID = "+MyDataBase.convertToValue( MyConstants::getMyId()) + " ;";
-    usersIds= MyDataBase.SelectData(contactTable,contactCol,contactCond); // [0] contacat id
 
-    for(int i =0;i < usersIds.size();i++){
+    usersIds= MyDataBase.SelectData(contactTable,contactCol,contactCond); // [0] contacat id
+    usersIds.push_back({MyConstants::getMyId()});
+
+
+    for(int i =usersIds.size()-1;i >=0;i--){
         string id=usersIds[i][0].toStdString();
         string contactCol       =  "*";
         string contactTable     =  "STORY" ;

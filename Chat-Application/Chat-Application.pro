@@ -31,7 +31,11 @@ SOURCES += \
     saveddata.cpp \
     showcontact.cpp \
     showcontactnamestory.cpp \
-    showstories.cpp
+    showstories.cpp \
+    profile.cpp \
+    constantdata.cpp
+
+
 
 HEADERS += \
     ChatInfo.h \
@@ -53,7 +57,11 @@ HEADERS += \
     saveddata.h \
     showcontact.h \
     showcontactnamestory.h \
-    showstories.h
+    showstories.h \
+    profile.h \
+    constantdata.h
+
+
 
 FORMS += \
     ChatInfo.ui \
@@ -71,7 +79,8 @@ FORMS += \
     mainwindow.ui \
     showcontact.ui \
     showcontactnamestory.ui \
-    showstories.ui
+    showstories.ui \
+    profile.ui
 
 
 
