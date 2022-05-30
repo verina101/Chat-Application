@@ -12,6 +12,7 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
+
     //background
     QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
@@ -29,6 +30,7 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
     string cond=";";
     string col="*";
     vec=MyDataBase.SelectData(tableName,col,cond);
+    cout<<vec.size()<<endl;
     for(auto it : vec){
         string time = it[5].toStdString();
         DateTime t;
@@ -106,5 +108,17 @@ void ShowContactNameStory::on_Back_clicked()
     Chats *myChats = new Chats();
     myChats->show();
     this->close();
+}
+
+
+void ShowContactNameStory::on_pushButton_clicked()
+{
+
+    SavedData::setshowDeleteButton(true);
+    //SavedData::setStoryUserID(SavedData::getUserId());
+    ShowStories *ss= new ShowStories();
+    ss->show();
+    this->hide();
+
 }
 

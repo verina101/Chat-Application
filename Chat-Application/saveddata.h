@@ -9,6 +9,7 @@ class SavedData
     static string userName;
     static string storyUserId;
     static string ChosenStoryId;
+    static bool   showDeleteButton;
 
 public:
 
@@ -22,6 +23,8 @@ public:
     static string getStoryUserID();
     static void   setChosenStoryId(string id);
     static string getChosenStoryId();
+    static void   setshowDeleteButton(bool i);
+    static bool getshowDeleteButton();
 
 };
 

@@ -4,11 +4,15 @@
 #include <StoryTime.h>
 #include <saveddata.h>
 #include <ShowContactNameStory.h>
+#include <MyConstants.h>
+#include<iostream>
+using namespace std;
 ShowStories::ShowStories(QWidget *parent): QWidget(parent), ui(new Ui::ShowStories) {
+
+
     ui->setupUi(this);
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
-
     //background
     QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
@@ -18,8 +22,14 @@ ShowStories::ShowStories(QWidget *parent): QWidget(parent), ui(new Ui::ShowStori
 
     SavedData contactId;
     Data MyDataBase;
-    string id=contactId.getStoryUserID();
+    MyConstants myID;
 
+    string id=contactId.getStoryUserID();
+    string id2= myID.getMyId().toStdString();
+    if(id==id2)
+        ui->pushButton_3->setHidden(false);
+    else
+        ui->pushButton_3->setHidden(true);
     string col="*";
     string tableName="STORY";
     string cond= "where StoryOwnerID ='"+id+"' ;";
@@ -32,6 +42,8 @@ ShowStories::ShowStories(QWidget *parent): QWidget(parent), ui(new Ui::ShowStori
             MyDataBase.DeleteData(tableName,cond);
         }
         else{
+            if(id==id2)
+                storyIndex.push_back(it[0]);
             StoryWidget *mycontact = new StoryWidget();
             mycontact->setStoryData(it[2],"ID: "+ it[1], it[5]);
             int w = mycontact->width();
@@ -45,6 +57,8 @@ ShowStories::ShowStories(QWidget *parent): QWidget(parent), ui(new Ui::ShowStori
 }
 
 
+
+
 ShowStories::~ShowStories() {
     delete ui;
 }
@@ -53,6 +67,8 @@ void ShowStories::on_pushButton_clicked() {
     ShowContactNameStory *s= new ShowContactNameStory();
     s->show();
     this->hide();
+    ui->pushButton_3->setHidden(true);
+  //  SavedData::setshowDeleteButton(false);
 }
 
 
@@ -65,5 +81,23 @@ void ShowStories::on_pushButton_2_clicked()
     StoryTime *st= new StoryTime();
     st->show();
     this->hide();
+}
+
+
+void ShowStories::on_pushButton_3_clicked()
+{
+
+
+    Data MyDataBase;
+    string tableName="STORY";
+
+
+    //cout<<"size"<< storyIndex.size();
+
+    int indx = ui->listWidget->selectionModel()->currentIndex().row();
+    string cond="where StoryID ='"+storyIndex[indx].toStdString()+"' ;";
+    ui->listWidget->item(ui->listWidget->currentRow())->setHidden(true);
+    MyDataBase.DeleteData(tableName,cond);
+
 }
 
