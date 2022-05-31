@@ -47,7 +47,7 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>1</x>
@@ -89,6 +89,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background:transparent;</string>
+          </property>
           <property name="text">
            <string>🥺</string>
           </property>
@@ -101,6 +104,9 @@
             <width>50</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:transparent;</string>
           </property>
           <property name="text">
            <string>🥰</string>
@@ -115,6 +121,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background:transparent;</string>
+          </property>
           <property name="text">
            <string>😂</string>
           </property>
@@ -127,6 +136,9 @@
             <width>50</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:transparent;</string>
           </property>
           <property name="text">
            <string>🤡 </string>
@@ -141,6 +153,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background:transparent;</string>
+          </property>
           <property name="text">
            <string>🐥</string>
           </property>
@@ -153,6 +168,9 @@
             <width>50</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:transparent;</string>
           </property>
           <property name="text">
            <string>😢</string>
@@ -167,6 +185,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background:transparent;</string>
+          </property>
           <property name="text">
            <string>😠</string>
           </property>
@@ -179,6 +200,9 @@
             <width>50</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:transparent;</string>
           </property>
           <property name="text">
            <string>🦉</string>
@@ -193,6 +217,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background:transparent;</string>
+          </property>
           <property name="text">
            <string>👍</string>
           </property>
@@ -206,6 +233,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background:transparent;</string>
+          </property>
           <property name="text">
            <string>❤️ </string>
           </property>
@@ -218,6 +248,9 @@
             <width>50</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:transparent;</string>
           </property>
           <property name="text">
            <string>💔 </string>
@@ -284,7 +317,15 @@ border-radius:15px;
     </widget>
    </widget>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>724</width>
+     <height>63</height>
+    </rect>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="leftMargin">
      <number>2</number>

@@ -56,7 +56,7 @@
      <item>
       <widget class="QLabel" name="Name">
        <property name="styleSheet">
-        <string notr="true">background:rgb(130, 130, 130);
+        <string notr="true">background:rgb(21, 45, 53);
 font:14px;
 color:white;
 border-radius:15px;
@@ -73,7 +73,7 @@ border-radius:15px;
      <item>
       <widget class="QLabel" name="Id">
        <property name="styleSheet">
-        <string notr="true">background:rgb(130, 130, 130);
+        <string notr="true">background:rgb(21, 45, 53);
 font:14px;
 color:white;
 border-radius:15px;

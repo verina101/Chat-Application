@@ -57,6 +57,8 @@ ShowStories::ShowStories(QWidget *parent): QWidget(parent), ui(new Ui::ShowStori
 }
 
 
+
+
 ShowStories::~ShowStories() {
     delete ui;
 }
@@ -66,11 +68,13 @@ void ShowStories::on_pushButton_clicked() {
     s->show();
     this->hide();
     ui->pushButton_3->setHidden(true);
+  //  SavedData::setshowDeleteButton(false);
 }
 
 
 void ShowStories::on_pushButton_2_clicked()
 {
+    if(!this->isSelected) return;
     SavedData save;
     int indx = ui->listWidget->selectionModel()->currentIndex().row();
     string chosen = this->stories[indx][0].toStdString();
@@ -78,17 +82,37 @@ void ShowStories::on_pushButton_2_clicked()
     StoryTime *st= new StoryTime();
     st->show();
     this->hide();
+    this->isSelected = false;
+
 }
 
 
-void ShowStories::on_pushButton_3_clicked() {
+void ShowStories::on_pushButton_3_clicked()
+{
+
+    if(!this->isSelected) return;
+
     Data MyDataBase;
     string tableName="STORY";
+
+
+    //cout<<"size"<< storyIndex.size();
 
     int indx = ui->listWidget->selectionModel()->currentIndex().row();
     string cond="where StoryID ='"+storyIndex[indx].toStdString()+"' ;";
     ui->listWidget->item(ui->listWidget->currentRow())->setHidden(true);
     MyDataBase.DeleteData(tableName,cond);
+    this->isSelected = false;
+
+
+}
+
+
+void ShowStories::on_listWidget_itemClicked(QListWidgetItem *item)
+{
+
+    item->isHidden();
+    this->isSelected = true;
 
 }
 

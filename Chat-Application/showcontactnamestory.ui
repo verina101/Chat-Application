@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(52, 91, 99);</string>
+  </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
@@ -26,7 +29,7 @@
     <item>
      <widget class="QListWidget" name="listWidget">
       <property name="styleSheet">
-       <string notr="true">background:transparent;</string>
+       <string notr="true">background:rgb(52, 91, 99);</string>
       </property>
       <property name="verticalScrollMode">
        <enum>QAbstractItemView::ScrollPerPixel</enum>
@@ -53,14 +56,14 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background:rgb(130, 130, 130);
+         <string notr="true">background:rgb(21, 45, 53);
 font:14px;
 color:white;
 border-radius:15px;
 </string>
         </property>
         <property name="text">
-         <string>SHOW STORIES 🤩</string>
+         <string>Show Stories</string>
         </property>
        </widget>
       </item>
@@ -73,14 +76,14 @@ border-radius:15px;
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background:rgb(130, 130, 130);
+         <string notr="true">background:rgb(21, 45, 53);
 font:14px;
 color:white;
 border-radius:15px;
 </string>
         </property>
         <property name="text">
-         <string>BACK 🥺</string>
+         <string>Back</string>
         </property>
        </widget>
       </item>

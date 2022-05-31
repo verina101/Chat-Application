@@ -83,6 +83,8 @@ ShowContactNameStory::~ShowContactNameStory()
 
 void ShowContactNameStory::on_ShowStories_clicked()
 {
+    if(!this->isSelected) return;
+
     SavedData saved;
 
     int indx = ui->listWidget->selectionModel()->currentIndex().row();
@@ -97,6 +99,7 @@ void ShowContactNameStory::on_ShowStories_clicked()
     ShowStories *ss= new ShowStories();
     ss->show();
     this->hide();
+    this->isSelected = false;
 }
 
 
@@ -115,6 +118,15 @@ void ShowContactNameStory::on_pushButton_clicked()
     ShowStories *ss= new ShowStories();
     ss->show();
     this->hide();
+
+}
+
+
+void ShowContactNameStory::on_listWidget_itemClicked(QListWidgetItem *item)
+{
+
+        item->isHidden();
+        this->isSelected = true;
 
 }
 

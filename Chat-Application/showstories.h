@@ -7,6 +7,8 @@
 #include <saveddata.h>
 #include <Data.h>
 #include <StoryWidget.h>
+#include <QListWidgetItem>
+
 using namespace std;
 namespace Ui {
 class ShowStories;
@@ -29,9 +31,12 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_listWidget_itemClicked(QListWidgetItem *item);
+
 private:
     Ui::ShowStories *ui;
     vector<vector<QString>> stories;
+    bool isSelected = false;
 };
 
 #endif // SHOWSTORIES_H

@@ -77,7 +77,7 @@ void ChatRoom::DisplayMessage(QString &msgText, QString senderName, QString send
         int getRandomColor = getRandomNumber(myMsg->getColorsCount());
         userColorIndex[senderID] = getRandomColor;
         isUsed[getRandomColor] = 1;
-        qDebug() << senderID << ":\t" << getRandomColor;
+        //qDebug() << senderID << ":\t" << getRandomColor;
     }
     myMsg->setUserData(senderName, userColorIndex[senderID]);
     int w = myMsg->width();
