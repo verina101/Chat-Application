@@ -10,7 +10,8 @@ Message::Message(QWidget *parent) : QWidget(parent), ui(new Ui::Message) {
 
 void Message::setUserData(QString userName, int colorIndex) {
     ui->label_Sender_Name->setText(userName);
-    ui->label_Sender_Name->setStyleSheet("color: " + colors[colorIndex] + ";");
+    ui->label_Sender_Name->setStyleSheet("color: " + colors[colorIndex] + "; font-size: 16px;");
+
 }
 
 int Message::getColorsCount() {
@@ -20,7 +21,7 @@ int Message::getColorsCount() {
 void Message::setMessage(QString msg, bool SentByMe, bool isGroupChat) {
     QString myStyleSheet = "font-size: 14px; border-radius:15px; margin-left: 1;";
     myStyleSheet += "font: " + QString(SentByMe ? "black" : "white") + ";";
-    myStyleSheet += "background: " + QString(SentByMe ? "lightgrey" : "steelblue") + ";";
+    myStyleSheet += "background: " + QString(SentByMe ? "rgb(18, 140, 126)" : "steelblue") + ";";
 
     if(SentByMe || !isGroupChat) {
         ui->label_Sender_Name->setMinimumHeight(0);
@@ -56,7 +57,6 @@ void Message::ConvertFormat(QString &str) {
     str.clear();
     for(auto ch : tmpqStr) {
         int oLd_nLines = tmpo->document()->documentLayout()->documentSize().height();
-
         tmpo->insertPlainText(ch);
         int new_nLines = tmpo->document()->documentLayout()->documentSize().height();
 
@@ -66,7 +66,6 @@ void Message::ConvertFormat(QString &str) {
         }
         str += addChar;
     }
-    //qDebug() << str;
     tmpo->close();
 }
 

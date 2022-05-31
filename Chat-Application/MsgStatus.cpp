@@ -14,9 +14,9 @@ void MsgStatus::setMsgStatus(QString date, QString time, bool isSeen) {
 
     QString myIcon;
     if(isSeen)
-         myIcon = ":/icons/assets/seen_Icon.png";
+        myIcon = ":/icons/assets/seen_Icon.png";
     else
-         myIcon = ":/icons/assets/notSeen_Icon.png";
+        myIcon = ":/icons/assets/notSeen_Icon.png";
 
     QPixmap myButton(myIcon);
     QIcon iconSendButton (myButton);

@@ -34,7 +34,6 @@ void contact::on_pushButton_2_clicked() {
 
     QString s = QString::number(this->myID);
     string id = s.toStdString();
-    //('A', 'B', '12', '123', 'N')
     int indx = ui->listWidget->selectionModel()->currentIndex().row();
     indx= at[indx];
     Data db;
@@ -67,22 +66,11 @@ void contact::on_listWidget_itemClicked(QListWidgetItem *item){
     this->isSelected = true;
 }
 
-void contact::openAddContact()
-{
-
-
-    //background
-    QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
-    myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(backgroundRole(), myBackGround);
-    this->setPalette(palette);
-
-
-    QPixmap pix("D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg") ;
+void contact::openAddContact() {
+    QPixmap pix(":/images/assets/contact.png") ;
     int h= ui->label->height();
     int w = ui->label->width();
-    ui->label-> setPixmap(pix.scaled(w,h, Qt::IgnoreAspectRatio));
+    ui->label-> setPixmap(pix.scaled(w,h, Qt::KeepAspectRatio));
     Data MyDataBase;
 
     this->myID = MyConstants::getMyId().toInt();
@@ -93,17 +81,11 @@ void contact::openAddContact()
     string userTable     =  "USER" ;
     string userCond     =  ";";
     this->data= MyDataBase.SelectData(userTable,userCol,userCond);
-    //cout<< "size is "<< data.size();
 
     string contactCol       =  "UserID,ContactID";
     string contactTable     =  "CONTACTS" ;
     string contactCond      =  "where UserID ='"+cid+"' ;";
     this->cdata= MyDataBase.SelectData(contactTable,contactCol,contactCond);
-
-    for(auto row1 : this->data) {
-        qDebug()<< row1;
-    }
-
 
     int expected=0, real=0,visible=0;
     QString seen = QString::number(visible);
@@ -121,13 +103,12 @@ void contact::openAddContact()
 
         if(!found){
             ContactWidget *mycontact = new ContactWidget();
-            QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";  //row1[3]
-            QString defaultphoto= "D:/Pictures/Ds project/NotSeenBackground.png";
+            QString defultProfile = ":/images/assets/defultProfile.png";
             if(row1[4]==seen){
-                mycontact->setContactData(defaultphoto, row1[1] +" "+ row1[2], "ID: "+row1[0]);
+                mycontact->setContactData(defultProfile, row1[1] +" "+ row1[2], "ID: "+row1[0]);
             }
             else{
-                mycontact->setContactData(myphotopath, row1[1] +" "+ row1[2], "ID: "+row1[0]);
+                mycontact->setContactData(row1[3], row1[1] +" "+ row1[2], "ID: "+row1[0]);
             }
             int w = mycontact->width();
             int h = mycontact->height();

@@ -122,9 +122,8 @@ border:red;</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background:orange;
-border-radius:15px;
-font-size:15px;</string>
+      <string notr="true">border-radius:15px;
+font-size:18px;</string>
      </property>
      <property name="text">
       <string/>

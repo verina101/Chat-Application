@@ -3,16 +3,9 @@
 
 ChatInfo::ChatInfo(QWidget *parent): QWidget(parent), ui(new Ui::ChatInfo) {
     ui->setupUi(this);
-
-    QPixmap myBackGround(":/images/assets/Chat_BackGround.png");
-    myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(backgroundRole(), myBackGround);
-    this->setPalette(palette);
 }
 
 void ChatInfo::setChatData() {
-
     ui->listWidget->clear();
 
     vector<QString> myChatRoomInfo = db.SelectData("CHATROOMINFO", "AdminName, RoomType","WHERE ChatRoomID = "+ db.convertToValue(MyConstants::getMyChatRoomID())).front();
@@ -27,21 +20,15 @@ void ChatInfo::setChatData() {
         ui->label_chatType->setText("UserName: ");
         ui->label_chatName->setText(MyConstants::getMyChatRoomName());
         ui->label_descreption_Admin_Type->setText("Description: ");
-        if(userData[3]=="1"){
-            ui->label_Description_Admin->setText(userData[0]);
-            QPixmap piximg(userData[1]);
-            int w = ui->label_picture->width();
-            int h = ui->label_picture->height();
-            ui->label_picture->setPixmap(piximg.scaled(w, h, Qt::IgnoreAspectRatio));
-        }else{
-            ui->label_Description_Admin->setText("Not Visible");
-            ui->label_picture->setText("Not Visible");
-        }
+
+        ui->label_Description_Admin->setText(userData[0]);
+        QPixmap piximg(userData[1]);
+        int w = ui->label_picture->width();
+        int h = ui->label_picture->height();
+        ui->label_picture->setPixmap(piximg.scaled(w, h, Qt::IgnoreAspectRatio));
 
         ui->label_myMobile->setText(userData[2]);
         ui->label_ListType->setText("Comman Chat Rooms");
-
-
 
         vector<vector<QString>> myChats = db.SelectData("PARTICIPATE","ChatRoomID", "WHERE UserID = " + db.convertToValue(MyConstants::getMyId()));
         vector<vector<QString>> userChats = db.SelectData("PARTICIPATE","ChatRoomID", "WHERE UserID = " + db.convertToValue(users[0][0]));
@@ -50,7 +37,7 @@ void ChatInfo::setChatData() {
         QString commonRoomID;
         for(auto it : myChats) {
             if(it[0] != MyConstants::getMyChatRoomID())
-            mp[it[0]] = 1;
+                mp[it[0]] = 1;
         }
 
         for(auto it : userChats) {

@@ -12,25 +12,17 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
-
-    //background
-    QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
-    myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(backgroundRole(), myBackGround);
-    this->setPalette(palette);
     SavedData s;
     Data MyDataBase;
 
     //********************************
-    // Delte old stories feom database
+    // Delete old stories feom database
     //********************************
     vector<vector<QString>>vec;
     string tableName="STORY";
     string cond=";";
     string col="*";
     vec=MyDataBase.SelectData(tableName,col,cond);
-    cout<<vec.size()<<endl;
     for(auto it : vec){
         string time = it[5].toStdString();
         DateTime t;
@@ -59,8 +51,8 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
         checkvec = MyDataBase.SelectData(contactTable,contactCol,contactCond);
         if(checkvec.size()){
             ContactWidget *mycontact = new ContactWidget();
-            QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";
-            mycontact->setContactData(myphotopath, checkvec[0][2], "ID: "+checkvec[0][1]);
+            QString userPicture = MyDataBase.SelectData("USER","ProfilePicture","WHERE UserID = '" +id + "'").front().front();
+            mycontact->setContactData(userPicture, checkvec[0][2], "ID: "+checkvec[0][1]);
             int w = mycontact->width();
             int h = mycontact->height();
             QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
@@ -116,7 +108,6 @@ void ShowContactNameStory::on_pushButton_clicked()
 {
 
     SavedData::setshowDeleteButton(true);
-    //SavedData::setStoryUserID(SavedData::getUserId());
     ShowStories *ss= new ShowStories();
     ss->show();
     this->hide();

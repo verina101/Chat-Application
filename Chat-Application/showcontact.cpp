@@ -21,9 +21,6 @@ ShowContact::ShowContact(QWidget *parent): QWidget(parent), ui(new Ui::ShowConta
     ui->setupUi(this);
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
-
-    QString myStyleSheet = "background: url(':/images/assets/login_BackGround.png');";
-    this->setStyleSheet(myStyleSheet);
 }
 
 ShowContact::~ShowContact() {
@@ -64,7 +61,6 @@ void ShowContact::openShowContact() {
     string userTable     =  "USER" ;
     string userCond     =  ";";
     this->data= db.SelectData(userTable,userCol,userCond);
-    cout<< "size is "<< data.size();
 
     string contactCol       =  "UserID, ContactID";
     string contactTable     =  "CONTACTS" ;
@@ -84,8 +80,7 @@ void ShowContact::openShowContact() {
 
         if(found) {
             ContactWidget *mycontact = new ContactWidget();
-            QString myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";
-            mycontact->setContactData(myphotopath, row1[1] +" "+ row1[2], "ID: "+row1[0]);
+            mycontact->setContactData(row1[3], row1[1] +" "+ row1[2], "ID: "+row1[0]);
 
             if(!ui->listWidget_2->isHidden()) {
                 mycontact->setGeometry(0,0,250,100);
@@ -97,8 +92,7 @@ void ShowContact::openShowContact() {
             item->setSizeHint(QSize(w, h));
             if(!ui->listWidget_2->isHidden()) {
                 ContactWidget *mycontact2 = new ContactWidget();
-                myphotopath = "D:/Pictures/My Gallery/ACM/FB_IMG_1645480394683.jpg";
-                mycontact2->setContactData(myphotopath, row1[1] +" "+ row1[2], "ID: "+row1[0]);
+                mycontact2->setContactData(row1[3], row1[1] +" "+ row1[2], "ID: "+row1[0]);
 
                 QListWidgetItem *item2 = new QListWidgetItem(ui->listWidget_2);
                 item2->setSizeHint(QSize(w, h));
@@ -113,6 +107,7 @@ void ShowContact::openShowContact() {
 }
 
 void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
+    item->isHidden();
     int index = ui->listWidget->currentRow();
     QString selectedID = cdata[index][1];
 
@@ -151,6 +146,7 @@ void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
 }
 
 void ShowContact::on_listWidget_2_itemClicked(QListWidgetItem *item) {
+    item->isHidden();
     int index = ui->listWidget_2->currentRow();
     ui->listWidget_2->item(index)->setHidden(true);
     ui->listWidget->item(index)->setHidden(false);
@@ -177,6 +173,7 @@ void ShowContact::on_pushButton_creategroupChat_clicked() {
     }
     MyConstants::setMyChatRoomID(chatID);
     MyConstants::setMyChatRoomName(chatName);
+    MyConstants::setMyChatRoomPic(":/images/assets/group_image.png");
 
     emit openContactChat();
     ui->listWidget->blockSignals(true);

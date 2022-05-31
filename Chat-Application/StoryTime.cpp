@@ -10,13 +10,6 @@ StoryTime::StoryTime(QWidget *parent): QWidget(parent), ui(new Ui::StoryTime) {
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
-    //background
-    QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
-    myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(backgroundRole(), myBackGround);
-    this->setPalette(palette);
-
     SavedData savee;
     Data MyData;
     string chosenn= savee.getChosenStoryId();
@@ -38,8 +31,6 @@ StoryTime::StoryTime(QWidget *parent): QWidget(parent), ui(new Ui::StoryTime) {
             name = path[i] + name;
         }
 
-        //        name=ConvertoValue(name);
-        qDebug()<<QString::fromStdString(path);
         QPixmap photo(QString::fromStdString(path));
         int h= ui->label->height();
         int w= ui->label->width();

@@ -16,7 +16,7 @@ void ChatItem::setChatData(QString chatPhoto, QString chatName, QString msgSende
     ui->label_chatPhoto->setPixmap(piximg.scaled(w, h, Qt::IgnoreAspectRatio));
 
     ui->label_chatName->setText(chatName);
-    QString sender_msg = msg == "" ? "" :  msgSender+" : "+msg;
+    QString sender_msg = msg == "" ? "" :  msgSender+": "+msg;
     ui->label_msgSender->setText(sender_msg);
 
 }

@@ -15,7 +15,7 @@ void StoryWidget::setStoryData(QString name, QString id, QString date) {
         string tmp = date.toStdString();
         tmp.pop_back();
         date = QString::fromStdString(tmp);
-     }
+    }
     ui->Label_StoryTime->setText(date);
 }
 

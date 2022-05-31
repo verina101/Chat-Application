@@ -21,13 +21,9 @@ public:
 private slots:
 
     void on_pushButton_login_clicked();
-
     void on_pushButton_signup_clicked();
-
     void on_pushButton_submit_clicked();
-
     void on_pushButton_change_pic_clicked();
-
     void on_pushButton_loginin_2_clicked();
 
 
@@ -39,7 +35,7 @@ private:
     Ui::login *ui;
     Data db;
     Chats *myChats ;
-    QString ProfilePicture;
+    QString ProfilePicture=":/images/assets/defultProfile.png";
 
 
 };
