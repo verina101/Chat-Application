@@ -12,9 +12,6 @@ profile::profile(QWidget *parent): QWidget(parent), ui(new Ui::profile) {
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
-    QPixmap myBackGround("background2.png");
-    ui->label->setPixmap(myBackGround.scaled(100,100,Qt::KeepAspectRatio));
-
     ui->comboBox_visibilty->addItem("For Contacts Only");//0
     ui->comboBox_visibilty->addItem("Everyone");//1
 
@@ -42,7 +39,6 @@ profile::profile(QWidget *parent): QWidget(parent), ui(new Ui::profile) {
 
     }
 
-    cout<< "full path "<< path<< endl<< "name " << name;
     QPixmap photo(QString::fromStdString(path));
     int h= ui->label->height();
     int w= ui->label->width();
@@ -77,7 +73,7 @@ void profile::on_pushButton_2_clicked()
     Data myData;
     string userCol     =  "ProfilePicture,Description";
     string userTable   =  "USER" ;
-    string userCond    =  ";";
+    string userCond = "WHERE PhoneNumber = '" + phoneno + "'";
 
     if(!filePath.isEmpty()){
         userCol = "ProfilePicture = '" + filePath.toStdString() + "'";

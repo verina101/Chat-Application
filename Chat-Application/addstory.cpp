@@ -18,12 +18,6 @@ AddStory::AddStory(QWidget *parent): QWidget(parent), ui(new Ui::AddStory) {
     ui->setupUi(this);
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
-
-    QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
-    myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(backgroundRole(), myBackGround);
-    this->setPalette(palette);
 }
 
 AddStory::~AddStory()
@@ -68,7 +62,6 @@ string  AddStory:: EditText(string s){
 void AddStory::on_pushButton_clicked(){
     QString input    = ui->textEdit->toPlainText();
     string editInput = input.toStdString();
-    cout<<editInput<<endl;
     string str       = this->EditText(editInput);
     bool photo = ui->radioButtonPhoto->isChecked();
     bool text  = ui->radioButtonText->isChecked();

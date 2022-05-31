@@ -35,7 +35,7 @@
    <item>
     <widget class="QListWidget" name="listWidget">
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background:rgb(212, 236, 221);</string>
      </property>
      <property name="verticalScrollMode">
       <enum>QAbstractItemView::ScrollPerPixel</enum>
@@ -48,7 +48,11 @@
       <number>2</number>
      </property>
      <item>
-      <widget class="QListWidget" name="listWidget_2"/>
+      <widget class="QListWidget" name="listWidget_2">
+       <property name="styleSheet">
+        <string notr="true">background:rgb(212, 236, 221);</string>
+       </property>
+      </widget>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
@@ -63,6 +67,10 @@
            <height>35</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background:white;
+color:black;</string>
+         </property>
          <property name="placeholderText">
           <string>Enter Group Chat Name</string>
          </property>
@@ -72,7 +80,7 @@
         <widget class="QPushButton" name="pushButton_creategroupChat">
          <property name="minimumSize">
           <size>
-           <width>45</width>
+           <width>100</width>
            <height>35</height>
           </size>
          </property>
@@ -84,8 +92,17 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>9</pointsize>
+           <pointsize>-1</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(52, 91, 99);
+font:14px;
+color:white;
+border-radius:10px;
+</string>
          </property>
          <property name="text">
           <string>CREATE</string>
@@ -106,11 +123,18 @@
        <property name="minimumSize">
         <size>
          <width>100</width>
-         <height>50</height>
+         <height>40</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(52, 91, 99);
+font:14px;
+color:white;
+border-radius:10px;
+</string>
+       </property>
        <property name="text">
-        <string>CLOSE 🥺</string>
+        <string>Close</string>
        </property>
       </widget>
      </item>

@@ -7,12 +7,7 @@
         <file>assets/seen_Icon.png</file>
     </qresource>
     <qresource prefix="/images">
-        <file>assets/ChatRooms_BackGround.jpg</file>
         <file>assets/group_image.png</file>
-        <file>assets/Chat_BackGround.jpg</file>
-        <file>assets/login_BackGround.png</file>
-        <file>assets/Menu_BackGround.jpg</file>
-        <file>assets/app_BackGround.jpg</file>
         <file>assets/contact.png</file>
         <file>assets/defultProfile.png</file>
         <file>assets/hello.png</file>

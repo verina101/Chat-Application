@@ -67,13 +67,6 @@ void contact::on_listWidget_itemClicked(QListWidgetItem *item){
 }
 
 void contact::openAddContact() {
-    //background
-    QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
-    myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(backgroundRole(), myBackGround);
-    this->setPalette(palette);
-
     QPixmap pix(":/images/assets/contact.png") ;
     int h= ui->label->height();
     int w = ui->label->width();

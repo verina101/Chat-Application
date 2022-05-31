@@ -9,16 +9,9 @@
 using namespace std;
 ShowStories::ShowStories(QWidget *parent): QWidget(parent), ui(new Ui::ShowStories) {
 
-
     ui->setupUi(this);
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
-    //background
-    QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
-    myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(backgroundRole(), myBackGround);
-    this->setPalette(palette);
 
     SavedData contactId;
     Data MyDataBase;
@@ -26,10 +19,12 @@ ShowStories::ShowStories(QWidget *parent): QWidget(parent), ui(new Ui::ShowStori
 
     string id=contactId.getStoryUserID();
     string id2= myID.getMyId().toStdString();
+
     if(id==id2)
         ui->pushButton_3->setHidden(false);
     else
         ui->pushButton_3->setHidden(true);
+
     string col="*";
     string tableName="STORY";
     string cond= "where StoryOwnerID ='"+id+"' ;";
@@ -68,12 +63,10 @@ void ShowStories::on_pushButton_clicked() {
     s->show();
     this->hide();
     ui->pushButton_3->setHidden(true);
-  //  SavedData::setshowDeleteButton(false);
 }
 
 
-void ShowStories::on_pushButton_2_clicked()
-{
+void ShowStories::on_pushButton_2_clicked(){
     if(!this->isSelected) return;
     SavedData save;
     int indx = ui->listWidget->selectionModel()->currentIndex().row();
@@ -87,16 +80,11 @@ void ShowStories::on_pushButton_2_clicked()
 }
 
 
-void ShowStories::on_pushButton_3_clicked()
-{
-
+void ShowStories::on_pushButton_3_clicked(){
     if(!this->isSelected) return;
 
     Data MyDataBase;
     string tableName="STORY";
-
-
-    //cout<<"size"<< storyIndex.size();
 
     int indx = ui->listWidget->selectionModel()->currentIndex().row();
     string cond="where StoryID ='"+storyIndex[indx].toStdString()+"' ;";
@@ -108,9 +96,7 @@ void ShowStories::on_pushButton_3_clicked()
 }
 
 
-void ShowStories::on_listWidget_itemClicked(QListWidgetItem *item)
-{
-
+void ShowStories::on_listWidget_itemClicked(QListWidgetItem *item){
     item->isHidden();
     this->isSelected = true;
 

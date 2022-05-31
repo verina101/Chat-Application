@@ -21,9 +21,6 @@ ShowContact::ShowContact(QWidget *parent): QWidget(parent), ui(new Ui::ShowConta
     ui->setupUi(this);
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
-
-    QString myStyleSheet = "background: url(':/images/assets/login_BackGround.png');";
-    this->setStyleSheet(myStyleSheet);
 }
 
 ShowContact::~ShowContact() {
@@ -176,6 +173,7 @@ void ShowContact::on_pushButton_creategroupChat_clicked() {
     }
     MyConstants::setMyChatRoomID(chatID);
     MyConstants::setMyChatRoomName(chatName);
+    MyConstants::setMyChatRoomPic(":/images/assets/group_image.png");
 
     emit openContactChat();
     ui->listWidget->blockSignals(true);

@@ -20,15 +20,15 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background:rgb(52, 91, 99);</string>
   </property>
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>70</y>
-     <width>700</width>
-     <height>431</height>
+     <y>60</y>
+     <width>701</width>
+     <height>441</height>
     </rect>
    </property>
    <property name="maximumSize">
@@ -38,22 +38,22 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background:rgb(21, 45, 53);</string>
    </property>
    <property name="currentIndex">
     <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">background:rgb(17, 32, 49);</string>
     </property>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>1</x>
-       <y>1</y>
-       <width>691</width>
-       <height>421</height>
+       <x>0</x>
+       <y>0</y>
+       <width>701</width>
+       <height>441</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -83,14 +83,23 @@
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
          <widget class="QPushButton" name="pushButton_1">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
+            <width>40</width>
             <height>16777215</height>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background:transparent;</string>
+           <string notr="true">background:rgb(52, 91, 99);
+border-radius:20px;
+font-size:16px;
+</string>
           </property>
           <property name="text">
            <string>🥺</string>
@@ -99,14 +108,23 @@
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_2">
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>16777215</height>
+            <width>40</width>
+            <height>40</height>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background:transparent;</string>
+           <string notr="true">background:rgb(52, 91, 99);
+border-radius:20px;
+font-size:16px;
+</string>
           </property>
           <property name="text">
            <string>🥰</string>
@@ -115,14 +133,23 @@
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_3">
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>16777215</height>
+            <width>40</width>
+            <height>40</height>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background:transparent;</string>
+           <string notr="true">background:rgb(52, 91, 99);
+border-radius:20px;
+font-size:16px;
+</string>
           </property>
           <property name="text">
            <string>😂</string>
@@ -131,17 +158,32 @@
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_4">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>16777215</height>
+            <width>40</width>
+            <height>40</height>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background:transparent;</string>
+           <string notr="true">background:rgb(52, 91, 99);
+border-radius:20px;
+font-size:16px;
+</string>
           </property>
           <property name="text">
-           <string>🤡 </string>
+           <string>🤡</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
           </property>
          </widget>
         </item>
@@ -149,12 +191,15 @@
          <widget class="QPushButton" name="pushButton_5">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>16777215</height>
+            <width>40</width>
+            <height>40</height>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background:transparent;</string>
+           <string notr="true">background:rgb(52, 91, 99);
+border-radius:20px;
+font-size:16px;
+</string>
           </property>
           <property name="text">
            <string>🐥</string>
@@ -165,12 +210,15 @@
          <widget class="QPushButton" name="pushButton_6">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>16777215</height>
+            <width>40</width>
+            <height>40</height>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background:transparent;</string>
+           <string notr="true">background:rgb(52, 91, 99);
+border-radius:20px;
+font-size:16px;
+</string>
           </property>
           <property name="text">
            <string>😢</string>
@@ -181,12 +229,15 @@
          <widget class="QPushButton" name="pushButton_7">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>16777215</height>
+            <width>40</width>
+            <height>40</height>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background:transparent;</string>
+           <string notr="true">background:rgb(52, 91, 99);
+border-radius:20px;
+font-size:16px;
+</string>
           </property>
           <property name="text">
            <string>😠</string>
@@ -197,12 +248,15 @@
          <widget class="QPushButton" name="pushButton_8">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>16777215</height>
+            <width>40</width>
+            <height>40</height>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background:transparent;</string>
+           <string notr="true">background:rgb(52, 91, 99);
+border-radius:20px;
+font-size:16px;
+</string>
           </property>
           <property name="text">
            <string>🦉</string>
@@ -213,12 +267,15 @@
          <widget class="QPushButton" name="pushButton_9">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>16777215</height>
+            <width>40</width>
+            <height>40</height>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background:transparent;</string>
+           <string notr="true">background:rgb(52, 91, 99);
+border-radius:20px;
+font-size:16px;
+</string>
           </property>
           <property name="text">
            <string>👍</string>
@@ -229,15 +286,18 @@
          <widget class="QPushButton" name="pushButton_10">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>16777215</height>
+            <width>40</width>
+            <height>40</height>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background:transparent;</string>
+           <string notr="true">background:rgb(52, 91, 99);
+border-radius:20px;
+font-size:16px;
+</string>
           </property>
           <property name="text">
-           <string>❤️ </string>
+           <string>❤️</string>
           </property>
          </widget>
         </item>
@@ -245,15 +305,18 @@
          <widget class="QPushButton" name="pushButton_11">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>16777215</height>
+            <width>40</width>
+            <height>40</height>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background:transparent;</string>
+           <string notr="true">background:rgb(52, 91, 99);
+border-radius:20px;
+font-size:16px;
+</string>
           </property>
           <property name="text">
-           <string>💔 </string>
+           <string>💔</string>
           </property>
          </widget>
         </item>
@@ -269,13 +332,13 @@
           <property name="minimumSize">
            <size>
             <width>600</width>
-            <height>70</height>
+            <height>60</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>600</width>
-            <height>70</height>
+            <height>60</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -322,8 +385,8 @@ border-radius:15px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>724</width>
-     <height>63</height>
+     <width>701</width>
+     <height>61</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
