@@ -16,6 +16,8 @@ This application helps people to communicate with each other such as the popular
 - The user can see all the stories of his mutual contacts.
 - each chatRoom has chatroom info - privateChat shows the common chatRoom between both users 
                                   - groupChat shows all the participants in the room with their lastseen in the group
+                                  - 
+                                  
 - each user can send and delete any info he sent
 - The user can see the status of the message whether it is seen or not
 ## Tools
