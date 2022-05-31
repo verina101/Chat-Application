@@ -19,9 +19,16 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(52, 91, 99);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">
+color:white;</string>
+     </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700; font-style:italic; text-decoration: underline;&quot;&gt;Add Story&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
@@ -67,7 +74,8 @@
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">font:16px;</string>
+        <string notr="true">font:16px;
+color:white;</string>
        </property>
        <property name="text">
         <string>Photo</string>
@@ -83,7 +91,8 @@
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">font:16px;</string>
+        <string notr="true">font:16px;
+color:white;</string>
        </property>
        <property name="text">
         <string>Text</string>
@@ -294,7 +303,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background:rgb(206, 206, 206);
+      <string notr="true">background:rgb(212, 236, 221);
 border-radius:15px;
 font:16px;
 font:white;</string>
@@ -312,14 +321,14 @@ font:white;</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background:rgb(130, 130, 130);
+        <string notr="true">background:rgb(21, 45, 53);
 font:14px;
 color:white;
 border-radius:15px;
 </string>
        </property>
        <property name="text">
-        <string>ADD 🤩</string>
+        <string>Add</string>
        </property>
       </widget>
      </item>
@@ -332,14 +341,14 @@ border-radius:15px;
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background:rgb(130, 130, 130);
+        <string notr="true">background:rgb(21, 45, 53);
 font:14px;
 color:white;
 border-radius:15px;
 </string>
        </property>
        <property name="text">
-        <string>CLOSE 🥺</string>
+        <string>Close</string>
        </property>
       </widget>
      </item>

@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(52, 91, 99);</string>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -24,8 +27,9 @@
    </property>
    <property name="styleSheet">
     <string notr="true">font:20px;
-color:black;
+color:white;
 border-radius:15px;
+background:rgb(52, 91, 99);
 </string>
    </property>
    <property name="text">
@@ -35,7 +39,7 @@ border-radius:15px;
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>580</x>
@@ -53,8 +57,15 @@ border-radius:15px;
         <height>50</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background:rgb(21, 45, 53);
+font:14px;
+color:white;
+border-radius:15px;
+</string>
+      </property>
       <property name="text">
-       <string>BACK 🤩</string>
+       <string>Back</string>
       </property>
      </widget>
     </item>
@@ -79,8 +90,15 @@ border-radius:15px;
         <height>50</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background:rgb(21, 45, 53);
+font:14px;
+color:white;
+border-radius:15px;
+</string>
+      </property>
       <property name="text">
-       <string>CLOSE 🥺</string>
+       <string>Close</string>
       </property>
      </widget>
     </item>
