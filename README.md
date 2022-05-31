@@ -24,7 +24,7 @@ This application helps people to communicate with each other such as the popular
 - Qt Creator
 - SQLite
 ## Screenshots
-<img src="https://i.ibb.co/tZ0DhJ4/1.png](https://user-images.githubusercontent.com/83420413/171068520-cc285b9e-804a-4791-839f-bfcd26fac8d7.jpg">
+<img src="https://user-images.githubusercontent.com/83420413/171068520-cc285b9e-804a-4791-839f-bfcd26fac8d7.jpg">
 <p align="center"></p>
 
 ## DataBase
