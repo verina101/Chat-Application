@@ -17,7 +17,7 @@ class ChatRoom: public QWidget {
 
 public:
     explicit ChatRoom(QWidget *parent = nullptr);
-    void DisplayMessage(QString &msgText, QString senderName, QString senderID, bool isDeleted);
+    void DisplayMessage(QString &msgText, QString senderName, QString senderID, bool isDeleted, bool isNew);
 
     ~ChatRoom();
 
@@ -30,8 +30,17 @@ private slots:
     void getMsgInfo();
     void deleteMsg();
 
-
-
+    void on_pushButton_1_clicked();
+    void on_pushButton_2_clicked();
+    void on_pushButton_3_clicked();
+    void on_pushButton_4_clicked();
+    void on_pushButton_5_clicked();
+    void on_pushButton_6_clicked();
+    void on_pushButton_7_clicked();
+    void on_pushButton_8_clicked();
+    void on_pushButton_9_clicked();
+    void on_pushButton_10_clicked();
+    void on_pushButton_11_clicked();
 
 signals:
     void exitChat();
@@ -42,7 +51,11 @@ private:
     ChatInfo myChatInfo;
     vector<vector<QString>> myChatMsgs;
     QString numberOfParticipate="";
+    map<QString, int> userColorIndex;
+    map<int, bool> isUsed;
+    bool isGroupChat;
 
+    int getRandomNumber(int total);
 
 };
 

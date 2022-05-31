@@ -7,10 +7,13 @@
 #include "ShowContactNameStory.h"
 #include "contact.h"
 #include "showcontact.h"
+#include "profile.h"
+#include "login.h"
 
 using namespace std;
 
 Chats::Chats(QWidget *parent): QWidget(parent), ui(new Ui::Chats) {
+    this->setWindowTitle("My Chats");
     ui->setupUi(this);
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
@@ -54,17 +57,18 @@ void Chats::displayChatList() {
     }
 
     QString chatName;
+    pair<QString,QString> chatInfo;
     for(auto currentMsg : msgs) {
         if(rooms[currentMsg[0] ] == -1) {
             rooms[currentMsg[0]] = 1;
 
             chatName = db.SelectData("CHATROOM", "Name", "WHERE RoomID = " + db.convertToValue(currentMsg[0])).front().front();
-            chatName = getChatName(chatName);
-            myChatsInfo.push_back({currentMsg[0],chatName});
+            chatInfo = getChatInfo(chatName);
+            myChatsInfo.push_back({chatInfo.second,{currentMsg[0],chatInfo.first}});
 
             ChatItem *chatItem = new ChatItem();
 
-            chatItem->setChatData(":/images/assets/ChatRooms_BackGround.jpg",chatName,currentMsg[1],currentMsg[2]);
+            chatItem->setChatData(chatInfo.second,chatInfo.first,currentMsg[1],currentMsg[2]);
 
             int w = chatItem->width();
             int h = chatItem->height();
@@ -75,12 +79,13 @@ void Chats::displayChatList() {
     }
     for(auto left : rooms) {
         if(left.second == -1) {
+
             chatName = db.SelectData("CHATROOM", "Name", "WHERE RoomID = " + db.convertToValue(left.first)).front().front();
-            chatName = getChatName(chatName);
-            myChatsInfo.push_back({left.first,chatName});
+            chatInfo = getChatInfo(chatName);
+            myChatsInfo.push_back({chatInfo.second,{left.first,chatInfo.first}});
 
             ChatItem *chatItem = new ChatItem();
-            chatItem->setChatData(":/images/assets/ChatRooms_BackGround.jpg",chatName,"","");
+            chatItem->setChatData(chatInfo.second,chatInfo.first,"","");
 
             int w = chatItem->width();
             int h = chatItem->height();
@@ -93,31 +98,38 @@ void Chats::displayChatList() {
 
 }
 
-QString Chats::getChatName(QString chatName){
+pair<QString, QString> Chats::getChatInfo(QString chatName){
+    pair<QString, QString> myChatInfo;
     int idIndex = 0;
     if(chatName.contains('#')){
         QList myList =  chatName.split('#');
         if(MyConstants::getMyId() == myList[0]){
             idIndex = 1;
         }
-        vector<QString> otherUserName = db.SelectData("USER","FirstName, LastName"," WHERE UserID = " + db.convertToValue(myList[idIndex])).front();
+        vector<QString> otherUserName = db.SelectData("USER","FirstName, LastName, ProfilePicture"," WHERE UserID = " + db.convertToValue(myList[idIndex])).front();
+        myChatInfo.first = otherUserName[0] + " " + otherUserName[1];
+        myChatInfo.second = otherUserName[2];
 
-        return otherUserName[0] + " " + otherUserName[1];
+        return myChatInfo;
     }
-    return chatName;
+    myChatInfo.first = chatName;
+    myChatInfo.second = ":/images/assets/group_image.png";
 
+    return myChatInfo;
 }
 
 
-void Chats::on_listWidget_currentRowChanged(int currentRow)
-{
-    MyConstants::setMyChatRoomID( myChatsInfo[currentRow].first);
-    MyConstants::setMyChatRoomName(  myChatsInfo[currentRow].second);
+void Chats::on_listWidget_currentRowChanged(int currentRow) {
+    MyConstants::setMyChatRoomID( myChatsInfo[currentRow].second.first);
+    MyConstants::setMyChatRoomName(myChatsInfo[currentRow].second.second);
+    MyConstants::setMyChatRoomPic(myChatsInfo[currentRow].first);
 
 }
 
 
 void Chats::on_listWidget_itemDoubleClicked(QListWidgetItem *item){
+    item->isHidden();
+    this->setWindowTitle("ChatRoom");
     emit selectChatRoom();
 
     ui->stackedWidget->setCurrentIndex(1);
@@ -129,6 +141,7 @@ void Chats::on_listWidget_itemDoubleClicked(QListWidgetItem *item){
 }
 
 void Chats::enterchats() {
+    this->setWindowTitle("My Chats");
     showContact.groupType = 0;
     ui->stackedWidget->setCurrentIndex(0);
     displayChatList();
@@ -138,6 +151,7 @@ void Chats::enterchats() {
 
 
 void Chats::on_pushButton_addStory_clicked(){
+    this->setWindowTitle("Add Story");
     AddStory *addStory = new AddStory();
     addStory->show();
     this->close();
@@ -145,6 +159,7 @@ void Chats::on_pushButton_addStory_clicked(){
 
 
 void Chats::on_pushButton_viewStory_clicked(){
+    this->setWindowTitle("View Story");
     ShowContactNameStory *showContactNameStory = new ShowContactNameStory();
     showContactNameStory->show();
     this->close();
@@ -152,8 +167,8 @@ void Chats::on_pushButton_viewStory_clicked(){
 
 //-----(Contact class)-----//
 void Chats::on_pushButton_addContact_clicked(){
+    this->setWindowTitle("Add Contact");
     emit selectAddContact();
-
 
     ui->stackedWidget->setCurrentIndex(3);
 
@@ -164,8 +179,8 @@ void Chats::on_pushButton_addContact_clicked(){
 }
 
 //-----(Show Contact class)-----//
-void Chats::openChatRoomFromContact()
-{
+void Chats::openChatRoomFromContact(){
+    this->setWindowTitle("ChatRoom");
     emit selectChatRoom();
 
     ui->stackedWidget->setCurrentIndex(1);
@@ -176,6 +191,8 @@ void Chats::openChatRoomFromContact()
 }
 
 void Chats::on_pushButton_createChat_clicked() {
+    this->setWindowTitle("Contacts");
+    showContact.groupType = 0;
     emit selectShowContact();
 
     ui->stackedWidget->setCurrentIndex(2);
@@ -189,13 +206,30 @@ void Chats::on_pushButton_createChat_clicked() {
 
 void Chats::on_pushButton_createGroup_clicked()
 {
+    this->setWindowTitle("Create Group Chat");
+    showContact.groupType = 1;
     emit selectShowContact();
 
     ui->stackedWidget->setCurrentIndex(2);
-    showContact.groupType = 1;
+
 
     ui->listWidget->blockSignals(true);
     ui->listWidget->clear();
     ui->listWidget->blockSignals(false);
+}
+
+
+void Chats::on_pushButton_Profile_clicked(){
+    this->setWindowTitle("Profile");
+    profile *myProfile = new profile();
+    myProfile->show();
+    this->close();
+}
+
+
+void Chats::on_pushButton_logOut_clicked(){
+    login *myLogin = new login();
+    myLogin->show();
+    this->close();
 }
 

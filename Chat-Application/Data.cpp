@@ -1,7 +1,7 @@
 #include "Data.h"
 using namespace std;
 
-Data::Data() {
+void Data::CreateDataBase() {
     DB = QSqlDatabase::addDatabase("QSQLITE");
     DB.setDatabaseName("DataBase.db");
     bool Exit = DB.open();
@@ -10,8 +10,9 @@ Data::Data() {
         assert(0);
     }
     DB.close();
-}
 
+    CreateTables();
+}
 void Data::CreateTables() {
     vector<pair<string, string>> tables(NumberOfTables, make_pair("UnNamed", ""));
 
@@ -104,21 +105,10 @@ void Data::CreateTables() {
                        "FOREIGN KEY (StoryOwnerID) REFERENCES USER (UserID));";
     myColumns[tables[7].first] = "(StoryOwnerID, StoryOwnerName, Text, Image, DateTime)";
 
-
-    tables[8].first = "CANVIEW";
-    tables[8].second = "CREATE TABLE IF NOT EXISTS " + tables[8].first + "("
-                       "UserID          INTEGER  NOT NULL, "
-                       "StoryID         INTEGER  NOT NULL, "
-                       "PRIMARY KEY (UserID, StoryID), "
-                       "FOREIGN KEY (UserID) REFERENCES USER (UserID), "
-                       "FOREIGN KEY (StoryID) REFERENCES Story (StoryID));";
-    myColumns[tables[8].first] = "(UserID, StoryID)";
-
-
     // **************************************************************** //
 
     for (int i = 0; i < NumberOfTables; i++) {
-        cerr << tables[i].first << ": ";
+        //cerr << tables[i].first << ": ";
         CreateTable(tables[i].second);
     }
 }
@@ -148,7 +138,7 @@ void Data::InsertData(string TableName, string values) {
     string SQL = "INSERT INTO " + TableName + myColumns[TableName] + " VALUES " + values ;
     QSqlQuery query;
     if(query.exec(QString::fromStdString(SQL))) {
-        cerr << "*** Records inserted successfully ***\n";
+//        cerr << "*** Records inserted successfully ***\n";
     }
     else {
         cerr << "*** Error in InsertData function ***\n";
@@ -162,20 +152,20 @@ vector<vector<QString>> Data::SelectData(string TableName, string Columns, strin
     //	columns must be in this format = (column1, column2, column3, columnN)
     DB.open();
     vector<vector<QString>> Rows;
-
+    int columnsCount = count(Columns.begin(), Columns.end(), ',') + 1;
+    if(Columns == "*") {
+        columnsCount = count(myColumns[TableName].begin(), myColumns[TableName].end(), ',') + 2;
+    }
     string SQL = "SELECT " + Columns + " FROM " + TableName + " " + Condition;
     QSqlQuery query;
     if(query.exec(QString::fromStdString(SQL))) {
-        cerr << "*** Records selected successfully ***\n";
+//        cerr << "*** Records selected successfully ***\n";
 
         while(query.next()) {
             Rows.push_back({});
-
-            for(int i = 0; i < 10; i++) {
+            for(int i = 0; i < columnsCount; i++) {
                 QString qCol = query.value(i).toString();
-                if(qCol != "") {
-                    Rows.back().push_back(qCol);
-                }
+                Rows.back().push_back(qCol);
             }
         }
     }
@@ -194,7 +184,7 @@ void Data::UpdateData(string TableName, string UpdatedColumn, string Condition) 
     string SQL = "UPDATE " + TableName + " SET " + UpdatedColumn + " " + Condition;
     QSqlQuery query;
     if(query.exec(QString::fromStdString(SQL))) {
-        cerr << "*** Records updated successfully ***\n";
+//        cerr << "*** Records updated successfully ***\n";
     }
     else {
         cerr << "*** Error in UpdateData function ***\n";
@@ -209,7 +199,7 @@ void Data::DeleteData(string& TableName, string& Condition) {
     string SQL = "DELETE FROM " + TableName + " " + Condition;
     QSqlQuery query;
     if(query.exec(QString::fromStdString(SQL))) {
-        cerr << "*** Records deleted successfully ***\n";
+//        cerr << "*** Records deleted successfully ***\n";
     }
     else {
         cerr << "*** Error in DeleteData function ***\n";

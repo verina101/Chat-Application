@@ -27,13 +27,13 @@ void DateTime::convertDate(string s , dateTime &t){
     vec.push_back(tmp);
     tmp.clear();
     vector<string>time;
-    for(int i =0; i < vec[3].size();i++){
+    for(int i =0; i < (int)vec[3].size();i++){
         if(vec[3][i]==':'){
             time.push_back(tmp);
             tmp.clear();
         }
         else{
-           tmp.push_back(vec[3][i]);
+            tmp.push_back(vec[3][i]);
         }
     }
     time.push_back(tmp);
@@ -82,19 +82,18 @@ bool DateTime::isValidStory(string s1 ){
     // it takes current time from database
     time_t now = time(0);
     dateTime t;
-    char *dt = ctime(&now);
     string s2=(string)ctime(&now);
-   // string s2(dt);
-    cout<<"Current time  "<<s2<<endl;
-    cout<<"Saved   time  "<<s1<<endl;
+
     dateTime t1,t2;
     convertDate(s1,t1);
     convertDate(s2,t2);
     long long mins1,mins2;
     mins1=numberOfMins(t1);
     mins2=numberOfMins(t2);
-    if(abs(mins1-mins2) >= 1440)return false;
-    else return true;
+    if(abs(mins1-mins2) >= 1440)
+        return false;
+    else
+        return true;
 }
 
 

@@ -27,11 +27,14 @@ SOURCES += \
     addstory.cpp \
     contact.cpp \
     contactwidget.cpp \
-    mainwindow.cpp \
     saveddata.cpp \
     showcontact.cpp \
     showcontactnamestory.cpp \
-    showstories.cpp
+    showstories.cpp \
+    profile.cpp \
+    constantdata.cpp
+
+
 
 HEADERS += \
     ChatInfo.h \
@@ -49,11 +52,14 @@ HEADERS += \
     addstory.h \
     contact.h \
     contactwidget.h \
-    mainwindow.h \
     saveddata.h \
     showcontact.h \
     showcontactnamestory.h \
-    showstories.h
+    showstories.h \
+    profile.h \
+    constantdata.h
+
+
 
 FORMS += \
     ChatInfo.ui \
@@ -68,10 +74,10 @@ FORMS += \
     addstory.ui \
     contact.ui \
     contactwidget.ui \
-    mainwindow.ui \
     showcontact.ui \
     showcontactnamestory.ui \
-    showstories.ui
+    showstories.ui \
+    profile.ui
 
 
 
@@ -82,4 +88,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    Recources.qrc
+        Recources.qrc
+

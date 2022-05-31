@@ -11,9 +11,6 @@ ChatRoom::ChatRoom(QWidget *parent): QWidget(parent), ui(new Ui::ChatRoom) {
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
 
-    QString myStyleSheet = "background: url(':/images/assets/login_BackGround.png');";
-    this->setStyleSheet(myStyleSheet);
-
     QPixmap myButton(":/icons/assets/Send_Icon.png");
     QIcon iconSendButton (myButton);
     ui->pushButton_send->setIcon(iconSendButton);
@@ -29,7 +26,8 @@ ChatRoom::ChatRoom(QWidget *parent): QWidget(parent), ui(new Ui::ChatRoom) {
 }
 
 void ChatRoom::openChatRoom() {
-    QPixmap piximg(":/images/assets/group_image.png");
+    ui->plainTextEdit->clear();
+    QPixmap piximg(MyConstants::getMyChatRoomPic());
     int w = ui->label_image->width();
     int h = ui->label_image->height();
     ui->label_image->setPixmap(piximg.scaled(w, h, Qt::KeepAspectRatio));
@@ -40,9 +38,10 @@ void ChatRoom::openChatRoom() {
     string column = "Text, MessageID, SenderName, SenderID, IsDeleted";
     string condition = "WHERE ChatRoomID = " + db.convertToValue(MyConstants::getMyChatRoomID());
     myChatMsgs = db.SelectData("MESSAGE", column, condition);
-
+    QString s = db.SelectData("CHATROOMINFO", "RoomType", condition).front().front();
+    isGroupChat = s.toInt();
     for(auto curMsg : myChatMsgs) {
-        DisplayMessage(curMsg[0], curMsg[2], curMsg[3], curMsg[4] == '1');
+        DisplayMessage(curMsg[0], curMsg[2], curMsg[3], curMsg[4] == '1', 0);
     }
     updateSeen();
 }
@@ -56,22 +55,28 @@ void ChatRoom::updateSeen(){
 
 }
 
-void ChatRoom::DisplayMessage(QString &msgText, QString senderName, QString senderID, bool isDeleted) {
-    Message *myMsg = new Message();
-    myMsg->ConvertFormat(msgText);
+void ChatRoom::DisplayMessage(QString &msgText, QString senderName, QString senderID, bool isDeleted, bool isNew) {
     if(msgText.isEmpty()) return;
+    Message *myMsg = new Message();
+    if(isNew) myMsg->ConvertFormat(msgText);
 
     if(isDeleted) {
         if(MyConstants::getMyId() == senderID)
-            myMsg->setMessage("YOU DELETED THIS MESSAGE", 1);
+            myMsg->setMessage("YOU DELETED THIS MESSAGE", 1, isGroupChat);
         else
-            myMsg->setMessage("THIS MESSAGE WAS DELETED", 0);
+            myMsg->setMessage("THIS MESSAGE WAS DELETED", 0, isGroupChat);
     }
     else {
-        myMsg->setMessage(msgText, (senderID == MyConstants::getMyId()));
+        myMsg->setMessage(msgText, (senderID == MyConstants::getMyId()), isGroupChat);
     }
 
-    myMsg->setUserData(senderName);
+    if(senderID != MyConstants::getMyId() && userColorIndex.find(senderID) == userColorIndex.end()) {
+        int getRandomColor = getRandomNumber(myMsg->getColorsCount());
+        userColorIndex[senderID] = getRandomColor;
+        isUsed[getRandomColor] = 1;
+        //qDebug() << senderID << ":\t" << getRandomColor;
+    }
+    myMsg->setUserData(senderName, userColorIndex[senderID]);
     int w = myMsg->width();
     int h = myMsg->height();
     QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
@@ -82,9 +87,16 @@ void ChatRoom::DisplayMessage(QString &msgText, QString senderName, QString send
 
 }
 
+int ChatRoom::getRandomNumber(int total) {
+    if((int)isUsed.size() == total) isUsed.clear();
+    int randomColor = rand() % total;
+    if(isUsed.find(randomColor) != isUsed.end()) return randomColor = getRandomNumber(total);
+    return randomColor;
+}
+
 void ChatRoom::on_pushButton_send_clicked() {
     QString myMsgText = ui->plainTextEdit->toPlainText();
-    DisplayMessage(myMsgText, "", MyConstants::getMyId(), 0);
+    DisplayMessage(myMsgText, "", MyConstants::getMyId(), 0,1);
 
     ui->plainTextEdit->setPlainText("");
 
@@ -111,7 +123,7 @@ void ChatRoom::on_comboBox_currentIndexChanged(int index) {
         ui->stackedWidget->setCurrentIndex(1);
         myChatInfo.setChatData();
     }
-    else { //Exit        
+    else { //Exit
         emit exitChat();
         ui->comboBox->setCurrentIndex(0);
 
@@ -150,9 +162,86 @@ void ChatRoom::deleteMsg() {
     Message *msg = new Message();
     msg->deleteMessage(MyConstants::getMyMsgID());
     QListWidgetItem *item = ui->listWidget->currentItem();
-    msg->setMessage("YOU DELETED THIS MESSAGE", 1);
+    msg->setMessage("YOU DELETED THIS MESSAGE", 1, isGroupChat);
     ui->listWidget->setItemWidget(item,msg);
 }
 
 
+void ChatRoom::on_pushButton_1_clicked() {
+    QString myEmoji = ui->pushButton_1->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
+}
+
+
+void ChatRoom::on_pushButton_2_clicked()
+{
+
+    QString myEmoji = ui->pushButton_2->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
+
+}
+
+
+void ChatRoom::on_pushButton_3_clicked()
+{
+    QString myEmoji = ui->pushButton_3->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
+}
+
+
+void ChatRoom::on_pushButton_4_clicked()
+{
+    QString myEmoji = ui->pushButton_4->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
+}
+
+
+void ChatRoom::on_pushButton_5_clicked()
+{
+    QString myEmoji = ui->pushButton_5->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
+}
+
+
+void ChatRoom::on_pushButton_6_clicked()
+{
+    QString myEmoji = ui->pushButton_6->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
+}
+
+
+void ChatRoom::on_pushButton_7_clicked()
+{
+    QString myEmoji = ui->pushButton_7->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
+
+}
+
+
+void ChatRoom::on_pushButton_8_clicked()
+{
+    QString myEmoji = ui->pushButton_8->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
+}
+
+
+void ChatRoom::on_pushButton_9_clicked()
+{
+    QString myEmoji = ui->pushButton_9->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
+}
+
+
+void ChatRoom::on_pushButton_10_clicked()
+{
+    QString myEmoji = ui->pushButton_10->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
+}
+
+
+void ChatRoom::on_pushButton_11_clicked()
+{
+    QString myEmoji = ui->pushButton_11->text();
+    ui->plainTextEdit->insertPlainText(myEmoji);
+}
 

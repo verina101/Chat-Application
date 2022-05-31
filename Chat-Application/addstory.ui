@@ -19,9 +19,15 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(52, 91, 99);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700; font-style:italic; text-decoration: underline;&quot;&gt;Add Story&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
@@ -67,7 +73,8 @@
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">font:16px;</string>
+        <string notr="true">font:16px;
+color:white;</string>
        </property>
        <property name="text">
         <string>Photo</string>
@@ -83,7 +90,8 @@
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">font:16px;</string>
+        <string notr="true">font:16px;
+color:white;</string>
        </property>
        <property name="text">
         <string>Text</string>
@@ -106,6 +114,244 @@
     </spacer>
    </item>
    <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(21, 45, 53);
+border-radius:20px;
+font-size:16px;
+</string>
+       </property>
+       <property name="text">
+        <string>🥺</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_12">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(21, 45, 53);
+border-radius:20px;
+font-size:16px;
+</string>
+       </property>
+       <property name="text">
+        <string>🥰</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_13">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(21, 45, 53);
+border-radius:20px;
+font-size:16px;
+</string>
+       </property>
+       <property name="text">
+        <string>😂</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(21, 45, 53);
+border-radius:20px;
+font-size:16px;
+</string>
+       </property>
+       <property name="text">
+        <string>🤡</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(21, 45, 53);
+border-radius:20px;
+font-size:16px;
+</string>
+       </property>
+       <property name="text">
+        <string>🐥</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(21, 45, 53);
+border-radius:20px;
+font-size:16px;
+</string>
+       </property>
+       <property name="text">
+        <string>😢</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_11">
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(21, 45, 53);
+border-radius:20px;
+font-size:16px;
+</string>
+       </property>
+       <property name="text">
+        <string>😠</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_9">
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(21, 45, 53);
+border-radius:20px;
+font-size:16px;
+</string>
+       </property>
+       <property name="text">
+        <string>🦉</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(21, 45, 53);
+border-radius:20px;
+font-size:16px;
+</string>
+       </property>
+       <property name="text">
+        <string>👍</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(21, 45, 53);
+border-radius:20px;
+font-size:16px;
+</string>
+       </property>
+       <property name="text">
+        <string>❤️</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_10">
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(21, 45, 53);
+border-radius:20px;
+font-size:16px;
+
+</string>
+       </property>
+       <property name="text">
+        <string>💔</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
     <widget class="QTextEdit" name="textEdit">
      <property name="maximumSize">
       <size>
@@ -114,7 +360,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background:rgb(178, 211, 255);
+      <string notr="true">background:rgb(212, 236, 221);
 border-radius:15px;
 font:16px;
 font:white;</string>
@@ -132,11 +378,14 @@ font:white;</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background:rgb(255, 249, 203);
-border-radius:15px;</string>
+        <string notr="true">background:rgb(21, 45, 53);
+font:14px;
+color:white;
+border-radius:15px;
+</string>
        </property>
        <property name="text">
-        <string>ADD 🤩</string>
+        <string>Add</string>
        </property>
       </widget>
      </item>
@@ -149,11 +398,14 @@ border-radius:15px;</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background:rgb(255, 249, 203);
-border-radius:15px;</string>
+        <string notr="true">background:rgb(21, 45, 53);
+font:14px;
+color:white;
+border-radius:15px;
+</string>
        </property>
        <property name="text">
-        <string>CLOSE 🥺</string>
+        <string>Close</string>
        </property>
       </widget>
      </item>

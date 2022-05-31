@@ -4,17 +4,11 @@
 #include <saveddata.h>
 #include <Data.h>
 #include <showstories.h>
+#include <QResource>
 StoryTime::StoryTime(QWidget *parent): QWidget(parent), ui(new Ui::StoryTime) {
     ui->setupUi(this);
     this->setMinimumSize(QSize(700, 500));
     this->setMaximumSize(QSize(700, 500));
-
-    //background
-    QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
-    myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(backgroundRole(), myBackGround);
-    this->setPalette(palette);
 
     SavedData savee;
     Data MyData;
@@ -29,27 +23,18 @@ StoryTime::StoryTime(QWidget *parent): QWidget(parent), ui(new Ui::StoryTime) {
     }
     else{
 
-       string path= chosenStory[0][4].toStdString(),name="";
-       bool p=false;
-       for(int i=path.size(); i>-1; --i){
-           if(path[i]=='/')
-               break;
-           if(path[i]=='.'){
-               p=true;
-               continue;
-       }
-           if(p)
-              name+=path[i];
-       }
+        string path= chosenStory[0][4].toStdString(),name="";
 
-       reverse(name.begin(), name.end());
+        for(int i=path.size() - 1; i>-1; --i){
+            if(path[i] == '/') break;
 
-//        name=ConvertoValue(name);
+            name = path[i] + name;
+        }
 
         QPixmap photo(QString::fromStdString(path));
         int h= ui->label->height();
         int w= ui->label->width();
-        ui->label-> setPixmap(photo.scaled(w,h, Qt::KeepAspectRatio));
+        ui->label-> setPixmap(photo.scaled(w,h, Qt::IgnoreAspectRatio));
     }
 
 
@@ -75,4 +60,3 @@ void StoryTime::on_pushButton_2_clicked()
     myChats->show();
     this->close();
 }
-

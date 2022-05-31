@@ -8,22 +8,27 @@ Message::Message(QWidget *parent) : QWidget(parent), ui(new Ui::Message) {
 
 }
 
-void Message::setUserData(QString userName) {
+void Message::setUserData(QString userName, int colorIndex) {
     ui->label_Sender_Name->setText(userName);
+    ui->label_Sender_Name->setStyleSheet("color: " + colors[colorIndex] + "; font-size: 16px;");
 
 }
 
-void Message::setMessage(QString msg, bool SentByMe) {
+int Message::getColorsCount() {
+    return colors.size();
+}
+
+void Message::setMessage(QString msg, bool SentByMe, bool isGroupChat) {
     QString myStyleSheet = "font-size: 14px; border-radius:15px; margin-left: 1;";
     myStyleSheet += "font: " + QString(SentByMe ? "black" : "white") + ";";
-    myStyleSheet += "background: " + QString(SentByMe ? "lightgrey" : "steelblue") + ";";
+    myStyleSheet += "background: " + QString(SentByMe ? "rgb(18, 140, 126)" : "steelblue") + ";";
 
-    if(SentByMe) {
+    if(SentByMe || !isGroupChat) {
         ui->label_Sender_Name->setMinimumHeight(0);
         ui->label_Sender_Name->setMaximumHeight(0);
         ui->label_Sender_Name->hide();
     }
-    else {
+    if(!SentByMe) {
         ui->horizontalLayout_2->setDirection(QBoxLayout::RightToLeft);
     }
 
@@ -42,27 +47,25 @@ void Message::ConvertFormat(QString &str) {
     tmpo->setStyleSheet("font-size: 14px;");
     tmpo->show();
     tmpo->hide();
+    int l = str.size();
+    while(l && (str[l - 1] == '\n' || str[l - 1] == ' ')) {
+        l--;
+    }
 
-    string tmpStr = str.toStdString(), subStr = "";
-    tmpo->setPlainText(QString::fromStdString(subStr));
-    while(!tmpStr.empty() && (tmpStr.back() == '\n' || tmpStr.back() == ' '))
-        tmpStr.pop_back();
-
+    str = str.left(l);
+    QString tmpqStr = str;
     str.clear();
-    for(auto ch : tmpStr) {
-        subStr += ch;
+    for(auto ch : tmpqStr) {
         int oLd_nLines = tmpo->document()->documentLayout()->documentSize().height();
-
-        tmpo->setPlainText(QString::fromStdString(subStr));
+        tmpo->insertPlainText(ch);
         int new_nLines = tmpo->document()->documentLayout()->documentSize().height();
 
-        string addChar (1, ch);
+        QString addChar (1, ch);
         if(oLd_nLines != new_nLines && ch != '\n') {
             addChar = '\n' + addChar;
         }
-        str += QString::fromStdString(addChar);
+        str += addChar;
     }
-    //qDebug() << str;
     tmpo->close();
 }
 
@@ -81,4 +84,3 @@ void Message::deleteMessage(QString messageID) {
     db.UpdateData("MESSAGE","Text = 'THIS MESSAGE WAS DELETED' , isDeleted = '1'","WHERE MessageID = " + db.convertToValue(messageID) );
 
 }
-

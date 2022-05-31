@@ -13,7 +13,7 @@ class StoryWidget : public QWidget
 
 public:
     explicit StoryWidget(QWidget *parent = nullptr);
-     void setStoryData(QString name , QString id, QString date);
+    void setStoryData(QString name , QString id, QString date);
     ~StoryWidget();
 
 

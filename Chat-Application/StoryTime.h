@@ -8,7 +8,7 @@
 #include <QString>
 #include <string>
 #include "Data.h"
-//#include<QDialog>
+#include <QListWidgetItem>
 
 using namespace std;
 
@@ -31,6 +31,7 @@ private slots:
 
 private:
     Ui::StoryTime *ui;
+    bool isSelected = false;
 };
 
 #endif // STORYTIME_H
