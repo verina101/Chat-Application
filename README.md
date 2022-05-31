@@ -24,8 +24,9 @@ This application helps people to communicate with each other such as the popular
 - Qt Creator
 - SQLite
 ## Screenshots
-<img src="">
-<p align="center"></p>
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](https://...Dark.png)  |  ![](https://...Ocean.png)
 
 ## DataBase
 ##### ERD Diagram
