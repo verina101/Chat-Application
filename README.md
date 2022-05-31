@@ -3,10 +3,10 @@ This application helps people to communicate with each other such as the popular
 
 
 ## Table of Contents
-- [Features] (Features)
-- [Tools] (Tools)
-- [DataBase] (DataBase)
-- [Screenshots] (Screenshots)
+- [Features](Features)
+- [Tools](Tools)
+- [DataBase](DataBase)
+- [Screenshots](Screenshots)
 
 ## Features
 - Login/Registration
