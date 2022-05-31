@@ -14,10 +14,9 @@ This application helps people to communicate with each other such as the popular
 - each user can add new contact and create private or groupchat with them
 - each user can post new stories and his contacs will be able to see it, it will disappear after 24 hours exactly
 - The user can see all the stories of his mutual contacts.
-- each chatRoom has chatroom info - privateChat shows the common chatRoom between both users 
-                                  - groupChat shows all the participants in the room with their lastseen in the group
-                                  - 
-                                  
+- each chatRoom has chatroom info:
+- privateChat info shows the common chatRoom between both users               
+- groupChat info shows all the participants in the room with their lastseen in the group                               
 - each user can send and delete any info he sent
 - The user can see the status of the message whether it is seen or not
 ## Tools
