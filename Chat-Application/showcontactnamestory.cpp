@@ -30,7 +30,6 @@ ShowContactNameStory::ShowContactNameStory(QWidget *parent): QWidget(parent), ui
     string cond=";";
     string col="*";
     vec=MyDataBase.SelectData(tableName,col,cond);
-    cout<<vec.size()<<endl;
     for(auto it : vec){
         string time = it[5].toStdString();
         DateTime t;

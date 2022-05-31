@@ -13,7 +13,7 @@ static QSqlDatabase DB;
 static map<string,string> myColumns;
 
 class Data {
-    static const int NumberOfTables = 9;
+    static const int NumberOfTables = 8;
 
     static void CreateTables();
     static void CreateTable(string& SQL);

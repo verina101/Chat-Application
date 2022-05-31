@@ -27,7 +27,6 @@ SOURCES += \
     addstory.cpp \
     contact.cpp \
     contactwidget.cpp \
-    mainwindow.cpp \
     saveddata.cpp \
     showcontact.cpp \
     showcontactnamestory.cpp \
@@ -53,7 +52,6 @@ HEADERS += \
     addstory.h \
     contact.h \
     contactwidget.h \
-    mainwindow.h \
     saveddata.h \
     showcontact.h \
     showcontactnamestory.h \
@@ -76,7 +74,6 @@ FORMS += \
     addstory.ui \
     contact.ui \
     contactwidget.ui \
-    mainwindow.ui \
     showcontact.ui \
     showcontactnamestory.ui \
     showstories.ui \

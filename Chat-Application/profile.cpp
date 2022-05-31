@@ -26,27 +26,27 @@ profile::profile(QWidget *parent): QWidget(parent), ui(new Ui::profile) {
     string userCond     =  "where PhoneNumber ='"+phoneno+"' ;";
     this->data= myData.SelectData(userTable,userCol,userCond);
 
-        ui->label_name_2->setText(data[0][0]+ " "+ data[0][1]);
-        ui->lineEdit->setText(data[0][3]);
-        ui->label_phoneNumber->setText(data[0][4]);
-        if(data[0][5]=="1")
-            ui->comboBox_visibilty->setCurrentIndex(1);
+    ui->label_name_2->setText(data[0][0]+ " "+ data[0][1]);
+    ui->lineEdit->setText(data[0][3]);
+    ui->label_phoneNumber->setText(data[0][4]);
+    if(data[0][5]=="1")
+        ui->comboBox_visibilty->setCurrentIndex(1);
 
 
-        string path= data[0][2].toStdString(),name="";
+    string path= data[0][2].toStdString(),name="";
 
-        for(int i=path.size() - 1; i>-1; --i){
-            if(path[i] == '/') break;
+    for(int i=path.size() - 1; i>-1; --i){
+        if(path[i] == '/') break;
 
-                 name = path[i] + name;
+        name = path[i] + name;
 
-        }
+    }
 
-        cout<< "full path "<< path<< endl<< "name " << name;
-        QPixmap photo(QString::fromStdString(path));
-        int h= ui->label->height();
-        int w= ui->label->width();
-        ui->label-> setPixmap(photo.scaled(w,h, Qt::IgnoreAspectRatio));
+    cout<< "full path "<< path<< endl<< "name " << name;
+    QPixmap photo(QString::fromStdString(path));
+    int h= ui->label->height();
+    int w= ui->label->width();
+    ui->label-> setPixmap(photo.scaled(w,h, Qt::IgnoreAspectRatio));
 
 }
 profile::~profile(){
@@ -59,13 +59,13 @@ void profile::on_pushButton_clicked()
     filePath=QFileDialog::getOpenFileName(this,"open a file","D:/",filter);
     QMessageBox::information(this,"..",filePath);
     if(!filePath.isEmpty()){
-    QPixmap pic(filePath);
-    ui->label->setPixmap(pic.scaled(100,100,Qt::IgnoreAspectRatio));
-     QFileInfo fi(filePath);
-     QString fileName= fi.fileName();
-     QString desktopPath = "";
-     QString destinationPath= desktopPath+QDir::separator()+fileName;
-    QFile::copy(filePath, destinationPath);
+        QPixmap pic(filePath);
+        ui->label->setPixmap(pic.scaled(100,100,Qt::IgnoreAspectRatio));
+        QFileInfo fi(filePath);
+        QString fileName= fi.fileName();
+        QString desktopPath = "";
+        QString destinationPath= desktopPath+QDir::separator()+fileName;
+        QFile::copy(filePath, destinationPath);
     }
 }
 
@@ -76,12 +76,12 @@ void profile::on_pushButton_2_clicked()
     string phoneno= currUser.getphoneNumber();
     Data myData;
     string userCol     =  "ProfilePicture,Description";
-    string userTable     =  "USER" ;
-    string userCond     =  ";";
+    string userTable   =  "USER" ;
+    string userCond    =  ";";
 
     if(!filePath.isEmpty()){
-    userCol = "ProfilePicture = '" + filePath.toStdString() + "'";
-    myData.UpdateData(userTable, userCol, userCond);
+        userCol = "ProfilePicture = '" + filePath.toStdString() + "'";
+        myData.UpdateData(userTable, userCol, userCond);
     }
 
     QString desk= ui->lineEdit->text();
@@ -94,7 +94,6 @@ void profile::on_pushButton_2_clicked()
     userCond = "WHERE PhoneNumber = '" + phoneno + "'";
     userCol= "Visibility = '" + visibility.toStdString() + "'";
     myData.UpdateData(userTable, userCol, userCond);
-
 
     Chats *myChats = new Chats();
     myChats->show();

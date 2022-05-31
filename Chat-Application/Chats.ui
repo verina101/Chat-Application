@@ -30,6 +30,9 @@ color:white;</string>
     <string notr="true"/>
    </property>
    <widget class="QWidget" name="page_myChats">
+    <property name="styleSheet">
+     <string notr="true">background:rgb(17, 32, 49);</string>
+    </property>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
@@ -91,6 +94,9 @@ color:white;</string>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="spacing">
+         <number>6</number>
+        </property>
         <property name="leftMargin">
          <number>0</number>
         </property>
@@ -128,8 +134,14 @@ color:white;</string>
       </item>
       <item>
        <widget class="QListWidget" name="listWidget">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="horizontalScrollBarPolicy">
          <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="autoScrollMargin">
+         <number>15</number>
         </property>
         <property name="verticalScrollMode">
          <enum>QAbstractItemView::ScrollPerPixel</enum>
@@ -142,13 +154,26 @@ color:white;</string>
          <number>4</number>
         </property>
         <property name="topMargin">
-         <number>0</number>
+         <number>2</number>
         </property>
         <property name="rightMargin">
          <number>4</number>
         </property>
+        <property name="bottomMargin">
+         <number>2</number>
+        </property>
         <item>
          <widget class="QPushButton" name="pushButton_addStory">
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:rgb(21, 45, 53);
+border-radius:15px;</string>
+          </property>
           <property name="text">
            <string>Add Story</string>
           </property>
@@ -169,6 +194,16 @@ color:white;</string>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_viewStory">
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:rgb(21, 45, 53);
+border-radius:15px;</string>
+          </property>
           <property name="text">
            <string>View Stories</string>
           </property>
@@ -189,6 +224,16 @@ color:white;</string>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_Profile">
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:rgb(21, 45, 53);
+border-radius:15px;</string>
+          </property>
           <property name="text">
            <string>My Profile</string>
           </property>
@@ -209,6 +254,16 @@ color:white;</string>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_logOut">
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:rgb(21, 45, 53);
+border-radius:15px;</string>
+          </property>
           <property name="text">
            <string>Log out</string>
           </property>

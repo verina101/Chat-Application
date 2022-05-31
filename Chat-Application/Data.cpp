@@ -105,21 +105,10 @@ void Data::CreateTables() {
                        "FOREIGN KEY (StoryOwnerID) REFERENCES USER (UserID));";
     myColumns[tables[7].first] = "(StoryOwnerID, StoryOwnerName, Text, Image, DateTime)";
 
-
-    tables[8].first = "CANVIEW";
-    tables[8].second = "CREATE TABLE IF NOT EXISTS " + tables[8].first + "("
-                       "UserID          INTEGER  NOT NULL, "
-                       "StoryID         INTEGER  NOT NULL, "
-                       "PRIMARY KEY (UserID, StoryID), "
-                       "FOREIGN KEY (UserID) REFERENCES USER (UserID), "
-                       "FOREIGN KEY (StoryID) REFERENCES Story (StoryID));";
-    myColumns[tables[8].first] = "(UserID, StoryID)";
-
-
     // **************************************************************** //
 
     for (int i = 0; i < NumberOfTables; i++) {
-        cerr << tables[i].first << ": ";
+        //cerr << tables[i].first << ": ";
         CreateTable(tables[i].second);
     }
 }

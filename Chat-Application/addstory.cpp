@@ -114,7 +114,7 @@ void AddStory::on_radioButtonPhoto_clicked()
     QString fileName= QFileDialog:: getOpenFileName(this, "open a file","D://",tr("Images(*.png *.jpg *.jpeg *.bmp *.gif)"));
     QMessageBox :: information(this, "..", fileName);
     ui->textEdit->setText(fileName);
-        ui->textEdit->setReadOnly(true);
+    ui->textEdit->setReadOnly(true);
 
 }
 
@@ -128,92 +128,92 @@ void AddStory::on_pushButton_2_clicked()
 
 void AddStory::on_pushButton_4_clicked()
 {
-      if(!ui->textEdit->isReadOnly()){
-    ui->textEdit->insertPlainText(ui->pushButton_4->text());
-      }
+    if(!ui->textEdit->isReadOnly()){
+        ui->textEdit->insertPlainText(ui->pushButton_4->text());
+    }
 
 }
 
 
 void AddStory::on_pushButton_12_clicked()
 {
-      if(!ui->textEdit->isReadOnly()){
-          ui->textEdit->insertPlainText(ui->pushButton_12->text());
+    if(!ui->textEdit->isReadOnly()){
+        ui->textEdit->insertPlainText(ui->pushButton_12->text());
 
-      }
+    }
 
 }
 
 
 void AddStory::on_pushButton_13_clicked()
 {
-      if(!ui->textEdit->isReadOnly()){
-          ui->textEdit->insertPlainText(ui->pushButton_13->text());
+    if(!ui->textEdit->isReadOnly()){
+        ui->textEdit->insertPlainText(ui->pushButton_13->text());
 
-      }
+    }
 }
 
 
 void AddStory::on_pushButton_8_clicked()
 {
-      if(!ui->textEdit->isReadOnly()){
-          ui->textEdit->insertPlainText(ui->pushButton_8->text());
+    if(!ui->textEdit->isReadOnly()){
+        ui->textEdit->insertPlainText(ui->pushButton_8->text());
 
-      }
+    }
 }
 
 
 void AddStory::on_pushButton_3_clicked()
 {
-      if(!ui->textEdit->isReadOnly()){
-          ui->textEdit->insertPlainText(ui->pushButton_3->text());
+    if(!ui->textEdit->isReadOnly()){
+        ui->textEdit->insertPlainText(ui->pushButton_3->text());
 
-      }
+    }
 }
 
 
 void AddStory::on_pushButton_5_clicked()
 {
-      if(!ui->textEdit->isReadOnly()){
-          ui->textEdit->insertPlainText(ui->pushButton_5->text());
+    if(!ui->textEdit->isReadOnly()){
+        ui->textEdit->insertPlainText(ui->pushButton_5->text());
 
-      }
+    }
 }
 
 
 void AddStory::on_pushButton_11_clicked()
 {
-      if(!ui->textEdit->isReadOnly()){
-          ui->textEdit->insertPlainText(ui->pushButton_11->text());
+    if(!ui->textEdit->isReadOnly()){
+        ui->textEdit->insertPlainText(ui->pushButton_11->text());
 
-      }
+    }
 }
 
 
 void AddStory::on_pushButton_9_clicked()
 {
-      if(!ui->textEdit->isReadOnly()){
-          ui->textEdit->insertPlainText(ui->pushButton_9->text());
+    if(!ui->textEdit->isReadOnly()){
+        ui->textEdit->insertPlainText(ui->pushButton_9->text());
 
-      }
+    }
 }
 
 
 void AddStory::on_pushButton_6_clicked()
 {
-      if(!ui->textEdit->isReadOnly()){
-          ui->textEdit->insertPlainText(ui->pushButton_6->text());
+    if(!ui->textEdit->isReadOnly()){
+        ui->textEdit->insertPlainText(ui->pushButton_6->text());
 
-      }
+    }
 }
 
 
 void AddStory::on_pushButton_7_clicked()
 {
-      if(!ui->textEdit->isReadOnly()){
-          ui->textEdit->insertPlainText(ui->pushButton_7->text());
+    if(!ui->textEdit->isReadOnly()){
+        ui->textEdit->insertPlainText(ui->pushButton_7->text());
 
-      }
+    }
 }
 
 

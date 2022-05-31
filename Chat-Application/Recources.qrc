@@ -15,5 +15,6 @@
         <file>assets/app_BackGround.jpg</file>
         <file>assets/contact.png</file>
         <file>assets/defultProfile.png</file>
+        <file>assets/hello.png</file>
     </qresource>
 </RCC>

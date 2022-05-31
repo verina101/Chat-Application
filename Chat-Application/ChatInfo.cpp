@@ -12,7 +12,6 @@ ChatInfo::ChatInfo(QWidget *parent): QWidget(parent), ui(new Ui::ChatInfo) {
 }
 
 void ChatInfo::setChatData() {
-
     ui->listWidget->clear();
 
     vector<QString> myChatRoomInfo = db.SelectData("CHATROOMINFO", "AdminName, RoomType","WHERE ChatRoomID = "+ db.convertToValue(MyConstants::getMyChatRoomID())).front();
@@ -34,11 +33,8 @@ void ChatInfo::setChatData() {
         int h = ui->label_picture->height();
         ui->label_picture->setPixmap(piximg.scaled(w, h, Qt::IgnoreAspectRatio));
 
-
         ui->label_myMobile->setText(userData[2]);
         ui->label_ListType->setText("Comman Chat Rooms");
-
-
 
         vector<vector<QString>> myChats = db.SelectData("PARTICIPATE","ChatRoomID", "WHERE UserID = " + db.convertToValue(MyConstants::getMyId()));
         vector<vector<QString>> userChats = db.SelectData("PARTICIPATE","ChatRoomID", "WHERE UserID = " + db.convertToValue(users[0][0]));
@@ -47,7 +43,7 @@ void ChatInfo::setChatData() {
         QString commonRoomID;
         for(auto it : myChats) {
             if(it[0] != MyConstants::getMyChatRoomID())
-            mp[it[0]] = 1;
+                mp[it[0]] = 1;
         }
 
         for(auto it : userChats) {

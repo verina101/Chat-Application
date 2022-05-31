@@ -64,7 +64,6 @@ void ShowContact::openShowContact() {
     string userTable     =  "USER" ;
     string userCond     =  ";";
     this->data= db.SelectData(userTable,userCol,userCond);
-    cout<< "size is "<< data.size();
 
     string contactCol       =  "UserID, ContactID";
     string contactTable     =  "CONTACTS" ;
@@ -83,7 +82,7 @@ void ShowContact::openShowContact() {
         }
 
         if(found) {
-            ContactWidget *mycontact = new ContactWidget();            
+            ContactWidget *mycontact = new ContactWidget();
             mycontact->setContactData(row1[3], row1[1] +" "+ row1[2], "ID: "+row1[0]);
 
             if(!ui->listWidget_2->isHidden()) {
@@ -111,6 +110,7 @@ void ShowContact::openShowContact() {
 }
 
 void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
+    item->isHidden();
     int index = ui->listWidget->currentRow();
     QString selectedID = cdata[index][1];
 
@@ -149,6 +149,7 @@ void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
 }
 
 void ShowContact::on_listWidget_2_itemClicked(QListWidgetItem *item) {
+    item->isHidden();
     int index = ui->listWidget_2->currentRow();
     ui->listWidget_2->item(index)->setHidden(true);
     ui->listWidget->item(index)->setHidden(false);

@@ -38,18 +38,25 @@
     <string>Chat photo</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>70</x>
      <y>10</y>
-     <width>601</width>
+     <width>602</width>
      <height>51</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>2</number>
+    </property>
     <item>
      <widget class="QLabel" name="label_chatName">
+      <property name="styleSheet">
+       <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;
+</string>
+      </property>
       <property name="text">
        <string>Chat Name</string>
       </property>
@@ -68,6 +75,9 @@
         <width>16777215</width>
         <height>16777215</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(144, 144, 144);</string>
       </property>
       <property name="text">
        <string>Sender  name</string>

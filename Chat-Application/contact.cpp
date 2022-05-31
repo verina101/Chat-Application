@@ -34,7 +34,6 @@ void contact::on_pushButton_2_clicked() {
 
     QString s = QString::number(this->myID);
     string id = s.toStdString();
-    //('A', 'B', '12', '123', 'N')
     int indx = ui->listWidget->selectionModel()->currentIndex().row();
     indx= at[indx];
     Data db;
@@ -67,17 +66,13 @@ void contact::on_listWidget_itemClicked(QListWidgetItem *item){
     this->isSelected = true;
 }
 
-void contact::openAddContact()
-{
-
-
+void contact::openAddContact() {
     //background
     QPixmap myBackGround(":/images/assets/app_BackGround.jpg");
     myBackGround = myBackGround.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(backgroundRole(), myBackGround);
     this->setPalette(palette);
-
 
     QPixmap pix(":/images/assets/contact.png") ;
     int h= ui->label->height();
@@ -93,17 +88,11 @@ void contact::openAddContact()
     string userTable     =  "USER" ;
     string userCond     =  ";";
     this->data= MyDataBase.SelectData(userTable,userCol,userCond);
-    //cout<< "size is "<< data.size();
 
     string contactCol       =  "UserID,ContactID";
     string contactTable     =  "CONTACTS" ;
     string contactCond      =  "where UserID ='"+cid+"' ;";
     this->cdata= MyDataBase.SelectData(contactTable,contactCol,contactCond);
-
-    for(auto row1 : this->data) {
-        qDebug()<< row1;
-    }
-
 
     int expected=0, real=0,visible=0;
     QString seen = QString::number(visible);
@@ -121,7 +110,7 @@ void contact::openAddContact()
 
         if(!found){
             ContactWidget *mycontact = new ContactWidget();
-            QString defultProfile = ":/images/assets/defultProfile.png";  //row1[3]
+            QString defultProfile = ":/images/assets/defultProfile.png";
             if(row1[4]==seen){
                 mycontact->setContactData(defultProfile, row1[1] +" "+ row1[2], "ID: "+row1[0]);
             }

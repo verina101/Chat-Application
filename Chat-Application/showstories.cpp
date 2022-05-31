@@ -57,8 +57,6 @@ ShowStories::ShowStories(QWidget *parent): QWidget(parent), ui(new Ui::ShowStori
 }
 
 
-
-
 ShowStories::~ShowStories() {
     delete ui;
 }
@@ -68,7 +66,6 @@ void ShowStories::on_pushButton_clicked() {
     s->show();
     this->hide();
     ui->pushButton_3->setHidden(true);
-  //  SavedData::setshowDeleteButton(false);
 }
 
 
@@ -84,15 +81,9 @@ void ShowStories::on_pushButton_2_clicked()
 }
 
 
-void ShowStories::on_pushButton_3_clicked()
-{
-
-
+void ShowStories::on_pushButton_3_clicked() {
     Data MyDataBase;
     string tableName="STORY";
-
-
-    //cout<<"size"<< storyIndex.size();
 
     int indx = ui->listWidget->selectionModel()->currentIndex().row();
     string cond="where StoryID ='"+storyIndex[indx].toStdString()+"' ;";

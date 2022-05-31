@@ -38,8 +38,6 @@ StoryTime::StoryTime(QWidget *parent): QWidget(parent), ui(new Ui::StoryTime) {
             name = path[i] + name;
         }
 
-        //        name=ConvertoValue(name);
-        qDebug()<<QString::fromStdString(path);
         QPixmap photo(QString::fromStdString(path));
         int h= ui->label->height();
         int w= ui->label->width();

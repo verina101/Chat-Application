@@ -30,7 +30,7 @@ ChatRoom::ChatRoom(QWidget *parent): QWidget(parent), ui(new Ui::ChatRoom) {
 
 void ChatRoom::openChatRoom() {
     ui->plainTextEdit->clear();
-    QPixmap piximg(":/images/assets/group_image.png");
+    QPixmap piximg(MyConstants::getMyChatRoomPic());
     int w = ui->label_image->width();
     int h = ui->label_image->height();
     ui->label_image->setPixmap(piximg.scaled(w, h, Qt::KeepAspectRatio));

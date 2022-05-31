@@ -56,7 +56,6 @@ void Message::ConvertFormat(QString &str) {
     str.clear();
     for(auto ch : tmpqStr) {
         int oLd_nLines = tmpo->document()->documentLayout()->documentSize().height();
-
         tmpo->insertPlainText(ch);
         int new_nLines = tmpo->document()->documentLayout()->documentSize().height();
 
@@ -66,7 +65,6 @@ void Message::ConvertFormat(QString &str) {
         }
         str += addChar;
     }
-    //qDebug() << str;
     tmpo->close();
 }
 
