@@ -26,10 +26,11 @@ This application helps people to communicate with each other such as the popular
 - Qt Creator
 - SQLite
 ## ScreenShot
-![Screenshot 2022-06-01 231513](https://user-images.githubusercontent.com/91009011/171511286-5f102e88-6f2d-40ff-95ed-b8bd31cee2f0.png) ![login](https://user-images.githubusercontent.com/91009011/171511313-9caa433e-ec5f-40c2-a0ac-926720d31511.png)
-
-
-## DataBase
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | <img src="https://user-images.githubusercontent.com/83420413/171509916-9fcac049-6d2e-4a0d-aa5d-283655dac89e.png" width="40%" height="60%" align="left" /> |
+| Content Cell  |  ![login](https://user-images.githubusercontent.com/91009011/171511650-58f03e59-6ae6-4b9f-b9e7-0e763932a28e.png)
+ |
 <p align="center">
     <img src="https://user-images.githubusercontent.com/83420413/171509916-9fcac049-6d2e-4a0d-aa5d-283655dac89e.png" width="40%" height="60%" align="left" />
     <img src="https://user-images.githubusercontent.com/83420413/171509760-02a2fc0c-a953-455b-8015-06f208ae5893.png" width="40%" height="60%" align="right"/>
