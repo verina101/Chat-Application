@@ -33,6 +33,6 @@ This application helps people to communicate with each other such as the popular
 
 ## DataBase
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/83420413/171510827-1dd162e3-3a7e-4e22-bf2f-7f45542f6f26.png" width="113%" height="65%" align="center"/>
-  <img src="https://user-images.githubusercontent.com/83420413/171510787-1f781ed4-e0bc-48d8-90cf-e818d7eefbd6.png" width="113%" height="65%" align="center"/>
+  <img src="https://user-images.githubusercontent.com/83420413/171510827-1dd162e3-3a7e-4e22-bf2f-7f45542f6f26.png" width="50%" height="50%" align="center"/>
+  <img src="https://user-images.githubusercontent.com/83420413/171510787-1f781ed4-e0bc-48d8-90cf-e818d7eefbd6.png" width="50%" height="50%" align="center"/>
 </p>
