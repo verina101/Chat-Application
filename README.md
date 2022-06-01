@@ -27,8 +27,10 @@ This application helps people to communicate with each other such as the popular
 - SQLite
 
 ## Screenshots
-
-
+| First Header  | Second Header |
+| ------------- | ------------- |
+| <img src="https://user-images.githubusercontent.com/83420413/171513886-fd3c2e7b-ace6-419e-8f45-5490655bd9b6.png" width="45%" height="100%" align="left" />  | <img src="https://user-images.githubusercontent.com/83420413/171513886-fd3c2e7b-ace6-419e-8f45-5490655bd9b6.png" width="45%" height="100%" align="left" />  |
+| Content Cell  | Content Cell  |
 
 
 ## DataBase
