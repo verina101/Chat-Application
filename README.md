@@ -28,8 +28,8 @@ This application helps people to communicate with each other such as the popular
 
 ## Screenshots
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/83420413/171509916-9fcac049-6d2e-4a0d-aa5d-283655dac89e.png" align="left" />
-    <img src="https://user-images.githubusercontent.com/83420413/171509760-02a2fc0c-a953-455b-8015-06f208ae5893.png" align="right"/>
+    <img src="https://user-images.githubusercontent.com/83420413/171509916-9fcac049-6d2e-4a0d-aa5d-283655dac89e.png" width="40%" height="60%" align="left" />
+    <img src="https://user-images.githubusercontent.com/83420413/171509760-02a2fc0c-a953-455b-8015-06f208ae5893.png" width="40%" height="60%" align="right"/>
 </p>
 
 ## DataBase
