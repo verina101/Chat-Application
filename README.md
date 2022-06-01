@@ -27,14 +27,12 @@ This application helps people to communicate with each other such as the popular
 - SQLite
 
 ## Screenshots
-| First Header  | Second Header |
-| ------------- | ------------- |
-| <img src="https://user-images.githubusercontent.com/83420413/171513886-fd3c2e7b-ace6-419e-8f45-5490655bd9b6.png" width="45%" height="100%" align="left" />  | <img src="https://user-images.githubusercontent.com/83420413/171513886-fd3c2e7b-ace6-419e-8f45-5490655bd9b6.png" width="45%" height="100%" align="left" />  |
-| Content Cell  | Content Cell  |
+
+<img src="https://user-images.githubusercontent.com/83420413/171513886-fd3c2e7b-ace6-419e-8f45-5490655bd9b6.png" width="40%" height="60%" align="center" /> <img src="https://user-images.githubusercontent.com/83420413/171514425-689716bd-b1da-4ddf-b08e-1937050febff.png" width="40%" height="60%" align="center" />
 
 
 ## DataBase
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/83420413/171068520-cc285b9e-804a-4791-839f-bfcd26fac8d7.jpg" width="45%" height="100%" align="left" />
-    <img src="https://user-images.githubusercontent.com/83420413/171070813-bfd8b5f9-cc6b-4d07-bcd1-dc5d3de37a63.jpg" width="45%" height="100%" align="right"/>
+    <img src="https://user-images.githubusercontent.com/83420413/171068520-cc285b9e-804a-4791-839f-bfcd26fac8d7.jpg" width="45%" height="100%" align="center" />
+    <img src="https://user-images.githubusercontent.com/83420413/171070813-bfd8b5f9-cc6b-4d07-bcd1-dc5d3de37a63.jpg" width="45%" height="100%" align="center"/>
 </p>
