@@ -28,7 +28,7 @@ This application helps people to communicate with each other such as the popular
 
 ## Screenshots
 <p align="center">
-  ![image](https://user-images.githubusercontent.com/83420413/171513226-4467d165-0b40-4e86-8111-4c3fec281d57.png) width="45%" height="40%" align="left"
+  ![image](https://user-images.githubusercontent.com/83420413/171513226-4467d165-0b40-4e86-8111-4c3fec281d57.png)
 </p>
 
 
