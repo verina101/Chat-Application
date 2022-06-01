@@ -28,12 +28,12 @@ This application helps people to communicate with each other such as the popular
 
 ## Screenshots
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/83420413/171509916-9fcac049-6d2e-4a0d-aa5d-283655dac89e.png" width="40%" height="60%" align="left" />
-    <img src="https://user-images.githubusercontent.com/83420413/171509760-02a2fc0c-a953-455b-8015-06f208ae5893.png" width="40%" height="60%" align="right"/>
+    <img src="https://user-images.githubusercontent.com/45971948/117722312-2fa48080-b1e1-11eb-8388-eb15e761c989.png" width="40%" height="60%" align="left" />
+    <img src="https://user-images.githubusercontent.com/45971948/117722321-3206da80-b1e1-11eb-8f4d-9823d398dc3b.png" width="40%" height="60%" align="right"/>
 </p>
 
 
-
+## DataBase
 <p align="center">
     <img src="https://user-images.githubusercontent.com/83420413/171068520-cc285b9e-804a-4791-839f-bfcd26fac8d7.jpg" width="40%" height="60%" align="left" />
     <img src="https://user-images.githubusercontent.com/83420413/171070813-bfd8b5f9-cc6b-4d07-bcd1-dc5d3de37a63.jpg" width="40%" height="60%" align="right"/>
