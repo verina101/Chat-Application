@@ -19,11 +19,14 @@ This application helps people to communicate with each other such as the popular
 - groupChat info shows all the participants in the room with their lastseen in the group                               
 - each user can send and delete any info he sent
 - The user can see the status of the message whether it is seen or not
+
 ## Tools
 - C++
 - Qt Creator
 - SQLite
+
 ## Screenshots
+
 
 ## DataBase
 ##### ERD Diagram
