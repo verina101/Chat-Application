@@ -9,7 +9,6 @@
 #include <string>
 #include "Data.h"
 #include <QListWidgetItem>
-
 using namespace std;
 
 namespace Ui {

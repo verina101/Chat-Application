@@ -5,6 +5,7 @@
 #include <Data.h>
 #include <showstories.h>
 #include <QResource>
+
 StoryTime::StoryTime(QWidget *parent): QWidget(parent), ui(new Ui::StoryTime) {
     ui->setupUi(this);
     this->setMinimumSize(QSize(700, 500));
@@ -30,6 +31,7 @@ StoryTime::StoryTime(QWidget *parent): QWidget(parent), ui(new Ui::StoryTime) {
 
             name = path[i] + name;
         }
+
 
         QPixmap photo(QString::fromStdString(path));
         int h= ui->label->height();
