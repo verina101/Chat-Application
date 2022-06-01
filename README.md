@@ -7,8 +7,8 @@ This application helps people to communicate with each other such as the popular
 - [Tools](#Tools)
 - [Screenshots](#Screenshots)
 - [DataBase](#DataBase)
-- [Team Members](#Team Members)
-- 
+- [TeamMembers](#TeamMembers)
+
 ## Features
 - Login/Registration
 - each user can change most of his profile info like profilePicture, password, description ...
@@ -42,7 +42,7 @@ This application helps people to communicate with each other such as the popular
     <img src="https://user-images.githubusercontent.com/83420413/171070813-bfd8b5f9-cc6b-4d07-bcd1-dc5d3de37a63.jpg" width="45%" height="100%" align="center"/>
 </p>
 
-## Team Members
+## TeamMembers
 | Name             | Account                                                      |
 | ---------------- | ------------------------------------------------------------ |
 | Amir Moris       | [@Amir-Moris](https://github.com/Amir-Moris)                 |
