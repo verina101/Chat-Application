@@ -1,5 +1,5 @@
 ## Chat App
-This application helps people to communicate with each other such as the popular application WhatsApp
+This application helps people to communicate with each other such as the popular application WhatsApp.
 
 
 ## Table of Contents
@@ -12,15 +12,15 @@ This application helps people to communicate with each other such as the popular
 ## Features
 - Login/Registration
 - each user can change most of his profile info like profilePicture, description, visibility ...
-- each user can add new contact and create private or groupchat with them
-- each user can post new stories and his contacts will be able to see it, it will disappear after 24 hours exactly
+- each user can add new contact and create private or groupchat with them.
+- each user can post new stories and his contacts will be able to see it, it will disappear after 24 hours exactly.
 - The user can see all stories of his mutual contacts.
 - each chatRoom has chatroom info:
-  - groupChat info shows all participants in the room with their lastseen in the group   
-  - privateChat info shows the common chatRoom between both users               
+  - groupChat info shows all participants in the room with their lastseen in the group.  
+  - privateChat info shows the common chatRoom between both users.
                             
-- each user can send and delete any info he sent
-- The user can see the status of the message whether it is seen or not
+- each user can send and delete any info he sent.
+- The user can see the status of the message whether it is seen or not.
 
 ## Tools
 - C++
