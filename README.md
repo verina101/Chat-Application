@@ -11,7 +11,7 @@ This application helps people to communicate with each other such as the popular
 
 ## Features
 - Login/Registration
-- each user can change most of his profile info like profilePicture, password, description ...
+- each user can change most of his profile info like profilePicture, description, visibility ...
 - each user can add new contact and create private or groupchat with them
 - each user can post new stories and his contacts will be able to see it, it will disappear after 24 hours exactly
 - The user can see all stories of his mutual contacts.
