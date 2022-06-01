@@ -100,6 +100,8 @@ void login::on_pushButton_submit_clicked() {
                     vector<vector<QString>> returnData = db.SelectData("USER", columns, condition);
                     if(returnData.empty()) {
                         string tablename="USER";
+                        if(ProfilePicture.isEmpty())
+                            ProfilePicture =":/images/assets/defultProfile.png";
                         string values = "(" + db.convertToValue(firstname) + "," + db.convertToValue(lastname) + "," + db.convertToValue(ProfilePicture) + "," + db.convertToValue(description) + "," + db.convertToValue(password) + "," + db.convertToValue(phoneno) + "," + db.convertToValue(visibility) + ")";
                         db.InsertData(tablename,values);
                         constantdata currUser;

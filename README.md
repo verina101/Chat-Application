@@ -5,8 +5,8 @@ This application helps people to communicate with each other such as the popular
 ## Table of Contents
 - [Features](#Features)
 - [Tools](#Tools)
-- [DataBase](#DataBase)
 - [Screenshots](#Screenshots)
+- [DataBase](#DataBase)
 
 ## Features
 - Login/Registration
@@ -28,10 +28,10 @@ This application helps people to communicate with each other such as the popular
 
 ## Screenshots
 
+   <img src="https://user-images.githubusercontent.com/83420413/171510827-1dd162e3-3a7e-4e22-bf2f-7f45542f6f26.png">
+    <img src="https://user-images.githubusercontent.com/83420413/171510787-1f781ed4-e0bc-48d8-90cf-e818d7eefbd6.png">
+
 
 ## DataBase
-##### ERD Diagram
-<img src="https://user-images.githubusercontent.com/83420413/171068520-cc285b9e-804a-4791-839f-bfcd26fac8d7.jpg">
-
-##### Schema
-<img src="https://user-images.githubusercontent.com/83420413/171070813-bfd8b5f9-cc6b-4d07-bcd1-dc5d3de37a63.jpg">
+<img src="https://user-images.githubusercontent.com/45971948/117722312-2fa48080-b1e1-11eb-8388-eb15e761c989.png" width="40%" height="40%" align="left" />
+<img src="https://user-images.githubusercontent.com/45971948/117722321-3206da80-b1e1-11eb-8f4d-9823d398dc3b.png" width="40%" height="40%" align="right"/>

@@ -32,6 +32,7 @@ SOURCES += \
     showcontactnamestory.cpp \
     showstories.cpp \
     profile.cpp \
+    mainwindow.cpp \
     constantdata.cpp
 
 
@@ -57,6 +58,7 @@ HEADERS += \
     showcontactnamestory.h \
     showstories.h \
     profile.h \
+    mainwindow.h \
     constantdata.h
 
 
@@ -77,6 +79,7 @@ FORMS += \
     showcontact.ui \
     showcontactnamestory.ui \
     showstories.ui \
+    mainWindow.ui \
     profile.ui
 
 

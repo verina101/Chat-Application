@@ -187,7 +187,7 @@ void Data::UpdateData(string TableName, string UpdatedColumn, string Condition) 
 //        cerr << "*** Records updated successfully ***\n";
     }
     else {
-        cerr << "*** Error in UpdateData function ***\n";
+        cerr <<SQL<< "*** Error in UpdateData function ***\n";
     }
 
     DB.close();

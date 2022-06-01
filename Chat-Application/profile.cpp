@@ -29,7 +29,6 @@ profile::profile(QWidget *parent): QWidget(parent), ui(new Ui::profile) {
     if(data[0][5]=="1")
         ui->comboBox_visibilty->setCurrentIndex(1);
 
-
     string path= data[0][2].toStdString(),name="";
 
     for(int i=path.size() - 1; i>-1; --i){
@@ -54,6 +53,8 @@ void profile::on_pushButton_clicked()
     QString filter="Jpeg File(*.jpeg);; Png File(*.png);; JPG File(*.jpg) ;; BMP File(*.bmp);; GIF file(*.gif)";
     filePath=QFileDialog::getOpenFileName(this,"open a file","D:/",filter);
     QMessageBox::information(this,"..",filePath);
+    if(filePath.isEmpty())
+        filePath = data[0][2];
     if(!filePath.isEmpty()){
         QPixmap pic(filePath);
         ui->label->setPixmap(pic.scaled(100,100,Qt::IgnoreAspectRatio));
@@ -74,12 +75,10 @@ void profile::on_pushButton_2_clicked()
     string userCol     =  "ProfilePicture,Description";
     string userTable   =  "USER" ;
     string userCond = "WHERE PhoneNumber = '" + phoneno + "'";
-
     if(!filePath.isEmpty()){
         userCol = "ProfilePicture = '" + filePath.toStdString() + "'";
         myData.UpdateData(userTable, userCol, userCond);
     }
-
     QString desk= ui->lineEdit->text();
     userCond = "WHERE PhoneNumber = '" + phoneno + "'";
     userCol= "Description = '" + desk.toStdString() + "'";
