@@ -28,9 +28,9 @@ This application helps people to communicate with each other such as the popular
 
 ## Screenshots
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/83420413/171510827-1dd162e3-3a7e-4e22-bf2f-7f45542f6f26.png" width="45%" height="40%" align="left"/>
-  <img src="https://user-images.githubusercontent.com/83420413/171510787-1f781ed4-e0bc-48d8-90cf-e818d7eefbd6.png" width="45%" height="40%" align="right"/>
+  ![image](https://user-images.githubusercontent.com/83420413/171513226-4467d165-0b40-4e86-8111-4c3fec281d57.png) width="45%" height="40%" align="left"
 </p>
+
 
 
 ## DataBase
