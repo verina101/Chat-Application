@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Add Story</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background:rgb(52, 91, 99);</string>

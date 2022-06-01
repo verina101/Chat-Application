@@ -1,7 +1,5 @@
 <RCC>
     <qresource prefix="/icons">
-        <file>assets/Delete_Icon.png</file>
-        <file>assets/Info_Icon.png</file>
         <file>assets/Send_Icon.png</file>
         <file>assets/notSeen_Icon.png</file>
         <file>assets/seen_Icon.png</file>
