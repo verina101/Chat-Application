@@ -32,10 +32,6 @@ This application helps people to communicate with each other such as the popular
     <img src="https://user-images.githubusercontent.com/83420413/171510787-1f781ed4-e0bc-48d8-90cf-e818d7eefbd6.png" width="40%" height="50%" align="right"/>
 </p>
 
-- asd
-
 ## DataBase
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/45971948/117722312-2fa48080-b1e1-11eb-8388-eb15e761c989.png" width="40%" height="40%" align="left" />
-    <img src="https://user-images.githubusercontent.com/45971948/117722321-3206da80-b1e1-11eb-8f4d-9823d398dc3b.png" width="40%" height="40%" align="right"/>
-</p>
+<img src="https://user-images.githubusercontent.com/45971948/117722312-2fa48080-b1e1-11eb-8388-eb15e761c989.png" width="40%" height="40%" align="left" />
+<img src="https://user-images.githubusercontent.com/45971948/117722321-3206da80-b1e1-11eb-8f4d-9823d398dc3b.png" width="40%" height="40%" align="right"/>
