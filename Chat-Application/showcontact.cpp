@@ -117,7 +117,7 @@ void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
         ui->listWidget_2->item(index)->setHidden(false);
     }
     else{
-        vector<QString> userData = db.SelectData("USER","FirstName, LastName","WHERE UserID = " + db.convertToValue(selectedID)).front();
+        vector<QString> userData = db.SelectData("USER","FirstName, LastName, ProfilePicture","WHERE UserID = " + db.convertToValue(selectedID)).front();
         QString chatName1 = MyConstants::getMyId() + "#" + selectedID;
         QString chatName2 = selectedID + "#" +MyConstants::getMyId();
         vector<vector<QString>> myChatID = db.SelectData("CHATROOM", "RoomID", "WHERE Name in ("+ db.convertToValue(chatName1)+", "+db.convertToValue(chatName2)+")" );
@@ -130,13 +130,18 @@ void ShowContact::on_listWidget_itemClicked(QListWidgetItem *item){
             db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(MyConstants::getMyId()) +" , datetime('now','localtime') )");
             db.InsertData("PARTICIPATE","( " + db.convertToValue(chatID) + ","+ db.convertToValue(selectedID) +" , datetime('now','localtime') )");
 
+            QString userPic = db.SelectData("USER","ProfilePicture","WHERE UserID ="+db.convertToValue(selectedID)).front().front();
             MyConstants::setMyChatRoomID(chatID);
+            MyConstants::setMyChatRoomPic(userPic);
+
         }
         else{
             MyConstants::setMyChatRoomID(myChatID[0][0]);
         }
 
         MyConstants::setMyChatRoomName(userData[0] + " " + userData[1]);
+        MyConstants::setMyChatRoomPic(userData[2]);
+
         emit openContactChat();
         ui->listWidget->blockSignals(true);
         ui->listWidget->clear();

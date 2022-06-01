@@ -141,7 +141,7 @@ void Data::InsertData(string TableName, string values) {
 //        cerr << "*** Records inserted successfully ***\n";
     }
     else {
-        cerr << "*** Error in InsertData function ***\n";
+        cerr << SQL << "*** Error in InsertData function ***\n";
 
     }
 

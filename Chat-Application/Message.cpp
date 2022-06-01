@@ -56,6 +56,8 @@ void Message::ConvertFormat(QString &str) {
     QString tmpqStr = str;
     str.clear();
     for(auto ch : tmpqStr) {
+        if(ch == '\'')
+            ch = '"';
         int oLd_nLines = tmpo->document()->documentLayout()->documentSize().height();
         tmpo->insertPlainText(ch);
         int new_nLines = tmpo->document()->documentLayout()->documentSize().height();
