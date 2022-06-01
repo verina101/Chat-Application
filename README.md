@@ -27,14 +27,12 @@ This application helps people to communicate with each other such as the popular
 - SQLite
 
 ## Screenshots
-<p align="center">
-  ![image](https://user-images.githubusercontent.com/83420413/171513226-4467d165-0b40-4e86-8111-4c3fec281d57.png)
-</p>
+
 
 
 
 ## DataBase
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/83420413/171509916-9fcac049-6d2e-4a0d-aa5d-283655dac89e.png" align="left" />
-  <img src="https://user-images.githubusercontent.com/83420413/171509760-02a2fc0c-a953-455b-8015-06f208ae5893.png" align="right"/>
+    <img src="https://user-images.githubusercontent.com/83420413/171068520-cc285b9e-804a-4791-839f-bfcd26fac8d7.jpg" width="45%" height="100%" align="left" />
+    <img src="https://user-images.githubusercontent.com/83420413/171070813-bfd8b5f9-cc6b-4d07-bcd1-dc5d3de37a63.jpg" width="45%" height="100%" align="right"/>
 </p>
